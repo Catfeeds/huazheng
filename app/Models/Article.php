@@ -18,6 +18,9 @@ class Article extends Model
     public function MoreImageMany(){
         return $this->hasMany('App\Models\MoreImage','more_id','id')->where('cate_id',1)->orderBy("order","DESC")->orderBy("id","DESC");
     }
+    public function MoreVideoMany(){
+        return $this->hasMany('App\Models\MoreVideo','more_id','id')->where('cate_id',1)->orderBy("order","DESC")->orderBy("id","DESC");
+    }
     static public function ArticleSave($attributes=array()){
 
 		$caregory_info = ArticleCategory::find($attributes['cate_id']);
@@ -90,6 +93,9 @@ class Article extends Model
         }
         if(isset($attributes['province'])&&trim($attributes['province'])!=''){
             $list = $list->where('province',$attributes['province']);
+        }
+        if(isset($attributes['no_id'])&&trim($attributes['no_id'])!=''){
+            $list = $list->where('id',"<>",$attributes['no_id']);
         }
         if(isset($attributes['city'])&&trim($attributes['city'])!=''){
             $list = $list->where('city',$attributes['city']);

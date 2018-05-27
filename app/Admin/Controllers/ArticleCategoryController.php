@@ -118,10 +118,11 @@ EOT;
             // $form->display('id', 'ID');
             
             $form->text('title', '名称')->rules('required');
+            $form->text('title2', '名称2');
             $form->text('en_title','英文名称');
             // $form->text('video','视频链接');
             $form->select('template', '模版')->options(trans('template.template'));
-            // $form->text('url', '链接标识')->help('不可输入中文，必须英文标签，这里输入的标签会影响访问链接');
+            $form->text('url', '链接标识')->help('不可输入中文，必须英文标签，这里输入的标签会影响访问链接');
             $form->select('parent_id', '所属分类')->options(ArticleCategory::selectOptions());
             $form->textarea('cat_desc', '描述')->rows(3);
             $form->editor('content', '内容');

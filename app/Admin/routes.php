@@ -20,6 +20,7 @@ Route::group([
     $router->resource('ads-position', AdsPositionController::class);//广告位
     $router->resource('ads-image', AdsImageController::class);//广告位
     $router->resource('more-image', MoreImageController::class);//广告位
+    $router->resource('more-video', MoreVideoController::class);//更多视频
     $router->resource('nav', NavController::class);//导航
     $router->resource('link', LinkController::class);//友情链接
     $router->resource('recruitment-apply', RecruitmentApplyController::class);//招聘申请

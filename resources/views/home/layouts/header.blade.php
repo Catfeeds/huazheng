@@ -68,7 +68,7 @@
                     <a href="#" class="wx">
                         关注微信
                     </a>
-                    <p><img src="{{asset(ConfigGet('ewm'))}}" alt=""></p>
+                    <p><img src="{{asset(ConfigGet('ewm'))}}" alt="{{ConfigGet('ewm_text')}}"></p>
                     <!-- <a href="#" target="_blank">登录爱情管家</a>
                     <a href="#" target="_blank">登录黄埔计划</a> -->
                 </div>

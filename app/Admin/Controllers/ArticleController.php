@@ -107,7 +107,10 @@ class ArticleController extends Controller
             
             $grid->actions(function ($actions) {
                 $row = $actions->row;
-                // $actions->prepend('<a href="/admin/more-image?cate_id=1&more_id='.$row['id'].'"><i class="fa fa-image"></i></a>');
+                if($row['article_category_to']['template']=='master-group'){
+                    $actions->prepend('<a href="/admin/more-image?cate_id=1&more_id='.$row['id'].'"><i class="fa fa-image"></i></a>');
+                    $actions->prepend('<a href="/admin/more-video?cate_id=1&more_id='.$row['id'].'"><i class="fa fa-file-video-o"></i></a>');
+                }
             });
             if($request['cate_id']>0){
                 $grid->urlCreateButton('/admin/article/create?cate_id='.$request['cate_id']);//修改添加按钮链接
@@ -158,13 +161,14 @@ class ArticleController extends Controller
 
             $form->select('cate_id','所属分类')->options($cate_options)->rules('required')->default($request['cate_id']);
             $form->textarea('desc','描述')->rows(3);
+            $form->textarea('desc2','描述2')->rows(3);
             $form->editor('content','内容');
             $form->image('img','图片')->move('/uploads/article/'.date('Ymd'))->uniqueName();
             $form->text('alt','图片alt');
             $form->image('img2','图片2')->move('/uploads/article/'.date('Ymd'))->uniqueName();
             $form->text('alt2','图片2alt');
             // $form->number('click','访问量');
-            $form->text('editor','来源')->default('萌货国际烘焙');
+            // $form->text('editor','来源')->default('萌货国际烘焙');
             $states = [
                 'on'  => ['value' => 1, 'text' => '是', 'color' => 'success'],
                 'off' => ['value' => 0, 'text' => '否', 'color' => 'danger'],
@@ -176,6 +180,7 @@ class ArticleController extends Controller
             $form->text('seo_description', 'seo description');
             // $form->text('job_title', '职称');
             $form->text('video', '视频链接');
+            $form->text('url', '链接');
 
             // $form->html('', $label = '知识解答');
             // $form->divide();

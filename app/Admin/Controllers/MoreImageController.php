@@ -69,6 +69,7 @@ class MoreImageController extends Controller
             //默认排序
             $grid->model()->orderBy('order','DESC');
             $grid->id('ID')->sortable();
+            $grid->column('title', '标题');
             $grid->column('alt',"alt");
             $grid->image("图片")->image();
             // $grid->column('url',"链接");
@@ -98,6 +99,7 @@ class MoreImageController extends Controller
             $form->hidden('cate_id','分类')->value($request['cate_id']);
             $form->hidden('more_id','分类')->value($request['more_id']);
 
+            $form->text('title', '标题');
             $form->text('alt', 'alt');
             $form->number('order', '排序');
             // $form->text('url', '链接');

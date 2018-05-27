@@ -3,273 +3,183 @@
     @parent
 @endsection
 @section('content')
-@include('home.layouts.banner')
-<div class="index_1 lazybg" data-bg="{{ asset('resources/home/images/bg1.jpg') }}">
-    <div class="layout">
-        <div class="title"><h3>{{$index_1_cate['title']}}<em>{{$index_1_cate['en_title']}}</em></h3></div>
-        <div class="tab">
-            <div class="hd">
-                <ul class="clearfix">
-                    @foreach($index_1 as $k=>$v)
-                        <li>{{$v['title']}}</li>
-                    @endforeach
-                </ul>
+@if(isset($banner)&&$banner->count())
+<div class="banner">
+    <div class="tab">
+        <div class="tab_in">
+            <ul>
+                @foreach(nav(3) as $k=>$v)
+                @if($k>0)
+                <li>
+                    <a class="tab-icon6" style="background-image: url({{asset($v['ico'])}})" @if(!empty($v['url'])) href="{{$v['url']}}" @endif @if($v['is_blank']) target="_blank" @endif title="{{$v['title']}}" >{{$v['title']}}</a>
+                </li>
+                @endif
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    <div class="swiper-container" id="swiper1">
+        <div class="swiper-wrapper">
+            @foreach($banner as $v)
+            <div class="swiper-slide" style="background-image: url({{asset($v['image'])}})" alt="{{$v['alt']}}">
+                <a @if(!empty($v['url']))href="{{$v['url']}}"@endif target="_blank"></a>
             </div>
-            <div class="bd">
-                @foreach($index_1 as $i1)
-                    <div class="con">
-                        <dl class="clearfix cou_list">
-                            @foreach($i1['article'] as $k=>$v)
-                                @if($k%4 < 2)
-                                <dd class="clearfix">
-                                    <div class="pich fl"><a href="{{URL('show-'.$v['cate_id'].'-'.$v['id'].'-1.html')}}"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></a></div>
-                                    <div class="box fr">
-                                        <div class="pic"><img src="{{asset($v['img2'])}}" alt="{{$v['alt2']}}"></div>
-                                        <div class="p1" title="{{$v['en_title']}}">{{$v['en_title']}}</div>
-                                        <div class="p2" title="{{$v['title']}}">{{$v['title']}}</div>
-                                        <div class="p3">
-                                            {!!nl2br($v['desc'])!!}
-                                        </div>
-                                        <a href="{{URL('show-'.$v['cate_id'].'-'.$v['id'].'-1.html')}}" class="mbtn"><b>了解详情</b></a>
+            @endforeach
+        </div>
+        <div class="swiper-pagination" id="swiper1-but"></div>
+    </div>
+</div>
+@endif
+<div class="con01">
+    <ul style="text-align:center;">
+        @foreach($index_1 as $v)
+        <li>
+            <div>
+                <div class="font0">{!!$v['title']!!}</div>
+                <div class="font1">{!!nl2br($v['desc'])!!}</div>
+            </div>
+        </li>
+        @endforeach
+    </ul>
+</div>
+<div class="con02">
+    <div class="con02-in">
+        <div class="con02-Top">
+            <div class="tit">
+                <hr class="tit-hr">
+                {{$index_2_cate['title']}}
+                <hr class="tit-hr">
+            </div>
+            <div class="tit2">
+                {!!nl2br($index_2_cate['cat_desc'])!!}
+            </div>
+        </div>
+        <div class="con02-body">
+            <div class="con02-bodyL">
+                @if(isset($index_2['0']))
+                <a href="{{$index_2['0']['url']}}"><img src="{{asset($index_2['0']['img'])}}" alt="{{$index_2['0']['alt']}}"></a>
+                @endif
+            </div>
+            <div class="con02-bodyR">
+                @if(isset($index_2['1']))
+                <a href="{{$index_2['1']['url']}}"><img src="{{asset($index_2['1']['img'])}}" alt="{{$index_2['1']['alt']}}"></a>
+                @endif
+                @if(isset($index_2['2']))
+                <a href="{{$index_2['2']['url']}}"><img src="{{asset($index_2['2']['img'])}}" alt="{{$index_2['2']['alt']}}"></a>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+<div class="con03">
+    <div class="con03-in">
+        <div class="con02-Top">
+            <div class="tit">
+                <hr class="tit-hr">
+                {{$index_3_cate['title']}}
+                <hr class="tit-hr">
+            </div>
+            <div class="tit2">
+                {!!nl2br($index_3_cate['cat_desc'])!!}
+            </div>
+        </div>
+    <div class="con02-con">
+        <div class="tabBar">
+            <div class="tabBarCon swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper" >
+                    @foreach($index_3 as $k=>$v)
+                    <div class="swiper-slide @if($k%2==0) con02-left con02-new @else con02-right @endif" >
+                        <h3>{!!$v['title']!!}</h3>
+                        <div class="kh-video qy-video">
+                            <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}" class="fm show">
+                            <video id="qiye-video" class="video-js vjs-default-skin" controls="">
+                                <source src="{{$v['video']}}" type="video/mp4">
+                            </video>
+                            <!-- <embed id="qiye-video" class="video-js vjs-default-skin" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=h0665s7je28&auto=0" allowFullScreen="true" quality="high" width="516" height="290" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="tabBarprev swiper-button-prev swiper-button-disabled"></div>
+                <div class="tabBarnext swiper-button-next"></div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    
+</div>
+<div class="con04">
+    <div class="con04-in">
+        <div class="con02-Top">
+            <div class="tit">
+                <hr class="tit-hr">
+                {{$index_4_cate['title']}}
+                <hr class="tit-hr">
+            </div>
+            <div class="tit2">
+                {!!nl2br($index_4_cate['cat_desc'])!!}
+            </div>
+        </div>
+        <div class="con04-body">
+            <div class="con04-bodyL">
+                <img src="{{asset($index_4_cate['img'])}}" alt="{{asset($index_4_cate['alt'])}}">
+            </div>
+            <div class="con04-bodyR">
+                <div class="con04-tab">
+                    <a class="con04-tabA1 on" href="javascript:;" target="_self">情感督导师</a>
+                    <a class="con04-tabA2" href="javascript:;" target="_self">情感咨询师</a>
+                </div>
+                <div class="con04-con cur">
+                    <!-- Swiper -->
+                    <div class="swiper-container" id="swiper2">
+                        <div class="swiper-wrapper" >
+                            @foreach($index_5 as $v)
+                            <div class="swiper-slide">
+                                <a href="{{URL($index_5_cate['url'],$v['id'])}}">
+                                    <img class="daoshi" src="{{asset($v['img2'])}}" alt="{{$v['alt2']}}">
+                                    <div class="daoshi-desc">
+                                        <p class="daoshi-descP">{{$v['title']}}</p>
+                                        <p>{!!nl2br($v['desc'])!!}</p>
                                     </div>
-                                </dd>
-                                @else
-                                <dd class="clearfix">
-                                    <div class="box fl">
-                                        <div class="pic"><img src="{{asset($v['img2'])}}" alt="{{$v['alt2']}}"></div>
-                                        <div class="p1" title="{{$v['en_title']}}">{{$v['en_title']}}</div>
-                                        <div class="p2" title="{{$v['title']}}">{{$v['title']}}</div>
-                                        <div class="p3">
-                                            {!!nl2br($v['desc'])!!}
-                                        </div>
-                                        <a href="{{URL('show-'.$v['cate_id'].'-'.$v['id'].'-1.html')}}" class="mbtn"><b>了解详情</b></a>
-                                    </div>
-                                    <div class="pich fr"><a href="{{URL('show-'.$v['cate_id'].'-'.$v['id'].'-1.html')}}"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></a></div>
-                                </dd>
-                                @endif
-                            @endforeach
-                            <?php 
-                                $ads_13 = ads_image(13,1);
-                            ?>
-                            @if($ads_13&&$ads_13->count())
-                            <dt class="lazybg clearfix">
-                                <a @if(!empty($ads_13['0']['url'])) href="{{$ads_13['0']['url']}}" @endif>
-                                    <img src="{{asset($ads_13['0']['image'])}}" alt="{{$ads_13['0']['alt']}}">
                                 </a>
-                            </dt>
-                            @endif
-                        </dl>
-                        <div class="twobtn">
-                            <div class="dis">
-                                <a href="{{URL('list-'.$index_1_cate['id'].'-1.html')}}">查看更多课程</a>
-                                <a >获取课程报价</a>
                             </div>
+                            @endforeach
                         </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="index_2 lazybg" data-bg="{{ asset('resources/home/images/bg2.jpg') }}">
-    <div class="layout">
-        <div class="title title2"><h3>{{$index_2_cate['title']}}<em>{{$index_2_cate['en_title']}}</em></h3></div>
-        <div class="tab">
-            <div class="hd">
-                <ul class="clearfix">
-                    @foreach($index_2 as $k=>$v)
-                        <li>{{$v['title']}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="bd">
-                @foreach($index_2 as $i2)
-                <div class="con">
-                    <ul class="clearfix">
-                        @foreach($i2['article'] as $k=>$v)
-                        <li><a class="pich"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></a></li>
-                        @endforeach
-                    </ul>
-                    <div class="twobtn">
-                        <div class="dis">
-                            <a href="{{URL('list-'.$i2['id'].'-1.html')}}">查看更多作品</a>
-                        </div>
+                    <div class="con04-bottom">
+                        <a class="zx kefu_btn" href="javascript:;" target="_self">在线咨询</a>
+                        <a class="yy footer-yy" href="javascript:;" target="_self">预约咨询</a>
                     </div>
                 </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_3 lazybg" data-bg="{{ asset('resources/home/images/bg3.jpg') }}">
-    <div class="layout">
-        <div class="title"><h3>{{$index_3_cate['title']}}<em>{{$index_3_cate['en_title']}}</em></h3></div>
-        <div class="picshow">
-            @foreach($index_3 as $k3=>$i3)
-                @if($k3%6==0)
-                <div>
-                    <div class="box clearfix">
-                @endif
-                    @if($k3%6==0)
-                    <div class="fl">
-                    @endif
-                    @if($k3%6==2)
-                    <div class="fr clearfix">
-                    @endif
-                        <div class="pich">
-                            <a href="{{URL('show-'.$i3['cate_id'].'-'.$i3['id'].'-1.html')}}">
-                                @if($k3%6 < 2)
-                                <img src="{{asset($i3['img2'])}}" alt="{{$i3['alt2']}}">
-                                @else
-                                <img src="{{asset($i3['img'])}}" alt="{{$i3['alt']}}">
-                                @endif
-                                <p>{{$i3['title']}}</p>
-                            </a>
-                        </div>
-                    @if($k3%6==1||$index_3->count()-1==$k3||$k3%6==5)
-                    </div>
-                    @endif
-                @if($k3%6==5||$index_3->count()-1==$k3)
-                    </div>
-                </div>
-                @endif
-            @endforeach
-        </div>
-        <div class="twobtn">
-            <div class="dis">
-                <a href="{{URL('list-'.$index_3_cate['id'].'-1.html')}}">查看更多学校实况</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_4 lazybg" data-bg="{{ asset('resources/home/images/bg4.jpg') }}">
-    <div class="layout">
-        <div class="title title2"><h3>{{$index_4_cate['title']}}<em>{{$index_4_cate['en_title']}}</em></h3></div>
-        <div class="clearfix tab">
-            <div class="bd">
-                @foreach($index_4 as $k4=>$i4)
-                @if($k4 < 4)
-                <div class="video">
-                    <embed src="{{$i4['video']}}" allowFullScreen="true" quality="high" width="582" height="341" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-                <!-- <img src="images/pic10.jpg"><b></b> -->
-                </div>
-                @endif
-                @endforeach
-            </div>
-            <div class="hd">
-                <ul>
-                    @foreach($index_4 as $k4=>$i4)
-                    @if($k4 < 4)
-                        <li class="clearfix">
-                            <div class="time"><b>{{date('d',strtotime($i4['add_time']))}}</b>{{date('Y/m',strtotime($i4['add_time']))}}</div>
-                            <div class="w">
-                                <h3>{{$i4['title']}}</h3>
-                                <p>{!!nl2br($i4['desc'])!!}<a href="{{URL('show-'.$i4['cate_id'].'-'.$i4['id'].'-1.html')}}">【详情】</a></p>
+                <div class="con04-con">
+                    <!-- Swiper -->
+                    <div class="swiper-container" id="swiper3">
+                        <div class="swiper-wrapper" >
+                            @foreach($index_6 as $v)
+                            <div class="swiper-slide">
+                                <a href="{{URL($index_6_cate['url'],$v['id'])}}">
+                                    <img class="daoshi" src="{{asset($v['img2'])}}" alt="{{$v['alt2']}}">
+                                    <div class="daoshi-desc">
+                                        <p class="daoshi-descP">{{$v['title']}}</p>
+                                        <p>{!!nl2br($v['desc'])!!}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </li>
-                    @endif
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-        <ul class="news_list clearfix">
-            @foreach($index_4 as $k4=>$i4)
-            @if($k4 > 3)
-            <li><a href="{{URL('show-'.$i4['cate_id'].'-'.$i4['id'].'-1.html')}}">{{$i4['title']}}：{!!nl2br($i4['desc'])!!}</a></li>
-            @endif
-            @endforeach
-        </ul>
-        <div class="twobtn">
-            <div class="dis">
-                <a href="{{URL('list-'.$index_4_cate['id'].'-1.html')}}">查看更多案例</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_5 lazybg" data-bg="{{ asset('resources/home/images/bg5.jpg') }}">
-    <div class="layout">
-        <div class="title"><h3>{{$index_5_cate['title']}}<em>{{$index_5_cate['en_title']}}</em></h3></div>
-        <div class="con">
-            {!!$index_5_cate['content']!!}
-        </div>
-        <div class="twobtn">
-            <div class="dis">
-                <a href="{{URL('list-5-1.html')}}">查看关于萌货</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_6 lazybg" data-bg="{{ asset('resources/home/images/bg6.jpg') }}">
-    <div class="layout">
-        <div class="title title2"><h3>{{$index_6_cate['title']}}<em>{{$index_6_cate['en_title']}}</em></h3></div>
-        <div class="con">
-            {!!$index_6_cate['content']!!}
-        </div>
-        <div class="twobtn">
-            <div class="dis">
-                <a >课程咨询</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_7 lazybg" data-bg="{{ asset('resources/home/images/bg7.jpg') }}">
-    <div class="layout">
-        <div class="title title2"><h3>{{$index_7_cate['title']}}<em>{{$index_7_cate['en_title']}}</em></h3></div>
-        <dl class="clearfix">
-            @foreach($index_7 as $k7=>$i7)
-            @if($k7 < 1)
-                <dt>
-                <a href="{{URL('show-'.$i7['cate_id'].'-'.$i7['id'].'-1.html')}}"><img src="{{asset($i7['img'])}}" alt="{{$i7['alt']}}"><p>{{$i7['title']}}</p></a>
-                </dt>
-            @endif
-            @endforeach
-            <dd class="clearfix">
-                @foreach($index_7 as $k7=>$i7)
-                @if($k7 > 0)
-                    <div class="pic"><a href="{{URL('show-'.$i7['cate_id'].'-'.$i7['id'].'-1.html')}}"><img src="{{asset($i7['img'])}}" alt="{{$i7['alt']}}"><p>{{$i7['title']}}</p></a></div>
-                @endif
-                @endforeach
-            </dd>
-        </dl>
-        <div class="twobtn">
-            <div class="dis">
-                <a >课程咨询</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index_8">
-    <div class="layout clearfix con">
-        <div class="fl">
-            <div class="tit">{{$index_8_cate['title']}}<span>/{{$index_8_cate['en_title']}}</span></div>
-            <div class="mes_g">
-                <div class="bd">
-                    <ul>
-                        @foreach($index_8 as $k8=>$i8)
-                        <li><a href="{{URL('show-'.$i8['cate_id'].'-'.$i8['id'].'-1.html')}}">{{$i8['title']}}</a></li>
-                        @endforeach
-                    </ul>
+                            @endforeach
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="con04-bottom">
+                        <a class="zx kefu_btn" href="javascript:;" target="_self">在线咨询</a>
+                        <a class="yy footer-yy" href="javascript:;" target="_self">预约咨询</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="fl">
-            <div class="tit">{{$index_9_cate['title']}}<span>/{{$index_9_cate['en_title']}}</span></div>
-            <div class="mes_g">
-                <div class="bd">
-                    <ul>
-                        @foreach($index_9 as $k9=>$i9)
-                        <li><a href="{{URL('show-'.$i9['cate_id'].'-'.$i9['id'].'-1.html')}}">{{$i9['title']}}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="fr">
-            <div class="tit">抢免费课程<span>/free course</span></div>
-            <a class="box">
-                <p>今天报名登记送出 <b>10</b> 位免费课程，免费课程今天仅剩 <b>3</b> 位<em>今天送完即止，明天再来。</em></p>
-            </a>
         </div>
     </div>
 </div>
@@ -277,25 +187,92 @@
 @section('script')
     @parent
     <script>
-        $(document).ready(function(){
-            $(".index_3 .picshow .pich").hover(function() {
-                $(this).find("p").stop().show().animate({
-                    "bottom": "0"
-                }, 500)
-            }, function() {
-                $(this).find("p").stop().hide().animate({
-                    "bottom": "-140px"
-                }, 1)
+        $(function(){
+            var swiper = new Swiper('#swiper1', {
+                autoplay: 3000,
+                pagination: '#swiper1-but',
+                paginationClickable: true
             });
-            $(".index_7 dl a").hover(function() {
-                $(this).find("p").stop().show().animate({
-                    "bottom": "0"
-                }, 500)
-            }, function() {
-                $(this).find("p").stop().hide().animate({
-                    "bottom": "-140px"
-                }, 1)
+            var mySwiper = new Swiper('.tabBarCon', {
+                slidesPerView : 2,
+                centeredSlides : false,
+                slidesPerGroup : 2,
+                prevButton:'.tabBarprev',
+                nextButton:'.tabBarnext',
+            })
+            var swiper2 = new Swiper('#swiper2', {
+                    pagination: '#swiper2-but',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev'
+                });
+            
+            var swiper6 = new Swiper('#swiper6', {
+                paginationClickable: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev'
             });
-        });
+            
+
+            $('.con04-tab a').click(function(event) {
+               $(this).addClass('on').siblings().removeClass('on');
+               var num = $(this).index();
+               $('.con04-con').eq(num).show().siblings('.con04-con').hide();
+               var swiper2 = new Swiper('#swiper2', {
+                    pagination: '#swiper2-but',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev'
+                });
+                var swiper6 = new Swiper('#swiper3', {
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev'
+                });
+            });
+                var qiyeVideo = document.getElementById('qiye-video')
+                var kehuVideo = document.getElementById('kehu-video')
+                var kehuImg = $('.kehu-video .fm')
+                var qiyeImg = $('.qy-video .fm')
+                $('.video-play').click(function(event) {
+                    $(this).hide();
+                    document.getElementById('home-video').play();
+                });
+                $('.kehu-video img').click(function(event) {
+                    $(this).removeClass('show');
+                    $(this).siblings('video').get(0).play();
+                    // document.getElementById('kehu-video').play();
+                    qiyeVideo.pause();
+                    $('.qy-video .mb').show();
+                    if( qiyeImg.hasClass('show') ){
+                        $('.qy-video .mb').hide()
+                    }
+                                         
+                });
+                $('.qy-video img').click(function(event) {
+                    $(this).removeClass('show');
+                    $(this).siblings('video').get(0).play();
+                    // document.getElementById('qiye-video').play();
+                    kehuVideo.pause();
+                    $('.kehu-video .mb').show();
+                    if( kehuImg.hasClass('show') ){
+                        $('.kehu-video .mb').hide()
+                    }
+                });
+
+                 $('.kh-video video').click(function(event) {
+                     $(this).siblings('.mb').hide();
+                     
+                 });
+                 $('#qiye-video').click(function(event) {
+                     qiyeVideo.pause()
+                 });
+                 $('#kehu-video').click(function(event) {
+                     kehuVideo.pause()
+                 });
+                 $('.kh-video .mb').click(function(event) {
+                     $(this).hide()
+                 });
+        })
     </script>
 @endsection
