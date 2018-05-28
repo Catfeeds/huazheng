@@ -397,4 +397,231 @@
 			</div>
 		</div>
 	</div>
+@elseif($index2_box['template']=='love3-encounter')
+	<div class="love3-content">
+		<div class="con1">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <ul>
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					<li>
+					    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+					    <p class="ellipsis">{{$b_v['title']}}</p>
+					    <span>{!!nl2br($b_v['desc'])!!}</span>
+					</li>
+					@endforeach
+		        </ul>
+		    </div>
+		</div>
+	</div>
+@elseif($index2_box['template']=='love3-happy')
+	<div class="love3-content">
+		<div class="con2">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <div class="cm">{!!$index2_box['content']!!}</div>
+		        <div class="tt">
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					<span @if($b_k==0) class="cur" @endif>{{$b_v['title']}}<i></i></span>
+					@endforeach
+		        </div>
+				@foreach($index2_box['article'] as $b_k=>$b_v)
+		        <div class="list @if($b_k==0) on @endif">
+		            <dl>
+		                <dt><img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"></dt>
+		                <dd>
+		                	{!!$b_v['content']!!}
+		                    <!-- <ul>
+            	    			@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
+            					<li>
+            					    {!!$b_v2!!}
+            					</li>
+            	    			@endforeach
+		                    </ul> -->
+		                </dd>
+		            </dl>
+		        </div>
+				@endforeach
+		    </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.love3-content .con2 .tt span').hover(function() {
+			    $(this).addClass('cur').siblings().removeClass('cur')
+			    var num=$(this).index();
+			    $('.love3-content .con2 .list').eq(num).show().siblings('.list').hide();
+			
+			});
+		})
+	</script>
+@elseif($index2_box['template']=='love3-course')
+	<div class="love3-content">
+		<div class="con3">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <ul>
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+		            <li>
+		                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+		                <div class="txt">
+		                    <p>
+            	    			@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
+            					<span>
+            					    {!!$b_v2!!}
+            					</span>
+            	    			@endforeach
+		                    </p>
+		                </div>
+		            </li>
+					@endforeach
+		        </ul>
+		    </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			//视频课程内容显示
+			$('.love3-content .con3 ul li').hover(function() {
+			    $(this).children('.txt').show()
+			},function(){
+			    $(this).children('.txt').hide()
+			});
+		})
+	</script>
+@elseif($index2_box['template']=='love3-guidelines')
+	<div class="love3-content">
+		<div class="con4">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <div class="cm">{!!$index2_box['content']!!}</div>
+		        <ul>
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					@if($b_k%2==0)
+					<li>
+					    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+					</li>
+					<li>
+					    <p class="ellipsis">{{$b_v['title']}}</p>
+					    <span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
+					</li>
+					@else
+					<li>
+					    <p class="ellipsis">{{$b_v['title']}}</p>
+					    <span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
+					</li>
+					<li>
+					    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+					</li>
+					@endif
+					@endforeach
+		        </ul>
+		        <a href="#" class="zx love-btn">了解自己适合哪种提升方案</a>
+		    </div>
+		</div>
+	</div>
+@elseif($index2_box['template']=='love3-course2')
+	<div class="love3-content">
+		<div class="con5">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <div class="cm">{!!$index2_box['content']!!}</div>
+		        <ul>
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					<li @if($b_k==0) class="cur" @endif>
+					    {!!$b_v['content']!!}
+					</li>
+					@endforeach
+		        </ul>
+		        <div class="line">
+		        </div>
+		        <div class="year">
+		            <div class="swiper-container">
+		                <div class="swiper-wrapper">
+		                	@foreach($index2_box['article'] as $b_k=>$b_v)
+		                    <div class="swiper-slide @if($b_k==0) cur @endif ">{{$b_v['title']}}</div>
+		                	@endforeach
+		                </div>
+		                <!-- Add Pagination -->
+		                <a class="arrow-left" href="#"></a> 
+		                <a class="arrow-right" href="#"></a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+@elseif($index2_box['template']=='love3-guimi')
+	<div class="love3-content">
+		<div class="con6">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <ul>
+                	@foreach($index2_box['article'] as $b_k=>$b_v)
+		            <li>
+		                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+		                <h3 class="ellipsis">{{$b_v['title']}}</h3>
+		                <p>
+		                    {!!nl2br($b_v['desc'])!!}
+		                    <b></b>
+		                    {!!nl2br($b_v['desc2'])!!}
+		                </p>
+		            </li>
+                	@endforeach
+		        </ul>
+		    </div>  
+		</div>
+	</div>
+	<script type="text/javascript">
+		//幸福团专家显示
+		$('love3-content .con6 ul li').hover(function() {
+		    $(this).children('p').show()
+		}, function() {
+		    $(this).children('p').hide()
+		});
+	</script>
+@elseif($index2_box['template']=='love3-img')
+	<div class="love3-content">
+		<div class="banner2" style="background-image:url({{asset($index2_box['img'])}});height: 172px;">
+		    <!-- <div class="con_in">
+		        <a href="#" class="apply_box_btn">立即获取</a>
+		    </div> -->
+		</div>
+	</div>
+@elseif($index2_box['template']=='love3-protection')
+	<div class="love3-content">
+		<div class="con7">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <div class="cm">{!!$index2_box['content']!!}</div>
+		        <a href="#" class="love-btn">了解如何加入幸福闺蜜团</a>
+		    </div>
+		</div>
+	</div>
+@elseif($index2_box['template']=='love3-why')
+	<div class="love3-content">
+		<div class="con10">
+		    <div class="con_in">
+		        <h2>{{$index2_box['title']}}</h2>
+		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+		        <ul>
+                	@foreach($index2_box['article'] as $b_k=>$b_v)
+		            <li>
+		                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+		                <b class="ellipsis">{{$b_v['title']}}</b>
+		                <p class="ellipsis2">
+		                    {!!nl2br($b_v['desc'])!!}
+		                </p>
+		            </li>
+                	@endforeach
+		        </ul>
+		    </div>
+		</div>
+	</div>
 @endif

@@ -146,4 +146,98 @@
             });
         });
     </script>
+    <div class="gw-yxd contact-box">
+        <div class="yxd-in">
+            <div class="yxd-tt">
+                免费申请预约解决情感烦恼
+                <div class="close">
+                    <img src="http://a3.huazhen.com/huazhen_revision/pc/home/images/gb_01.png" alt="">
+                </div>
+            </div>
+            <div class="yxd-info" >
+                <p>带*号的为必填</p>
+                <input type="text" name="realname" placeholder="*请输入您的姓名" class="name text">                   
+                <input type="text" name="mobile" placeholder="*请输入手机号码" class="phone text">
+                <div class="yzm txyzm">
+                    <input type="text" name="captcha" placeholder="*请输入图形验证" value="">
+                    <span><img class="verifyImage" src="" alt="" onclick="getVcode()"></span>
+                </div>
+                <div class="sex">
+                    <span>*性别</span>
+                    <div class="gender">
+                        <div class="sg" value="2" name="gender">男</div>
+                        <div class="mn" value="1" name="gender">女</div>
+                    </div>
+                </div>
+                <input type="text" name="age" placeholder="请输入你的年龄" class="phone text">
+                <div class="mon-come mon-select">
+                    <div class="mon-text" value="" name="income">
+                        月收入
+                    </div>
+                    <ul  style="display:none">
+                        <li value="1" >
+                            0-3,000元
+                        </li>
+                        <li value="2">
+                            3,001-5,000元
+                        </li>
+
+                        <li value="3">
+                            5,001-8,000元
+                        </li>
+                        <li value="4">
+                            8,001-10,000元
+                        </li>
+                        <li value="5">
+                            10,001-20,000元
+                        </li>
+                        <li value="6">
+                            20,001-50,000元
+                        </li>
+                        <li value="7">
+                            50,000 元及以上
+                        </li>
+                    </ul>
+                </div>
+                <div class="yy-time mon-select">
+                    <div class="mon-text" value="" name="fine_time">
+                        最佳致电时间
+                    </div>
+                    <ul style="display:none" >
+                        <li value="10:00-11:00" name="fine_time">
+                            10:00-11:00
+                        </li>
+                        <li value="11:00-12:00" name="fine_time">
+                            11:00-12:00
+                        </li>
+                        <li value="12：00-13:00" name="fine_time">
+                            12：00-13:00
+                        </li>
+                        <li name="fine_time" value="14：00-15:00">
+                            14：00-15:00
+                        </li>
+                        <li name="fine_time" value="15：00-16:00">
+                            15：00-16:00
+                        </li>
+                        <li name="fine_time" value="16：00-17:00">
+                            16：00-17:00
+                        </li>
+                        <li name="fine_time" value="17：00-18:00">
+                            17：00-18:00
+                        </li>
+                        <li name="fine_time" value="18：00-19:00">
+                            18：00-19:00
+                        </li>
+                        <li name="fine_time" value="19：00-20:00">
+                            19：00-20:00
+                        </li>
+                        <li name="fine_time" value="21：00-22:00">
+                            21：00-22:00
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-submit submit-btn">立即申请</div>
+            </div>
+        </div>
+    </div>
 @show

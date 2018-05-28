@@ -153,6 +153,26 @@ $(function(){
         $('.ds_js').show().siblings('.item').hide();
         $('.ds_nav ul li').removeClass('cur');
     });
+
+    //历程
+    var love3_con5_swiper = new Swiper('.love3-content .con5 .swiper-container', {
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 60,
+    });
+    $('.love3-content .con5 .arrow-left').on('click', function(e){
+        e.preventDefault()
+        love3_con5_swiper.slidePrev()
+    })
+    $('.love3-content .con5 .arrow-right').on('click', function(e){
+        e.preventDefault()
+        love3_con5_swiper.slideNext()
+    })
+    $('.love3-content .con5 .swiper-container .swiper-slide').click(function(event) {
+        $(this).addClass('cur').siblings().removeClass('cur');
+        var num=$(this).index();
+        $('.con5 ul li').eq(num).show().siblings().hide();
+    });
 })
 
 // var Index= 0;

@@ -130,6 +130,17 @@ class HomeController extends Controller
             'take'=>8,
         ]);
 
+        $index_7 = ArticleCategory::orderBy('order',"ASC")->where('parent_id',342)->get();//获取一级分类
+        foreach($index_7 as $k=>$v){
+            $v['article'] = Article::ArticleList([
+                'cate_id'=>$v['id'],
+                'order'=>'is_top',
+                'sort'=>'DESC',
+                'paginate'=>5,
+            ]);
+        }
+        $index_7_cate = ArticleCategory::find(342);
+        
         $banner = ads_image(12);
         $assign = [
             'banner'       => $banner,
@@ -141,9 +152,11 @@ class HomeController extends Controller
             'index_3_cate' => $index_3_cate,
             'index_4_cate' => $index_4_cate,
             'index_5_cate' => $index_5_cate,
-            'index_5' => $index_5,
+            'index_5'      => $index_5,
             'index_6_cate' => $index_6_cate,
-            'index_6' => $index_6,
+            'index_6'      => $index_6,
+            'index_7_cate' => $index_7_cate,
+            'index_7'      => $index_7,
             
             'nav_index'=>true,
         ];

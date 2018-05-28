@@ -107,6 +107,16 @@ class ArticleController extends Controller
                 }
                 $assign['universal_cate_list'] = $universal_cate_list;
                 break;
+            case 'love3':
+                $cate_list = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['id'])->get();//获取一级分类
+                foreach($cate_list as $k=>$v){
+                    $v['article'] = Article::ArticleList([
+                        'cate_id'=>$v['id'],
+                        'paginate'=>0,
+                    ]);
+                }
+                $assign['cate_list'] = $cate_list;
+                break;
             case 'news'://动态
                 //获取列表数据
                 $article_list = Article::ArticleList([

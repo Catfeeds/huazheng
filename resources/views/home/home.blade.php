@@ -183,11 +183,56 @@
         </div>
     </div>
 </div>
+<div class="con05">
+    <div class="con05-in">
+        <div class="con02-Top">
+            <div class="tit">
+                <hr class="tit-hr">
+                {{$index_7_cate['title']}}
+                <hr class="tit-hr">
+            </div>
+            <div class="tit2">
+                {!!nl2br($index_7_cate['cat_desc'])!!}
+            </div>
+        </div>
+        <div class="con05-tab">
+            <ul>
+                @foreach($index_7 as $k=>$v)
+                <li @if($k==0) class="on" @endif>{{$v['title']}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @foreach($index_7 as $k=>$v)
+        <div class="con05-zx con05-news1 @if($k==0) cur @endif">
+            @foreach($v['article'] as $b_k=>$b_v)
+            <div class="adImg @if($b_k==0) adImg2 @endif">
+                <a href="{{URL($v['url'],$b_v['id'])}}">
+                    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"/>
+                    <p>
+                        <span>{{$b_v['title']}}</span>
+                    </p>
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @endforeach
+    </div>
+</div>
 @endsection
 @section('script')
     @parent
     <script>
         $(function(){
+            //切换新闻
+            $(".con05-tab ul li").mouseenter(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+                var _index = $(this).index();
+                // var _news = ".con05-news"+_index;
+                // $(".con05-zx").hide();
+                // $(_news).show();
+                $('.con05-zx').eq(_index).show().siblings('.con05-zx').hide();
+            });
+
             var swiper = new Swiper('#swiper1', {
                 autoplay: 3000,
                 pagination: '#swiper1-but',
