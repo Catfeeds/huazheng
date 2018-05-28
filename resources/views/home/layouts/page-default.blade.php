@@ -21,7 +21,7 @@
     $start_url = preg_replace('/page\=(\d+)/i',"page=1",$previousPageUrl);
 
     $nextPageUrl = $paginator->nextPageUrl();
-    $end_url = preg_replace('/page\=(\d+)/i',"page=".$paginator->total(),$nextPageUrl);
+    $end_url = preg_replace('/page\=(\d+)/i',"page=".$paginator->lastPage(),$nextPageUrl);
 
     $path = $previousPageUrl?$previousPageUrl:$nextPageUrl;
     $path = preg_replace('/\&page\=(\d+)/i',"",$path);
@@ -33,13 +33,13 @@
     @else
         <a href="{{ $previousPageUrl }}" class="previous" data-action="previous" target="_blank">上一页</a>
     @endif
-    <input type="text" data-max-page="{{$paginator->total()}}" data-path="{{$path}}">
+    <input type="text" data-max-page="{{$paginator->lastPage()}}" data-path="{{$path}}">
     @if ($paginator->hasMorePages())
         <a href="{{ $paginator->nextPageUrl() }}" class="next" data-action="next" target="_blank">下一页</a>
     @else
         <a class="next disabled" data-action="next" target="_blank">下一页</a>
     @endif
-    <a @if($paginator->currentPage()!=$paginator->total()) href="{{$end_url}}" @endif class="last @if($paginator->currentPage()==$paginator->total()) disabled @endif" data-action="last" target="_blank">»</a>
+    <a @if($paginator->currentPage()!=$paginator->lastPage()) href="{{$end_url}}" @endif class="last @if($paginator->currentPage()==$paginator->lastPage()) disabled @endif" data-action="last" target="_blank">»</a>
     <!-- <ul class="pagination clearfix">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
@@ -77,7 +77,7 @@
     <script>
         $(function(){
             $('.pagination').jqPagination({
-                max_page: {{$paginator->total()}},
+                max_page: {{$paginator->lastPage()}},
                 paged: function(page) {
                     PageCallback(page);
                 }

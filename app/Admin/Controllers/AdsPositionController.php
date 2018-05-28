@@ -100,8 +100,4 @@ class AdsPositionController extends Controller
         return Admin::form(AdsPosition::class, function (Form $form) {
             $form->text('title', '名称')->rules('required');
             $form->textarea('message', '说明')->rows(3);
-            $form->number('width','图片宽度');
-            $form->number('height','图片高度');
-        });
-    }
-}
+            $form->number
