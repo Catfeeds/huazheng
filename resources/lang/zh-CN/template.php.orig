@@ -21,6 +21,7 @@ return [
 		'index2-problem' => '普通主页-情感问题',
 		'index2-img' => '普通主页-单图高度456',
 		'love3' => '爱情管家',
+<<<<<<< HEAD
 		'love3-encounter' => '爱情管家-遭遇',
 		'love3-happy' => '爱情管家-幸福',
 		'love3-course' => '爱情管家-视频课程内容',
@@ -30,6 +31,8 @@ return [
 		'love3-img' => '爱情管家-单图高度172',
 		'love3-protection' => '爱情管家-保障',
 		'love3-why' => '爱情管家-为什么选择',
+		'hpjht' => '黄埔计划',
+=======
 		'hpjht' => '黄埔计划',
 		'hpjht-compared' => '黄埔计划-对比',
 		'hpjht-reason' => '黄埔计划-理由',
@@ -41,6 +44,7 @@ return [
 		'hpjht-price' => '黄埔计划-价格',
 		'hpjht-sign-up' => '黄埔计划-报名',
 		'hpjht-style' => '黄埔计划-风采',
+>>>>>>> ad5b77397e0c8669577ebdf87e96cd7351496470
 		'ppzx' => '品牌介绍',
 		'news' => '动态',
 		'video' => '视频媒体',
