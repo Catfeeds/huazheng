@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 28/05/2018 17:34:58
+ Date: 01/06/2018 13:41:58
 */
 
 SET NAMES utf8mb4;
@@ -72,7 +72,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4633 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 4637 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -4709,6 +4709,10 @@ INSERT INTO `hl_admin_operation_log` VALUES (4629, 1, 'admin/article', 'GET', '1
 INSERT INTO `hl_admin_operation_log` VALUES (4630, 1, 'admin/article/create', 'GET', '127.0.0.1', '{\"cate_id\":\"371\",\"_pjax\":\"#pjax-container\"}', '2018-05-28 17:32:54', '2018-05-28 17:32:54');
 INSERT INTO `hl_admin_operation_log` VALUES (4631, 1, 'admin/article', 'POST', '127.0.0.1', '{\"title\":\"\\u4e13\\u4e1a\",\"en_title\":null,\"title2\":null,\"cate_id\":\"371\",\"desc\":\"9\\u5e74\\u4e13\\u6ce8\\u4e24\\r\\n\\u6027\\u60c5\\u611f\\u670d\\u52a1\",\"desc2\":null,\"content\":null,\"alt\":null,\"alt2\":null,\"is_top\":\"off\",\"add_time\":\"2018-05-28 17:32:54\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"video\":null,\"url\":null,\"_token\":\"1nO8iznBs383qC1PGiZtJN3AING9lB7HSsrdqFfe\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article?no_header=true&no_sidebar=true&no_footer=true&cate_id=371\"}', '2018-05-28 17:33:04', '2018-05-28 17:33:04');
 INSERT INTO `hl_admin_operation_log` VALUES (4632, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"371\"}', '2018-05-28 17:33:04', '2018-05-28 17:33:04');
+INSERT INTO `hl_admin_operation_log` VALUES (4633, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-01 11:21:54', '2018-06-01 11:21:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4634, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-01 11:21:56', '2018-06-01 11:21:56');
+INSERT INTO `hl_admin_operation_log` VALUES (4635, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-01 11:21:58', '2018-06-01 11:21:58');
+INSERT INTO `hl_admin_operation_log` VALUES (4636, 1, 'admin/article-category/363/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-01 11:22:05', '2018-06-01 11:22:05');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
