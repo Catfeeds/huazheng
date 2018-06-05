@@ -20,79 +20,67 @@
                             已经注册 <a href="{{URL('login')}}">直接登录</a>
                         </div>
                     </div>
-                    <form method="POST" action="{{route('register')}}">
+                    <form method="POST" id="demoform" action="{{URL('password-reset')}}">
                         @csrf
                         <div class="form-item" >
                             <!--注册from-->
                             <div class="form-group ">
                                 <div class="input-group">
-                                    <input type="text" class="form-control retpadding text-input" placeholder="请输入手机号码" id="register-phone" name="phone"/>
-                                    <label for="register-phone" class="error"></label>
+                                    <input type="text" class="form-control retpadding text-input" placeholder="请输入手机号码" id="register-phone" name="phone" value="{{old('phone')}}" datatype="*,m" nullmsg="请输入手机号码" errormsg="请输入手机号码" />
+                                    <label for="register-phone" class="error Validform_checktip  @if($errors->has('phone')) Validform_wrong @endif">
+                                        @if ($errors->has('phone'))
+                                            {{ $errors->first('phone') }}
+                                        @endif
+                                    </label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control retpadding text-input" placeholder="密码由6-20位字母，数字和符号组成"
-                                    id="register-password" name="password" id="register-password"/>
-                                    <label for="register-password" class="error"></label>
+                                    <input type="password" class="form-control retpadding text-input" placeholder="密码由6-20位组成"
+                                    id="register-password" name="password" datatype="*6-20" errormsg="密码由6-20位组成" value="{{old('password')}}" />
+                                    <label for="register-password" class="error Validform_checktip @if($errors->has('password')) Validform_wrong @endif">
+                                        @if ($errors->has('password'))
+                                            {{ $errors->first('password') }}
+                                        @endif
+                                    </label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control retpadding text-input" placeholder="请再次输入上面的密码"  name="password_confirmation" id="register-password_confirmation" />
-                                    <label for="register-password_confirmation" class="error"></label>
+                                    <input type="password" class="form-control retpadding text-input" placeholder="请再次输入上面的密码"  name="password_confirmation" id="register-password_confirmation" datatype="*" recheck="password" errormsg="您两次输入的密码不一致！" value="{{old('password_confirmation')}}"/>
+                                    <label for="register-password_confirmation" class="error Validform_checktip @if($errors->has('password_confirmation')) Validform_wrong @endif">
+                                        @if ($errors->has('password_confirmation'))
+                                            {{ $errors->first('password_confirmation') }}
+                                        @endif
+                                    </label>
                                 </div>
                                 <div class="input-group input-group2">
                                     <input type="text" class="form-control retpadding note text-input" placeholder="图形验证码" name="captcha"
                                     id="register-captcha" required/>
-                                    <label for="register-captcha" class="error" style="right:48%;"></label>
+                                    <label for="register-captcha" class="error Validform_checktip" style="right:48%;"></label>
                                     <div class="captcha">
                                         {!!captcha_img()!!}
                                     </div>
                                 </div>
                                 <div class="input-group input-group2">
                                     <input type="text" class="form-control retpadding note text-input" placeholder="短信验证码" name="verify_code"
-                                    id="register-code" required/>
-                                    <label for="register-code" class="error" style="right:48%;"></label>
+                                    id="register-code" required datatype="*" nullmsg="请输入短信验证码" value="{{old('verify_code')}}" />
                                     <input class="get-msg" id="register-get-code" value="获取验证码" type="button">
-                                </div>
-                                <div class="input-group">
-                                    <div class="dropdown">
-                                        <input type="hidden" class="form-control retpadding text-input" placeholder="预约咨询时间" id="dropdown-input"
-                                        name="consult-time"/>
-                                        <label for="login-time" class="error"></label>
-                                        <span class="dropdown-title">预约咨询时间</span>
-
-                                        <ul name="consult-time" class="dropdown-items">
-                                            <div class="ul-p">预约咨询时间</div>
-                                            <li class="dropdown-item" data-value="1">早上： 9:00-12:00</li>
-                                            <li class="dropdown-item" data-value="2">中午：13:00-17:00</li>
-                                            <li class="dropdown-item" data-value="3">晚上：18:00-21:00</li>
-                                        </ul>
-                                    </div>
+                                    <label for="register-code" class="Validform_checktip @if($errors->has('verify_code')) Validform_wrong @endif" style="position: absolute;bottom: 0;left: 0;">
+                                        @if ($errors->has('verify_code'))
+                                            {{ $errors->first('verify_code') }}
+                                        @endif
+                                    </label>
                                 </div>
                                 <div class="input-group">
                                     <input class="btn nomargin" type="button" value="立 即 注 册" id="register-submit">
                                 </div>
-                                <input type="hidden" name="channelName" value="竞价-花镇-官网">
-                                <input type="hidden" name="channel_code" value="490640b43519c77281cb2f8471e61a71">
                                 <div class="input-group yhxy" >
-                                    <input class="reset" type="checkbox" id="register-checkbox" >
+                                    <input class="reset" type="checkbox" id="register-checkbox" value="1" name="xieyi" @if(old('xieyi')) checked='checked' @endif>
                                     <label for="register-checkbox" style="display:inline-block;">我已接受并阅读<span onclick="window.open('/huazhen_agreement')">《花镇用户协议》</span></label>
+                                    @if ($errors->has('xieyi'))
+                                        <label for="register-code" class="Validform_checktip Validform_wrong" style="position: absolute;bottom: -20px;left: 0;width: 100%;text-align: center;">
+                                            {{ $errors->first('xieyi') }}
+                                        </label>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
-                        <div class="right-bottom register">
-                            <ul>
-                                <li>
-                                    <span><img src="http://a3.huazhen.com/huazhen_revision/pc/account/images/icon-03.png" alt=""></span>
-                                    个性化
-                                </li>
-                                <li>
-                                    <span><img src="http://a3.huazhen.com/huazhen_revision/pc/account/images/icon-04.png" alt=""></span>
-                                    品质化
-                                </li>
-                                <li>
-                                    <span><img src="http://a3.huazhen.com/huazhen_revision/pc/account/images/icon-05.png" alt=""></span>
-                                    高端化
-                                </li>
-                            </ul>
                         </div>
                     </form>
                 </div>
@@ -104,8 +92,92 @@
 @section('script')
 @parent
 <script type="text/javascript">
+    var t=60;
     $(".captcha").click(function(){
         $(".captcha").find("img").attr('src',"{{captcha_src()}}"+Math.random());
     })
+    $(".get-msg").click(function(){
+        var phone = $("#register-phone").val();
+        var captcha = $("#register-captcha").val();
+        if($(".get-msg").attr('is')!=false){
+            $(".get-msg").attr("is",false);
+            $.ajax({
+                type: "POST",
+                url:"{{URL('register-sms-send')}}",
+                data:"captcha="+captcha+"&phone="+phone,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success:function(data){
+                    if(data.code==200){
+                        alert(data.message+data.data.captcha);
+                        t=60;
+                        captcha_up();
+                    }else{
+                        alert(data.message);
+                    }
+                    
+                },
+                error:function(data){
+                    var obj = new Function("return" + data.responseText)();
+                    console.log(obj);
+                    obj = obj.errors;
+                    var msg='';
+                    $(".get-msg").attr("is",true);
+                    for (var prop in obj){
+                        msg += obj[prop]+"\r";
+                    }
+                    alert(msg);
+                }
+            });
+        }
+    })
+    function captcha_up(){
+        $(".get-msg").val("")
+        sint = setInterval(function(){
+          $(".get-msg").val(t--);
+          if(t<=0){
+            $(".get-msg").attr("is",true);
+            $(".get-msg").val("获取验证码");
+            clearInterval(sint);
+          }
+        },1000)
+    }
+    // function submit(){
+    //     var formData=$("#demoform").serialize();
+    //     var form_url=$("#demoform").attr('action');
+    //     if($("#register-submit").attr('is')!=false){
+    //       $("#register-submit").attr("is",false);
+    //       $.ajax({
+    //         type: "POST",
+    //         url:form_url,
+    //         data:formData,
+    //         success:function(data){
+    //           $("#register-submit").attr("is",true);
+    //           alert(data.message);
+    //         },
+    //         error:function(data){
+    //           var obj = new Function("return" + data.responseText)();
+    //           obj = obj.errors;
+    //           var msg='';
+    //           $("#register-submit").attr("is",true);
+    //           for (var prop in obj){
+    //               msg += obj[prop]+"\r";
+    //           }
+    //           alert(msg);
+    //         }
+    //       });
+    //     }
+    // }
+
+    $("#demoform").Validform({
+        tiptype:3,
+        showAllError:true,
+        btnSubmit:"#register-submit",
+        beforeSubmit:function(date){
+            // submit();
+            // return false;
+        }
+    });
 </script>
 @endsection

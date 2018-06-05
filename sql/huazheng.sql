@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 05/06/2018 18:01:21
+ Date: 06/06/2018 02:50:10
 */
 
 SET NAMES utf8mb4;
@@ -72,7 +72,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4718 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 4722 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -4794,6 +4794,10 @@ INSERT INTO `hl_admin_operation_log` VALUES (4714, 1, 'admin/article', 'GET', '1
 INSERT INTO `hl_admin_operation_log` VALUES (4715, 1, 'admin/article/create', 'GET', '127.0.0.1', '{\"cate_id\":\"357\",\"_pjax\":\"#pjax-container\"}', '2018-06-04 17:20:42', '2018-06-04 17:20:42');
 INSERT INTO `hl_admin_operation_log` VALUES (4716, 1, 'admin/article', 'POST', '127.0.0.1', '{\"title\":\"\\u4fd8\\u83b7\\u7537\\u795e\",\"en_title\":null,\"title2\":null,\"cate_id\":\"357\",\"desc\":null,\"desc2\":null,\"content\":null,\"alt\":null,\"alt2\":null,\"is_top\":\"off\",\"add_time\":\"2018-06-04 17:20:42\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"video\":null,\"url\":\"\\/fhns\",\"_token\":\"YIco4hFGNCYQYVunR2E1v8ORQEsqbCvDHqSJCIEj\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article?no_header=true&no_sidebar=true&no_footer=true&cate_id=357\"}', '2018-06-04 17:20:54', '2018-06-04 17:20:54');
 INSERT INTO `hl_admin_operation_log` VALUES (4717, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"357\"}', '2018-06-04 17:20:55', '2018-06-04 17:20:55');
+INSERT INTO `hl_admin_operation_log` VALUES (4718, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-05 19:04:23', '2018-06-05 19:04:23');
+INSERT INTO `hl_admin_operation_log` VALUES (4719, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-05 19:04:26', '2018-06-05 19:04:26');
+INSERT INTO `hl_admin_operation_log` VALUES (4720, 1, 'admin/config-save', 'POST', '127.0.0.1', '{\"config_id\":{\"10\":\"\\u7b03\\u7231\\u60c5\\u611f|\\u60c5\\u611f\\u54a8\\u8be2\\u4e0e\\u89c4\\u5212\\u6807\\u6746\\u54c1\\u724c|\\u60c5\\u611f\\u57f9\\u8bad\\u673a\\u6784\",\"15\":\"\\u633d\\u56de\\u7231\\u60c5,\\u633d\\u56de\\u7537\\u53cb,\\u633d\\u56de\\u5973\\u53cb,\\u633d\\u6551\\u5a5a\\u59fb,\\u5206\\u79bb\\u5c0f\\u4e09,\\u7ecf\\u8425\\u5a5a\\u59fb,\\u8c08\\u604b\\u7231\\u7684\\u6280\\u5de7\",\"20\":\"\\u7b03\\u7231\\u60c5\\u611f\\uff0c\\u5973\\u6027\\u5a5a\\u604b\\u54a8\\u8be2\\u4e0e\\u57f9\\u8bad\\u673a\\u6784\\uff0c\\u5343\\u540d\\u60c5\\u611f\\u5bfc\\u5e08\\u81f4\\u529b\\u4e8e\\u4fee\\u590d\\u5a5a\\u59fb\\u5173\\u7cfb\\uff0c\\u5206\\u79bb\\u5c0f\\u4e09\\uff0c\\u633d\\u56de\\u7231\\u60c5\\uff0c\\u633d\\u56de\\u5973\\u53cb\\uff0c\\u633d\\u56de\\u7537\\u53cb\\u7b49\\u670d\\u52a1\",\"25\":\"\\u7248\\u6743\\u6240\\u6709\\uff1a\\u5e7f\\u5dde\\u7b03\\u7231\\u6559\\u80b2\\u54a8\\u8be2\\u6709\\u9650\\u516c\\u53f8\",\"30\":\"Copyright\\u00a9 2008-2017 HuaZhen,lnc.All Rights Reserved.\",\"35\":\"\\u7ca4ICP\\u590716060296\\u53f7-1\",\"40\":\"400-0173-520\",\"45\":\"\\u5e7f\\u5dde\\u5927\\u9053\\u4e2d599\\u53f7\",\"55\":\"\\u7b03\\u7231\",\"65\":\"\\u7b03\\u7231APP\",\"70\":null},\"_token\":\"OPGCgNB8MDovdxC0uje0ZdynmUkL36Cq92oNUqOO\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\"}', '2018-06-05 19:04:31', '2018-06-05 19:04:31');
+INSERT INTO `hl_admin_operation_log` VALUES (4721, 1, 'admin/config', 'GET', '127.0.0.1', '[]', '2018-06-05 19:04:31', '2018-06-05 19:04:31');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -9621,7 +9625,15 @@ CREATE TABLE `hl_sms_captcha`  (
   `captcha` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '验证码',
   `status` tinyint(1) NULL DEFAULT 1 COMMENT '状态1-未使用，2-使用',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_sms_captcha
+-- ----------------------------
+INSERT INTO `hl_sms_captcha` VALUES (1, '13226468871', '127.0.0.1', 1528219808, '5428', 2);
+INSERT INTO `hl_sms_captcha` VALUES (2, '13226468871', '127.0.0.1', 1528212074, '8165', 1);
+INSERT INTO `hl_sms_captcha` VALUES (3, '13226468871', '127.0.0.1', 1528212141, '2443', 1);
+INSERT INTO `hl_sms_captcha` VALUES (4, '13226468871', '127.0.0.1', 1528224207, '3909', 2);
 
 -- ----------------------------
 -- Table structure for hl_users
@@ -9637,12 +9649,11 @@ CREATE TABLE `hl_users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`phone`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_users
 -- ----------------------------
-INSERT INTO `hl_users` VALUES (1, 'hao', '809448797@qq.com', '123456', NULL, '2018-04-17 17:13:12', '2018-04-17 17:13:12');
-INSERT INTO `hl_users` VALUES (2, 'hao', '8094487972@qq.com', '$2y$10$AB.4KnjFkI6/1337XFkII.W8U5jBlRlByDlGNQpuYT6tiRTUiUT2W', NULL, '2018-04-17 17:36:21', '2018-04-17 18:00:15');
+INSERT INTO `hl_users` VALUES (6, '', '13226468871', '$2y$10$4Y5YJvEK.MfqrHjWaViBA.b2l5pgNrrab9MQTRO0HFttisUmGBYvW', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-06 02:49:36');
 
 SET FOREIGN_KEY_CHECKS = 1;

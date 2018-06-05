@@ -1438,7 +1438,16 @@ trait ValidatesAttributes
 
         return preg_match($pattern, $value) > 0;
     }
-
+    /**
+     * 验证手机号
+     */
+    public function validatePhone($attribute, $value){
+        if(preg_match("/^1\d{10}$/",$value)){  
+            return true;
+        }else{  
+            return false;
+        }
+    }
     /**
      * Get the size of an attribute.
      *

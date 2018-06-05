@@ -41,7 +41,7 @@ $(function(){
             Index++;
         }
     }
-    var intYuan = setInterval("rotate()",2000);
+    var intYuan = setInterval(rotate,2000);
     $(".lubo area").hover(function() {
         clearInterval(intYuan);
         Index = $(this).index();

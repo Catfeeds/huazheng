@@ -151,7 +151,7 @@
             <div class="yxd-tt">
                 免费申请预约解决情感烦恼
                 <div class="close">
-                    <img src="http://a3.huazhen.com/huazhen_revision/pc/home/images/gb_01.png" alt="">
+                    <img src="{{asset('resources/home/picture/gb_01.png')}}" alt="">
                 </div>
             </div>
             <div class="yxd-info" >

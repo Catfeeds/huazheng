@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User,App\Models\SmsCaptcha;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,12 +52,31 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $Validator = Validator::make($data, [
             // 'name' => 'required|string|max:255',
-            'phone' => 'required|string|phone|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'captcha' => 'required|captcha',
-        ],[],['phone'=>"手机号码"]);
+            'phone'       => 'required|string|phone|max:255|unique:users',
+            'password'    => 'required|string|min:6|max:20|confirmed',
+            'verify_code' => 'required',
+            'xieyi'       => 'required',
+        ],[
+            'xieyi.required' => '请阅读并同意协议',
+        ],['phone'=>"手机号码"]);
+        
+        $SmsCaptcha = SmsCaptcha::where([
+            'phone'=>$data['phone'],
+            'captcha'=>$data['verify_code'],
+            'status'=>1,
+        ])->where('add_time',">",time()-1800)->first();
+        $Validator->after(function($validator) use ($SmsCaptcha){
+            if(!$SmsCaptcha){
+                $validator->errors()->add('verify_code', '短信验证码过期或不存在，请重新获取');
+            }
+        });
+        if(!$Validator->errors()->messages()&&!$Validator->fails()){
+            $SmsCaptcha->status=2;
+            $SmsCaptcha->save();
+        }
+        return $Validator;
     }
 
     /**
@@ -68,6 +87,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             // 'name' => $data['name'],
             'phone' => $data['phone'],

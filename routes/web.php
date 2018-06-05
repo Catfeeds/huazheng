@@ -19,6 +19,12 @@ Route::get('/', 'HomeController@index');
 Route::post('apply-save','ApplyController@apply_save');//申请提交
 Route::post('recruitment-apply-save','RecruitmentApplyController@recruitment_apply_save');//申请提交
 
+Route::post('register-sms-send','SmsController@register_sms_send');//发送注册短信验证码
+Route::post('password-reset-sms-send','SmsController@password_reset_sms_send');//发送充值密码短信验证码
+
+Route::get('password-reset','UserController@password_reset');//重置密码页面
+Route::post('password-reset','UserController@password_reset_save');//重置密码
+
 // Route::get('list-{cate_id}-{page}.html','ArticleController@article_category');
 // Route::get('show-{cate_id}-{id}-{page}.html','ArticleController@article_info');
 

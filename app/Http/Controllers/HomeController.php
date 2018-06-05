@@ -7,6 +7,7 @@ use App\Models\Article,App\Models\ArticleCategory;
 
 class HomeController extends Controller
 {
+    // Illuminate\Validation\Concerns\ValidatesAttributes//验证规则文件
     /**
      * Create a new controller instance.
      *
