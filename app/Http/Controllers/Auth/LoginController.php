@@ -26,7 +26,10 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    public function username(){
+        //设置验证账户名的字段
+        return 'phone';
+    }
     /**
      * Create a new controller instance.
      *

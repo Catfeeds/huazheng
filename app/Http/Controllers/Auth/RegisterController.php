@@ -39,6 +39,10 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+    public function showRegistrationForm(){
+        //更改注册页面模版路径
+        return view('home.user.register');
+    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -49,10 +53,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            // 'name' => 'required|string|max:255',
+            'phone' => 'required|string|phone|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-        ]);
+            'captcha' => 'required|captcha',
+        ],[],['phone'=>"手机号码"]);
     }
 
     /**
@@ -64,8 +69,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            // 'name' => $data['name'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
     }

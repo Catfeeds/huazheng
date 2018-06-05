@@ -101,7 +101,7 @@ class HomeController extends Controller
             'cate_id'=>357,
             'order'=>'is_top',
             'sort'=>'DESC',
-            'take'=>3,
+            'take'=>5,
         ]);
         $index_2_cate = ArticleCategory::find(357);
 

@@ -2,8 +2,8 @@
 
 return [
 	'required'     => '请填写:attribute',
-	'email'        => '必须是有效的电子邮件地址',
-	'unique'       => '已经存在',
+	'email'        => ':attribute必须是有效的电子邮件地址',
+	'unique'       => ':attribute已经存在',
 	'min'       => [
 		'string'=>':attribute至少:min个字符',
 	],
@@ -15,5 +15,7 @@ return [
 	],
 	'attributes'   =>[
 		'email'        =>"邮箱",
+		'captcha'=>'验证码',
 	],
+	'phone' => ':attribute格式不正确',
 ];

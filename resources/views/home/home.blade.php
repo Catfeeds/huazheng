@@ -30,7 +30,7 @@
     </div>
 </div>
 @endif
-<div class="con01">
+<!-- <div class="con01">
     <ul style="text-align:center;">
         @foreach($index_1 as $v)
         <li>
@@ -41,7 +41,7 @@
         </li>
         @endforeach
     </ul>
-</div>
+</div> -->
 <div class="con02">
     <div class="con02-in">
         <div class="con02-Top">
@@ -55,7 +55,12 @@
             </div>
         </div>
         <div class="con02-body">
-            <div class="con02-bodyL">
+            <ul class="clearfix">
+                @foreach($index_2 as $v)
+                <li><a href="{{$v['url']}}"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></a></li>
+                @endforeach
+            </ul>
+            <!-- <div class="con02-bodyL">
                 @if(isset($index_2['0']))
                 <a href="{{$index_2['0']['url']}}"><img src="{{asset($index_2['0']['img'])}}" alt="{{$index_2['0']['alt']}}"></a>
                 @endif
@@ -67,7 +72,7 @@
                 @if(isset($index_2['2']))
                 <a href="{{$index_2['2']['url']}}"><img src="{{asset($index_2['2']['img'])}}" alt="{{$index_2['2']['alt']}}"></a>
                 @endif
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -91,10 +96,11 @@
                     <div class="swiper-slide @if($k%2==0) con02-left con02-new @else con02-right @endif" >
                         <h3>{!!$v['title']!!}</h3>
                         <div class="kh-video qy-video">
-                            <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}" class="fm show">
-                            <video id="qiye-video" class="video-js vjs-default-skin" controls="">
+                            <!-- <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}" class="fm show"> -->
+                            <!-- <video id="qiye-video" class="video-js vjs-default-skin" controls="">
                                 <source src="{{$v['video']}}" type="video/mp4">
-                            </video>
+                            </video> -->
+                            <iframe frameborder="0" width="1050" height="410" src="{{$v['video']}}" allowfullscreen></iframe>
                             <!-- <embed id="qiye-video" class="video-js vjs-default-skin" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=h0665s7je28&auto=0" allowFullScreen="true" quality="high" width="516" height="290" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
                         </div>
                     </div>
@@ -239,9 +245,9 @@
                 paginationClickable: true
             });
             var mySwiper = new Swiper('.tabBarCon', {
-                slidesPerView : 2,
+                slidesPerView :1,
                 centeredSlides : false,
-                slidesPerGroup : 2,
+                slidesPerGroup : 1,
                 prevButton:'.tabBarprev',
                 nextButton:'.tabBarnext',
             })
