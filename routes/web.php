@@ -25,6 +25,9 @@ Route::post('password-reset-sms-send','SmsController@password_reset_sms_send');/
 Route::get('password-reset','UserController@password_reset');//重置密码页面
 Route::post('password-reset','UserController@password_reset_save');//重置密码
 
+Route::get('video-list','VideoController@video_list');//视频课程
+
+
 // Route::get('list-{cate_id}-{page}.html','ArticleController@article_category');
 // Route::get('show-{cate_id}-{id}-{page}.html','ArticleController@article_info');
 

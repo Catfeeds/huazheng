@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 06/06/2018 02:50:10
+ Date: 06/06/2018 18:04:26
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `hl_admin_menu`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_menu
@@ -50,12 +50,15 @@ INSERT INTO `hl_admin_menu` VALUES (12, 11, 14, '站点信息', 'fa-wrench', '/c
 INSERT INTO `hl_admin_menu` VALUES (13, 9, 9, '文章', 'fa-book', 'article-iframe', '2018-04-23 06:48:29', '2018-05-20 00:16:20');
 INSERT INTO `hl_admin_menu` VALUES (14, 0, 11, '图片', 'fa-image', NULL, '2018-04-23 13:55:09', '2018-04-23 14:28:27');
 INSERT INTO `hl_admin_menu` VALUES (15, 14, 12, '广告图', 'fa-image', '/ads-position', '2018-04-23 13:55:53', '2018-04-23 14:28:27');
-INSERT INTO `hl_admin_menu` VALUES (16, 11, 0, '头部导航', 'fa-wrench', 'nav?type=1', '2018-04-24 15:54:35', '2018-04-24 15:54:35');
-INSERT INTO `hl_admin_menu` VALUES (17, 11, 0, '尾部导航', 'fa-wrench', 'nav?type=2', '2018-04-24 15:54:46', '2018-04-24 15:54:56');
-INSERT INTO `hl_admin_menu` VALUES (18, 11, 0, '底部导航', 'fa-wrench', 'nav?type=4', '2018-04-25 14:28:46', '2018-05-28 09:35:28');
-INSERT INTO `hl_admin_menu` VALUES (19, 0, 0, '加盟申请', 'fa-joomla', 'apply', '2018-04-26 01:42:05', '2018-04-26 01:42:05');
-INSERT INTO `hl_admin_menu` VALUES (20, 0, 0, '招聘申请', 'fa-joomla', 'recruitment-apply', '2018-04-26 01:42:27', '2018-04-26 01:42:27');
-INSERT INTO `hl_admin_menu` VALUES (21, 11, 0, '首页banner导航', 'fa-wrench', 'nav?type=3', '2018-05-26 01:29:08', '2018-05-26 01:29:08');
+INSERT INTO `hl_admin_menu` VALUES (16, 11, 15, '头部导航', 'fa-wrench', 'nav?type=1', '2018-04-24 15:54:35', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (17, 11, 16, '尾部导航', 'fa-wrench', 'nav?type=2', '2018-04-24 15:54:46', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (18, 11, 17, '底部导航', 'fa-wrench', 'nav?type=4', '2018-04-25 14:28:46', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (19, 0, 19, '加盟申请', 'fa-joomla', 'apply', '2018-04-26 01:42:05', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (20, 0, 20, '招聘申请', 'fa-joomla', 'recruitment-apply', '2018-04-26 01:42:27', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (21, 11, 18, '首页banner导航', 'fa-wrench', 'nav?type=3', '2018-05-26 01:29:08', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (22, 0, 21, '视频课程', 'fa-video-camera', NULL, '2018-06-06 11:47:00', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_menu` VALUES (23, 22, 0, '分类', 'fa-bars', 'category?type=1', '2018-06-06 11:47:26', '2018-06-06 11:47:26');
+INSERT INTO `hl_admin_menu` VALUES (24, 22, 0, '视频课程', 'fa-book', 'video', '2018-06-06 14:22:25', '2018-06-06 14:22:25');
 
 -- ----------------------------
 -- Table structure for hl_admin_operation_log
@@ -72,7 +75,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4722 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 4822 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -4798,6 +4801,106 @@ INSERT INTO `hl_admin_operation_log` VALUES (4718, 1, 'admin', 'GET', '127.0.0.1
 INSERT INTO `hl_admin_operation_log` VALUES (4719, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-05 19:04:26', '2018-06-05 19:04:26');
 INSERT INTO `hl_admin_operation_log` VALUES (4720, 1, 'admin/config-save', 'POST', '127.0.0.1', '{\"config_id\":{\"10\":\"\\u7b03\\u7231\\u60c5\\u611f|\\u60c5\\u611f\\u54a8\\u8be2\\u4e0e\\u89c4\\u5212\\u6807\\u6746\\u54c1\\u724c|\\u60c5\\u611f\\u57f9\\u8bad\\u673a\\u6784\",\"15\":\"\\u633d\\u56de\\u7231\\u60c5,\\u633d\\u56de\\u7537\\u53cb,\\u633d\\u56de\\u5973\\u53cb,\\u633d\\u6551\\u5a5a\\u59fb,\\u5206\\u79bb\\u5c0f\\u4e09,\\u7ecf\\u8425\\u5a5a\\u59fb,\\u8c08\\u604b\\u7231\\u7684\\u6280\\u5de7\",\"20\":\"\\u7b03\\u7231\\u60c5\\u611f\\uff0c\\u5973\\u6027\\u5a5a\\u604b\\u54a8\\u8be2\\u4e0e\\u57f9\\u8bad\\u673a\\u6784\\uff0c\\u5343\\u540d\\u60c5\\u611f\\u5bfc\\u5e08\\u81f4\\u529b\\u4e8e\\u4fee\\u590d\\u5a5a\\u59fb\\u5173\\u7cfb\\uff0c\\u5206\\u79bb\\u5c0f\\u4e09\\uff0c\\u633d\\u56de\\u7231\\u60c5\\uff0c\\u633d\\u56de\\u5973\\u53cb\\uff0c\\u633d\\u56de\\u7537\\u53cb\\u7b49\\u670d\\u52a1\",\"25\":\"\\u7248\\u6743\\u6240\\u6709\\uff1a\\u5e7f\\u5dde\\u7b03\\u7231\\u6559\\u80b2\\u54a8\\u8be2\\u6709\\u9650\\u516c\\u53f8\",\"30\":\"Copyright\\u00a9 2008-2017 HuaZhen,lnc.All Rights Reserved.\",\"35\":\"\\u7ca4ICP\\u590716060296\\u53f7-1\",\"40\":\"400-0173-520\",\"45\":\"\\u5e7f\\u5dde\\u5927\\u9053\\u4e2d599\\u53f7\",\"55\":\"\\u7b03\\u7231\",\"65\":\"\\u7b03\\u7231APP\",\"70\":null},\"_token\":\"OPGCgNB8MDovdxC0uje0ZdynmUkL36Cq92oNUqOO\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\"}', '2018-06-05 19:04:31', '2018-06-05 19:04:31');
 INSERT INTO `hl_admin_operation_log` VALUES (4721, 1, 'admin/config', 'GET', '127.0.0.1', '[]', '2018-06-05 19:04:31', '2018-06-05 19:04:31');
+INSERT INTO `hl_admin_operation_log` VALUES (4722, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-06 10:12:24', '2018-06-06 10:12:24');
+INSERT INTO `hl_admin_operation_log` VALUES (4723, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 10:22:57', '2018-06-06 10:22:57');
+INSERT INTO `hl_admin_operation_log` VALUES (4724, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-06 10:22:57', '2018-06-06 10:22:57');
+INSERT INTO `hl_admin_operation_log` VALUES (4725, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"page\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 10:22:59', '2018-06-06 10:22:59');
+INSERT INTO `hl_admin_operation_log` VALUES (4726, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"_pjax\":\"#pjax-container\",\"page\":\"3\"}', '2018-06-06 10:23:01', '2018-06-06 10:23:01');
+INSERT INTO `hl_admin_operation_log` VALUES (4727, 1, 'admin/more-video', 'GET', '127.0.0.1', '{\"cate_id\":\"1\",\"more_id\":\"1171\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 10:23:04', '2018-06-06 10:23:04');
+INSERT INTO `hl_admin_operation_log` VALUES (4728, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"page\":\"3\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 10:23:09', '2018-06-06 10:23:09');
+INSERT INTO `hl_admin_operation_log` VALUES (4729, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-06 11:44:41', '2018-06-06 11:44:41');
+INSERT INTO `hl_admin_operation_log` VALUES (4730, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:44:45', '2018-06-06 11:44:45');
+INSERT INTO `hl_admin_operation_log` VALUES (4731, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-06 11:44:45', '2018-06-06 11:44:45');
+INSERT INTO `hl_admin_operation_log` VALUES (4732, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:44:51', '2018-06-06 11:44:51');
+INSERT INTO `hl_admin_operation_log` VALUES (4733, 1, 'admin/auth/menu/21/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:44:57', '2018-06-06 11:44:57');
+INSERT INTO `hl_admin_operation_log` VALUES (4734, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:45:55', '2018-06-06 11:45:55');
+INSERT INTO `hl_admin_operation_log` VALUES (4735, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u89c6\\u9891\\u8bfe\\u7a0b\",\"icon\":\"fa-video-camera\",\"uri\":null,\"roles\":[null],\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\"}', '2018-06-06 11:47:00', '2018-06-06 11:47:00');
+INSERT INTO `hl_admin_operation_log` VALUES (4736, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 11:47:00', '2018-06-06 11:47:00');
+INSERT INTO `hl_admin_operation_log` VALUES (4737, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_order\":\"[{\\\"id\\\":1},{\\\"id\\\":2,\\\"children\\\":[{\\\"id\\\":3},{\\\"id\\\":4},{\\\"id\\\":5},{\\\"id\\\":6},{\\\"id\\\":7}]},{\\\"id\\\":9,\\\"children\\\":[{\\\"id\\\":13},{\\\"id\\\":10}]},{\\\"id\\\":14,\\\"children\\\":[{\\\"id\\\":15}]},{\\\"id\\\":11,\\\"children\\\":[{\\\"id\\\":12},{\\\"id\\\":16},{\\\"id\\\":17},{\\\"id\\\":18},{\\\"id\\\":21}]},{\\\"id\\\":19},{\\\"id\\\":20},{\\\"id\\\":22}]\"}', '2018-06-06 11:47:03', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_operation_log` VALUES (4738, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:47:03', '2018-06-06 11:47:03');
+INSERT INTO `hl_admin_operation_log` VALUES (4739, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"22\",\"title\":\"\\u5206\\u7c7b\",\"icon\":\"fa-bars\",\"uri\":\"category?type=1\",\"roles\":[null],\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\"}', '2018-06-06 11:47:26', '2018-06-06 11:47:26');
+INSERT INTO `hl_admin_operation_log` VALUES (4740, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 11:47:27', '2018-06-06 11:47:27');
+INSERT INTO `hl_admin_operation_log` VALUES (4741, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 11:47:29', '2018-06-06 11:47:29');
+INSERT INTO `hl_admin_operation_log` VALUES (4742, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:47:32', '2018-06-06 11:47:32');
+INSERT INTO `hl_admin_operation_log` VALUES (4743, 1, 'admin/category/create', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:47:35', '2018-06-06 11:47:35');
+INSERT INTO `hl_admin_operation_log` VALUES (4744, 1, 'admin/category', 'POST', '127.0.0.1', '{\"title\":\"\\u60c5\\u611f\\u4fee\\u590d\",\"type\":\"1\",\"parent_id\":\"0\",\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/category?type=1\"}', '2018-06-06 11:47:47', '2018-06-06 11:47:47');
+INSERT INTO `hl_admin_operation_log` VALUES (4745, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\"}', '2018-06-06 11:47:47', '2018-06-06 11:47:47');
+INSERT INTO `hl_admin_operation_log` VALUES (4746, 1, 'admin/category/create', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:47:51', '2018-06-06 11:47:51');
+INSERT INTO `hl_admin_operation_log` VALUES (4747, 1, 'admin/category', 'POST', '127.0.0.1', '{\"title\":\"\\u9b45\\u529b\\u63d0\\u5347\",\"type\":\"1\",\"parent_id\":\"0\",\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/category?type=1\"}', '2018-06-06 11:47:53', '2018-06-06 11:47:53');
+INSERT INTO `hl_admin_operation_log` VALUES (4748, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\"}', '2018-06-06 11:47:54', '2018-06-06 11:47:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4749, 1, 'admin/category/create', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:47:58', '2018-06-06 11:47:58');
+INSERT INTO `hl_admin_operation_log` VALUES (4750, 1, 'admin/category', 'POST', '127.0.0.1', '{\"title\":\"\\u604b\\u7231\\u5a5a\\u59fb\",\"type\":\"1\",\"parent_id\":\"0\",\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/category?type=1\"}', '2018-06-06 11:48:00', '2018-06-06 11:48:00');
+INSERT INTO `hl_admin_operation_log` VALUES (4751, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\"}', '2018-06-06 11:48:00', '2018-06-06 11:48:00');
+INSERT INTO `hl_admin_operation_log` VALUES (4752, 1, 'admin/category/create', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:48:05', '2018-06-06 11:48:05');
+INSERT INTO `hl_admin_operation_log` VALUES (4753, 1, 'admin/category', 'POST', '127.0.0.1', '{\"title\":\"\\u633d\\u56de\\u7231\\u60c5\",\"type\":\"1\",\"parent_id\":\"0\",\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/category?type=1\"}', '2018-06-06 11:48:07', '2018-06-06 11:48:07');
+INSERT INTO `hl_admin_operation_log` VALUES (4754, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\"}', '2018-06-06 11:48:08', '2018-06-06 11:48:08');
+INSERT INTO `hl_admin_operation_log` VALUES (4755, 1, 'admin/category/create', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:48:11', '2018-06-06 11:48:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4756, 1, 'admin/category', 'POST', '127.0.0.1', '{\"title\":\"\\u6027\\u5546\\u9b45\\u529b\",\"type\":\"1\",\"parent_id\":\"0\",\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/category?type=1\"}', '2018-06-06 11:48:14', '2018-06-06 11:48:14');
+INSERT INTO `hl_admin_operation_log` VALUES (4757, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\"}', '2018-06-06 11:48:14', '2018-06-06 11:48:14');
+INSERT INTO `hl_admin_operation_log` VALUES (4758, 1, 'admin/category', 'POST', '127.0.0.1', '{\"_token\":\"EmxNanbz5wLoWQxB2GE1KGXzNTLOw35jgqdW7bFA\",\"_order\":\"[{\\\"id\\\":372},{\\\"id\\\":373},{\\\"id\\\":374},{\\\"id\\\":375},{\\\"id\\\":376}]\"}', '2018-06-06 11:48:15', '2018-06-06 11:48:15');
+INSERT INTO `hl_admin_operation_log` VALUES (4759, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":null}', '2018-06-06 11:48:15', '2018-06-06 11:48:15');
+INSERT INTO `hl_admin_operation_log` VALUES (4760, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 11:48:15', '2018-06-06 11:48:15');
+INSERT INTO `hl_admin_operation_log` VALUES (4761, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-06 11:49:54', '2018-06-06 11:49:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4762, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 14:21:40', '2018-06-06 14:21:40');
+INSERT INTO `hl_admin_operation_log` VALUES (4763, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"22\",\"title\":\"\\u89c6\\u9891\\u8bfe\\u7a0b\",\"icon\":\"fa-book\",\"uri\":\"video\",\"roles\":[null],\"_token\":\"IFvA8m90ZJrKghs4zUDPXw8v9lOZCY67lQr0aoyt\"}', '2018-06-06 14:22:25', '2018-06-06 14:22:25');
+INSERT INTO `hl_admin_operation_log` VALUES (4764, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 14:22:25', '2018-06-06 14:22:25');
+INSERT INTO `hl_admin_operation_log` VALUES (4765, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-06 14:22:27', '2018-06-06 14:22:27');
+INSERT INTO `hl_admin_operation_log` VALUES (4766, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:22:40', '2018-06-06 14:22:40');
+INSERT INTO `hl_admin_operation_log` VALUES (4767, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:22:56', '2018-06-06 14:22:56');
+INSERT INTO `hl_admin_operation_log` VALUES (4768, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:25:09', '2018-06-06 14:25:09');
+INSERT INTO `hl_admin_operation_log` VALUES (4769, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:25:46', '2018-06-06 14:25:46');
+INSERT INTO `hl_admin_operation_log` VALUES (4770, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:25:50', '2018-06-06 14:25:50');
+INSERT INTO `hl_admin_operation_log` VALUES (4771, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:26:03', '2018-06-06 14:26:03');
+INSERT INTO `hl_admin_operation_log` VALUES (4772, 1, 'admin/video/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 14:26:21', '2018-06-06 14:26:21');
+INSERT INTO `hl_admin_operation_log` VALUES (4773, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:26:21', '2018-06-06 14:26:21');
+INSERT INTO `hl_admin_operation_log` VALUES (4774, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:26:53', '2018-06-06 14:26:53');
+INSERT INTO `hl_admin_operation_log` VALUES (4775, 1, 'admin/video/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 14:26:54', '2018-06-06 14:26:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4776, 1, 'admin/video/create', 'GET', '127.0.0.1', '[]', '2018-06-06 14:26:55', '2018-06-06 14:26:55');
+INSERT INTO `hl_admin_operation_log` VALUES (4777, 1, 'admin/video/create', 'GET', '127.0.0.1', '[]', '2018-06-06 14:30:47', '2018-06-06 14:30:47');
+INSERT INTO `hl_admin_operation_log` VALUES (4778, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 14:30:50', '2018-06-06 14:30:50');
+INSERT INTO `hl_admin_operation_log` VALUES (4779, 1, 'admin/video/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 14:30:51', '2018-06-06 14:30:51');
+INSERT INTO `hl_admin_operation_log` VALUES (4780, 1, 'admin/video', 'POST', '127.0.0.1', '{\"title\":\"\\u7231\\u60c5\\u4e09\\u91cd\\u594f\",\"cate_id\":\"372\",\"type\":\"1\",\"alt\":null,\"desc\":\"\\u966a\\u4f60\\u61c2\\u7231\\u3001\\u4f1a\\u7231\\u3001\\u62e5\\u6709\\u7231\\u3002\",\"content\":\"<img src=\\\"\\/uploads\\/attached\\/image\\/20180606\\/20180606063313_64166.png\\\" alt=\\\"\\\" \\/>\",\"price\":\"299\",\"is_fee\":\"1\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"_token\":\"IFvA8m90ZJrKghs4zUDPXw8v9lOZCY67lQr0aoyt\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/video\"}', '2018-06-06 14:33:23', '2018-06-06 14:33:23');
+INSERT INTO `hl_admin_operation_log` VALUES (4781, 1, 'admin/video/create', 'GET', '127.0.0.1', '[]', '2018-06-06 14:33:24', '2018-06-06 14:33:24');
+INSERT INTO `hl_admin_operation_log` VALUES (4782, 1, 'admin/video', 'POST', '127.0.0.1', '{\"title\":\"\\u7231\\u60c5\\u4e09\\u91cd\\u594f\",\"cate_id\":\"372\",\"type\":\"1\",\"alt\":null,\"desc\":\"\\u966a\\u4f60\\u61c2\\u7231\\u3001\\u4f1a\\u7231\\u3001\\u62e5\\u6709\\u7231\\u3002\",\"content\":\"<img src=\\\"\\/uploads\\/attached\\/image\\/20180606\\/20180606063313_64166.png\\\" alt=\\\"\\\" \\/>\",\"price\":\"299\",\"is_fee\":\"1\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"_token\":\"IFvA8m90ZJrKghs4zUDPXw8v9lOZCY67lQr0aoyt\"}', '2018-06-06 14:34:44', '2018-06-06 14:34:44');
+INSERT INTO `hl_admin_operation_log` VALUES (4783, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:34:44', '2018-06-06 14:34:44');
+INSERT INTO `hl_admin_operation_log` VALUES (4784, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:37:53', '2018-06-06 14:37:53');
+INSERT INTO `hl_admin_operation_log` VALUES (4785, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:38:15', '2018-06-06 14:38:15');
+INSERT INTO `hl_admin_operation_log` VALUES (4786, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:38:39', '2018-06-06 14:38:39');
+INSERT INTO `hl_admin_operation_log` VALUES (4787, 1, 'admin/video/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 14:38:40', '2018-06-06 14:38:40');
+INSERT INTO `hl_admin_operation_log` VALUES (4788, 1, 'admin/video/1', 'PUT', '127.0.0.1', '{\"video_id\":\"1\",\"title\":\"\\u7231\\u60c5\\u4e09\\u91cd\\u594f\",\"cate_id\":\"372\",\"type\":\"1\",\"alt\":null,\"desc\":\"\\u966a\\u4f60\\u61c2\\u7231\\u3001\\u4f1a\\u7231\\u3001\\u62e5\\u6709\\u7231\\u3002\",\"content\":\"<img src=\\\"\\/uploads\\/attached\\/image\\/20180606\\/20180606063313_64166.png\\\" alt=\\\"\\\" \\/>\",\"price\":\"299.00\",\"is_fee\":\"1\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"_token\":\"IFvA8m90ZJrKghs4zUDPXw8v9lOZCY67lQr0aoyt\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/video\"}', '2018-06-06 14:38:54', '2018-06-06 14:38:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4789, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:38:54', '2018-06-06 14:38:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4790, 1, 'admin/video', 'GET', '127.0.0.1', '[]', '2018-06-06 14:39:59', '2018-06-06 14:39:59');
+INSERT INTO `hl_admin_operation_log` VALUES (4791, 1, 'admin/video-course', 'GET', '127.0.0.1', '{\"video_id\":null}', '2018-06-06 15:26:57', '2018-06-06 15:26:57');
+INSERT INTO `hl_admin_operation_log` VALUES (4792, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:06', '2018-06-06 15:27:06');
+INSERT INTO `hl_admin_operation_log` VALUES (4793, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:07', '2018-06-06 15:27:07');
+INSERT INTO `hl_admin_operation_log` VALUES (4794, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:08', '2018-06-06 15:27:08');
+INSERT INTO `hl_admin_operation_log` VALUES (4795, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:09', '2018-06-06 15:27:09');
+INSERT INTO `hl_admin_operation_log` VALUES (4796, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:11', '2018-06-06 15:27:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4797, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:13', '2018-06-06 15:27:13');
+INSERT INTO `hl_admin_operation_log` VALUES (4798, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:15', '2018-06-06 15:27:15');
+INSERT INTO `hl_admin_operation_log` VALUES (4799, 1, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:28', '2018-06-06 15:27:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4800, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:28', '2018-06-06 15:27:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4801, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:29', '2018-06-06 15:27:29');
+INSERT INTO `hl_admin_operation_log` VALUES (4802, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:30', '2018-06-06 15:27:30');
+INSERT INTO `hl_admin_operation_log` VALUES (4803, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:31', '2018-06-06 15:27:31');
+INSERT INTO `hl_admin_operation_log` VALUES (4804, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:32', '2018-06-06 15:27:32');
+INSERT INTO `hl_admin_operation_log` VALUES (4805, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:33', '2018-06-06 15:27:33');
+INSERT INTO `hl_admin_operation_log` VALUES (4806, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"4\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:33', '2018-06-06 15:27:33');
+INSERT INTO `hl_admin_operation_log` VALUES (4807, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"3\",\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:34', '2018-06-06 15:27:34');
+INSERT INTO `hl_admin_operation_log` VALUES (4808, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:27:35', '2018-06-06 15:27:35');
+INSERT INTO `hl_admin_operation_log` VALUES (4809, 1, 'admin/config', 'GET', '127.0.0.1', '[]', '2018-06-06 15:27:39', '2018-06-06 15:27:39');
+INSERT INTO `hl_admin_operation_log` VALUES (4810, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-06-06 15:39:44', '2018-06-06 15:39:44');
+INSERT INTO `hl_admin_operation_log` VALUES (4811, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:39:48', '2018-06-06 15:39:48');
+INSERT INTO `hl_admin_operation_log` VALUES (4812, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:43:33', '2018-06-06 15:43:33');
+INSERT INTO `hl_admin_operation_log` VALUES (4813, 1, 'admin/video-course', 'GET', '127.0.0.1', '{\"video_id\":null,\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:43:34', '2018-06-06 15:43:34');
+INSERT INTO `hl_admin_operation_log` VALUES (4814, 1, 'admin/video-course/create', 'GET', '127.0.0.1', '{\"video_id\":null,\"_pjax\":\"#pjax-container\"}', '2018-06-06 15:43:36', '2018-06-06 15:43:36');
+INSERT INTO `hl_admin_operation_log` VALUES (4815, 1, 'admin/video-course/create', 'GET', '127.0.0.1', '{\"video_id\":null}', '2018-06-06 15:45:30', '2018-06-06 15:45:30');
+INSERT INTO `hl_admin_operation_log` VALUES (4816, 1, 'admin/video-course', 'POST', '127.0.0.1', '{\"video_id\":null,\"title\":\"\\u7b2c\\u4e00\\u8282:\\u5438\\u5f15\\u529b\\u7684\\u6838\\u5fc3\",\"video\":\"http:\\/\\/7xowi0.com1.z0.glb.clouddn.com\\/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=\",\"try_video\":\"http:\\/\\/7xowi0.com1.z0.glb.clouddn.com\\/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=\",\"_token\":\"IFvA8m90ZJrKghs4zUDPXw8v9lOZCY67lQr0aoyt\"}', '2018-06-06 16:05:17', '2018-06-06 16:05:17');
+INSERT INTO `hl_admin_operation_log` VALUES (4817, 1, 'admin/video-course', 'GET', '127.0.0.1', '{\"video_id\":null}', '2018-06-06 16:05:17', '2018-06-06 16:05:17');
+INSERT INTO `hl_admin_operation_log` VALUES (4818, 1, 'admin/video-course', 'GET', '127.0.0.1', '{\"video_id\":null}', '2018-06-06 16:05:27', '2018-06-06 16:05:27');
+INSERT INTO `hl_admin_operation_log` VALUES (4819, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 16:07:33', '2018-06-06 16:07:33');
+INSERT INTO `hl_admin_operation_log` VALUES (4820, 1, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 16:24:13', '2018-06-06 16:24:13');
+INSERT INTO `hl_admin_operation_log` VALUES (4821, 1, 'admin/video/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-06 16:24:14', '2018-06-06 16:24:14');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -5636,6 +5739,30 @@ INSERT INTO `hl_article_category2` VALUES (361, 0, '黄埔计划', NULL, NULL, N
 INSERT INTO `hl_article_category2` VALUES (362, 0, '品牌介绍', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ppzx', 8, '2018-05-27 00:12:56', '2018-05-27 16:05:20', 'ppzx', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for hl_category
+-- ----------------------------
+DROP TABLE IF EXISTS `hl_category`;
+CREATE TABLE `hl_category`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '分类',
+  `parent_id` int(11) NULL DEFAULT NULL COMMENT '上级id',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
+  `order` int(11) NULL DEFAULT 0 COMMENT '排序',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `type` int(11) NULL DEFAULT 1 COMMENT '类型，1-视频',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 377 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_category
+-- ----------------------------
+INSERT INTO `hl_category` VALUES (372, 0, '情感修复', 1, '2018-06-06 11:47:47', '2018-06-06 11:48:15', 1);
+INSERT INTO `hl_category` VALUES (373, 0, '魅力提升', 2, '2018-06-06 11:47:53', '2018-06-06 11:48:15', 1);
+INSERT INTO `hl_category` VALUES (374, 0, '恋爱婚姻', 3, '2018-06-06 11:48:00', '2018-06-06 11:48:15', 1);
+INSERT INTO `hl_category` VALUES (375, 0, '挽回爱情', 4, '2018-06-06 11:48:07', '2018-06-06 11:48:15', 1);
+INSERT INTO `hl_category` VALUES (376, 0, '性商魅力', 5, '2018-06-06 11:48:14', '2018-06-06 11:48:15', 1);
+
+-- ----------------------------
 -- Table structure for hl_config
 -- ----------------------------
 DROP TABLE IF EXISTS `hl_config`;
@@ -5779,7 +5906,7 @@ CREATE TABLE `hl_nav`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'url',
   `is_blank` tinyint(1) NULL DEFAULT 0 COMMENT '是否新窗口 0-否，1-是',
-  `type` int(11) NULL DEFAULT 1 COMMENT '类型，1-头部，2-尾部',
+  `type` int(11) NULL DEFAULT 1 COMMENT '类型，1-头部，2-尾部,3-banner,4-底部',
   `ico` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 99 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -9655,5 +9782,55 @@ CREATE TABLE `hl_users`  (
 -- Records of hl_users
 -- ----------------------------
 INSERT INTO `hl_users` VALUES (6, '', '13226468871', '$2y$10$4Y5YJvEK.MfqrHjWaViBA.b2l5pgNrrab9MQTRO0HFttisUmGBYvW', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-06 02:49:36');
+
+-- ----------------------------
+-- Table structure for hl_video
+-- ----------------------------
+DROP TABLE IF EXISTS `hl_video`;
+CREATE TABLE `hl_video`  (
+  `video_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '视频主表',
+  `cate_id` int(11) NULL DEFAULT NULL COMMENT '分类',
+  `type` tinyint(1) NULL DEFAULT 1 COMMENT '类别,1-视频，2-音频',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `seo_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT '' COMMENT 'seo标题',
+  `seo_keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT '' COMMENT 'seo关键字',
+  `seo_description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'seo说明',
+  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图片',
+  `alt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图片alt',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
+  `number` int(11) NULL DEFAULT NULL COMMENT '观看人数',
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '内容',
+  `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '价格',
+  `is_fee` tinyint(1) NULL DEFAULT 2 COMMENT '免费观看，1-全部收费，2-vip免费，3-会员免费',
+  `desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '描述',
+  `old_price` decimal(10, 2) NULL DEFAULT NULL COMMENT '价格',
+  PRIMARY KEY (`video_id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_video
+-- ----------------------------
+INSERT INTO `hl_video` VALUES (1, 372, 1, '2018-06-06 14:34:44', '2018-06-06 14:38:54', NULL, NULL, NULL, 'uploads/video/20180606/5b178084a4a182.95589538.jpg', NULL, '爱情三重奏', NULL, '<img src=\"/uploads/attached/image/20180606/20180606063313_64166.png\" alt=\"\" />', 299.00, 1, '陪你懂爱、会爱、拥有爱。', NULL);
+
+-- ----------------------------
+-- Table structure for hl_video_course
+-- ----------------------------
+DROP TABLE IF EXISTS `hl_video_course`;
+CREATE TABLE `hl_video_course`  (
+  `course_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '视频课程',
+  `video` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '视频链接',
+  `try_video` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '试看的视频',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
+  `video_id` int(11) NULL DEFAULT NULL COMMENT '对应的课程',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`course_id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_video_course
+-- ----------------------------
+INSERT INTO `hl_video_course` VALUES (1, 'http://7xowi0.com1.z0.glb.clouddn.com/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=', 'http://7xowi0.com1.z0.glb.clouddn.com/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=', '第一节:吸引力的核心', NULL, '2018-06-06 16:05:17', '2018-06-06 16:05:17');
 
 SET FOREIGN_KEY_CHECKS = 1;

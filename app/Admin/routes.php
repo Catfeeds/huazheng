@@ -26,6 +26,10 @@ Route::group([
     $router->resource('recruitment-apply', RecruitmentApplyController::class);//招聘申请
     $router->resource('apply',ApplyController::class);//招聘申请
 
+    $router->resource('category', CategoryController::class);//分类
+    $router->resource('video', VideoController::class);//视频课程
+    $router->resource('video-course', VideoCourseController::class);//视频课程
+
     $router->get('city', 'RegionController@city');
     $router->get('district', 'RegionController@district');
     $router->get('article-iframe', 'ArticleController@iframe');//文章
