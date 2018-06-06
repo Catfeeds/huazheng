@@ -26,6 +26,12 @@ Route::get('password-reset','UserController@password_reset');//重置密码页�
 Route::post('password-reset','UserController@password_reset_save');//重置密码
 
 Route::get('video-list','VideoController@video_list');//视频课程
+Route::get('video-info/{id}','VideoController@video_info');//视频课程详情
+
+Route::group(['middleware'=>'auth'], function(){
+	Route::get('video-play/{id}','VideoController@video_play');//视频课程详情
+	Route::get('video-pay/{id}','VideoController@video_pay');//视频课程购买
+});
 
 
 // Route::get('list-{cate_id}-{page}.html','ArticleController@article_category');

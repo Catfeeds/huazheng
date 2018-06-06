@@ -57,7 +57,7 @@
 	margin-left: 26px;
 }
 
-.page{
+/*.page{
 	text-align: center;
 	font-size: 14px;
 	padding-top: 35px;
@@ -71,7 +71,7 @@
 .page a:hover,
 .page a.on{
 	color: #22b6aa;
-}
+}*/
 
 .layout img{max-width: 100%;width: auto;}
 

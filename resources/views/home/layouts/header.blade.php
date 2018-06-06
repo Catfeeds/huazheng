@@ -1,4 +1,5 @@
 @section('header')
+    @if(!isset($is_header)||$is_header!=0)
     <!-- <div class="header">
         <div class="htop">
             <div class="layout clearfix">
@@ -183,4 +184,5 @@
             $('.new_user-card').hide();
         });
     </script>
+    @endif
 @show

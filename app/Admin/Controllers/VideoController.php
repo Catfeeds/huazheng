@@ -92,7 +92,7 @@ class VideoController extends Controller
             $grid->actions(function ($actions) {
                 $row = $actions->row;
                 //课程按钮添加
-                $actions->prepend('<a href="/admin/video-course?video_id='.$row['id'].'"><i class="fa fa-file-video-o"></i></a>');
+                $actions->prepend('<a href="/admin/video-course?video_id='.$row['video_id'].'"><i class="fa fa-file-video-o"></i></a>');
             });
             if($request['cate_id']>0){
                 $grid->urlCreateButton('/admin/video/create?cate_id='.$request['cate_id']);//修改添加按钮链接

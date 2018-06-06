@@ -15,7 +15,7 @@ class Video extends Model
     public function CategoryTo(){
         return $this->belongsTo('App\Models\Category','cate_id','id');
     }
-    static public function VideoList($attributes = array()){
+    public function VideoList($attributes = array()){
         $list = Video::with(['CategoryTo','VideoCourseMany']);
         if(isset($attributes['cate_id'])&&trim($attributes['cate_id'])!=''){
             $list = $list->where('cate_id',$attributes['cate_id']);
@@ -23,9 +23,14 @@ class Video extends Model
         if(isset($attributes['type'])&&trim($attributes['type'])!=''){
             $list = $list->where('type',$attributes['type']);
         }
-        
 
-        $list = $list->orderBy("created_at","DESC")->orderBy("id","DESC");
+        if(isset($attributes['order'])&&count($attributes['order'])){
+            foreach($attributes['order'] as $k=>$v){
+                $list = $list->orderBy($v['order'],$v['sort']);
+            }
+        }
+
+        $list = $list->orderBy("created_at","DESC")->orderBy("video_id","DESC");
         if(isset($attributes['take'])&&trim($attributes['take'])!=''){
             $list = $list->take($attributes['take'])->get();
         }else{

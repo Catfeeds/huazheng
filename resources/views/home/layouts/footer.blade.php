@@ -1,4 +1,5 @@
 @section('footer')
+    @if(!isset($is_footer)||$is_footer!=0)
     <!-- <div class="foot">
         <div class="fmenu">
             <div class="layout">
@@ -240,4 +241,5 @@
             </div>
         </div>
     </div>
+    @endif
 @show
