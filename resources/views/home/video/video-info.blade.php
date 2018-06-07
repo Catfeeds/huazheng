@@ -17,8 +17,14 @@
                 <p class="courseNum">{{$info['number']}}人学习过 | {{count($info['VideoCourseMany'])}}个课时</p>
                 <p class="videoTag">
                     <span>新用户注册</span>
+                    @if($info['is_try']&&$info['is_fee']!=3)
                     <span>免费试听</span>
-                    <!-- <span>会员免费</span> -->
+                    @endif
+                    @if($info['is_fee']==2)
+                    <span>会员免费</span>
+                    @elseif($info['is_fee']==3)
+                    <span>免费观看</span>
+                    @endif
                 </p>
                 <p class="btns">
                     @if($is_pay)

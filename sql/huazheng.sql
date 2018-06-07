@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 08/06/2018 02:28:10
+ Date: 08/06/2018 02:53:07
 */
 
 SET NAMES utf8mb4;
@@ -6047,8 +6047,8 @@ CREATE TABLE `hl_config`  (
 -- ----------------------------
 -- Records of hl_config
 -- ----------------------------
-INSERT INTO `hl_config` VALUES (1, 'logo', 'uploads/config/5b14f802cd48b0.93128718.png', 'base', 'img', 50, NULL, '2018-06-04 16:27:46');
-INSERT INTO `hl_config` VALUES (5, 'footer_logo', 'uploads/config/5b14f802e94988.91336748.png', 'base', 'img', 50, NULL, '2018-06-04 16:27:46');
+INSERT INTO `hl_config` VALUES (1, 'logo', 'uploads/config/5b178ce5702414.27357014.png', 'base', 'img', 50, NULL, '2018-06-04 16:27:46');
+INSERT INTO `hl_config` VALUES (5, 'footer_logo', 'uploads/config/5b178ce573a125.40248822.png', 'base', 'img', 50, NULL, '2018-06-04 16:27:46');
 INSERT INTO `hl_config` VALUES (10, 'site_name', '笃爱情感|情感咨询与规划标杆品牌|情感培训机构', 'base', 'text', 50, NULL, '2018-06-04 16:27:47');
 INSERT INTO `hl_config` VALUES (15, 'site_keywords', '挽回爱情,挽回男友,挽回女友,挽救婚姻,分离小三,经营婚姻,谈恋爱的技巧', 'base', 'text', 50, NULL, '2018-05-25 22:43:43');
 INSERT INTO `hl_config` VALUES (20, 'site_description', '笃爱情感，女性婚恋咨询与培训机构，千名情感导师致力于修复婚姻关系，分离小三，挽回爱情，挽回女友，挽回男友等服务', 'base', 'textarea', 50, NULL, '2018-06-04 16:27:47');

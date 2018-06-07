@@ -56,7 +56,13 @@ class VideoController extends Controller
         if(!$info){
             return redirect()->back();
         }
-        $info['is_pay'] = false;
+        $info['is_try'] = false;
+        foreach($info['VideoCourseMany'] as $v2){//查看是否可以试听
+            if(!empty($v2['try_video'])){
+                $info['is_try'] = true;
+                break;
+            }
+        }
         if($user_info['id']>0){
             $is_pay = VideoOrder::is_pay($id,$user_info['id']);
             switch ($info['is_fee']) {
