@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Encore\Admin\Traits\AdminBuilder;
 use Encore\Admin\Traits\ModelTree;
+use App\Models\Video,App\Models\VideoCourse,App\Models\User,App\Models\Category,App\Models\VideoOrder;
 class Video extends Model
 {
     protected $table = 'video';
@@ -22,6 +23,9 @@ class Video extends Model
         }
         if(isset($attributes['type'])&&trim($attributes['type'])!=''){
             $list = $list->where('type',$attributes['type']);
+        }
+        if(isset($attributes['video_id_in'])&&count($attributes['video_id_in'])){
+            $list = $list->whereIn('video_id',$attributes['video_id_in']);
         }
 
         if(isset($attributes['order'])&&count($attributes['order'])){

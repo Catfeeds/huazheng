@@ -83,31 +83,26 @@
             猜你喜欢
         </p>
         <ul class="videoList">
-            <li>
-                <a href="/payment/course/94">
-                    <div class="imgDiv">
-                        <img class="videoPa" src="//huazhen-upload.oss-cn-hangzhou.aliyuncs.com/images/common/201801/26/cifolykiopmkcqgelyodctxc8u6fst2s.jpg">
-                        <p>
-                            <img src="{{asset('resources/home/images/ico/ico22.png')}}">
-                            36个课时
-                        </p>
-                    </div>
-                    <div class="videoTit">
-                        <p>冷爱断桥理论：没有挽回不了的...</p>
-                        <span>1955人正在学习</span>
-                    </div>
-                    <div class="priceTag">
-                        <p class="price colred">
-                            ￥<span class="newprice">199</span>
-                            <span class="oldprice">238.8</span>
-                        </p>
-                        <p class="videotag">
-                            <span>可试学</span>
-                            <!-- <span>会员免费</span> -->
-                        </p>
-                    </div>
-                </a>
-            </li>
+            @foreach($like_video_list as $v)
+                <li>
+                    <a href="{{URL('video-info',[$v])}}">
+                        <div class="imgDiv">
+                            <img class="videoPa" src="{{asset($v['img'])}}">
+                            <p><img src="{{asset('resources/home/images/ico/ico22.png')}}">{{count($v['VideoCourseMany'])}}个课时</p>
+                        </div>
+                        <div class="videoTit">
+                            <p>{{$v['title']}}</p>
+                            <span>{{$v['number']}}人正在学习</span> 
+                        </div>
+                        <div class="priceTag"> 
+                            <p class="price colred">￥<span class="newprice">{{$v['price']}}</span><span class="oldprice">{{$v['old_price']}}</span> </p> 
+                            @if($v['is_try'])
+                            <p class="videotag"> <span>可试学</span> </p> 
+                            @endif
+                        </div> 
+                    </a> 
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-use App\Models\Config,App\Models\Nav,App\Models\AdsImage,App\Models\Link,App\Models\ArticleCategory,App\Models\Article,App\Models\AdsPosition,App\Models\VideoOrder;
+use App\Models\Config,App\Models\Nav,App\Models\AdsImage,App\Models\Link,App\Models\ArticleCategory,App\Models\Article,App\Models\AdsPosition,App\Models\VideoOrder,App\Models\VipOrder;
 /**
  * 站点信息获取
  * @param string $name [参数名称]
@@ -311,10 +311,21 @@ function f_article_info($id){
  * 课程订单号生成
  */
 function video_order_no(){
-    $order_no = date('YmdHis').mt_rand(10000,99999)."1";
+    $order_no = date('YmdHis')."01".mt_rand(10000,99999);
     $count = VideoOrder::where("order_no",$order_no)->count();
     if($count){
         $order_no = video_order_no();
+    }
+    return $order_no;
+
+}/**
+ * Vip订单号生成
+ */
+function vip_order_no(){
+    $order_no = date('YmdHis')."02".mt_rand(10000,99999);
+    $count = VipOrder::where("order_no",$order_no)->count();
+    if($count){
+        $order_no = vip_order_no();
     }
     return $order_no;
 }

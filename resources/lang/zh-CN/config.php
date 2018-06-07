@@ -23,5 +23,6 @@ return [
 		'app_ewm'=>"App二维码",
 		'app_ewm_text'=>"App二维码说明",
 		'kefu_url'=>"客服链接",
+		'vip_price'=>"Vip价格",
 	],
 ];

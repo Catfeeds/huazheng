@@ -88,7 +88,18 @@ class VideoController extends Controller
                 'title'=>$info['title'],
             ],
         ];
+        //猜你喜欢
+        $like_video_list = Video::VideoList([
+            'order'    =>[
+                0=>[
+                    'order'=>'number',
+                    'sort'=>'DESC',
+                ],
+            ],
+            'paginate' =>3,
+        ]);
         $assign = [
+            'like_video_list'  => $like_video_list,
             'location'         => $location,
             'info'             => $info,
             'is_pay'           => $is_pay,
@@ -160,6 +171,31 @@ class VideoController extends Controller
         $arr->order_no = video_order_no();
         $arr->save();
 
+        Video::where("video_id",$id)->increment('number',1);
         return redirect('video-info/'.$id);
+    }
+
+    public function member_video_list(Request $request){
+        //我购买的课程
+        $user_info = Auth::user();
+        $video_id_in = [-1];
+        $order = VideoOrder::where([
+            'user_id'=>$user_info['id'],
+            'status'=>2,
+        ])->get();
+        foreach($order as $v){
+            $video_id_in[] = $v['video_id'];
+        }
+        $video_list = Video::VideoList([
+            'video_id_in' => $video_id_in,
+            'paginate' =>9,
+        ]);
+        
+        $assign = [
+            'head_title'     => '我的课程',
+            'video_list'     => $video_list,
+            'Gs_panel_title' => 2,
+        ];
+        return view('home.video.member-video-list',$assign);
     }
 }

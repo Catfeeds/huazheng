@@ -91,7 +91,7 @@
                                 <div class="new_user-card">
                                     <i class="new_triangle_up"></i>
                                     <div class="new_quick_pop_user">
-                                        <a class="user_name" href="/user">{{Auth::user()->name}}</a>
+                                        <a class="user_name" href="{{URL('member')}}">{{Auth::user()->name}}</a>
                                         <span>您好，</span>
                                         <div class="link_quit">
                                             <a href="{{URL('logout')}}" target="_self">退出</a>

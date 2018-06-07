@@ -20,20 +20,30 @@ Route::post('apply-save','ApplyController@apply_save');//申请提交
 Route::post('recruitment-apply-save','RecruitmentApplyController@recruitment_apply_save');//申请提交
 
 Route::post('register-sms-send','SmsController@register_sms_send');//发送注册短信验证码
-Route::post('password-reset-sms-send','SmsController@password_reset_sms_send');//发送充值密码短信验证码
+Route::post('password-reset-sms-send','SmsController@password_reset_sms_send');//发送密码密码短信验证码
 
-Route::get('password-reset','UserController@password_reset');//重置密码页面
-Route::post('password-reset','UserController@password_reset_save');//重置密码
+Route::get('password-reset','UserController@password_reset');//密码页面
+Route::post('password-reset','UserController@password_reset_save');//密码密码
 
 Route::get('video-list','VideoController@video_list');//视频课程
 Route::get('video-info/{id}','VideoController@video_info');//视频课程详情
 
 Route::group(['middleware'=>'auth'], function(){
+	//需要登陆的路由
 	Route::get('video-play/{id}','VideoController@video_play');//视频课程观看
 	Route::get('video-pay/{id}','VideoController@video_pay');//视频课程购买
+	Route::get('member-video-list','VideoController@member_video_list');//视频课程购买
 
-	Route::get('member','UserController@member');//视频课程购买
+	Route::get('vip-pay','UserController@vip_pay');//会员vip购买
+	Route::get('member','UserController@member');//个人中心
+	Route::get('member-pic','UserController@member_pic');//会员头像
+	Route::post('member-pic-save','UserController@member_pic_save');//会员上传头像
 	Route::post('user-name-save','UserController@user_name_save');//会员名称修改
+	Route::post('user-bangding-save','UserController@user_bangding_save');//会员名称修改
+	Route::post('user-password-save','UserController@user_password_save');//会员密码修改
+
+	Route::post('bangding-sms-send','SmsController@bangding_sms_send');//发送修改手机验证码
+	Route::post('password-sms-send','SmsController@password_sms_send');//发送修改密码验证码
 });
 
 

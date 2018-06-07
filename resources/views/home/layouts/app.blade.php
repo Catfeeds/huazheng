@@ -15,6 +15,7 @@
             <meta name="description" content="@if(isset($head_description)){{$head_description}}@else{{ConfigGet('site_description')}}@endif">
         @show
         @section('style')
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/cropper.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/iconfont.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/swiper.min.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/style.css') }}" />
