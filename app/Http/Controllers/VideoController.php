@@ -169,6 +169,7 @@ class VideoController extends Controller
         $arr->status = 2;
         $arr->price = $Video['price'];
         $arr->order_no = video_order_no();
+        $arr->pay_time = date('Y-m-d H:i:s');
         $arr->save();
 
         Video::where("video_id",$id)->increment('number',1);

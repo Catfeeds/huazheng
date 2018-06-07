@@ -29,6 +29,8 @@ Route::group([
     $router->resource('category', CategoryController::class);//分类
     $router->resource('video', VideoController::class);//视频课程
     $router->resource('video-course', VideoCourseController::class);//视频课程
+    $router->resource('vip-order', VipOrderController::class);//视频课程
+    $router->resource('video-order', VideoOrderController::class);//视频课程
 
     $router->get('city', 'RegionController@city');
     $router->get('district', 'RegionController@district');

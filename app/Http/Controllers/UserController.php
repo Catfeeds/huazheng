@@ -70,8 +70,8 @@ class UserController extends Controller
         //会员中心首页
         
         //更新会员vip状态，---后面更改成定时任务
-        User::where('grade',2)->where('grade_end',"<",time())->update(['grade'=>1]);
-        User::where('grade',1)->where('grade_end',">",time())->update(['grade'=>2]);
+        User::where('grade',2)->where('grade_end',"<",date('Y-m-d H:i:s'))->update(['grade'=>1]);
+        User::where('grade',1)->where('grade_end',">",date('Y-m-d H:i:s'))->update(['grade'=>2]);
 
 
         $user_info = Auth::user();
@@ -170,16 +170,17 @@ class UserController extends Controller
         $arr->status = 2;
         $arr->price = ConfigGet('vip_price');
         $arr->order_no = vip_order_no();
+        $arr->pay_time = date('Y-m-d H:i:s');
         $arr->save();
 
         if($user_info['grade']==2){
             //续费
-            $user_info->grade_end = $user_info->grade_end+60*60*24*365;//增加1年
+            $user_info->grade_end = date('Y-m-d H:i:s',strtotime($user_info->grade_end)+60*60*24*365);//增加1年
         }else{
             //新购
             $user_info->grade = 2;
-            $user_info->grade_start = time();
-            $user_info->grade_end = time()+60*60*24*365;//增加1年
+            $user_info->grade_start = date('Y-m-d H:i:s');
+            $user_info->grade_end = date('Y-m-d H:i:s',time()+60*60*24*365);//增加1年
         }
         $user_info->save();
         return redirect()->back();

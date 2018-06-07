@@ -9,7 +9,12 @@ class VideoOrder extends Model
 {
     protected $table = 'video_order';
     protected $primaryKey = 'order_id';
-
+    public function UserTo(){
+        return $this->belongsTo('App\Models\User','user_id','id');
+    }
+    public function VideoTo(){
+        return $this->belongsTo('App\Models\Video','video_id','video_id');
+    }
     public function is_pay($order_id,$user_id){
         //验证会员是否购买课程
         $order_info = VideoOrder::where([

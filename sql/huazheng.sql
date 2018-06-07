@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 08/06/2018 00:09:27
+ Date: 08/06/2018 02:28:10
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `hl_admin_menu`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_menu
@@ -61,6 +61,8 @@ INSERT INTO `hl_admin_menu` VALUES (23, 22, 0, '分类', 'fa-bars', 'category?ty
 INSERT INTO `hl_admin_menu` VALUES (24, 22, 0, '视频课程', 'fa-book', 'video', '2018-06-06 14:22:25', '2018-06-06 14:22:25');
 INSERT INTO `hl_admin_menu` VALUES (25, 0, 0, '会员管理', 'fa-user', NULL, '2018-06-07 23:11:26', '2018-06-07 23:11:26');
 INSERT INTO `hl_admin_menu` VALUES (26, 25, 0, '会员', 'fa-user', 'users', '2018-06-07 23:11:40', '2018-06-07 23:11:40');
+INSERT INTO `hl_admin_menu` VALUES (27, 25, 0, 'vip购买记录', 'fa-shopping-bag', 'vip-order', '2018-06-08 01:53:38', '2018-06-08 01:53:38');
+INSERT INTO `hl_admin_menu` VALUES (28, 22, 0, '课程购买记录', 'fa-shopping-bag', 'video-order', '2018-06-08 02:08:50', '2018-06-08 02:08:50');
 
 -- ----------------------------
 -- Table structure for hl_admin_operation_log
@@ -77,7 +79,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4930 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5081 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -5011,6 +5013,157 @@ INSERT INTO `hl_admin_operation_log` VALUES (4926, 1, 'admin/users/6/edit', 'GET
 INSERT INTO `hl_admin_operation_log` VALUES (4927, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 00:08:54', '2018-06-08 00:08:54');
 INSERT INTO `hl_admin_operation_log` VALUES (4928, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 00:09:04', '2018-06-08 00:09:04');
 INSERT INTO `hl_admin_operation_log` VALUES (4929, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 00:09:12', '2018-06-08 00:09:12');
+INSERT INTO `hl_admin_operation_log` VALUES (4930, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-08 00:55:53', '2018-06-08 00:55:53');
+INSERT INTO `hl_admin_operation_log` VALUES (4931, 1, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 00:56:03', '2018-06-08 00:56:03');
+INSERT INTO `hl_admin_operation_log` VALUES (4932, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 00:56:06', '2018-06-08 00:56:06');
+INSERT INTO `hl_admin_operation_log` VALUES (4933, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 00:56:22', '2018-06-08 00:56:22');
+INSERT INTO `hl_admin_operation_log` VALUES (4934, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 00:56:23', '2018-06-08 00:56:23');
+INSERT INTO `hl_admin_operation_log` VALUES (4935, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 00:56:25', '2018-06-08 00:56:25');
+INSERT INTO `hl_admin_operation_log` VALUES (4936, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '[]', '2018-06-08 00:56:40', '2018-06-08 00:56:40');
+INSERT INTO `hl_admin_operation_log` VALUES (4937, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 00:56:41', '2018-06-08 00:56:41');
+INSERT INTO `hl_admin_operation_log` VALUES (4938, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 00:56:43', '2018-06-08 00:56:43');
+INSERT INTO `hl_admin_operation_log` VALUES (4939, 1, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:04:44', '2018-06-08 01:04:44');
+INSERT INTO `hl_admin_operation_log` VALUES (4940, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:04:45', '2018-06-08 01:04:45');
+INSERT INTO `hl_admin_operation_log` VALUES (4941, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:07:06', '2018-06-08 01:07:06');
+INSERT INTO `hl_admin_operation_log` VALUES (4942, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:07:26', '2018-06-08 01:07:26');
+INSERT INTO `hl_admin_operation_log` VALUES (4943, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:08:22', '2018-06-08 01:08:22');
+INSERT INTO `hl_admin_operation_log` VALUES (4944, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:09:11', '2018-06-08 01:09:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4945, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:13:24', '2018-06-08 01:13:24');
+INSERT INTO `hl_admin_operation_log` VALUES (4946, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:14:19', '2018-06-08 01:14:19');
+INSERT INTO `hl_admin_operation_log` VALUES (4947, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:20:06', '2018-06-08 01:20:06');
+INSERT INTO `hl_admin_operation_log` VALUES (4948, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:20:23', '2018-06-08 01:20:23');
+INSERT INTO `hl_admin_operation_log` VALUES (4949, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:20:48', '2018-06-08 01:20:48');
+INSERT INTO `hl_admin_operation_log` VALUES (4950, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '[]', '2018-06-08 01:21:53', '2018-06-08 01:21:53');
+INSERT INTO `hl_admin_operation_log` VALUES (4951, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 01:21:54', '2018-06-08 01:21:54');
+INSERT INTO `hl_admin_operation_log` VALUES (4952, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:21:57', '2018-06-08 01:21:57');
+INSERT INTO `hl_admin_operation_log` VALUES (4953, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:22:11', '2018-06-08 01:22:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4954, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:22:58', '2018-06-08 01:22:58');
+INSERT INTO `hl_admin_operation_log` VALUES (4955, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:23:04', '2018-06-08 01:23:04');
+INSERT INTO `hl_admin_operation_log` VALUES (4956, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:23:11', '2018-06-08 01:23:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4957, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:23:19', '2018-06-08 01:23:19');
+INSERT INTO `hl_admin_operation_log` VALUES (4958, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '[]', '2018-06-08 01:28:20', '2018-06-08 01:28:20');
+INSERT INTO `hl_admin_operation_log` VALUES (4959, 1, 'admin/article/1249/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:28:20', '2018-06-08 01:28:20');
+INSERT INTO `hl_admin_operation_log` VALUES (4960, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 01:28:20', '2018-06-08 01:28:20');
+INSERT INTO `hl_admin_operation_log` VALUES (4961, 1, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:28:31', '2018-06-08 01:28:31');
+INSERT INTO `hl_admin_operation_log` VALUES (4962, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:28:35', '2018-06-08 01:28:35');
+INSERT INTO `hl_admin_operation_log` VALUES (4963, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:30:42', '2018-06-08 01:30:42');
+INSERT INTO `hl_admin_operation_log` VALUES (4964, 1, 'admin/users/6', 'PUT', '127.0.0.1', '{\"name\":\"\\u554a\\u554a\\u554a\",\"phone\":\"13226468872\",\"password\":\"123456\",\"grade_end\":\"2018-02-14 01:27:20\",\"id\":\"6\",\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_method\":\"PUT\"}', '2018-06-08 01:31:45', '2018-06-08 01:31:45');
+INSERT INTO `hl_admin_operation_log` VALUES (4965, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2018-06-08 01:31:45', '2018-06-08 01:31:45');
+INSERT INTO `hl_admin_operation_log` VALUES (4966, 1, 'admin/users/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:31:47', '2018-06-08 01:31:47');
+INSERT INTO `hl_admin_operation_log` VALUES (4967, 1, 'admin/users/6', 'PUT', '127.0.0.1', '{\"name\":\"\\u554a\\u554a\\u554a\",\"phone\":\"13226468872\",\"password\":\"123456\",\"grade_end\":\"2020-12-10 01:27:20\",\"id\":\"6\",\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/users\"}', '2018-06-08 01:31:55', '2018-06-08 01:31:55');
+INSERT INTO `hl_admin_operation_log` VALUES (4968, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2018-06-08 01:31:55', '2018-06-08 01:31:55');
+INSERT INTO `hl_admin_operation_log` VALUES (4969, 1, 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:32:19', '2018-06-08 01:32:19');
+INSERT INTO `hl_admin_operation_log` VALUES (4970, 1, 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"111\",\"phone\":\"13226468872\",\"password\":null,\"grade_end\":null,\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/users\"}', '2018-06-08 01:32:28', '2018-06-08 01:32:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4971, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:32:28', '2018-06-08 01:32:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4972, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:33:28', '2018-06-08 01:33:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4973, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:04', '2018-06-08 01:34:04');
+INSERT INTO `hl_admin_operation_log` VALUES (4974, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:11', '2018-06-08 01:34:11');
+INSERT INTO `hl_admin_operation_log` VALUES (4975, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:19', '2018-06-08 01:34:19');
+INSERT INTO `hl_admin_operation_log` VALUES (4976, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:24', '2018-06-08 01:34:24');
+INSERT INTO `hl_admin_operation_log` VALUES (4977, 1, 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"aaa\",\"phone\":\"13226468871\",\"password\":\"123456\",\"grade_end\":null,\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\"}', '2018-06-08 01:34:34', '2018-06-08 01:34:34');
+INSERT INTO `hl_admin_operation_log` VALUES (4978, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:34', '2018-06-08 01:34:34');
+INSERT INTO `hl_admin_operation_log` VALUES (4979, 1, 'admin/users/7/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:34:37', '2018-06-08 01:34:37');
+INSERT INTO `hl_admin_operation_log` VALUES (4980, 1, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:34:44', '2018-06-08 01:34:44');
+INSERT INTO `hl_admin_operation_log` VALUES (4981, 1, 'admin/users/7/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:34:46', '2018-06-08 01:34:46');
+INSERT INTO `hl_admin_operation_log` VALUES (4982, 1, 'admin/users/7', 'PUT', '127.0.0.1', '{\"name\":\"aaa\",\"phone\":\"13226468871\",\"password\":null,\"grade_end\":null,\"id\":\"7\",\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/users\"}', '2018-06-08 01:34:56', '2018-06-08 01:34:56');
+INSERT INTO `hl_admin_operation_log` VALUES (4983, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2018-06-08 01:34:56', '2018-06-08 01:34:56');
+INSERT INTO `hl_admin_operation_log` VALUES (4984, 1, 'admin/users/7/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:35:01', '2018-06-08 01:35:01');
+INSERT INTO `hl_admin_operation_log` VALUES (4985, 1, 'admin/users/7/edit', 'GET', '127.0.0.1', '[]', '2018-06-08 01:35:05', '2018-06-08 01:35:05');
+INSERT INTO `hl_admin_operation_log` VALUES (4986, 1, 'admin/users/7', 'PUT', '127.0.0.1', '{\"name\":\"aaa\",\"phone\":\"13226468871\",\"password\":null,\"grade_end\":null,\"id\":\"7\",\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/users\\/create\"}', '2018-06-08 01:35:12', '2018-06-08 01:35:12');
+INSERT INTO `hl_admin_operation_log` VALUES (4987, 1, 'admin/users/create', 'GET', '127.0.0.1', '[]', '2018-06-08 01:35:12', '2018-06-08 01:35:12');
+INSERT INTO `hl_admin_operation_log` VALUES (4988, 1, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:35:20', '2018-06-08 01:35:20');
+INSERT INTO `hl_admin_operation_log` VALUES (4989, 1, 'admin/users/7/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:35:22', '2018-06-08 01:35:22');
+INSERT INTO `hl_admin_operation_log` VALUES (4990, 1, 'admin/users/7', 'PUT', '127.0.0.1', '{\"name\":\"aaa\",\"phone\":\"13226468871\",\"password\":null,\"grade_end\":null,\"id\":\"7\",\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/users\"}', '2018-06-08 01:35:27', '2018-06-08 01:35:27');
+INSERT INTO `hl_admin_operation_log` VALUES (4991, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2018-06-08 01:35:28', '2018-06-08 01:35:28');
+INSERT INTO `hl_admin_operation_log` VALUES (4992, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:51:30', '2018-06-08 01:51:30');
+INSERT INTO `hl_admin_operation_log` VALUES (4993, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"25\",\"title\":\"vip\\u8d2d\\u4e70\\u8bb0\\u5f55\",\"icon\":\"fa-shopping-bag\",\"uri\":\"vip-order\",\"roles\":[null],\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\"}', '2018-06-08 01:53:38', '2018-06-08 01:53:38');
+INSERT INTO `hl_admin_operation_log` VALUES (4994, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-08 01:53:38', '2018-06-08 01:53:38');
+INSERT INTO `hl_admin_operation_log` VALUES (4995, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-08 01:53:39', '2018-06-08 01:53:39');
+INSERT INTO `hl_admin_operation_log` VALUES (4996, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:53:42', '2018-06-08 01:53:42');
+INSERT INTO `hl_admin_operation_log` VALUES (4997, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"order_id\":null,\"user_name\":\"11\"}', '2018-06-08 01:54:09', '2018-06-08 01:54:09');
+INSERT INTO `hl_admin_operation_log` VALUES (4998, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:12', '2018-06-08 01:54:12');
+INSERT INTO `hl_admin_operation_log` VALUES (4999, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:35', '2018-06-08 01:54:35');
+INSERT INTO `hl_admin_operation_log` VALUES (5000, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:36', '2018-06-08 01:54:36');
+INSERT INTO `hl_admin_operation_log` VALUES (5001, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:37', '2018-06-08 01:54:37');
+INSERT INTO `hl_admin_operation_log` VALUES (5002, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:39', '2018-06-08 01:54:39');
+INSERT INTO `hl_admin_operation_log` VALUES (5003, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 01:54:52', '2018-06-08 01:54:52');
+INSERT INTO `hl_admin_operation_log` VALUES (5004, 1, 'admin/vip-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:00:06', '2018-06-08 02:00:06');
+INSERT INTO `hl_admin_operation_log` VALUES (5005, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"a\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:00:11', '2018-06-08 02:00:11');
+INSERT INTO `hl_admin_operation_log` VALUES (5006, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"\\u554a\"}', '2018-06-08 02:00:16', '2018-06-08 02:00:16');
+INSERT INTO `hl_admin_operation_log` VALUES (5007, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"1322\"}', '2018-06-08 02:00:22', '2018-06-08 02:00:22');
+INSERT INTO `hl_admin_operation_log` VALUES (5008, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"1322\"}', '2018-06-08 02:00:31', '2018-06-08 02:00:31');
+INSERT INTO `hl_admin_operation_log` VALUES (5009, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"1322\"}', '2018-06-08 02:00:51', '2018-06-08 02:00:51');
+INSERT INTO `hl_admin_operation_log` VALUES (5010, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"1322\"}', '2018-06-08 02:03:01', '2018-06-08 02:03:01');
+INSERT INTO `hl_admin_operation_log` VALUES (5011, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"order_id\":null,\"52b712d9a38dd748133371222e9f3a83\":\"1322\"}', '2018-06-08 02:04:06', '2018-06-08 02:04:06');
+INSERT INTO `hl_admin_operation_log` VALUES (5012, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:04:13', '2018-06-08 02:04:13');
+INSERT INTO `hl_admin_operation_log` VALUES (5013, 1, 'admin/config-save', 'POST', '127.0.0.1', '{\"config_id\":{\"10\":\"\\u7b03\\u7231\\u60c5\\u611f|\\u60c5\\u611f\\u54a8\\u8be2\\u4e0e\\u89c4\\u5212\\u6807\\u6746\\u54c1\\u724c|\\u60c5\\u611f\\u57f9\\u8bad\\u673a\\u6784\",\"15\":\"\\u633d\\u56de\\u7231\\u60c5,\\u633d\\u56de\\u7537\\u53cb,\\u633d\\u56de\\u5973\\u53cb,\\u633d\\u6551\\u5a5a\\u59fb,\\u5206\\u79bb\\u5c0f\\u4e09,\\u7ecf\\u8425\\u5a5a\\u59fb,\\u8c08\\u604b\\u7231\\u7684\\u6280\\u5de7\",\"20\":\"\\u7b03\\u7231\\u60c5\\u611f\\uff0c\\u5973\\u6027\\u5a5a\\u604b\\u54a8\\u8be2\\u4e0e\\u57f9\\u8bad\\u673a\\u6784\\uff0c\\u5343\\u540d\\u60c5\\u611f\\u5bfc\\u5e08\\u81f4\\u529b\\u4e8e\\u4fee\\u590d\\u5a5a\\u59fb\\u5173\\u7cfb\\uff0c\\u5206\\u79bb\\u5c0f\\u4e09\\uff0c\\u633d\\u56de\\u7231\\u60c5\\uff0c\\u633d\\u56de\\u5973\\u53cb\\uff0c\\u633d\\u56de\\u7537\\u53cb\\u7b49\\u670d\\u52a1\",\"25\":\"\\u7248\\u6743\\u6240\\u6709\\uff1a\\u5e7f\\u5dde\\u7b03\\u7231\\u6559\\u80b2\\u54a8\\u8be2\\u6709\\u9650\\u516c\\u53f8\",\"30\":\"Copyright\\u00a9 2008-2017 HuaZhen,lnc.All Rights Reserved.\",\"35\":\"\\u7ca4ICP\\u590716060296\\u53f7-1\",\"40\":\"400-0173-520\",\"45\":\"\\u5e7f\\u5dde\\u5927\\u9053\\u4e2d599\\u53f7\",\"55\":\"\\u7b03\\u7231\",\"65\":\"\\u7b03\\u7231APP\",\"70\":null,\"75\":\"299\"},\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/vip-order?&order_id=&52b712d9a38dd748133371222e9f3a83=1322\"}', '2018-06-08 02:04:15', '2018-06-08 02:04:15');
+INSERT INTO `hl_admin_operation_log` VALUES (5014, 1, 'admin/config', 'GET', '127.0.0.1', '[]', '2018-06-08 02:04:16', '2018-06-08 02:04:16');
+INSERT INTO `hl_admin_operation_log` VALUES (5015, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:04:23', '2018-06-08 02:04:23');
+INSERT INTO `hl_admin_operation_log` VALUES (5016, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:08:18', '2018-06-08 02:08:18');
+INSERT INTO `hl_admin_operation_log` VALUES (5017, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"22\",\"title\":\"\\u8bfe\\u7a0b\\u8d2d\\u4e70\\u8bb0\\u5f55\",\"icon\":\"fa-shopping-bag\",\"uri\":\"video-order\",\"roles\":[null],\"_token\":\"aZegqjbJPaESacAFmvieVwY1ZRdZIBqOp4ZneERE\"}', '2018-06-08 02:08:50', '2018-06-08 02:08:50');
+INSERT INTO `hl_admin_operation_log` VALUES (5018, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-08 02:08:50', '2018-06-08 02:08:50');
+INSERT INTO `hl_admin_operation_log` VALUES (5019, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-06-08 02:08:53', '2018-06-08 02:08:53');
+INSERT INTO `hl_admin_operation_log` VALUES (5020, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:08:57', '2018-06-08 02:08:57');
+INSERT INTO `hl_admin_operation_log` VALUES (5021, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:08:59', '2018-06-08 02:08:59');
+INSERT INTO `hl_admin_operation_log` VALUES (5022, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:10:54', '2018-06-08 02:10:54');
+INSERT INTO `hl_admin_operation_log` VALUES (5023, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:10:57', '2018-06-08 02:10:57');
+INSERT INTO `hl_admin_operation_log` VALUES (5024, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:10:58', '2018-06-08 02:10:58');
+INSERT INTO `hl_admin_operation_log` VALUES (5025, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:10:59', '2018-06-08 02:10:59');
+INSERT INTO `hl_admin_operation_log` VALUES (5026, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:11:00', '2018-06-08 02:11:00');
+INSERT INTO `hl_admin_operation_log` VALUES (5027, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:11:00', '2018-06-08 02:11:00');
+INSERT INTO `hl_admin_operation_log` VALUES (5028, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:11:01', '2018-06-08 02:11:01');
+INSERT INTO `hl_admin_operation_log` VALUES (5029, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:11:30', '2018-06-08 02:11:30');
+INSERT INTO `hl_admin_operation_log` VALUES (5030, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:11:35', '2018-06-08 02:11:35');
+INSERT INTO `hl_admin_operation_log` VALUES (5031, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:11:39', '2018-06-08 02:11:39');
+INSERT INTO `hl_admin_operation_log` VALUES (5032, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:11:41', '2018-06-08 02:11:41');
+INSERT INTO `hl_admin_operation_log` VALUES (5033, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:11:45', '2018-06-08 02:11:45');
+INSERT INTO `hl_admin_operation_log` VALUES (5034, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:12:11', '2018-06-08 02:12:11');
+INSERT INTO `hl_admin_operation_log` VALUES (5035, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:12:24', '2018-06-08 02:12:24');
+INSERT INTO `hl_admin_operation_log` VALUES (5036, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:12:46', '2018-06-08 02:12:46');
+INSERT INTO `hl_admin_operation_log` VALUES (5037, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:12:49', '2018-06-08 02:12:49');
+INSERT INTO `hl_admin_operation_log` VALUES (5038, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:13:01', '2018-06-08 02:13:01');
+INSERT INTO `hl_admin_operation_log` VALUES (5039, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 02:13:01', '2018-06-08 02:13:01');
+INSERT INTO `hl_admin_operation_log` VALUES (5040, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:13:04', '2018-06-08 02:13:04');
+INSERT INTO `hl_admin_operation_log` VALUES (5041, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:13:05', '2018-06-08 02:13:05');
+INSERT INTO `hl_admin_operation_log` VALUES (5042, 1, 'admin/apply', 'GET', '127.0.0.1', '[]', '2018-06-08 02:14:14', '2018-06-08 02:14:14');
+INSERT INTO `hl_admin_operation_log` VALUES (5043, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:39', '2018-06-08 02:15:39');
+INSERT INTO `hl_admin_operation_log` VALUES (5044, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 02:15:40', '2018-06-08 02:15:40');
+INSERT INTO `hl_admin_operation_log` VALUES (5045, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:41', '2018-06-08 02:15:41');
+INSERT INTO `hl_admin_operation_log` VALUES (5046, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:43', '2018-06-08 02:15:43');
+INSERT INTO `hl_admin_operation_log` VALUES (5047, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:46', '2018-06-08 02:15:46');
+INSERT INTO `hl_admin_operation_log` VALUES (5048, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:47', '2018-06-08 02:15:47');
+INSERT INTO `hl_admin_operation_log` VALUES (5049, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:48', '2018-06-08 02:15:48');
+INSERT INTO `hl_admin_operation_log` VALUES (5050, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"4\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:49', '2018-06-08 02:15:49');
+INSERT INTO `hl_admin_operation_log` VALUES (5051, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"3\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:50', '2018-06-08 02:15:50');
+INSERT INTO `hl_admin_operation_log` VALUES (5052, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:52', '2018-06-08 02:15:52');
+INSERT INTO `hl_admin_operation_log` VALUES (5053, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:53', '2018-06-08 02:15:53');
+INSERT INTO `hl_admin_operation_log` VALUES (5054, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:15:57', '2018-06-08 02:15:57');
+INSERT INTO `hl_admin_operation_log` VALUES (5055, 1, 'admin/recruitment-apply', 'GET', '127.0.0.1', '[]', '2018-06-08 02:18:03', '2018-06-08 02:18:03');
+INSERT INTO `hl_admin_operation_log` VALUES (5056, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:18:06', '2018-06-08 02:18:06');
+INSERT INTO `hl_admin_operation_log` VALUES (5057, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:18:06', '2018-06-08 02:18:06');
+INSERT INTO `hl_admin_operation_log` VALUES (5058, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:21:22', '2018-06-08 02:21:22');
+INSERT INTO `hl_admin_operation_log` VALUES (5059, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:22:52', '2018-06-08 02:22:52');
+INSERT INTO `hl_admin_operation_log` VALUES (5060, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:23:49', '2018-06-08 02:23:49');
+INSERT INTO `hl_admin_operation_log` VALUES (5061, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:24:02', '2018-06-08 02:24:02');
+INSERT INTO `hl_admin_operation_log` VALUES (5062, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:24:20', '2018-06-08 02:24:20');
+INSERT INTO `hl_admin_operation_log` VALUES (5063, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:24:32', '2018-06-08 02:24:32');
+INSERT INTO `hl_admin_operation_log` VALUES (5064, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:24:37', '2018-06-08 02:24:37');
+INSERT INTO `hl_admin_operation_log` VALUES (5065, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_export_\":\"all\"}', '2018-06-08 02:24:40', '2018-06-08 02:24:40');
+INSERT INTO `hl_admin_operation_log` VALUES (5066, 1, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:26', '2018-06-08 02:25:26');
+INSERT INTO `hl_admin_operation_log` VALUES (5067, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:29', '2018-06-08 02:25:29');
+INSERT INTO `hl_admin_operation_log` VALUES (5068, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:30', '2018-06-08 02:25:30');
+INSERT INTO `hl_admin_operation_log` VALUES (5069, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:31', '2018-06-08 02:25:31');
+INSERT INTO `hl_admin_operation_log` VALUES (5070, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:31', '2018-06-08 02:25:31');
+INSERT INTO `hl_admin_operation_log` VALUES (5071, 1, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:25:32', '2018-06-08 02:25:32');
+INSERT INTO `hl_admin_operation_log` VALUES (5072, 1, 'admin/video-order', 'GET', '127.0.0.1', '[]', '2018-06-08 02:25:57', '2018-06-08 02:25:57');
+INSERT INTO `hl_admin_operation_log` VALUES (5073, 2, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-08 02:27:26', '2018-06-08 02:27:26');
+INSERT INTO `hl_admin_operation_log` VALUES (5074, 2, 'admin/video-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:29', '2018-06-08 02:27:29');
+INSERT INTO `hl_admin_operation_log` VALUES (5075, 2, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:30', '2018-06-08 02:27:30');
+INSERT INTO `hl_admin_operation_log` VALUES (5076, 2, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:31', '2018-06-08 02:27:31');
+INSERT INTO `hl_admin_operation_log` VALUES (5077, 2, 'admin/video', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:32', '2018-06-08 02:27:32');
+INSERT INTO `hl_admin_operation_log` VALUES (5078, 2, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:33', '2018-06-08 02:27:33');
+INSERT INTO `hl_admin_operation_log` VALUES (5079, 2, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:38', '2018-06-08 02:27:38');
+INSERT INTO `hl_admin_operation_log` VALUES (5080, 2, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:39', '2018-06-08 02:27:39');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -6083,8 +6236,8 @@ CREATE TABLE `hl_pay_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '对应价格',
   `pay_status` tinyint(1) NULL DEFAULT 1 COMMENT '1-未支付，2-支付',
-  `add_time` int(11) NULL DEFAULT NULL COMMENT '添加时间',
-  `pay_time` int(11) NULL DEFAULT NULL COMMENT '支付时间',
+  `add_time` timestamp NULL DEFAULT NULL COMMENT '添加时间',
+  `pay_time` timestamp NULL DEFAULT NULL COMMENT '支付时间',
   `pay_type` tinyint(1) NULL DEFAULT 1 COMMENT '支付类型，1-微信，2-支付宝',
   PRIMARY KEY (`pay_id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Fixed;
@@ -9908,18 +10061,19 @@ CREATE TABLE `hl_users`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `grade` tinyint(1) NULL DEFAULT 1 COMMENT '会员等级，1-普通，2-vip',
-  `grade_start` int(11) NULL DEFAULT NULL COMMENT 'vip开始时间',
-  `grade_end` int(11) NULL DEFAULT NULL COMMENT 'vip结束时间',
+  `grade_start` timestamp NULL DEFAULT NULL COMMENT 'vip开始时间',
+  `grade_end` timestamp NULL DEFAULT NULL COMMENT 'vip结束时间',
   `pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'resources/home/images/pic.png' COMMENT '头像',
   `wx_openid` int(11) NULL DEFAULT NULL COMMENT '微信openid',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`phone`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_users
 -- ----------------------------
-INSERT INTO `hl_users` VALUES (6, '啊啊啊', '13226468872', '$2y$10$Obe7mMzMhmdLis5jcHCT.u.5jRgs7FGiNBoRivQ6eVRQnwFUHfryq', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-07 23:09:33', 2, 1528382992, 1622990992, 'uploads/user/20180607/5b193fe32b0927.35128746.png', NULL);
+INSERT INTO `hl_users` VALUES (6, '啊啊啊', '13226468872', '$2y$10$H2Je2GYzktn7EeFMUYbOV.kKp3pZLU5C8qHGzyChYJF1h.tW0CNWK', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-08 02:04:18', 2, '2018-06-08 01:27:20', '2022-12-10 01:27:20', 'uploads/user/20180607/5b193fe32b0927.35128746.png', NULL);
+INSERT INTO `hl_users` VALUES (7, 'aaa', '13226468871', '', NULL, '2018-06-08 01:34:34', '2018-06-08 01:35:27', 1, NULL, NULL, 'uploads/user/20180608/5b196cdfe38d59.18661043.jpg', NULL);
 
 -- ----------------------------
 -- Table structure for hl_video
@@ -9986,7 +10140,7 @@ CREATE TABLE `hl_video_order`  (
   `status` tinyint(1) NULL DEFAULT 1 COMMENT '订单状态1-未付款，2-付款',
   `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '支付价格',
   `order_no` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单号',
-  `pay_time` int(11) NULL DEFAULT NULL COMMENT '支付时间',
+  `pay_time` timestamp NULL DEFAULT NULL COMMENT '支付时间',
   `pay_type` tinyint(1) NULL DEFAULT NULL COMMENT '支付类型，1-微信，2-支付宝',
   PRIMARY KEY (`order_id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -10008,14 +10162,9 @@ CREATE TABLE `hl_vip_order`  (
   `status` tinyint(1) NULL DEFAULT 1 COMMENT '订单状态1-未付款，2-付款',
   `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '支付价格',
   `order_no` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单号',
-  `pay_time` int(11) NULL DEFAULT NULL COMMENT '支付时间',
+  `pay_time` timestamp NULL DEFAULT NULL COMMENT '支付时间',
   `pay_type` tinyint(1) NULL DEFAULT NULL COMMENT '支付类型，1-微信，2-支付宝',
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of hl_vip_order
--- ----------------------------
-INSERT INTO `hl_vip_order` VALUES (6, '2018-06-07 23:09:33', '2018-06-07 23:09:33', 6, 2, 299.00, '201806072309330245718', NULL, NULL);
+) ENGINE = MyISAM AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;

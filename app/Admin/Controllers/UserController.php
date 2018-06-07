@@ -120,10 +120,10 @@ class UserController extends Controller
                 }
             });
 
-
-            $form->display('name', '姓名');
-
             $form->display('grade', '会员等级')->with(function ($grade) {
+                if(!isset($grade)){
+                    $grade = 1;
+                }
                 return trans('home.user.grade.'.$grade);
             });
 
@@ -145,6 +145,11 @@ class UserController extends Controller
                     $arr->password = Hash::make($password);
                 }
                 $arr->pic = Image($arr->pic,100,100,"uploads/user/".date("Ymd")."/");
+                if(strtotime($arr->grade_end)<time()){
+                    $arr->grade = 1;
+                }else{
+                    $arr->grade = 2;
+                }
             });
         });
     }

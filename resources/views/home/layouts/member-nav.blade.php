@@ -13,7 +13,7 @@ $user_info = Auth::user();
         </p>
         @else
         <div class="vip">
-            <span>{{date('Y-m-d',$user_info['grade_end'])}}到期</span><a href="{{URL('vip-pay')}}" class="xufei">续费</a>
+            <span>{{date('Y-m-d',strtotime($user_info['grade_end']))}}到期</span><a href="{{URL('vip-pay')}}" class="xufei">续费</a>
         </div>
         @endif
         @if(empty($user_info['wx_openid']))
