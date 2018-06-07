@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 07/06/2018 02:50:27
+ Date: 07/06/2018 18:06:37
 */
 
 SET NAMES utf8mb4;
@@ -9841,6 +9841,8 @@ CREATE TABLE `hl_users`  (
   `grade` tinyint(1) NULL DEFAULT 1 COMMENT '会员等级，1-普通，2-vip',
   `grade_start` int(11) NULL DEFAULT NULL COMMENT 'vip开始时间',
   `grade_end` int(11) NULL DEFAULT NULL COMMENT 'vip结束时间',
+  `pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'resources/home/images/pic.png' COMMENT '头像',
+  `wx_openid` int(11) NULL DEFAULT NULL COMMENT '微信openid',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`phone`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
@@ -9848,7 +9850,7 @@ CREATE TABLE `hl_users`  (
 -- ----------------------------
 -- Records of hl_users
 -- ----------------------------
-INSERT INTO `hl_users` VALUES (6, '', '13226468871', '$2y$10$4Y5YJvEK.MfqrHjWaViBA.b2l5pgNrrab9MQTRO0HFttisUmGBYvW', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-06 02:49:36', 1, NULL, NULL);
+INSERT INTO `hl_users` VALUES (6, '啊啊啊', '13226468871', '$2y$10$4Y5YJvEK.MfqrHjWaViBA.b2l5pgNrrab9MQTRO0HFttisUmGBYvW', 'I6e7Is52vfvKY6QsrQ3bTFlhpFCZpasajldxRBBSBKrtYQEYWC5HjwCf7Sim', '2018-06-06 01:46:25', '2018-06-07 17:57:32', 1, NULL, NULL, 'resources/home/images/pic.png', NULL);
 
 -- ----------------------------
 -- Table structure for hl_video
@@ -9899,7 +9901,7 @@ CREATE TABLE `hl_video_course`  (
 -- ----------------------------
 -- Records of hl_video_course
 -- ----------------------------
-INSERT INTO `hl_video_course` VALUES (1, 'http://7xowi0.com1.z0.glb.clouddn.com/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=', 'http://7xowi0.com1.z0.glb.clouddn.com/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4?e=1528274742&token=7ccn6zh5h7Kk4fbtRomGKfDCc86syeaGSGu8cN4z:sQhS5efWR5JjutZwNoOX64zWG7g=', '第一节:吸引力的核心', 1, '2018-06-06 16:05:17', '2018-06-06 16:05:17');
+INSERT INTO `hl_video_course` VALUES (1, 'uploads/video/20180606/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4', 'uploads/video/20180606/preview-d69b5b26f6ed17e-1514952950-5a4c58f69e295.mp4', '第一节:吸引力的核心', 1, '2018-06-06 16:05:17', '2018-06-06 16:05:17');
 INSERT INTO `hl_video_course` VALUES (2, 'uploads/video/20180606/preview-417796c4eb2d8ed-1514514341-5a45a7a58e0cc.mp4', 'uploads/video/20180606/preview-417796c4eb2d8ed-1514514341-5a45a7a58e0cc.mp4', '第一节:情感修复必经之路：情绪的循环', 3, '2018-06-06 23:45:16', '2018-06-06 23:45:16');
 
 -- ----------------------------

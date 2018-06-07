@@ -86,12 +86,12 @@
                             @if(Auth::check())
                             <div class="new_hy_show">
                                 <!-- <span class="tx" onclick="window.open('{{URL('member')}}')"><img src="http://a3.huazhen.com/static/customer/user/personal-images/default.png" alt=""></span> -->
-                                <span class="name" onclick="window.open('{{URL('member')}}')">{{Auth::user()->phone}}</span>
+                                <span class="name" onclick="window.open('{{URL('member')}}')">{{Auth::user()->name}}</span>
                                 <!-- <span class="quit" onclick="window.open('/user/logout')">退出</span> -->
                                 <div class="new_user-card">
                                     <i class="new_triangle_up"></i>
                                     <div class="new_quick_pop_user">
-                                        <a class="user_name" href="/user">{{Auth::user()->phone}}</a>
+                                        <a class="user_name" href="/user">{{Auth::user()->name}}</a>
                                         <span>您好，</span>
                                         <div class="link_quit">
                                             <a href="{{URL('logout')}}" target="_self">退出</a>

@@ -116,11 +116,11 @@ class VideoController extends Controller
             //可以查看正式视频的
             $video_url = $VideoCourse['video'];
             $is_video = false;
-        }elseif(empty($VideoCourse['try_video'])){
+        }elseif(!empty($VideoCourse['try_video'])){
             //有试看的
             $video_url = $VideoCourse['try_video'];
         }
-        
+        // dd($video_url);
         if($is_video&&empty($video_url)){
             //没得观看，跳转回去
             return redirect('video-info/'.$Video['video_id'])->with('error_message',"请先购买课程");

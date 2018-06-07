@@ -26,7 +26,7 @@
                 <input type="hidden" name="order" id="order" value="{{request()->order}}">
             </form>
         </div>
-        <div class="videoCon">
+        <div class="videoCon_list">
             <p class="videoFilter">
                 <span name="order" class="filter @if(empty(request()->order)) colred @endif" tag="">最新发布</span><span name="order" class="filter @if(request()->order=='number') colred @endif" tag="number">人气最高</span>
             </p>

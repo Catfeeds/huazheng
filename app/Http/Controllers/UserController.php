@@ -64,5 +64,21 @@ class UserController extends Controller
         $user->save();
         return redirect('login');
     }
-    
+
+    public function member(Request $request){
+        //会员中心首页
+        $assign = [
+            'head_title' => '会员中心',
+            'Gs_panel_title' => 1,
+        ];
+        return view('home.user.member',$assign);
+    }
+
+    public function user_name_save(Request $request){
+        //会员名称修改
+        $user_info = Auth::user();
+        $user_info->name = $request['name'];
+        $user_info->save();
+        return render("修改成功",200,$user_info->name);
+    }
 }
