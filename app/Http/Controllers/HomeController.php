@@ -137,7 +137,7 @@ class HomeController extends Controller
                 'cate_id'=>$v['id'],
                 'order'=>'is_top',
                 'sort'=>'DESC',
-                'paginate'=>5,
+                'paginate'=>8,
             ]);
         }
         $index_7_cate = ArticleCategory::find(342);

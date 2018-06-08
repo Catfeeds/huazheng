@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 08/06/2018 02:53:07
+ Date: 08/06/2018 10:19:16
 */
 
 SET NAMES utf8mb4;
@@ -79,7 +79,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5081 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5096 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -5164,6 +5164,21 @@ INSERT INTO `hl_admin_operation_log` VALUES (5077, 2, 'admin/video', 'GET', '127
 INSERT INTO `hl_admin_operation_log` VALUES (5078, 2, 'admin/category', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:33', '2018-06-08 02:27:33');
 INSERT INTO `hl_admin_operation_log` VALUES (5079, 2, 'admin/vip-order', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:38', '2018-06-08 02:27:38');
 INSERT INTO `hl_admin_operation_log` VALUES (5080, 2, 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 02:27:39', '2018-06-08 02:27:39');
+INSERT INTO `hl_admin_operation_log` VALUES (5081, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-08 10:07:43', '2018-06-08 10:07:43');
+INSERT INTO `hl_admin_operation_log` VALUES (5082, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:07:47', '2018-06-08 10:07:47');
+INSERT INTO `hl_admin_operation_log` VALUES (5083, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-08 10:07:47', '2018-06-08 10:07:47');
+INSERT INTO `hl_admin_operation_log` VALUES (5084, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"342\"}', '2018-06-08 10:07:49', '2018-06-08 10:07:49');
+INSERT INTO `hl_admin_operation_log` VALUES (5085, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"342\"}', '2018-06-08 10:08:08', '2018-06-08 10:08:08');
+INSERT INTO `hl_admin_operation_log` VALUES (5086, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:08:38', '2018-06-08 10:08:38');
+INSERT INTO `hl_admin_operation_log` VALUES (5087, 1, 'admin/article-category/342/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:08:48', '2018-06-08 10:08:48');
+INSERT INTO `hl_admin_operation_log` VALUES (5088, 1, 'admin/article-category/342', 'PUT', '127.0.0.1', '{\"title\":\"\\u65b0\\u95fb\\u54a8\\u8be2\",\"title2\":null,\"en_title\":null,\"template\":\"news\",\"url\":\"article\",\"parent_id\":\"0\",\"cat_desc\":\"\\u4e86\\u89e3\\u7b03\\u7231\\u4ece\\u70b9\\u6ef4\\u670d\\u52a1\\u5f00\\u59cb\",\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"_token\":\"SBT82WkQVt3M5Lslv6jRY35yUhCXwwtYIvANhBAW\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-08 10:09:05', '2018-06-08 10:09:05');
+INSERT INTO `hl_admin_operation_log` VALUES (5089, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-08 10:09:06', '2018-06-08 10:09:06');
+INSERT INTO `hl_admin_operation_log` VALUES (5090, 1, 'admin/article-category/351/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:09:24', '2018-06-08 10:09:24');
+INSERT INTO `hl_admin_operation_log` VALUES (5091, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:09:44', '2018-06-08 10:09:44');
+INSERT INTO `hl_admin_operation_log` VALUES (5092, 1, 'admin/article-category/372/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:09:53', '2018-06-08 10:09:53');
+INSERT INTO `hl_admin_operation_log` VALUES (5093, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:09:55', '2018-06-08 10:09:55');
+INSERT INTO `hl_admin_operation_log` VALUES (5094, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"4\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:10:03', '2018-06-08 10:10:03');
+INSERT INTO `hl_admin_operation_log` VALUES (5095, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-06-08 10:10:06', '2018-06-08 10:10:06');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -5895,7 +5910,7 @@ INSERT INTO `hl_article_category` VALUES (338, 334, '笃爱 助你收获完美�
 INSERT INTO `hl_article_category` VALUES (339, 0, '亲子教育', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/26393178c0c6a3e675b2f184db0100dc.png', NULL, 'index2', 28, '2018-05-27 18:24:25', '2018-06-04 16:08:25', 'qgzd', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (340, 339, '你是否有过类似的情感困惑', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/48b0c012d74088caf37a2f2e91b0bcfe.jpg', NULL, 'index2-confusion', 29, '2018-05-27 18:25:00', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (341, 339, '情感问题', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/df149c304a225027303b400c99c4f281.png', NULL, 'index2-problem', 30, '2018-05-27 18:54:19', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (342, 0, '笃爱动态', NULL, NULL, '了解笃爱从点滴服务开始', NULL, NULL, NULL, 'uploads/article/20180527/8f980b08c9946f922f4dc688307b57f6.jpg', NULL, 'news', 36, '2018-05-27 19:56:09', '2018-06-04 16:08:25', 'article', NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (342, 0, '新闻咨询', NULL, NULL, '了解笃爱从点滴服务开始', NULL, NULL, NULL, 'uploads/article/20180527/8f980b08c9946f922f4dc688307b57f6.jpg', NULL, 'news', 36, '2018-05-27 19:56:09', '2018-06-08 10:09:05', 'article', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (343, 342, '实力', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'news', 37, '2018-05-27 19:56:50', '2018-06-04 16:08:25', 'article-strength', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (344, 342, '荣誉', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'news', 38, '2018-05-27 19:58:12', '2018-06-04 16:08:25', 'article-honor', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (345, 342, '关爱', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'news', 39, '2018-05-27 19:58:42', '2018-06-04 16:08:25', 'article-caring', NULL, NULL, NULL, NULL);
@@ -6188,8 +6203,8 @@ INSERT INTO `hl_nav` VALUES (57, 0, '学习课程', 14, '2018-05-20 20:10:06', '
 INSERT INTO `hl_nav` VALUES (58, 0, '品牌推广', 15, '2018-05-20 20:10:30', '2018-06-04 15:43:57', '/video', 0, 1, NULL);
 INSERT INTO `hl_nav` VALUES (59, 54, '俘获男神', 7, '2018-05-20 20:10:52', '2018-06-04 15:43:57', '/fhns', 0, 1, NULL);
 INSERT INTO `hl_nav` VALUES (60, 54, '婚姻修复', 3, '2018-05-20 20:11:19', '2018-06-04 15:43:57', '/hyxf', 0, 1, NULL);
-INSERT INTO `hl_nav` VALUES (97, 0, '导师团队', 6, '2018-05-20 20:11:19', '2018-05-26 02:10:47', '/zjzx', 0, 2, NULL);
-INSERT INTO `hl_nav` VALUES (93, 0, '挽回恋情', 2, '2018-05-20 20:11:19', '2018-05-26 02:08:45', '/whlq', 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (97, 0, '在线咨询', 6, '2018-05-20 20:11:19', '2018-05-26 02:10:47', '', 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (93, 0, '笃爱介绍', 2, '2018-05-20 20:11:19', '2018-05-26 02:08:45', '', 0, 2, NULL);
 INSERT INTO `hl_nav` VALUES (69, 54, '挽回恋情', 4, '2018-05-20 20:11:19', '2018-06-04 15:43:57', '/whlq', 0, 1, NULL);
 INSERT INTO `hl_nav` VALUES (70, 54, '亲子教育', 6, '2018-05-20 20:11:19', '2018-06-04 15:43:57', '/qgzd', 0, 1, NULL);
 INSERT INTO `hl_nav` VALUES (71, 54, '小三分离', 5, '2018-05-20 20:11:19', '2018-06-04 15:43:57', '/love3', 0, 1, NULL);
@@ -6208,10 +6223,7 @@ INSERT INTO `hl_nav` VALUES (87, 0, '亲子教育', 4, '2018-05-20 20:11:19', '2
 INSERT INTO `hl_nav` VALUES (88, 0, '俘获男神', 5, '2018-05-20 20:11:19', '2018-05-26 02:10:42', '/fhns', 0, 4, NULL);
 INSERT INTO `hl_nav` VALUES (89, 0, '导师团队', 6, '2018-05-20 20:11:19', '2018-05-26 02:10:47', '/zjzx', 0, 4, NULL);
 INSERT INTO `hl_nav` VALUES (98, 0, '笃爱资讯', 7, '2018-05-20 20:11:19', '2018-06-01 12:48:34', '/article', 0, 4, NULL);
-INSERT INTO `hl_nav` VALUES (96, 0, '俘获男神', 5, '2018-05-20 20:11:19', '2018-05-26 02:10:42', '/fhns', 0, 2, NULL);
-INSERT INTO `hl_nav` VALUES (95, 0, '亲子教育', 4, '2018-05-20 20:11:19', '2018-05-26 02:10:35', '/qgzd', 0, 2, NULL);
-INSERT INTO `hl_nav` VALUES (94, 0, '小三分离', 3, '2018-05-20 20:11:19', '2018-05-26 02:10:28', '/love3', 0, 2, NULL);
-INSERT INTO `hl_nav` VALUES (92, 0, '婚姻修复', 1, '2018-05-20 20:11:19', '2018-06-01 12:48:28', '/hyxf', 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (96, 0, '联系我们', 5, '2018-05-20 20:11:19', '2018-05-26 02:10:42', '', 0, 2, NULL);
 
 -- ----------------------------
 -- Table structure for hl_password_resets

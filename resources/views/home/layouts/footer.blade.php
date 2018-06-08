@@ -72,11 +72,11 @@
                     <div class="new_foot-nav">
                         @foreach(nav(2) as $k=>$v)
                             @if($k%2==0)
-                                <div>
+                                <!-- <div> -->
                             @endif
                             <a @if(!empty($v['url']))href="{{$v['url']}}"@endif @if($v['is_blank']) target="_blank" @endif title="{{$v['title'] or ''}}">{{$v['title'] or ''}}</a>
                             @if($k%2==1||$k+1==count(nav(2)))
-                                </div>
+                                <!-- </div> -->
                             @endif
                         @endforeach
                     </div>

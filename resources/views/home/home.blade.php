@@ -209,11 +209,11 @@
             </ul>
         </div>
         @foreach($index_7 as $k=>$v)
-        <div class="con05-zx con05-news1 @if($k==0) cur @endif">
+        <div class="con05-zx con05-news1 @if($k==0) cur @endif clearfix">
             @foreach($v['article'] as $b_k=>$b_v)
             <div class="adImg @if($b_k==0) adImg2 @endif">
                 <a href="{{URL($v['url'],$b_v['id'])}}">
-                    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"/>
+                    <!-- <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"/> -->
                     <p>
                         <span>{{$b_v['title']}}</span>
                     </p>
