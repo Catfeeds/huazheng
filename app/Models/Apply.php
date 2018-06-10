@@ -24,7 +24,16 @@ class Apply extends Model
         	$info->phone = $attributes['phone'];
         }
         if(isset($attributes['age'])){
-        	$info->age = $attributes['age'];
+            $info->age = $attributes['age'];
+        }
+        if(isset($attributes['sex'])){
+        	$info->sex = $attributes['sex'];
+        }
+        if(isset($attributes['income'])){
+            $info->income = $attributes['income'];
+        }
+        if(isset($attributes['fine_time'])){
+            $info->fine_time = $attributes['fine_time'];
         }
         if(isset($attributes['address'])){
         	$info->address = $attributes['address'];

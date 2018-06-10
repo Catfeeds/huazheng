@@ -74,13 +74,11 @@ class UserController extends Controller
     protected function grid()
     {
         return Admin::grid(User::class, function (Grid $grid) {
-
+            $grid->disableExport();
             $grid->model()->orderBy('created_at','DESC');
-
             $grid->id('ID')->sortable();
             $grid->column('name',"会员名称");
             $grid->column('phone',"手机号码");
-
             $grid->column('grade',"会员等级")->display(function($grade){
                 if($grade==2){
                     return '<span class="badge bg-red">'.trans('home.user.grade.'.$grade).'</span>';
@@ -88,10 +86,7 @@ class UserController extends Controller
                     return '<span class="badge bg-gray">'.trans('home.user.grade.'.$grade).'</span>';
                 }
             });
-            
-
             $grid->column('created_at',"注册日期")->sortable();
-
         });
     }
 

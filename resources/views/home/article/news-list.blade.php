@@ -15,7 +15,7 @@
                 {{date('Y-m-d',strtotime($v['add_time']))}}
             </span>
             <div class="btn">
-                <span class="yy btn-contact apply_box_btn" data-channel="新花镇_花镇项目">马上预约</span>
+                <span class="yy btn-contact apply_box_btn" data-channel="新笃爱_笃爱项目">马上预约</span>
                 <span class="zx kefu_btn">在线咨询</span>
             </div>
         </div>

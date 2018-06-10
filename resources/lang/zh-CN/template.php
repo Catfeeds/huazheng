@@ -49,6 +49,7 @@ return [
 		'master-group' => '导师团',
 		'guimi-group' => '闺蜜团',
 		'system-article' => '系统告示',
+		'introduce' => '笃爱介绍',
 
 		// 'course'=>"课程",
 		// 'news'=>"新闻",
@@ -104,6 +105,7 @@ return [
 		'love3-protection' => '0',
 		'love3-why' => '98',
 		'system-article' => '0',
+		'introduce' => '0',
 		// 'course'=>"366",
 		// 'news'=>"869",
 		// 'works'=>"1194",
@@ -158,6 +160,7 @@ return [
 		'love3-protection' => '0',
 		'love3-why' => '98',
 		'system-article' => '0',
+		'introduce' => '0',
 		// 'course'=>"352",
 		// 'news'=>"440",
 		// 'works'=>"812",

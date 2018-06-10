@@ -27,6 +27,7 @@ Route::post('password-reset','UserController@password_reset_save');//密码密�
 
 Route::get('video-list','VideoController@video_list');//视频课程
 Route::get('video-info/{id}','VideoController@video_info');//视频课程详情
+Route::get('contact-us','ArticleController@contact_us');//联系我们
 
 Route::group(['middleware'=>'auth'], function(){
 	//需要登陆的路由

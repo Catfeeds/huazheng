@@ -45,7 +45,7 @@
                                     <input class="btn nomargin loginin-btn" type="button" value="登 录">
                                 </div>
                                 <div class="zc">
-                                    <a href="{{URL('register')}}">还没花镇账号？立即注册 ></a>
+                                    <a href="{{URL('register')}}">还没笃爱账号？立即注册 ></a>
                                 </div>
                             </div>
                         </form>

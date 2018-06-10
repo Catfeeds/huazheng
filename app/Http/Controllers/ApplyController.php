@@ -28,21 +28,22 @@ class ApplyController extends Controller
         $this->validate($request,[
             'name'    => 'required',
             'phone'   => 'required',
-            'code'    => 'sometimes|required|captcha',
+            'sex'   => 'required',
+            'captcha'    => 'sometimes|required|captcha',
         ],[],[
             'name'=>"姓名",
-            'phone'=>"联系方式",
-            'address'=>"地址",
-            'code'=>"验证码",
+            'phone'=>"手机号码",
+            'captcha'=>"验证码",
+            'sex'=>"性别",
         ]);
 
         $info = Apply::ApplySave([
             'name'=>$request['name'],
             'phone'=>$request['phone'],
-            'address'=>$request['address'],
+            'sex'=>$request['sex'],
             'age'=>$request['age'],
-            'years'=>$request['years'],
-            'cate_id'=>$request['cate_id'],
+            'income'=>$request['income'],
+            'fine_time'=>$request['fine_time'],
         ]);
 
         // $mail = Mail::send("emails.emails",['info'=>$info],function ($message) use ($info) {

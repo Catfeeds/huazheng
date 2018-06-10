@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="input-group yhxy" >
                                     <input class="reset" type="checkbox" id="register-checkbox" value="1" name="xieyi" @if(old('xieyi')) checked='checked' @endif>
-                                    <label for="register-checkbox" style="display:inline-block;">我已接受并阅读<span onclick="window.open('/huazhen_agreement')">《花镇用户协议》</span></label>
+                                    <label for="register-checkbox" style="display:inline-block;">我已接受并阅读<span onclick="window.open('{{URL('system-article',[1250])}}')">《笃爱用户协议》</span></label>
                                     @if ($errors->has('xieyi'))
                                         <label for="register-code" class="Validform_checktip Validform_wrong" style="position: absolute;bottom: -20px;left: 0;width: 100%;text-align: center;">
                                             {{ $errors->first('xieyi') }}

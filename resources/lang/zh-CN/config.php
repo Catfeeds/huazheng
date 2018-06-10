@@ -24,5 +24,10 @@ return [
 		'app_ewm_text'=>"App二维码说明",
 		'kefu_url'=>"客服链接",
 		'vip_price'=>"Vip价格",
+		'contact_us'=>"联系我们内容",
+		'contact_us1'=>"公交路线",
+		'contact_us2'=>"地铁路线",
+		'contact_us3'=>"火车路线",
+		'contact_us4'=>"飞机路线",
 	],
 ];

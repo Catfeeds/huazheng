@@ -81,13 +81,13 @@ class ArticleCategoryController extends Controller
         return ArticleCategory::tree(function ($tree) {
             $tree->branch(function ($branch) {
                 // return "{$branch['id']} - {$branch['title']} ";
-                if($branch['template']=='about-detail-img'){
+                if($branch['template']=='introduce'){
                     // <a href="/admin/article?cate_id={$branch['id']}"><i class="fa fa-book"></i></a>
                     // <a href="/admin/more-image?cate_id=2&more_id={$branch['id']}"><i class="fa fa-image"></i></a>
                     return <<<EOT
                     {$branch['id']} - {$branch['title']} 
                     <span class="pull-right dd-nodrag">
-                    
+                    <a href="/admin/more-image?cate_id=2&more_id={$branch['id']}"><i class="fa fa-image"></i></a>
                     <a href="/admin/article-category/{$branch['id']}/edit"><i class="fa fa-edit"></i></a>
                     <a href="javascript:void(0);" data-id="{$branch['id']}" class="tree_branch_delete"><i class="fa fa-trash"></i></a>
                     </span>

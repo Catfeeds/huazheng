@@ -3,7 +3,7 @@
     <div class="case_zx">
         <a class="bendi" @if(!empty($v['url'])) href="{{$v['url']}}" @endif target="_blank"><img src="{{asset($v['image'])}}" alt="{{asset($v['alt'])}}"> </a>
         <a href="javascript:;" class="kefu_btn zx" target="_blank">立即咨询</a> 
-        <a href="javascript:;" class="apply_box_btn zx" data-channel="新花镇_文章页" target="_blank">免费申请</a> 
+        <a href="javascript:;" class="apply_box_btn zx" data-channel="新笃爱_文章页" target="_blank">免费申请</a> 
     </div>
     @endforeach
     <div class="tjzj">

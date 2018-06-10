@@ -154,6 +154,19 @@ class ArticleController extends Controller
                 }
                 $assign['cate_list'] = $cate_list;
                 break;
+            case 'introduce'://介绍
+                $cate_list = ArticleCategory::with(['MoreImageMany'])->orderBy('order',"ASC")->where('parent_id',$cate_info['id'])->get();//获取一级分类
+                $assign['cate_list'] = $cate_list;
+                $daoshi = Article::ArticleList([
+                    'cate_id'=>'353',
+                    'order'=>'is_top',
+                    'sort'=>'DESC',
+                    'take'=>8,
+                ]);
+                $daoshi_cate = ArticleCategory::find('353');
+                $assign['daoshi'] = $daoshi;
+                $assign['daoshi_cate'] = $daoshi_cate;
+                break;
             // case 'course'://全部课程
             //     foreach($sub_category as $k=>$v){
             //         $v['article'] = Article::ArticleList([
@@ -356,5 +369,19 @@ class ArticleController extends Controller
                 break;
         }
         return view('home.article.'.$cate_info['template']."-info",$assign);
+    }
+
+    public function contact_us(Request $request){
+        $location = [
+            0=>[
+                'url'=>'',
+                'title'=>"联系我们",
+                // 'en_title'=>$cate_info['en_title'],
+            ],
+        ];
+        $assign = [
+            'location' => $location,
+        ];
+        return view('home.article.contact-us',$assign);
     }
 }
