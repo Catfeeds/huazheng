@@ -10,11 +10,6 @@
         @include('home.layouts.location')
         <div class="article_con_top">
             <h2>{{$cate_info['title']}}</h2>
-            <div class="article_con_nav">
-                @foreach($sub_category as $v)
-                <span><a href="{{URL($v['url'])}}" target="_blank">{{$v['title']}}</a></span>
-                @endforeach
-            </div>
         </div>
         <div class="article_con_in clearfix" id="pageDiv">
             @include('home.article.news-list')

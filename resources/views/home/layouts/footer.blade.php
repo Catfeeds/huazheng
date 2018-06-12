@@ -209,6 +209,9 @@
             $(".side_qgzx").click(function(){
                 $(".gw-yxd").show();
             })
+            $(".apply_box_btn").click(function(){
+                $(".gw-yxd").show();
+            })
             $(".gw-yxd .close").click(function(){
                 $(".gw-yxd").hide();
             })

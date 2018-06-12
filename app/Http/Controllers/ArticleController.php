@@ -138,11 +138,14 @@ class ArticleController extends Controller
                 // html
                 break;
             case 'video'://视频
-                $article_list = Article::ArticleList([
-                    'cate_id_in'=>sub_cate_in($cate_info['id']),
-                    'paginate'=>0,
-                ]);
-                $assign['article_list'] = $article_list;
+                $cate_list = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['id'])->get();//获取一级分类
+                foreach($cate_list as $k=>$v){
+                    $v['article'] = Article::ArticleList([
+                        'cate_id'=>$v['id'],
+                        'paginate'=>0,
+                    ]);
+                }
+                $assign['cate_list'] = $cate_list;
                 break;
             case 'master'://导师中心
                 $cate_list = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['id'])->get();//获取一级分类
