@@ -13,7 +13,7 @@
             <div class="contact_left">
                 <p class="title">联系我们</p>
                 {!!nl2br(ConfigGet('contact_us'))!!}
-                <a href="###" class="kefu_btn"><img src="{{asset('resources/home/images/ico/zx.gif')}}" alt="">在线咨询</a>
+                <a class="kefu_btn"><img src="{{asset('resources/home/images/ico/zx.gif')}}" alt="">在线咨询</a>
             </div>
             <div class="contact_right">
                 <div class="way">

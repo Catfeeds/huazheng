@@ -63,15 +63,15 @@
                     <span>{!!ConfigGet('phone')!!}</span>
                 </div>
                 <div class="new_top-right">
-                    <a href="#" class="wb">
+                    <a  class="wb">
                         关注微博
                     </a>
-                    <a href="#" class="wx">
+                    <a  class="wx">
                         关注微信
                     </a>
                     <p><img src="{{asset(ConfigGet('ewm'))}}" alt="{{ConfigGet('ewm_text')}}"></p>
-                    <!-- <a href="#" target="_blank">登录爱情管家</a>
-                    <a href="#" target="_blank">登录黄埔计划</a> -->
+                    <!-- <a  target="_blank">登录爱情管家</a>
+                    <a  target="_blank">登录黄埔计划</a> -->
                 </div>
             </div>
         </div>
@@ -80,8 +80,8 @@
                 <div class="new_header-in">
                     <h1><a href="/" rel="nofollow" ><img src="{{asset(ConfigGet('logo'))}}" alt="{{ConfigGet('site_name')}}" title="{{ConfigGet('site_name')}}"></a></h1>
                     <div class="new_logo-right">
-                        <!-- <a href="#" class="header-wxyz">验证官方微信号</a> -->
-                        <a href="#" class="kefu_btn header-zx">在线咨询</a>
+                        <!-- <a  class="header-wxyz">验证官方微信号</a> -->
+                        <a  class="kefu_btn header-zx">在线咨询</a>
                         <div class="new_login-in">
                             @if(Auth::check())
                             <div class="new_hy_show">

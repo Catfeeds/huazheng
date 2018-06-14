@@ -33,13 +33,13 @@
                 <h3>导师介绍</h3>
                 <ul>
                     <li>
-                        <a href="javascript:;" target="_self">导师视频</a>
+                        <a  target="_self">导师视频</a>
                     </li>
                     <li>
-                        <a href="javascript:;" target="_self">导师荣誉</a>
+                        <a  target="_self">导师荣誉</a>
                     </li>
                     <li>
-                        <a href="javascript:;" class="kefu_btn" target="_self">立即咨询</a>
+                        <a  class="kefu_btn" target="_self">立即咨询</a>
                     </li>
                 </ul>
             </div>

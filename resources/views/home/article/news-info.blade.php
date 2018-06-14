@@ -23,12 +23,12 @@
                                 <span>分享至：</span>
                                 <div class="sher">
                                     <div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1461393392404">
-                                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-                                        <a href="#" class="bds_more" data-cmd="more"></a>
+                                        <a  class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                        <a  class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                        <a  class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                        <a  class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                        <a  class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                                        <a  class="bds_more" data-cmd="more"></a>
                                     </div>
                                     <script>
                                         window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"":{"viewList":["qzone","tsina","tqq","renren","weixin","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
@@ -45,8 +45,8 @@
                 @foreach(ads_image(22,1) as $v)
                 <div class="ad" style="background-image: url({{asset($v['image'])}});">
                     <div class="ad_zx">
-                        <a href="javascript:;" class="kefu_btn ad_zx1" target="_self"><i></i>在线咨询</a>
-                        <a href="javascript:;" class="apply_box_btn ad_zx2" target="_self"><i></i>网上预约</a>
+                        <a  class="kefu_btn ad_zx1" target="_self"><i></i>在线咨询</a>
+                        <a  class="apply_box_btn ad_zx2" target="_self"><i></i>网上预约</a>
                     </div>
                 </div>
                 @endforeach

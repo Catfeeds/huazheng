@@ -25,7 +25,7 @@
                                         <p class="ellipsis">{{$b_v['title2']}}</p>
                                         <span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
                                         <a href="{{URL($v['url'],$b_v['id'])}}" class="know" target="_blank">了解详情</a>
-                                        <a href="javascript:;" class="kefu_btn zx" target="_blank">咨询导师</a>
+                                        <a  class="kefu_btn zx" target="_blank">咨询导师</a>
                                     </dd>
                                 </dl>
                             @endforeach
@@ -43,7 +43,7 @@
                                             <div class="line"></div>
                                             <span class="ellipsis2">{!!nl2br($b_v['desc'])!!}</span>
                                          <a href="{{URL($v['url'],$b_v['id'])}}" class="know" target="_blank">了解详情</a>
-                                        <a href="javascript:;" class="kefu_btn zx" target="_blank">咨询导师</a>
+                                        <a  class="kefu_btn zx" target="_blank">咨询导师</a>
                                         </div>
                                     </li>
                                 @endforeach

@@ -85,7 +85,7 @@
                         {{ConfigGet('copyright')}} {{ConfigGet('beian')}}
                     </div>
                 </li>
-                <li class="last">
+                <!-- <li class="last">
                     <div class="foot-ewm">
                         <img style="width:102px" src="{{asset(ConfigGet('ewm'))}}" alt="{{ConfigGet('ewm_text')}}"/>
                         <p>{{ConfigGet('ewm_text')}}</p>
@@ -94,7 +94,7 @@
                         <img style="width: 102px" src="{{asset(ConfigGet('app_ewm'))}}" alt="{{ConfigGet('app_ewm_text')}}"/>
                         <p>{{ConfigGet('app_ewm_text')}}</p>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -102,15 +102,15 @@
     <div class="side_fixed">
         <ul>
             <li class="side_qgzx">
-                <a href="#" target="_self">情感<br>咨询</a>
+                <a  target="_self">情感<br>咨询</a>
                 <span></span>
             </li>
             <li class="kefu_btn">
-                <a href="#" target="_self">售前<br>客服</a>
+                <a  target="_self">售前<br>客服</a>
                 <span></span>
             </li>
             <li class="side_ewm">
-                <a href="#" target="_self">{{ConfigGet('app_ewm_text')}}</a>
+                <a  target="_self">{{ConfigGet('app_ewm_text')}}</a>
                 <span></span>
                 <div class="hz_ewm">
                     <div class="ewm_in">
@@ -200,12 +200,14 @@
     </div>
     <script type="text/javascript">
         $(function(){
+            @if(!empty(ConfigGet('kefu_url')))
             $('body').on('click', '.kefu_btn', function (e) {
                 // var option = "height=100, width=400, toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no"
                 window.open("{{ConfigGet('kefu_url')}}", "newwindow") 
                 // onKST();
                 return false;
             });
+            @endif
             $(".side_qgzx").click(function(){
                 $(".gw-yxd").show();
             })

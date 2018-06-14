@@ -32,7 +32,7 @@
                     @else
                     <a href="{{URL('video-pay',$info['video_id'])}}">立刻购买</a>
                     @endif
-                    <a href="javascript:void(0)" class="kefu_btn">我要咨询</a>
+                    <a  class="kefu_btn">我要咨询</a>
                 </p>
                 @if (session('error_message'))
                     <div class="error_message">
@@ -44,12 +44,12 @@
             <div class="fx">
                 <div class="bdsharebuttonbox">
                     <span class="fon14 fxfont">分享</span>
-                    <a href="#" class="bds_more" data-cmd="more"></a>
-                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a  class="bds_more" data-cmd="more"></a>
+                    <a  class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a  class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a  class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                    <a  class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                    <a  class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
                 </div>
             </div>
         </div>

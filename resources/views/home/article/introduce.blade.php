@@ -21,8 +21,8 @@
 		                        <div class="swiper-slide"><img src="{{asset($v2['image'])}}" alt="{{$v2['alt']}}"></div>
        							@endforeach
 		                    </div>
-		                    <a class="arrow-left" href="#"></a>
-		                    <a class="arrow-right" href="#"></a>
+		                    <a class="arrow-left" ></a>
+		                    <a class="arrow-right" ></a>
 		                </div>
 		            </div>
 		        @else

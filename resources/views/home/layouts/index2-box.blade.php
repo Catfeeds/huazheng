@@ -71,7 +71,7 @@
 		<div class="trapMan-harvest">
 			<div class="trapMan-harvestL">
 				<img src="{{asset($index2_box['img'])}}" alt="{{$index2_box['alt']}}">
-				<a href="#" class="kefu_btn"></a>
+				<a  class="kefu_btn"></a>
 			</div>
 			<div class="trapMan-harvestR">
     			@foreach($index2_box['article'] as $b_k=>$b_v)
@@ -97,7 +97,7 @@
 					<span>{{$b_v}}</span>
 				</div>
     			@endforeach
-				<a href="#" class="ljzx kefu_btn">立即咨询</a>
+				<a  class="ljzx kefu_btn">立即咨询</a>
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,7 @@
 						<li><i></i>{{$b_v2}}</li>
     					@endforeach
 					</ul>
-					<a href="#" class="kefu_btn">免费咨询</a>
+					<a  class="kefu_btn">免费咨询</a>
 				</li>
     			@endforeach
 			</ul>
@@ -180,7 +180,7 @@
 					<span class="point"></span>
 					<div class="daoshi-file">
 						<div class="love">
-							<a href="#" class="kefu_btn">
+							<a  class="kefu_btn">
 								<img src="{{asset('resources/home/images/ico/ico10.png')}}" alt="" class="love-img">
 							</a>
 							<p>我要与导师面对面</p>
@@ -219,7 +219,7 @@
 					<div class="trapMan-shareLD @if($b_k%2==1) trapMan-shareD2 @endif">
 						<p class="trapMan-shareLP1">{{$b_v['title']}}</p>
 						<p class="trapMan-shareLP2">{!!nl2br($b_v['desc'])!!}</p>
-						<p class="trapMan-shareLP3"><a href="#" class="kefu_btn">了解详情</a></p>
+						<p class="trapMan-shareLP3"><a  class="kefu_btn">了解详情</a></p>
 					</div>
 				</div>
 	    		@endforeach
@@ -241,7 +241,7 @@
 					<div class="trapMan-classD">
 						<h4>{{$b_v['title']}}</h4>
 						<p>{!!nl2br($b_v['desc'])!!}</p>
-						<a href="#" class="kefu_btn" target='_self'>【了解详情】</a>
+						<a  class="kefu_btn" target='_self'>【了解详情】</a>
 					</div>
 				</li>
 				@endif
@@ -252,7 +252,7 @@
 					@foreach($index2_box['article'] as $b_k=>$b_v)
 		    		@if($b_k > 2 && $b_k < 9)
 					<div class="trapMan-class2LD" v-for="case in cate_article_list" >
-						<a href="#" class="kefu_btn" target='_self'>
+						<a  class="kefu_btn" target='_self'>
 							<span>0{{$b_k-2}}</span>
 							{{$b_v['title']}}
 						</a>
@@ -264,7 +264,7 @@
 					@foreach($index2_box['article'] as $b_k=>$b_v)
 		    		@if($b_k > 8 && $b_k < 12)
 					<div class="trapMan-class2RD">
-						<a href="#" target='_self'>
+						<a  target='_self'>
 							<div class="trapMan-class2RTit">
 								<img src="{{asset('resources/home/images/ico/ico11.png')}}" alt="">
 								<span>{{$b_v['title']}}</span>
@@ -283,7 +283,7 @@
 			</div>
 			<div class="trapMan-btn">
 				<div class="trapMan-class2LA kefu_btn">
-					<a href="#" target='_self' >点击查看更多信息</a>
+					<a  target='_self' >点击查看更多信息</a>
 				</div>
 				<div class="trapMan-class2RA kefu_btn">
 					和我的情况很类似，立刻咨询导师获取帮助
@@ -520,7 +520,7 @@
 					@endif
 					@endforeach
 		        </ul>
-		        <a href="#" class="zx love-btn">了解自己适合哪种提升方案</a>
+		        <a  class="zx love-btn">了解自己适合哪种提升方案</a>
 		    </div>
 		</div>
 	</div>
@@ -548,8 +548,8 @@
 		                	@endforeach
 		                </div>
 		                <!-- Add Pagination -->
-		                <a class="arrow-left" href="#"></a> 
-		                <a class="arrow-right" href="#"></a>
+		                <a class="arrow-left" ></a> 
+		                <a class="arrow-right" ></a>
 		            </div>
 		        </div>
 		    </div>
@@ -589,7 +589,7 @@
 	<div class="love3-content">
 		<div class="banner2" style="background-image:url({{asset($index2_box['img'])}});height: 172px;">
 		    <!-- <div class="con_in">
-		        <a href="#" class="apply_box_btn">立即获取</a>
+		        <a  class="apply_box_btn">立即获取</a>
 		    </div> -->
 		</div>
 	</div>
@@ -600,7 +600,7 @@
 		        <h2>{{$index2_box['title']}}</h2>
 		        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
 		        <div class="cm">{!!$index2_box['content']!!}</div>
-		        <a href="#" class="love-btn">了解如何加入幸福闺蜜团</a>
+		        <a  class="love-btn">了解如何加入幸福闺蜜团</a>
 		    </div>
 		</div>
 	</div>

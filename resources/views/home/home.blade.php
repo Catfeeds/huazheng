@@ -132,8 +132,8 @@
             </div>
             <div class="con04-bodyR">
                 <div class="con04-tab">
-                    <a class="con04-tabA1 on" href="javascript:;" target="_self">情感督导师</a>
-                    <a class="con04-tabA2" href="javascript:;" target="_self">情感咨询师</a>
+                    <a class="con04-tabA1 on"  target="_self">情感督导师</a>
+                    <a class="con04-tabA2"  target="_self">情感咨询师</a>
                 </div>
                 <div class="con04-con cur">
                     <!-- Swiper -->
@@ -156,8 +156,8 @@
                         <div class="swiper-button-next"></div>
                     </div>
                     <div class="con04-bottom">
-                        <a class="zx kefu_btn" href="javascript:;" target="_self">在线咨询</a>
-                        <a class="yy footer-yy" href="javascript:;" target="_self">预约咨询</a>
+                        <a class="zx kefu_btn"  target="_self">在线咨询</a>
+                        <a class="yy footer-yy"  target="_self">预约咨询</a>
                     </div>
                 </div>
                 <div class="con04-con">
@@ -181,8 +181,8 @@
                         <div class="swiper-button-next"></div>
                     </div>
                     <div class="con04-bottom">
-                        <a class="zx kefu_btn" href="javascript:;" target="_self">在线咨询</a>
-                        <a class="yy footer-yy" href="javascript:;" target="_self">预约咨询</a>
+                        <a class="zx kefu_btn"  target="_self">在线咨询</a>
+                        <a class="yy footer-yy"  target="_self">预约咨询</a>
                     </div>
                 </div>
             </div>
