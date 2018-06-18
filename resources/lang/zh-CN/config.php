@@ -12,7 +12,7 @@ return [
 		'address'=>"地址",
 		'logo'=>"logo",
 		'logo2'=>"横logo",
-		'logo3'=>"手机导航logo",
+		'logo3'=>"手机logo",
 		'footer_logo'=>"底部logo",
 		'ewm'=>"二维码",
 		'wem_name'=>"二维码说明",

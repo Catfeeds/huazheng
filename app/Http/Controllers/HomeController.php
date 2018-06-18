@@ -25,71 +25,6 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        // sitemap();
-        // $index_1 = ArticleCategory::orderBy('order',"ASC")->where('parent_id',6)->get();//获取一级分类
-        // foreach($index_1 as $k=>$v){
-        //     $v['article'] = Article::ArticleList([
-        //         'cate_id'=>$v['id'],
-        //         'order'=>'is_top',
-        //         'sort'=>'DESC',
-        //         'paginate'=>7,
-        //     ]);
-        // }
-        // $index_1_cate = ArticleCategory::find(6);
-
-        // $index_2 = ArticleCategory::orderBy('order',"ASC")->where('parent_id',8)->get();//获取一级分类
-        // foreach($index_2 as $k=>$v){
-        //     $v['article'] = Article::ArticleList([
-        //         'cate_id'=>$v['id'],
-        //         'order'=>'is_top',
-        //         'sort'=>'DESC',
-        //         'paginate'=>9,
-        //     ]);
-        // }
-        // $index_2_cate = ArticleCategory::find(6);
-
-        // $index_3 = Article::ArticleList([
-        //     'cate_id'=>63,
-        //     'order'=>'is_top',
-        //     'sort'=>'DESC',
-        //     'take'=>18,
-        // ]);
-        // $index_3_cate = ArticleCategory::find(63);
-
-        // $index_4 = Article::ArticleList([
-        //     'cate_id'=>22,
-        //     'order'=>'is_top',
-        //     'sort'=>'DESC',
-        //     'take'=>9,
-        // ]);
-        // $index_4_cate = ArticleCategory::find(22);
-
-
-        // $index_5_cate = ArticleCategory::find(64);
-        // $index_6_cate = ArticleCategory::find(65);
-
-        // $index_7 = Article::ArticleList([
-        //     'cate_id'=>7,
-        //     'order'=>'is_top',
-        //     'sort'=>'DESC',
-        //     'take'=>9,
-        // ]);
-        // $index_7_cate = ArticleCategory::find(7);
-
-        // $index_8 = Article::ArticleList([
-        //     'cate_id'=>27,
-        //     'order'=>'is_top',
-        //     'sort'=>'DESC',
-        //     'take'=>9,
-        // ]);
-        // $index_8_cate = ArticleCategory::find(27);
-        // $index_9 = Article::ArticleList([
-        //     'cate_id'=>42,
-        //     'order'=>'is_top',
-        //     'sort'=>'DESC',
-        //     'take'=>9,
-        // ]);
-        // $index_9_cate = ArticleCategory::find(42);
         $index_1 = Article::ArticleList([
             'cate_id'=>356,
             'order'=>'is_top',
@@ -130,16 +65,6 @@ class HomeController extends Controller
             'sort'=>'DESC',
             'take'=>8,
         ]);
-
-        // $index_7 = ArticleCategory::orderBy('order',"ASC")->where('parent_id',342)->get();//获取一级分类
-        // foreach($index_7 as $k=>$v){
-        //     $v['article'] = Article::ArticleList([
-        //         'cate_id'=>$v['id'],
-        //         'order'=>'is_top',
-        //         'sort'=>'DESC',
-        //         'paginate'=>8,
-        //     ]);
-        // }
         $index_7 = Article::ArticleList([
             'cate_id_in'=>sub_cate_in(342),
             'order'=>'is_top',
@@ -167,6 +92,10 @@ class HomeController extends Controller
             
             'nav_index'=>true,
         ];
-        return view('home.home',$assign);
+        if(isMobile()){
+            return view('mobile.home',$assign);
+        }else{
+            return view('home.home',$assign);
+        }
     }
 }
