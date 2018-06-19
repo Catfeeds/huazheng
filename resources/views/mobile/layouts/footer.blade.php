@@ -105,7 +105,10 @@
             $(".erweima").click(function(){
                 $('.erma').fadeIn()
             })
-
+            $(".cuo").click(function(){
+                $('.erma').fadeOut()
+            });
+            
             $(".toTop").click(function(){
                 $('html,body').animate({
                     scrollTop:0

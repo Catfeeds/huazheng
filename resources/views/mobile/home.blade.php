@@ -185,9 +185,7 @@
             });
             
             
-            $(".cuo").click(function(){
-                $('.erma').fadeOut()
-            });
+            
             $(".videoI").click(function(){
                 $(this).hide().siblings('.videov').show();
             })

@@ -223,7 +223,11 @@ class ArticleController extends Controller
             //     $assign['article_list'] = $article_list;
             //     break;
         }
-        return view('home.article.'.$cate_info['template'],$assign);
+        if(isMobile()){
+            return view('mobile.article.'.$cate_info['template'],$assign);
+        }else{
+            return view('home.article.'.$cate_info['template'],$assign);
+        }
     }
     /**
      * 文章详情
