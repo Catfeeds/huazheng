@@ -158,111 +158,157 @@
 					<span class="minTit">{{$index2_box['en_title']}}</span>
 		      	</p>
 		   	</div>
-			<div class="trapMan-two">
-				<ul>
+			<div class="trapMan-two qg_fw">
+				<ul class="clearfix swiper-wrapper">
 	    			@foreach($index2_box['article'] as $b_k=>$b_v)
-					<li class="trapMan-twoItem">
-						<p class="trapMan-twoB1" title="{{$b_v['title']}}" style="@if($b_k%4==1) background:#ff7396; @elseif($b_k%4==2) background:#50b2e1; @endif">{{$b_v['title']}}</p>
-						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-						<ul class="trapMan-twoB2">
-	    					@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
-							<li><i></i>{{$b_v2}}</li>
-	    					@endforeach
-						</ul>
-						<a  class="kefu_btn">免费咨询</a>
+					<li class="trapMan-twoItem swiper-slide">
+						<div class="bx">
+							<p class="trapMan-twoB1" title="{{$b_v['title']}}" style="@if($b_k%4==1) background:#ff7396; @elseif($b_k%4==2) background:#50b2e1; @endif">{{$b_v['title']}}</p>
+							<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+							<ul class="trapMan-twoB2">
+		    					@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
+								<li><i></i>{{$b_v2}}</li>
+		    					@endforeach
+							</ul>
+							<a  class="kefu_btn">免费咨询</a>
+						</div>
 					</li>
 	    			@endforeach
 				</ul>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var qgSwiper = new Swiper('.qg_fw', {
+					autoplay : 3000,
+					initialSlide :1,
+					effect : 'coverflow',
+					slidesPerView: 1.3,
+					centeredSlides: true,
+					coverflow: {
+			            rotate: 0,
+			            stretch: 80,
+			            depth:85,
+			            modifier: 2,
+			            slideShadows : false,
+		       		}
+				})
+			})
+		</script>
 	@elseif($index2_box['template']=='index2-five-advantages')
-		<div class="trapMan-home">
-			<div class="trapMan-Tit2 ">
-				<p class="cl">{{$index2_box['title']}}</p>
-				<p class="">{!!nl2br($index2_box['cat_desc'])!!}</p>
-			</div>
-			<div class="trapMan-lunbo">
-	    		@foreach($index2_box['article'] as $b_k=>$b_v)
-	    		@if($b_k < 5)
-				<div class="lunbo-item @if($b_k==0) cur @endif">
-					<div class="trapMan-lunboL">
-						<div class="trapMan-lunboLD1">{{$b_v['title']}}</div>
-						<div class="trapMan-lunboLD2"><span>{{$b_v['title2']}}</span></div>
-						<div class="trapMan-lunboLD3">{!!nl2br($b_v['desc'])!!}</div>
-					</div>
-					<div class="trapMan-lunboR">
-						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-					</div>
-				</div>
-				@endif
-	    		@endforeach
-				<div class="lubo">
-					<img src="{{asset('resources/home/images/ico/advantages0.png')}}" alt="" usemap="#Map" id="Image1">
-					<map name="Map">
-						<area shape="poly" coords="16,165,80,60,206,12,207,133,162,150,136,195" >
-						<area shape="poly" coords="211,13,335,57,403,163,287,190,259,148,210,131" >
-						<area shape="poly" coords="286,194,403,167,399，286，319,374,255,275,285,235" >
-						<area shape="poly" coords="250,279,314,379,214,408,107,378,168,274，210,290" >
-						<area shape="poly" coords="98,372,164,274,140,234,135,196,16,170,21,273" >
-					</map>
+		<div class="trapMan-home ">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
+			<div class="trapMan-lunbo ">
+				<div class="ys_swiper">
+					<div class="swiper-wrapper">
+			    		@foreach($index2_box['article'] as $b_k=>$b_v)
+			    		@if($b_k < 5)
+			    		<div class="swiper-slide">
+			    			<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}" class="ys_top">
+			    			<div class="ys_con hz-cf">
+			    				<div class="hz-fl">
+			    					<div class="ys_icon"><span>{{$b_k+1}}</span><br>优势</div>
+			    					<p>{{$b_v['title']}}</p>
+			    					<div class="ys_des">{{$b_v['title2']}}</div>
+			    				</div>
+			    				<div class="ys_text">{!!nl2br($b_v['desc'])!!}</div>
+			    			</div>
+			    		</div>
+						@endif
+			    		@endforeach
+		    		</div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var ysSwiper = new Swiper('.ys_swiper', {
+					autoplay : 3000,
+					pagination : '.swiper-pagination',
+					paginationClickable :true,
+				})
+			})
+		</script>
 	@elseif($index2_box['template']=='index2-emotional-master')
 		<div class="trapMan-home">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
 			<div class="trapMan-Tit2 trapMan-Tit3">
-				<p class="cl">{{$index2_box['title']}}</p>
-				<p class="">{!!nl2br($index2_box['cat_desc'])!!}</p>
-				<div class="section">
-					<ul class="daoshi_list">
-		    			@foreach($index2_box['article'] as $b_k=>$b_v)
-		    			@if($b_k < 3)
-						<li class="daoshi_name la b{{$b_k}}">
-							<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}" class="pic">
-							<h4 class="t1">{{$b_v['title']}}</h4>
-							<h4 class="t2">{{$b_v['title2']}}</h4>
-						</li>
-						@endif
-		    			@endforeach
-					</ul>
-					<div class="daoshi_bg2">
-		    		@foreach($index2_box['article'] as $b_k=>$b_v)
-		    		@if($b_k < 3)
-					<div class="daoshi_bglist daoshi_bglist{{$b_k}}">
-						<span class="point"></span>
-						<div class="daoshi-file">
-							<div class="love">
-								<a  class="kefu_btn">
-									<img src="{{asset('resources/home/images/ico/ico10.png')}}" alt="" class="love-img">
-								</a>
-								<p>我要与导师面对面</p>
-							</div>
-							<div class="file-name">导师档案</div>
-							<div class="file-detail">
-								{!!nl2br($b_v['desc'])!!}
+				<ul class="clearfix zsds_btn">
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					@if($b_k < 3)
+				    <li class="divbox @if($b_k==0) divbox @endif">
+				        <p class="@if($b_k==0) zsds_btn_sel @endif">
+				            <i style="background-image: url({{asset($b_v['img'])}});"></i>{{$b_v['title']}}
+				        </p>
+				    </li>
+    				@endif
+        			@endforeach
+			  	</ul>
+				<div class="zsds_com hid_bbor">
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					@if($b_k < 3)
+					<div class="la" @if($b_k>0) style="display: none;" @endif>
+						<div class="clearfix hz-cf">
+							<img src="{{asset($b_v['img2'])}}" alt="{{$b_v['alt2']}}" class="zsds_img">
+							<div class="zsds_div">
+								<p class="zsName">{{$b_v['title']}}</p>
+								<p class="zsRy">{{$b_v['title2']}}</p>
+								<p class="ry"><span>荣誉</span></p>
+								<div class="zsUl">
+									{!!nl2br($b_v['desc'])!!}
+								</div>
 							</div>
 						</div>
-						<div class="daoshi-file daoshi-file-2">
-
-							<div class="file-name">荣耀地位</div>
-							<div class="file-detail">
-								{!!nl2br($b_v['desc2'])!!}
-							</div>
+						<div class="sc">
+							{!!nl2br($b_v['desc2'])!!}
 						</div>
-						<img src="{{asset($b_v['img2'])}}" alt="{{$b_v['alt2']}}" class="daoshi_img">
 					</div>
 					@endif
 		    		@endforeach
-					</div>
-				</div>
+			  	</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".zsds_btn li").click(function(){
+			        $(this).addClass('divbox').siblings().removeClass('divbox');
+			        $(this).find('p').addClass('zsds_btn_sel').parents('li').siblings().find('p').removeClass("zsds_btn_sel");
+			        $(".zsds_com>div").eq($(this).index()).show().siblings().hide();
+			        console.log($(this).index());
+			    });
+			})
+		</script>
 	@elseif($index2_box['template']=='index2-article')
-		<div class="trapMan-home">
-			<div class="trapMan-Tit2 trapMan-Tit3">
-				<p class="cl">{{$index2_box['title']}}</p>
-				<p class="">{!!nl2br($index2_box['cat_desc'])!!}</p>
-			</div>
+		<!-- <div class="trapMan-home">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
 			<div class="trapMan-share">
 				<div class="trapMan-shareL">
 		    		@foreach($index2_box['article'] as $b_k=>$b_v)
@@ -277,70 +323,33 @@
 		    		@endforeach
 				</div>
 			</div>
-		</div>
+		</div> -->
 	@elseif($index2_box['template']=='index2-skills')
 		<div class="trapMan-home">
-			<div class="trapMan-Tit2 trapMan-Tit3">
-				<p class="cl">{{$index2_box['title']}}</p>
-				<p class="">{!!nl2br($index2_box['cat_desc'])!!}</p>
-			</div>
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
 			<div class="trapMan-class" >
 				<ul>
 					@foreach($index2_box['article'] as $b_k=>$b_v)
 		    		@if($b_k < 3)
 					<li>
-						<div> <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"> </div> 
+						<div class="art_img"> <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"> </div> 
 						<div class="trapMan-classD">
 							<h4>{{$b_v['title']}}</h4>
 							<p>{!!nl2br($b_v['desc'])!!}</p>
-							<a  class="kefu_btn" target='_self'>【了解详情】</a>
 						</div>
 					</li>
 					@endif
 					@endforeach
 				</ul>
-				<div class="trapMan-class2">
-					<div class="trapMan-class2L">
-						@foreach($index2_box['article'] as $b_k=>$b_v)
-			    		@if($b_k > 2 && $b_k < 9)
-						<div class="trapMan-class2LD" v-for="case in cate_article_list" >
-							<a  class="kefu_btn" target='_self'>
-								<span>0{{$b_k-2}}</span>
-								{{$b_v['title']}}
-							</a>
-						</div>
-						@endif
-						@endforeach
-					</div>
-					<div class="trapMan-class2R">
-						@foreach($index2_box['article'] as $b_k=>$b_v)
-			    		@if($b_k > 8 && $b_k < 12)
-						<div class="trapMan-class2RD">
-							<a  target='_self'>
-								<div class="trapMan-class2RTit">
-									<img src="{{asset('resources/home/images/ico/ico11.png')}}" alt="">
-									<span>{{$b_v['title']}}</span>
-								</div>
-								<div class="trapMan-class2RCon">
-									<img src="{{asset('resources/home/images/ico/ico12.png')}}" alt="">
-									<span>{!!nl2br($b_v['desc'])!!}
-										<p class="kefu_btn">[详情]</p>
-									</span>
-								</div>
-							</a>
-						</div>
-						@endif
-						@endforeach
-					</div>
-				</div>
-				<div class="trapMan-btn">
-					<div class="trapMan-class2LA kefu_btn">
-						<a  target='_self' >点击查看更多信息</a>
-					</div>
-					<div class="trapMan-class2RA kefu_btn">
-						和我的情况很类似，立刻咨询导师获取帮助
-					</div>
-				</div>
 			</div>
 		</div>
 	@elseif($index2_box['template']=='index2-crux')
@@ -421,14 +430,21 @@
 			<div class="hz-btn fh_btn kefu_btn hy_btn">立即咨询</div>
 		</div>
 	@elseif($index2_box['template']=='index2-love-state2')
-		<div class="whaq-tit cl">
-			{{$index2_box['title']}}
-		</div>
+		<div class="tap2_tit">
+	      	<p>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<span>{{$index2_box['title']}}</span>
+				<span class="minTit">{{$index2_box['en_title']}}</span>
+	      	</p>
+	   	</div>
 		<div class="whaq-item1">
-			<div class="whaq-item1Con">
-				<ul>
+			<div class="whaq-item1Con wh_swiper">
+				<ul class="swiper-wrapper">
 					@foreach($index2_box['article'] as $b_k=>$b_v)
-					<li class="list{{$b_k+1}}">
+					<li class="swiper-slide list{{$b_k+1}}">
 						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
 						<p class="whaq-item1ConP1 ellipsis">{{$b_v['title']}}</p>
 						<p class="whaq-item1ConP2 ellipsis3">{!!nl2br($b_v['desc'])!!}</p>
@@ -441,6 +457,24 @@
 			<p class="whaq-tit2P1">{!!nl2br($index2_box['cat_desc'])!!}</p>
 			<p class="whaq-tit2P2"><span class="kefu_btn">{{$index2_box['title2']}}</span></p>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var wh_swiper = new Swiper('.wh_swiper', {
+					autoplay : 3000,
+					initialSlide :1,
+					effect : 'coverflow',
+					slidesPerView: 1.3,
+					centeredSlides: true,
+					coverflow: {
+			            rotate: 0,
+			            stretch: 80,
+			            depth:85,
+			            modifier: 2,
+			            slideShadows : false,
+		       		}
+				})
+			})
+		</script>
 	@elseif($index2_box['template']=='index2-img')
 		<div class="whaq-item2" style="background-image: url({{asset($index2_box['img'])}});"></div>
 	@elseif($index2_box['template']=='index2-confusion')
