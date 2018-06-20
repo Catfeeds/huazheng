@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 20/06/2018 18:13:33
+ Date: 20/06/2018 22:09:11
 */
 
 SET NAMES utf8mb4;
@@ -80,7 +80,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5954 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5971 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -6038,6 +6038,23 @@ INSERT INTO `hl_admin_operation_log` VALUES (5950, 1, 'admin/article-category', 
 INSERT INTO `hl_admin_operation_log` VALUES (5951, 1, 'admin/article-category/335/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 17:41:18', '2018-06-20 17:41:18');
 INSERT INTO `hl_admin_operation_log` VALUES (5952, 1, 'admin/article-category/335', 'PUT', '127.0.0.1', '{\"title\":\"\\u4f60\\u73b0\\u5728\\u7684\\u604b\\u7231\\u72b6\\u6001\\u662f...\",\"title2\":\"\\u7acb\\u5373\\u54a8\\u8be2\\u7b03\\u7231\\u60c5\\u611f\\u5bfc\\u5e08\\uff0c\\u52a9\\u4f60\\u4e8c\\u6b21\\u5438\\u5f15TA\\uff01\",\"en_title\":\"What  is  your  present  state  of  love?\",\"template\":\"index2-love-state2\",\"url\":null,\"parent_id\":\"334\",\"cat_desc\":\"\\u627e\\u4e0d\\u5230\\u771f\\u6b63\\u6709\\u6548\\u7684\\u633d\\u56de\\u65b9\\u6cd5\\uff1f \\r\\n\\u627e\\u7b03\\u7231\\uff0c\\u5e2e\\u60a8\\u5e94\\u5bf9\\u4e00\\u5207\\u60c5\\u611f\\u7591\\u96be\\u6742\\u75c7\\u3002\",\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 17:41:21', '2018-06-20 17:41:21');
 INSERT INTO `hl_admin_operation_log` VALUES (5953, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 17:41:21', '2018-06-20 17:41:21');
+INSERT INTO `hl_admin_operation_log` VALUES (5954, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-06-20 18:52:50', '2018-06-20 18:52:50');
+INSERT INTO `hl_admin_operation_log` VALUES (5955, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 18:52:53', '2018-06-20 18:52:53');
+INSERT INTO `hl_admin_operation_log` VALUES (5956, 1, 'admin/article-category/336/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 18:52:59', '2018-06-20 18:52:59');
+INSERT INTO `hl_admin_operation_log` VALUES (5957, 1, 'admin/article-category/336', 'PUT', '127.0.0.1', '{\"title\":\"\\u6570\\u636e\\u8c03\\u67e5\\u604b\\u7231\\u5206\\u624b\\u539f\\u56e0\",\"title2\":null,\"en_title\":null,\"template\":\"index2-img\",\"url\":null,\"parent_id\":\"334\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 18:54:16', '2018-06-20 18:54:16');
+INSERT INTO `hl_admin_operation_log` VALUES (5958, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 18:54:17', '2018-06-20 18:54:17');
+INSERT INTO `hl_admin_operation_log` VALUES (5959, 1, 'admin/article-category/336/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 18:56:08', '2018-06-20 18:56:08');
+INSERT INTO `hl_admin_operation_log` VALUES (5960, 1, 'admin/article-category/336', 'PUT', '127.0.0.1', '{\"title\":\"\\u6570\\u636e\\u8c03\\u67e5\\u604b\\u7231\\u5206\\u624b\\u539f\\u56e0\",\"title2\":null,\"en_title\":\"Reasons   for   breaking   up   love  data\",\"template\":\"index2-img\",\"url\":null,\"parent_id\":\"334\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 18:56:11', '2018-06-20 18:56:11');
+INSERT INTO `hl_admin_operation_log` VALUES (5961, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 18:56:11', '2018-06-20 18:56:11');
+INSERT INTO `hl_admin_operation_log` VALUES (5962, 1, 'admin/article-category/337/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 18:56:36', '2018-06-20 18:56:36');
+INSERT INTO `hl_admin_operation_log` VALUES (5963, 1, 'admin/article-category/337', 'PUT', '127.0.0.1', '{\"title\":\"\\u662f\\u4ec0\\u4e48\\u539f\\u56e0\\u8ba9\\u4f60\\u75db\\u5931\\u7231\\u4eba\",\"title2\":null,\"en_title\":\"What   made   you   lose   your   love  \\uff1f\",\"template\":\"index2-upset\",\"url\":null,\"parent_id\":\"334\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 18:56:40', '2018-06-20 18:56:40');
+INSERT INTO `hl_admin_operation_log` VALUES (5964, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 18:56:40', '2018-06-20 18:56:40');
+INSERT INTO `hl_admin_operation_log` VALUES (5965, 1, 'admin/article-category/363/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 21:33:42', '2018-06-20 21:33:42');
+INSERT INTO `hl_admin_operation_log` VALUES (5966, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 21:33:44', '2018-06-20 21:33:44');
+INSERT INTO `hl_admin_operation_log` VALUES (5967, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\"}', '2018-06-20 21:33:45', '2018-06-20 21:33:45');
+INSERT INTO `hl_admin_operation_log` VALUES (5968, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"363\"}', '2018-06-20 21:33:47', '2018-06-20 21:33:47');
+INSERT INTO `hl_admin_operation_log` VALUES (5969, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"364\"}', '2018-06-20 21:33:48', '2018-06-20 21:33:48');
+INSERT INTO `hl_admin_operation_log` VALUES (5970, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"363\"}', '2018-06-20 21:33:50', '2018-06-20 21:33:50');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -6755,8 +6772,8 @@ INSERT INTO `hl_article_category` VALUES (332, 329, '遭遇婚姻危机，你的
 INSERT INTO `hl_article_category` VALUES (333, 329, '笃爱 助你收获完美爱情', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/img_02.png', NULL, 'index2-love', 12, '2018-05-27 09:40:33', '2018-06-20 02:49:01', NULL, 'May   you   mend   a   happy   marriage', NULL, 'uploads/article/20180620/429ae475a1f71157471aee6944f380c1.png', NULL);
 INSERT INTO `hl_article_category` VALUES (334, 0, '挽回恋情', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180612/fb46f34716fc98e0a0c9e74690abb1fe.jpg', NULL, 'index2', 13, '2018-05-27 17:36:45', '2018-06-12 18:45:37', 'whlq', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (335, 334, '你现在的恋爱状态是...', '立即咨询笃爱情感导师，助你二次吸引TA！', NULL, '找不到真正有效的挽回方法？ \r\n找笃爱，帮您应对一切情感疑难杂症。', NULL, NULL, NULL, NULL, NULL, 'index2-love-state2', 14, '2018-05-27 17:48:27', '2018-06-20 17:41:21', NULL, 'What  is  your  present  state  of  love?', NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (336, 334, '数据调查恋爱分手原因', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/0f0df8136d06f5c63a7eb149e3c8cf20.jpg', NULL, 'index2-img', 15, '2018-05-27 17:57:12', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (337, 334, '是什么原因让你痛失爱人', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'index2-upset', 16, '2018-05-27 18:00:48', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (336, 334, '数据调查恋爱分手原因', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/0f0df8136d06f5c63a7eb149e3c8cf20.jpg', NULL, 'index2-img', 15, '2018-05-27 17:57:12', '2018-06-20 18:56:11', NULL, 'Reasons   for   breaking   up   love  data', NULL, 'uploads/article/20180620/07a118b499c72579b3110c46af9f79a3.png', NULL);
+INSERT INTO `hl_article_category` VALUES (337, 334, '是什么原因让你痛失爱人', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'index2-upset', 16, '2018-05-27 18:00:48', '2018-06-20 18:56:40', NULL, 'What   made   you   lose   your   love  ？', NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (338, 334, '笃爱 助你收获完美爱情', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/e4eede230604f00b84746d0c60550af4.png', NULL, 'index2-love', 17, '2018-05-27 18:14:55', '2018-06-20 17:40:24', NULL, NULL, NULL, 'uploads/article/20180620/5a22b3f5c71b3f64d305f5e42a030921.png', NULL);
 INSERT INTO `hl_article_category` VALUES (339, 0, '亲子教育', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180612/cdb2da965beb96b23d88dce7d3017842.jpg', NULL, 'index2', 28, '2018-05-27 18:24:25', '2018-06-12 18:46:14', 'qgzd', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (340, 339, '你是否有过类似的情感困惑', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/48b0c012d74088caf37a2f2e91b0bcfe.jpg', NULL, 'index2-confusion', 29, '2018-05-27 18:25:00', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);

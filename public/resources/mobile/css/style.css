@@ -822,12 +822,20 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
 }
 .index2 .repair-item3 .repair-item3ConTit{
     font-size: .26rem;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 .index2 .repair-item3 .repair-item3ConP{
     font-size: .2rem;
     color: #999;
     width: 1.8rem;
     margin-top: .05rem;
+    display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 
 .index2 .repair-item4 .repair-item4T{
@@ -1175,34 +1183,161 @@ text-overflow: ellipsis;line-height: 1.4;margin-top: .05rem;}
 }
 .whaq-item1 .whaq-item1Con ul li{
     /*width: 5rem;*/
-    /*padding:.2rem;*/
+    padding:.2rem;
     color: #fff;
     border-radius: .1rem;
+    height:4.6rem;
+    line-height: 1.7;
 }
 .whaq-item1 .whaq-item1Con ul li.list1{
     background: url("../images/tp_03.jpg") no-repeat;
-    background-size: 100%;
-    left: 0px;
+    background-size:cover;
 }
 .whaq-item1 .whaq-item1Con ul li.list2{
     background: url("../images/tp_02.jpg") no-repeat;
-    background-size: 100%;
-    left: 400px;
+    background-size:cover;
 }
 .whaq-item1 .whaq-item1Con ul li.list3{
     background: url("../images/tp_01.jpg") no-repeat;
-    background-size: 100%;
-    left: 800px;
+    background-size:cover;
 }
 .whaq-item1 .whaq-item1Con ul li img{
-    width: 1rem;display: block;margin:0 auto;
+    width: 1.4rem;display: block;margin:0 auto;
 }
 .whaq-item1 .whaq-item1Con ul li .whaq-item1ConP1{
-    font-size: .28rem;
+    font-size: .32rem;
     text-align: center;
     margin:.05rem 0;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
     /*margin-bottom: 36px;*/
 }
 .whaq-item1 .whaq-item1Con ul li .whaq-item1ConP2{
     font-size: .24rem;
+    padding:.1rem;
+    display: -webkit-box;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
 }
+.whaq-tit2 .whaq-tit2P1{
+    font-size: .24rem;
+    color: #999;
+    text-align: center;
+    margin-top: .2rem;
+    padding: .1rem 0;
+    position: relative;
+}
+.whaq-tit2 .wh_tleft,.whaq-tit2 .wh_tright{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: .65rem;
+}
+.whaq-tit2 .wh_tright{
+    left: auto;
+    right: 0;
+}
+.whaq-tit2 .kefu_btn {
+    padding: 6px 12px;
+    display: inline-block;
+    color: #fff;
+    background: #ff5562;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width:6rem;
+    font-size: .28rem;
+    margin: .2rem auto;
+    display: block;
+}
+
+
+.index2 .whaq-item2 .img_box{padding: .2rem 0;}
+.love3-content .con_in h2{color:#ff6271;font-size: .3rem;text-align: center;}
+.love3-content .con_in h4{color: #ff4e5e;text-align: center;padding-top: .2rem;line-height: 1.9;font-size: .2rem;}
+.love3-content .con_in .cm{color: #99; font-size:.24rem; line-height: 1.7; letter-spacing: 1px;padding:.2rem;}
+
+.love3-content .con1{padding:.3rem .2rem;}
+.love3-content .con1 ul{text-align: center;}
+.love3-content .con1 ul li{vertical-align: top;width: :;vertical-align: top;width: 29%;margin:0 2%;}
+.love3-content .con1 ul li p{border: 1px solid #000; font-weight: bold; font-size: .3rem; text-align: center; line-height: .4rem; margin-top: .1rem;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.love3-content .con1 ul li span{display: block; width:100%; text-align: center; line-height: .3rem;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.love3-content .con2{padding:.3rem .24rem;}
+
+.love3-content .con2 .con_in .tt span{width: 50%;background-color: #fee8eb;float:left;text-align: center;line-height: .5rem;}
+.love3-content .con2 .con_in .tt span.cur{background-color: #f8485e;color: #fff;}
+.love3-content .con2 .con_in .list{display: none;}
+.love3-content .con2 .con_in .list.on{display: block;}
+.love3-content .con2 .con_in .list ul{padding:0 !important;}
+
+.love3-content .con3{ width:100%;padding:.3rem .2rem;}
+.love3-content .con3 ul{ padding-top: .3rem; text-align: center;}
+.love3-content .con3 ul li{ display: inline-block; position: relative;}
+.love3-content .con3 ul li .txt{ width:100%; height: 100%; background-color:rgba(255,85,98,.6); padding: 8px; position: absolute; left: 0; top:0;}
+.love3-content .con3 ul li img{width: 100%;}
+.love3-content .con3 ul li p span{ display: block; position: relative; padding-left: 20px; color:#fff;  padding-top:8px; width:130px; margin: 0 auto; text-align: left;}
+.love3-content .con3 ul li p{ width:100%; height: 100%; border:1px solid #ff9da5; padding-top: 8px; box-sizing: border-box;overflow: hidden;}
+.love3-content .con3 ul li p span::before{ content: ''; width:2px; height: 2px; background: #fff; position: absolute; left:5px; top:17px;}
+
+.love3-content .con4{ width:100%;padding:.3rem .2rem;}
+.love3-content .con4 li{position: relative;text-align: center;background: no-repeat center;background-size: cover;color:#fff;line-height: 1.8;}
+.love3-content .con4 li .tc{background-color: rgba(153,153,153,0.6);padding:.3rem;}
+.love3-content .con4 li .ellipsis{font-size: .36rem;}
+.love3-content .con4 li .ellipsis3{font-size: .24rem;} 
+.love3-content .con4 .kefu_btn {
+    padding: 6px 12px;
+    display: inline-block;
+    color: #fff;
+    background: #ff5562;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 6rem;
+    font-size: .28rem;
+    margin: .2rem auto;
+    display: block;
+}
+.love3-content .con5 .part-3{background: url(../images/ico9.jpg) no-repeat center;  background-size: cover;padding:.3rem .2rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

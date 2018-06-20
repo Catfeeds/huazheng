@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	@elseif($index2_box['template']=='index2-upset')
-		<div class="trapMan-home2">
+		<div class="repair-item3">
 			<div class="tap2_tit">
 		      	<p>
 					<i></i>
@@ -54,28 +54,19 @@
 					<span class="minTit">{{$index2_box['en_title']}}</span>
 		      	</p>
 		   	</div>
-			<div class="trapMan-item2">
-				<div class="trapMan-item2Img">
-					<img src="{{asset($index2_box['img'])}}" alt="{{$index2_box['alt']}}">
-				</div>
-				<div class="trapMan-item2Tab">
-	    			@foreach($index2_box['article'] as $b_k=>$b_v)
-					<div class="trapMan-item2TabD  @if($b_k%4==0) onML @endif kefu_btn">
-						<div>
-							<p class="trapMan-item2TabDT">{!!$b_v['title']!!}</p>
-							<p class="text">{!!nl2br($b_v['desc'])!!}</p>
+			<div class="repair-item3Con">
+				<ul class="clearfix">
+					@foreach($index2_box['article'] as $b_k=>$b_v)
+					<li class="kefu_btn">
+						<div class="repair-item3-1">
+							<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}" class="img1">
+							<img src="{{asset($b_v['img2'])}}" alt="{{$b_v['alt2']}}" class="img2">
 						</div>
-						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-						<img class="dw" src="{{asset('resources/home/images/ico/ico2.png')}}" alt="">
-					</div>
-	    			@endforeach
-				</div>
-				@if(!empty($index2_box['cat_desc']))
-				<div class="trapMan-item2Bot">
-					<p>权威调查统计：</p>
-					<span>{!!nl2br($index2_box['cat_desc'])!!}</span>
-				</div>
-				@endif
+						<p class="repair-item3ConTit repair-item3b{{$b_k+1}}">{{$b_v['title']}}</p>
+						<p class="repair-item3ConP">{!!nl2br($b_v['desc'])!!}</p>
+					</li>
+					@endforeach
+				</ul>
 			</div>
 		</div>
 	@elseif($index2_box['template']=='index2-love')
@@ -454,7 +445,11 @@
 			</div>
 		</div>
 		<div class="whaq-tit2">
-			<p class="whaq-tit2P1">{!!nl2br($index2_box['cat_desc'])!!}</p>
+			<p class="whaq-tit2P1">
+			{!!nl2br($index2_box['cat_desc'])!!}
+			<img src="{{asset('resources/mobile/images/ico7.png')}}" class="wh_tleft">
+      		<img src="{{asset('resources/mobile/images/ico8.png')}}" class="wh_tright">
+			</p>
 			<p class="whaq-tit2P2"><span class="kefu_btn">{{$index2_box['title2']}}</span></p>
 		</div>
 		<script type="text/javascript">
@@ -476,7 +471,19 @@
 			})
 		</script>
 	@elseif($index2_box['template']=='index2-img')
-		<div class="whaq-item2" style="background-image: url({{asset($index2_box['img'])}});"></div>
+		<div class="whaq-item2">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
+		   	<div class="img_box"><img src="{{asset($index2_box['img2'])}}"></div>
+		</div>
 	@elseif($index2_box['template']=='index2-confusion')
 		<div class="qgzd-content">
 			<div class="confusion_con01">
@@ -511,13 +518,21 @@
 		</div>
 	@elseif($index2_box['template']=='love3-encounter')
 		<div class="love3-content">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
 			<div class="con1">
-			    <div class="con_in">
-			        <h2>{{$index2_box['title']}}</h2>
-			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
-			        <ul>
+			    <div class="con_in love3_con1">
+			        <ul class="swiper-wrapper">
 						@foreach($index2_box['article'] as $b_k=>$b_v)
-						<li>
+						<li class="swiper-slide">
 						    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
 						    <p class="ellipsis">{{$b_v['title']}}</p>
 						    <span>{!!nl2br($b_v['desc'])!!}</span>
@@ -527,12 +542,21 @@
 			    </div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var love3_con1 = new Swiper('.love3_con1', {
+				    pagination : '.projectpa',
+				    slidesPerView : 1.5,
+				    spaceBetween : 20,
+				    autoplay : 4000
+				});
+			})
+		</script>
 	@elseif($index2_box['template']=='love3-happy')
 		<div class="love3-content">
 			<div class="con2">
 			    <div class="con_in">
 			        <h2>{{$index2_box['title']}}</h2>
-			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
 			        <div class="cm">{!!$index2_box['content']!!}</div>
 			        <div class="tt">
 						@foreach($index2_box['article'] as $b_k=>$b_v)
@@ -572,12 +596,12 @@
 	@elseif($index2_box['template']=='love3-course')
 		<div class="love3-content">
 			<div class="con3">
-			    <div class="con_in">
+			    <div class="con_in love3_con3">
 			        <h2>{{$index2_box['title']}}</h2>
-			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
-			        <ul>
+			        <div class="cm">{!!nl2br($index2_box['cat_desc'])!!}</div>
+			        <ul class="swiper-wrapper">
 						@foreach($index2_box['article'] as $b_k=>$b_v)
-			            <li>
+			            <li class="swiper-slide">
 			                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
 			                <div class="txt">
 			                    <p>
@@ -596,53 +620,58 @@
 		</div>
 		<script type="text/javascript">
 			$(function(){
-				//视频课程内容显示
-				$('.love3-content .con3 ul li').hover(function() {
-				    $(this).children('.txt').show()
-				},function(){
-				    $(this).children('.txt').hide()
+				var love3_con3 = new Swiper('.love3_con3', {
+				    pagination : '.projectpa',
+				    slidesPerView : 1.5,
+				    spaceBetween : 20,
+				    autoplay : 4000
 				});
 			})
 		</script>
 	@elseif($index2_box['template']=='love3-guidelines')
 		<div class="love3-content">
 			<div class="con4">
-			    <div class="con_in">
+			    <div class="con_in love3_con4">
 			        <h2>{{$index2_box['title']}}</h2>
 			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
 			        <div class="cm">{!!$index2_box['content']!!}</div>
-			        <ul>
+			        <ul class="swiper-wrapper">
 						@foreach($index2_box['article'] as $b_k=>$b_v)
-						@if($b_k%2==0)
-						<li>
-						    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+						<li class="swiper-slide" style="background-image: url({{asset($b_v['img'])}});">
+						    <div class="tc">
+						    	<p class="ellipsis">{{$b_v['title']}}</p>
+						    	<span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
+						    </div>
 						</li>
-						<li>
-						    <p class="ellipsis">{{$b_v['title']}}</p>
-						    <span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
-						</li>
-						@else
-						<li>
-						    <p class="ellipsis">{{$b_v['title']}}</p>
-						    <span class="ellipsis3">{!!nl2br($b_v['desc'])!!}</span>
-						</li>
-						<li>
-						    <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-						</li>
-						@endif
 						@endforeach
 			        </ul>
-			        <a  class="zx love-btn">了解自己适合哪种提升方案</a>
+			        <a  class="zx love-btn kefu_btn">了解自己适合哪种提升方案</a>
 			    </div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var love3_con4 = new Swiper('.love3_con4', {
+				    pagination : '.projectpa',
+				    slidesPerView : 1,
+				    spaceBetween : 20,
+				    autoplay : 4000
+				});
+			})
+		</script>
 	@elseif($index2_box['template']=='love3-course2')
 		<div class="love3-content">
 			<div class="con5">
 			    <div class="con_in">
-			        <h2>{{$index2_box['title']}}</h2>
-			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
-			        <div class="cm">{!!$index2_box['content']!!}</div>
+			    	<div class="part-3">
+	    	            <div class="con">
+	    	                <h2>{{$index2_box['title']}}</h2>
+	    	                <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
+	    	                <div class="cm">{!!$index2_box['content']!!}</div>
+	    	            </div>
+	    	        </div>
+
+			        
 			        <ul>
 						@foreach($index2_box['article'] as $b_k=>$b_v)
 						<li @if($b_k==0) class="cur" @endif>
