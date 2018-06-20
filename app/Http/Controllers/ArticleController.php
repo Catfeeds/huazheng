@@ -375,7 +375,11 @@ class ArticleController extends Controller
                 $assign['art_4'] = $art_4;
                 break;
         }
-        return view('home.article.'.$cate_info['template']."-info",$assign);
+        if(isMobile()){
+            return view('mobile.article.'.$cate_info['template']."-info",$assign);
+        }else{
+            return view('home.article.'.$cate_info['template']."-info",$assign);
+        }
     }
 
     public function contact_us(Request $request){

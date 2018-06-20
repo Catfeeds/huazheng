@@ -7,7 +7,7 @@
         @foreach($article_list as $k=>$v)
         <a class="story-article-list" href="{{URL($cate_info['url'],$v['id'])}}">
             <div class="story-article-bg">
-                <img src="//huazhen-upload.oss-cn-hangzhou.aliyuncs.com/article/201712/27/ax03plgm2flv9vc6mif6v6mh81obygar.png" alt="">
+                <img src="{{asset($v['img'])}}" alt="">
             </div>
             <div class="story-article-info">
                 <div class="story-article-title">{{$v['title']}}</div>
