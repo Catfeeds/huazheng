@@ -1548,3 +1548,118 @@ white-space: nowrap;}
 }
 .swiper-container-horizontal>.swiper-pagination-bullets.pagination2{position: absolute;bottom: 0;width: 100%;}
 .pagination2 .swiper-pagination-bullet{height: .2rem;border-radius: .2rem;width: .2rem;margin:0 .1rem;}
+
+
+.index2 .fh_swi  .swiper-slide img{
+    width: 100%;
+    display: block;
+}
+.index2 .fh_swi{
+    padding:.3rem 0
+}
+.index2 .fh_swi  .swiper-slide{
+    box-shadow: 0 0 18px 3px rgba(255,109,169,.15);
+    border-radius: 3px;
+    background: #fff;
+}
+.index2 .fh_swi .fh_pone ,.index2 .fh_swi .fh_ptwo{
+    width: 90%;
+    margin: .25rem auto .15rem;
+    color: #ff545d;
+    font-size: .26rem;
+    text-align: center;
+}
+.index2 .fh_swi .fh_ptwo{
+    color: #ff3388;
+    margin: .85rem auto .55rem;
+}
+.index2 .fh_swicon .fh_href {
+    padding-bottom: .3rem;
+    text-align: center;
+}
+.index2 .fh_swicon .fh_href a{
+    background: #ff6da9;
+    border-radius: 30px;
+    font-size: .22rem;
+    box-shadow: 0px 1px 2px 1px rgba(100,4,44,.2);
+}
+.index2 .trapMan-exponent{padding: .3rem .24rem;}
+
+
+.news .story-article-list{color: #323232; display: -webkit-box; display: -webkit-flex; display: flex; padding: 0.3rem 0.24rem; background: white; margin-bottom: 0.05rem; border-bottom: 1px solid #ccc;}
+.news .story-article-list .story-article-bg {
+    width:1.8rem;
+    display: inline-block;
+    /* -webkit-box-flex: 1; */
+    /* -moz-box-flex: 1; */
+    /* -ms-flex: 1; */
+    /* flex: 1; */
+    overflow: hidden;
+}
+.news .story-article-list .story-article-bg img{width: 100%;}
+.news .story-article-list .story-article-info{
+    padding-left: 0.1rem;
+    width: 80%;
+}
+.news .story-article-list .story-article-info .story-article-title {
+    font-size: 0.28rem;
+    color: #323232;
+    line-height:1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: .1rem;
+}
+
+.news .story-article-list .story-article-info .story-article-text {
+    font-size: 0.24rem;
+    color: #999999;
+    line-height:1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.page{
+    margin-top: .2rem;
+    text-align: center;
+    font-size: .2rem;
+}
+.page li{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 .05rem;
+    width: .3rem;
+    height: .3rem;
+    line-height: .3rem;
+    border-radius: .3rem;
+    vertical-align: middle;
+}
+.page li a{display: block;width:.3rem;height:.3rem;}
+.page .active{
+    color:#fff;
+    background: #ff5562;
+}
+.page li.prevs,.page li.nexts,.page li:hover.prevs,.page li:hover.nexts{border:0;}
+.page .prevs,.page .nexts{
+    width:.3rem;
+    height:.3rem;
+    background: url(../images/ico11.png) no-repeat left top/.6rem;
+}
+.page .nexts{
+    background-position: right top;
+}
+
+
+
+
+
+
+
+
+
+

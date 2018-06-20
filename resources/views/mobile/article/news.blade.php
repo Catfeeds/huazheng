@@ -1,22 +1,22 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
     @parent
 @endsection
 @section('content')
-    @if(!empty($top_category['img']))
-    <div class="banner" style="background-image: url({{asset($top_category['img'])}}); height:482px;"></div>
-    @endif
-    <div class="layout article-content">
-        @include('home.layouts.location')
-        <div class="article_con_top">
-            <h2>{{$cate_info['title']}}</h2>
-        </div>
-        <div class="article_con_in clearfix" id="pageDiv">
-            @include('home.article.news-list')
-        </div>
-        @include('home.layouts.page',['page'=>$article_list])
+    <div id="story-tab1" class="news">
+        @foreach($article_list as $k=>$v)
+        <a class="story-article-list" href="{{URL($cate_info['url'],$v['id'])}}">
+            <div class="story-article-bg">
+                <img src="//huazhen-upload.oss-cn-hangzhou.aliyuncs.com/article/201712/27/ax03plgm2flv9vc6mif6v6mh81obygar.png" alt="">
+            </div>
+            <div class="story-article-info">
+                <div class="story-article-title">{{$v['title']}}</div>
+                <div class="story-article-text">{!!nl2br($v['desc'])!!}</div>
+            </div>
+        </a>
+        @endforeach
     </div>
-    @include('home.layouts.fhns-bottom')
+    @include('mobile.layouts.page2',['page'=>$article_list])
 @endsection
 @section('script')
     @parent

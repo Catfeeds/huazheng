@@ -23,25 +23,39 @@
 					<span class="minTit">{{$index2_box['en_title']}}</span>
 		      	</p>
 		   	</div>
-			<div class="trapMan-item1">
-	    		@foreach($index2_box['article'] as $b_k=>$b_v)
-					@if($b_k==floor(count($index2_box['article'])/2))	
-					<div>
-						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-						<p class="cl">{!!nl2br($b_v['desc'])!!}</p>
-						<p class="customLove kefu_btn" title="{{$b_v['title']}}">{{$b_v['title']}}</p>
-					</div>
-					@else
-					<div>
-						<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-						<p class="clping" title="{{$b_v['title']}}">{!!$b_v['title']!!}</p>
-						<img src="{{asset('resources/home/images/ico/ico1.png')}}">
-						<p class="text">{!!nl2br($b_v['desc'])!!}</p>
-					</div>
-					@endif
-	    		@endforeach
-			</div>
+		   	<div class="box_padd hid_bbor fh_swicon">
+	   	       <div class="swiper-container fh_swi" >
+	   	          <div class="swiper-wrapper">
+	    			@foreach($index2_box['article'] as $b_k=>$b_v)
+	   	            <div class="swiper-slide">
+	   	                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+	   	                <p class="fh_ptwo">{{$b_v['title']}}</p>
+	   	            </div>
+	    			@endforeach
+	   	          </div>
+	   	        </div>   
+	   	        <div class="hz-xc fh_href">
+	   	            <a class="hz-btn kefu_btn" href="">定制专属爱情方案，收获属于你的爱情！</a>    
+	   	        </div>
+	   	   </div>
 		</div>
+		<script> 
+		$(function(){
+			var mySwiper = new Swiper('.fh_swi', {
+		        initialSlide :1,
+		        effect : 'coverflow',
+		            slidesPerView: 1.3,
+		            centeredSlides: true,
+		            coverflow: {
+		                rotate: 0,
+		                stretch: 80,
+		                depth:85,
+		                modifier: 2,
+		                slideShadows : false
+		            }
+			})
+		})
+		</script>
 	@elseif($index2_box['template']=='index2-upset')
 		<div class="repair-item3">
 			<div class="tap2_tit">
@@ -125,16 +139,8 @@
 					<span class="minTit">{{$index2_box['en_title']}}</span>
 		      	</p>
 		   	</div>
-			<div class="trapMan-exponent" style="background-image: url({{asset($index2_box['img'])}});">
-				<div class="trapMan-exponentT">
-	    			@foreach(explode('<br />',nl2br($index2_box['cat_desc'])) as $b_k=>$b_v)
-					<div>
-						<img src="{{asset('resources/home/images/ico/ico3.png')}}">
-						<span>{{$b_v}}</span>
-					</div>
-	    			@endforeach
-					<a  class="ljzx kefu_btn">立即咨询</a>
-				</div>
+			<div class="trapMan-exponent" >
+				<a class="kefu_btn"><img src="{{asset($index2_box['img2'])}}" alt=""></a>
 			</div>
 		</div>
 	@elseif($index2_box['template']=='index2-emotional-services')
