@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 20/06/2018 22:09:11
+ Date: 20/06/2018 23:23:53
 */
 
 SET NAMES utf8mb4;
@@ -80,7 +80,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5971 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5981 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -6055,6 +6055,16 @@ INSERT INTO `hl_admin_operation_log` VALUES (5967, 1, 'admin/article', 'GET', '1
 INSERT INTO `hl_admin_operation_log` VALUES (5968, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"363\"}', '2018-06-20 21:33:47', '2018-06-20 21:33:47');
 INSERT INTO `hl_admin_operation_log` VALUES (5969, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"364\"}', '2018-06-20 21:33:48', '2018-06-20 21:33:48');
 INSERT INTO `hl_admin_operation_log` VALUES (5970, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"cate_id\":\"363\"}', '2018-06-20 21:33:50', '2018-06-20 21:33:50');
+INSERT INTO `hl_admin_operation_log` VALUES (5971, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 22:57:38', '2018-06-20 22:57:38');
+INSERT INTO `hl_admin_operation_log` VALUES (5972, 1, 'admin/article-category/340/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 22:57:43', '2018-06-20 22:57:43');
+INSERT INTO `hl_admin_operation_log` VALUES (5973, 1, 'admin/article-category/340', 'PUT', '127.0.0.1', '{\"title\":\"\\u4f60\\u662f\\u5426\\u6709\\u8fc7\\u7c7b\\u4f3c\\u7684\\u60c5\\u611f\\u56f0\\u60d1\",\"title2\":null,\"en_title\":\"Have   you   had   any   similar   confusion\",\"template\":\"index2-confusion\",\"url\":null,\"parent_id\":\"339\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 22:57:46', '2018-06-20 22:57:46');
+INSERT INTO `hl_admin_operation_log` VALUES (5974, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 22:57:46', '2018-06-20 22:57:46');
+INSERT INTO `hl_admin_operation_log` VALUES (5975, 1, 'admin/article-category/340/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 22:58:48', '2018-06-20 22:58:48');
+INSERT INTO `hl_admin_operation_log` VALUES (5976, 1, 'admin/article-category/340', 'PUT', '127.0.0.1', '{\"title\":\"\\u4f60\\u662f\\u5426\\u6709\\u8fc7\\u7c7b\\u4f3c\\u7684\\u60c5\\u611f\\u56f0\\u60d1\",\"title2\":null,\"en_title\":\"Have   you   had   any   similar   confusion\",\"template\":\"index2-confusion\",\"url\":null,\"parent_id\":\"339\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 22:59:04', '2018-06-20 22:59:04');
+INSERT INTO `hl_admin_operation_log` VALUES (5977, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 22:59:04', '2018-06-20 22:59:04');
+INSERT INTO `hl_admin_operation_log` VALUES (5978, 1, 'admin/article-category/341/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-06-20 23:00:12', '2018-06-20 23:00:12');
+INSERT INTO `hl_admin_operation_log` VALUES (5979, 1, 'admin/article-category/341', 'PUT', '127.0.0.1', '{\"title\":\"\\u60c5\\u611f\\u95ee\\u9898\",\"title2\":null,\"en_title\":\"How many emotional problems do you have?\",\"template\":\"index2-problem\",\"url\":null,\"parent_id\":\"339\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"vPfiwQITNY43zHOcDmbxq7ltd33VwN8FzyaGsHvH\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-06-20 23:00:16', '2018-06-20 23:00:16');
+INSERT INTO `hl_admin_operation_log` VALUES (5980, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-06-20 23:00:16', '2018-06-20 23:00:16');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -6776,8 +6786,8 @@ INSERT INTO `hl_article_category` VALUES (336, 334, '数据调查恋爱分手原
 INSERT INTO `hl_article_category` VALUES (337, 334, '是什么原因让你痛失爱人', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'index2-upset', 16, '2018-05-27 18:00:48', '2018-06-20 18:56:40', NULL, 'What   made   you   lose   your   love  ？', NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (338, 334, '笃爱 助你收获完美爱情', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/e4eede230604f00b84746d0c60550af4.png', NULL, 'index2-love', 17, '2018-05-27 18:14:55', '2018-06-20 17:40:24', NULL, NULL, NULL, 'uploads/article/20180620/5a22b3f5c71b3f64d305f5e42a030921.png', NULL);
 INSERT INTO `hl_article_category` VALUES (339, 0, '亲子教育', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180612/cdb2da965beb96b23d88dce7d3017842.jpg', NULL, 'index2', 28, '2018-05-27 18:24:25', '2018-06-12 18:46:14', 'qgzd', NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (340, 339, '你是否有过类似的情感困惑', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/48b0c012d74088caf37a2f2e91b0bcfe.jpg', NULL, 'index2-confusion', 29, '2018-05-27 18:25:00', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (341, 339, '情感问题', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/df149c304a225027303b400c99c4f281.png', NULL, 'index2-problem', 30, '2018-05-27 18:54:19', '2018-06-04 16:08:25', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (340, 339, '你是否有过类似的情感困惑', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/48b0c012d74088caf37a2f2e91b0bcfe.jpg', NULL, 'index2-confusion', 29, '2018-05-27 18:25:00', '2018-06-20 22:59:04', NULL, 'Have   you   had   any   similar   confusion', NULL, 'uploads/article/20180620/4116bdde39b17be3d6732545c89f60f1.png', NULL);
+INSERT INTO `hl_article_category` VALUES (341, 339, '情感问题', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180527/df149c304a225027303b400c99c4f281.png', NULL, 'index2-problem', 30, '2018-05-27 18:54:19', '2018-06-20 23:00:16', NULL, 'How many emotional problems do you have?', NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (342, 0, '新闻咨询', NULL, NULL, '了解笃爱从点滴服务开始', NULL, NULL, NULL, 'uploads/article/20180613/a7619764e316e571dec6d7fdb1dd5078.jpg', NULL, 'news', 36, '2018-05-27 19:56:09', '2018-06-13 09:29:09', 'article', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (378, 350, '广告推广', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'video', 43, '2018-06-12 13:58:34', '2018-06-12 14:12:13', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (377, 350, '网络推广', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'video', 42, '2018-06-12 13:58:21', '2018-06-12 14:00:00', NULL, NULL, NULL, NULL, NULL);

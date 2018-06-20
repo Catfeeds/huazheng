@@ -9,7 +9,6 @@
     @foreach($cate_list as $v)
         @include('mobile.layouts.index2-box',['index2_box'=>$v])
     @endforeach
-    @include('mobile.layouts.fhns-bottom')
 @endsection
 @section('script')
     @parent

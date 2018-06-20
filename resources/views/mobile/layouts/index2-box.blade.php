@@ -486,9 +486,18 @@
 		</div>
 	@elseif($index2_box['template']=='index2-confusion')
 		<div class="qgzd-content">
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
 			<div class="confusion_con01">
 				<div class="con-in">
-					<h3>{{$index2_box['title']}}</h3>
 					<ul>
 						@foreach($index2_box['article'] as $b_k=>$b_v)
 						<li class="animated kefu_btn">
@@ -498,24 +507,51 @@
 					</ul>
 				</div>
 			</div>
-			@if(!empty($index2_box['img']))
-			<div class="add-tu" style="background-image: url({{asset($index2_box['img'])}});"> </div>
+			@if(!empty($index2_box['img2']))
+			<div class="add-tu"> <img src="{{asset($index2_box['img2'])}}"> </div>
 			@endif
 		</div>
 	@elseif($index2_box['template']=='index2-problem')
 		<div class="qgzd-content">
-			<div class="problem-con02">
-				<div class="con-in" style="background-image: url({{asset($index2_box['img'])}});">
-					<ul>
-						@foreach($index2_box['article'] as $b_k=>$b_v)
-						<li class="li{{$b_k+1}}">
-							<p class="kefu_btn">老公变心了还能挽回吗？</p>
-						</li>
-						@endforeach
-					</ul>
-				</div>
-			</div>
+			<div class="tap2_tit">
+		      	<p>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<span>{{$index2_box['title']}}</span>
+					<span class="minTit">{{$index2_box['en_title']}}</span>
+		      	</p>
+		   	</div>
+			<div class="padd_all hid_bbor">
+		        <div class="swiper-container qg_swi">
+		          	<div class="swiper-wrapper">
+		          	@foreach($index2_box['article'] as $b_k=>$b_v)
+			          	@if($b_k%6==0)
+			            <div class="swiper-slide">
+		                <ul class="clearfix qg_list hz-cf">
+		                @endif
+
+		                    <li><a href="javascript:void(0)" class="kefu_btn">{{$b_v['title']}}</a></li>
+	
+						@if($b_k%6==5||count($index2_box['article'])==$b_k+1)
+		                </ul>
+			            </div>
+			            @endif
+		            @endforeach
+		          	</div>
+		           <div class="swiper-pagination pagination2"></div>
+		        </div>
+		   </div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				var mySwiper = new Swiper('.qg_swi', {
+				    pagination : '.swiper-pagination',
+				    paginationClickable :true,
+				})
+			})
+		</script>
 	@elseif($index2_box['template']=='love3-encounter')
 		<div class="love3-content">
 			<div class="tap2_tit">
@@ -670,27 +706,26 @@
 	    	                <div class="cm">{!!$index2_box['content']!!}</div>
 	    	            </div>
 	    	        </div>
-
-			        
-			        <ul>
-						@foreach($index2_box['article'] as $b_k=>$b_v)
-						<li @if($b_k==0) class="cur" @endif>
-						    {!!$b_v['content']!!}
-						</li>
-						@endforeach
-			        </ul>
-			        <div class="line">
-			        </div>
-			        <div class="year">
-			            <div class="swiper-container">
-			                <div class="swiper-wrapper">
-			                	@foreach($index2_box['article'] as $b_k=>$b_v)
-			                    <div class="swiper-slide @if($b_k==0) cur @endif ">{{$b_v['title']}}</div>
-			                	@endforeach
+					<div class="part-2">
+			            <div class="con">
+			                <div class="clearfix live-list">
+								@foreach($index2_box['article'] as $b_k=>$b_v)
+			                    <div class="time">
+			                        <span class="span-1">{{$b_v['title']}}</span>
+			                    </div>
+			                    <div class="news">
+			                        <div class="con">
+			                            {!!$b_v['content']!!}
+			                        </div>
+			                    </div>
+			                    <div class="clear"></div>
+								@endforeach
 			                </div>
-			                <!-- Add Pagination -->
-			                <a class="arrow-left" ></a> 
-			                <a class="arrow-right" ></a>
+			            </div>
+			            <div class="con">
+			                <div class="btn-2">
+			                    <a class="a-1 kefu_btn">了解哪种更适合自己</a>
+			                </div>
 			            </div>
 			        </div>
 			    </div>
@@ -698,42 +733,72 @@
 		</div>
 	@elseif($index2_box['template']=='love3-guimi')
 		<div class="love3-content">
-			<div class="con6">
-			    <div class="con_in">
+			<div class="con6 ">
+			    <div class="con_in ">
 			        <h2>{{$index2_box['title']}}</h2>
 			        <h4>{!!nl2br($index2_box['cat_desc'])!!}</h4>
-			        <ul>
-	                	@foreach($index2_box['article'] as $b_k=>$b_v)
-			            <li>
-			                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-			                <h3 class="ellipsis">{{$b_v['title']}}</h3>
-			                <p>
-			                    {!!nl2br($b_v['desc'])!!}
-			                    <b></b>
-			                    {!!nl2br($b_v['desc2'])!!}
-			                </p>
-			            </li>
-	                	@endforeach
-			        </ul>
-			    </div>  
+			        <div class="love3_con6 dz" style="position: relative;">
+				        <div class=" swiper-wrapper">
+		                	@foreach($index2_box['article'] as $b_k=>$b_v)
+	                        <div class="clearfix dz-list swiper-slide">
+	                            <div class="dz-img">
+	                                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+	                            </div>
+	                            <div class="dz-txt">
+	                                <div class="dz-title">
+	                                    <span class="name">{{$b_v['title']}}</span>
+	                                </div>
+	                                <div class="hr"></div>
+	                                <div class="info">
+	                                    {!!nl2br($b_v['desc'])!!}
+					                    <b></b>
+					                    {!!nl2br($b_v['desc2'])!!}
+	                                </div>
+	                            </div>
+	                            <div class="clear"></div>
+	                        </div><div class="clearfix dz-list swiper-slide">
+	                            <div class="dz-img">
+	                                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+	                            </div>
+	                            <div class="dz-txt">
+	                                <div class="dz-title">
+	                                    <span class="name">{{$b_v['title']}}</span>
+	                                </div>
+	                                <div class="hr"></div>
+	                                <div class="info">
+	                                    {!!nl2br($b_v['desc'])!!}
+					                    <b></b>
+					                    {!!nl2br($b_v['desc2'])!!}
+	                                </div>
+	                            </div>
+	                            <div class="clear"></div>
+	                        </div>
+		                	@endforeach
+				        </div>   
+				        <div class="swiper-pagination"></div>
+			        </div>
+			    </div>
+			    <a class="a-1 kefu_btn">了解更多幸福闺蜜团信息</a>
 			</div>
 		</div>
 		<script type="text/javascript">
-			//幸福团专家显示
-			$('love3-content .con6 ul li').hover(function() {
-			    $(this).children('p').show()
-			}, function() {
-			    $(this).children('p').hide()
-			});
+			$(function(){
+				var love3_con6 = new Swiper('.love3_con6', {
+				    pagination : '.swiper-pagination',
+				    slidesPerView : 1,
+				    spaceBetween : 20,
+				    autoplay : 4000
+				});
+			})
 		</script>
 	@elseif($index2_box['template']=='love3-img')
-		<div class="love3-content">
+		{{--<div class="love3-content">
 			<div class="banner2" style="background-image:url({{asset($index2_box['img'])}});height: 172px;">
 			    <!-- <div class="con_in">
 			        <a  class="apply_box_btn">立即获取</a>
 			    </div> -->
 			</div>
-		</div>
+		</div>--}}
 	@elseif($index2_box['template']=='love3-protection')
 		<div class="love3-content">
 			<div class="con7">

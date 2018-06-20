@@ -628,6 +628,7 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
 
 
 
+.index2{overflow: hidden;}
 .index2 .tap2_tit{
     text-align: center;
     font-size: .1rem;
@@ -1327,17 +1328,223 @@ white-space: nowrap;}
     display: block;
 }
 .love3-content .con5 .part-3{background: url(../images/ico9.jpg) no-repeat center;  background-size: cover;padding:.3rem .2rem;}
+.love3-content .con5 .part-2{padding:.3rem .2rem;}
+
+.love3-content .con5 .part-2 .live-list .time {
+    float: left;
+    width: 20%;
+}
+.love3-content .con5 .part-2 .live-list .time .span-1 {
+    display: inline-block;
+    width: 80%;
+    color: #fe6d7a;
+    font-weight: 600;
+    font-size:.24rem;
+    background: url("../images/ico10.jpg") no-repeat 100% 96%;
+    margin-left: 7%;
+    z-index: 99;
+    position: relative;
+    padding-top: 75%;
+    text-align: left;
+    padding-right: 25%;
+    background-size: 23%;
+}
+.love3-content .con5 .part-2 .live-list .news {
+    float: left;
+    width: 76%;
+    border-left: 1px dashed #999;
+    padding-left: 3%;
+}
+
+.love3-content .con5 .part-2 .live-list .news .li {
+
+    float: left;
+    width: 5%;
+    height: 20px;
+}
+
+.love3-content .con5 .part-2 .live-list .news .con {
+    background: #ffffff;
+    float: left;
+    width: 95%;
+    padding: 2%;
+}
+
+.love3-content .con5 .part-2 .live-list .news .con .img img {
+    width: 100%;
+}
+
+.love3-content .con5 .part-2 .live-list .news .con .txt {
+    font-size: 1.4rem;
+    color: #000000;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2.0rem;
+}
+
+.love3-content .con5 .kefu_btn {
+    padding: 6px 12px;
+    display: inline-block;
+    color: #fff;
+    background: #ff5562;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 6rem;
+    font-size: .28rem;
+    margin: .2rem auto;
+    display: block;
+}
+
+.love3-content .con6{padding:.3rem .24rem;position: relative;    background: #fbf6fb;}
+.love3-content .con6 .dz{padding: .2rem 0 .4rem;position: relative;}
+.love3-content .con6 .dz .dz-list .dz-img {
+    width: 50%;
+    float: left;
+}
+
+.love3-content .con6 .dz .dz-list .dz-txt {
+    width: 50%;
+    float: right;
+}
+
+.love3-content .con6 .dz .dz-list .dz-txt .dz-title {
+    text-align: left;
+    padding-left: 6%;
+}
+
+.love3-content .con6 .dz .dz-list .dz-txt .name {
+    font-size: .3rem;
+    font-weight: bold;
+    color: #ff6d7a;
+    text-align: left;
+}
+
+.love3-content .con6 .dz .dz-list .dz-txt .name2 {
+    font-size: .24rem;
+    margin-left: 5%;
+}
+
+.love3-content .con6 .dz .dz-list .dz-txt .info {
+    color: #333;
+    font-size: .18rem;
+    line-height: 1.7;
+    padding-top: 5%;
+    text-align: left;
+    padding-left: 6%;
+
+}
+
+.love3-content .con6 .dz .dz-list .hr {
+    width: .2rem;
+    border-top: 3px solid #ff6d7a;
+    margin: 5% 0 6% 6%;
+
+}
+.love3-content .con6 .kefu_btn {
+    padding: 6px 12px;
+    display: inline-block;
+    color: #fff;
+    background: #ff5562;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 6rem;
+    font-size: .28rem;
+    margin: .2rem auto;
+    display: block;
+}
 
 
+.love3-content .con7{padding:.3rem .24rem;}
+.love3-content .con7 .cm li{width: 100%!important;;margin:0 !important;padding:.2rem!important;text-align: center;display: block;}
+.love3-content .con7 .cm li p{margin:0 !important;width: 100%!important;;}
+.love3-content .con7 .love-btn{padding: 6px 12px;
+    display: inline-block;
+    color: #fff;
+    background: #ff5562;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 6rem;
+    font-size: .28rem;
+    margin: .2rem auto;
+    display: block;
+}
+.love3-content .con10{ width:100%; background: url(../images/bj4.png) no-repeat center/cover; padding: .3rem .24rem;}
+.love3-content .con10 ul{ overflow: hidden; }
+.love3-content .con10 ul li{ float:left;width: 50%;margin-top: .2rem;}
+.love3-content .con10 ul li img{ margin: 0 auto;display: block; width: 1.6rem;}
+.love3-content .con10 ul li b{ width:40%; text-align: center; display: block;  margin: 0 auto;  color:#ff5562; font-size: .3rem; padding-bottom: .05rem; border-bottom: 2px solid #ff5562; padding-top: .1rem;}
+.love3-content .con10 ul li p{ font-size: .24rem; line-height: 1.8; width: 100%; text-align: center; margin-top: .05rem;}
 
 
+.index2 .confusion_con01 ul{ overflow: hidden;padding-top: .2rem;}
+.index2 .confusion_con01 ul li{ float: left;width:48%;margin-left: 1%;}
 
-
-
-
-
-
-
-
-
-
+.index2 .padd_all{padding:.3rem .24rem;position: relative;overflow: hidden;}
+.index2 .qg_swi{padding-bottom: .3rem;overflow: hidden;}
+.index2 .qg_list li a{color: #fff;}
+.index2 .qg_list li{
+    float: left;
+    width: 49.5%;
+    margin-right: 1%;
+    text-align: center;
+    font-size: .2rem;
+    color: #fff;
+    background: #ff5562;
+    border-radius: 3px;
+    padding: .15rem 0;
+    margin-bottom: .15rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.index2 .qg_list li:nth-of-type(2n){
+    margin-right: 0;
+    background: #ff61a3
+}
+.index2 .qg_list li:nth-of-type(3){
+    background: #01b7ee
+}
+.index2 .qg_list li:nth-of-type(4){
+    background: #89c997
+}
+.index2 .qg_list li:nth-of-type(5){
+    background: #dfb200
+}
+.index2 .qg_list li:nth-of-type(6){
+    background: #B7DFE9
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.pagination2{position: absolute;bottom: 0;width: 100%;}
+.pagination2 .swiper-pagination-bullet{height: .2rem;border-radius: .2rem;width: .2rem;margin:0 .1rem;}

@@ -390,7 +390,7 @@
 				<ul>
 					@foreach($index2_box['article'] as $b_k=>$b_v)
 					<li class="li{{$b_k+1}}">
-						<p class="kefu_btn">老公变心了还能挽回吗？</p>
+						<p class="kefu_btn">{{$b_v['title']}}</p>
 					</li>
 					@endforeach
 				</ul>
