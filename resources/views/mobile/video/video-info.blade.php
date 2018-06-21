@@ -48,9 +48,9 @@
             <ul>
                 @foreach($info['VideoCourseMany'] as $k=>$v)
                 @if($is_pay!='免费观看'&&$is_pay!='已购买')
-                <li data-src="{{$v['try_video']}}" data-try='1' @if($k==0) class="on" @endif>{{$v['title']}}</li>
+                <li data-src="{{asset($v['try_video'])}}" data-try='1' @if($k==0) class="on" @endif>{{$v['title']}}</li>
                 @else
-                <li data-src="{{$v['video']}}" @if($k==0) class="on" @endif>{{$v['title']}}</li>
+                <li data-src="{{asset($v['video'])}}" @if($k==0) class="on" @endif>{{$v['title']}}</li>
                 @endif
                 @endforeach
             </ul>
@@ -96,7 +96,8 @@
         var videoObject = {
             container: '#video', //容器的ID
             variable: 'player',
-            poster:'{{asset($Video['img'])}}',//封面图片
+            flashplayer:true,
+            poster:'{{asset($info['img'])}}',//封面图片
             video: video_url
         };
         var player = new ckplayer(videoObject);
@@ -108,7 +109,8 @@
             var newVideoObject = {
                 container: '#video', //容器的ID
                 variable: 'player',
-                poster:'{{asset($Video['img'])}}',//封面图片
+                flashplayer:true,
+                poster:'{{asset($info['img'])}}',//封面图片
                 // loaded: 'loadedHandler', //当播放器加载后执行的函数
                 video: videoUrl
             }
