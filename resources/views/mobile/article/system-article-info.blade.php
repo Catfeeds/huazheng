@@ -1,9 +1,9 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
     @parent
 @endsection
 @section('content')
-    <div class="layout">
+    <div class="ststem_article">
         {!!$info['content']!!}
     </div>
 @endsection

@@ -20,7 +20,7 @@
                             已经注册 <a href="{{URL('login')}}">直接登录</a>
                         </div>
                     </div>
-                    <form method="POST" id="demoform" action="{{URL('password-reset')}}">
+                    <form method="POST" id="demoform" action="{{URL('register')}}">
                         @csrf
                         <div class="form-item" >
                             <!--注册from-->

@@ -213,7 +213,7 @@ class VideoController extends Controller
                 // $width = trans('template.template_width.'.$caregory_info['template']);
                 // $height = trans('template.template_height.'.$caregory_info['template']);
                 // if($width>0||$height>0){
-                    $form->img = Image($form->img,537,289,"uploads/video/".date("Ymd")."/");
+                    $form->img = Image($form->img,1920,1033,"uploads/video/".date("Ymd")."/");
                 // }
             });
             // $form->saved(function (Form $form) {

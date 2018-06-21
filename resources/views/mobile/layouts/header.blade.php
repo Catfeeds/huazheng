@@ -7,7 +7,9 @@
                 <i class="iconfont icon-bars"></i>
             </a>
             @if(Auth::check())
-                <img src="{{asset(Auth::user()->pic)}}" class="pic">
+                <a href="{{URL('member')}}" style="border:0;padding:0">
+                    <img src="{{asset(Auth::user()->pic)}}" class="pic">
+                </a>
             @else
                 <a href="{{URL('login')}}">登录</a>
             @endif
@@ -23,7 +25,7 @@
                 @foreach(nav(5) as $k=>$v)
                 <li>
                     <a @if(!empty($v['url'])) href="{{$v['url']}}" @endif @if($v['is_blank']) target="_blank" @endif title="{{$v['title']}}"  @if(count($v['child'])) class="cur" @endif>
-                        <i class="iconfont icon-nan navsI icon{{$k+1}}" style="background-image: url({{asset($v['ico'])}});"></i>
+                        <i class=" icon-nan navsI icon{{$k+1}}" style="background-image: url({{asset($v['ico'])}});"></i>
                         <p>{{$v['title']}}</p>
                     </a>
                 </li>

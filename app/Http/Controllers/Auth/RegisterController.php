@@ -41,7 +41,11 @@ class RegisterController extends Controller
     }
     public function showRegistrationForm(){
         //更改注册页面模版路径
-        return view('home.user.register');
+        if(isMobile()){
+            return view('mobile.user.register',['is_footer'=>0]);
+        }else{
+            return view('home.user.register');
+        }
     }
 
     /**

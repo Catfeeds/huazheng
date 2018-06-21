@@ -69,7 +69,7 @@
                 <p class="courseItem" onclick="window.open('{{URL('video-play',[$v['course_id']])}}')">
                     <i></i>
                     {{$v['title']}}
-                    @if(!empty($v['try_video']))
+                    @if(!empty($v['try_video'])&&($is_pay!='免费观看'||$is_pay!='已购买'))
                     <span class="free">免费试听</span>
                     @endif
                     <i></i>

@@ -73,14 +73,30 @@ class UserController extends Controller
         User::where('grade',2)->where('grade_end',"<",date('Y-m-d H:i:s'))->update(['grade'=>1]);
         User::where('grade',1)->where('grade_end',">",date('Y-m-d H:i:s'))->update(['grade'=>2]);
 
-
         $user_info = Auth::user();
         $assign = [
             'head_title'     => '会员中心',
             'Gs_panel_title' => 1,
             'user_info'      => $user_info,
         ];
-        return view('home.user.member',$assign);
+        if(isMobile()){
+            return view('mobile.user.member',$assign);
+        }else{
+            return view('home.user.member',$assign);
+        }
+    }
+    public function member_edit(Request $request){
+        $user_info = Auth::user();
+        $assign = [
+            'head_title'     => '个人资料',
+            'Gs_panel_title' => 1,
+            'user_info'      => $user_info,
+        ];
+        if(isMobile()){
+            return view('mobile.user.member_edit',$assign);
+        }else{
+            return view('home.user.member_edit',$assign);
+        }
     }
     public function member_pic(){
         $user_info = Auth::user();

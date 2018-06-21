@@ -1,73 +1,52 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
+<style type="text/css">
+    body{background-color: #f2f2f2}
+</style>
 @parent
 @endsection
 @section('content')
-<div class="user_main">
-    <div class="site_container">
-        <div class="container_inner clearfix">
-            @include('home.layouts.member-nav')
-            <div class="user_right_content">
-                <h3 class="jichu_info">安全设置</h3>
-                <div class="panel_info">
-                    <div class="box">
-                        <p class="user_name_show">昵称：<span class="unicheng f-ml78 update_field">{{$user_info['name']}}</span><span class="write xg">修改</span></p>
-                        <p class="f-dn user_name_edit" data-cfield="nick2" >
-                            昵称：<input type="text" name="name" value="{{$user_info['name']}}">
-                            <span class="close user_center_colse">保存</span>
-                            <span class="sure">取消</span>
-                        </p>
-                    </div>
-                    <div class="box">
-                        <p>绑定手机：<span class="f-ml46 user_phone">{{substr_replace($user_info['phone'],'****',3,4)}}</span><span class="write cxbd">重新绑定</span></p>
-                    </div>
-                    <div class="box">
-                        <p>密码：<span class="f-ml46" style="margin-left: 77px;">******</span><span class="write xg3">修改</span></p>
-                    </div>
-                </div>
-            </div>
+<div class="mainSelf">
+    <div class="selfGroup selfTop">
+        <div class="selfImg">
+            <img src="{{asset($user_info['pic'])}}" alt="" />
         </div>
+        <div class="selfName">
+            <span class="selfNameValue">{{$user_info['name']}}</span>
+            <!-- <a href="{{URL('member-edit')}}"><span class="editIcon"></span></a> -->
+        </div>
+        @if($user_info['grade']==1)
+        <p class="user_kt">
+            <a href="{{URL('vip-pay')}}" class="vip_btn">成为VIP</a>
+        </p>
+        @else
+        <div class="vip">
+            <span>{{date('Y-m-d',strtotime($user_info['grade_end']))}}到期</span><a href="{{URL('vip-pay')}}" class="xufei">续费</a>
+        </div>
+        @endif
+    </div>
+            <!-- <span class="wxNo"><a href="/account/wechat/login" style="color:#ff5266;">去绑定微信</a></span> -->
+    <div class="selfGroup selfList">
+        <ul>
+            <a href="{{URL('member-video-list')}}">
+                <li class="wdkc">
+                    <i class="bgIcon"></i>
+                    <p>我的课程</p>
+                    <i class="moreIcon"></i>
+                </li>
+            </a>
+            <a href="{{URL('logout')}}">
+                <li class="end">
+                    <i class="bgIcon"></i>
+                    <p>退出</p>
+                    <i class="moreIcon"></i>
+                </li>
+            </a>
+        </ul>
     </div>
 </div>
-<!--修改密码框-->
-<div class="bangding xgmm" id="xgmm">
-    <div class="bangdingkuang xgmm2">
-        <form method="POST" id="passwordform" action="{{URL('user-password-save')}}">
-            @csrf
-            <div class="bd1">修改密码
-                <img class="xgmm_gb" src="http://a3.huazhen.com/new_huazhen/user_v_1_2/img/icon-guanbi.png" alt=""/></div>
-            <!-- <div><input type="text" id="password-mobile" name="phone" placeholder="请输入绑定手机号码"/></div> -->
-            <div class="bd4">
-                <input type="text" name="verify_code" id="password-verify-code" placeholder="请输入验证码"/>
-                <span class="get-msg">获取验证码</span>
-            </div>
-            <div><input type="password" id="password-password" name="password" placeholder="请输入新密码"/></div>
-            <div><input type="password" id="password-password2" name="password_confirmation" placeholder="请再次输入新密码"/></div>
-            <div class="bd5">
-                <p class="save2">提交</p>
-            </div>
-        </form>
-    </div>
-</div>
-<!--重新绑定手机框-->
-<div id="bangding" class="bangding">
-    <div class="bangdingkuang">
-        <form method="POST" id="rebindform" action="{{URL('user-bangding-save')}}">
-            @csrf
-            <div class="bd1">重新绑定手机
-                <img class="bd1_gb" src="http://a3.huazhen.com/new_huazhen/user_v_1_2/img/icon-guanbi.png" alt=""/></div>
-            <!-- <div><input type="password" id="rebind-password" name="password"  placeholder="请输入密码"/></div> -->
-            <div><input type="text" id="rebind-mobile" name="phone" placeholder="请输入新手机"/></div>
-            <div class="bd4">
-                <input type="text" name="verify_code" id="rebind-verify-code" placeholder="请输入验证码"/>
-                <span class="get-msg" id="rebind-get-msg">获取验证码</span>
-            </div>
-            <div class="bd5">
-                <p class="subt">提交</p>
-            </div>
-        </form>
-    </div>
-</div>
+
+
 @endsection
 @section('script')
 @parent

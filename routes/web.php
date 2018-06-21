@@ -37,6 +37,7 @@ Route::group(['middleware'=>'auth'], function(){
 
 	Route::get('vip-pay','UserController@vip_pay');//会员vip购买
 	Route::get('member','UserController@member');//个人中心
+	Route::get('member-edit','UserController@member_edit');//个人资料修改
 	Route::get('member-pic','UserController@member_pic');//会员头像
 	Route::post('member-pic-save','UserController@member_pic_save');//会员上传头像
 	Route::post('user-name-save','UserController@user_name_save');//会员名称修改

@@ -48,7 +48,7 @@
     var videoObject = {
         container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
         variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-        poster:'{{asset('resources/home/images/ico/ico25.jpg')}}',//封面图片
+        poster:'{{asset($Video['img'])}}',//封面图片
         video:'{{asset($video_url)}}',//视频地址
     };
     var player=new ckplayer(videoObject);

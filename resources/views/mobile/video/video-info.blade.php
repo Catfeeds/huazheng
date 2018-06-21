@@ -1,135 +1,153 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
+<style type="text/css">
+    body{background-color: #f8f8f8;}
+</style>
 @parent
 @endsection
 @section('content')
-<div class="expert_con">
-    @include('home.layouts.location')
-    <div class="videoInfo">
-        <div class="imgDiv1">
-            <img class="videoP" src="{{asset($info['img'])}}" alt="{{$info['alt']}}">
-        </div>
-        <div class="videoI">
-            <p class="videoTit">{{$info['title']}}</p>
-            <p class="videoSumm">{!!nl2br($info['desc'])!!}</p>
-            <div class="videoCon">
-                <p class="price">价格 <span class="newPrice"><i>￥</i>{{$info['price']}}</span><span class="oldPrice">{{$info['old_price']}}</span></p>
-                <p class="courseNum">{{$info['number']}}人学习过 | {{count($info['VideoCourseMany'])}}个课时</p>
-                <p class="videoTag">
-                    <span>新用户注册</span>
-                    @if($info['is_try']&&$info['is_fee']!=3)
-                    <span>免费试听</span>
-                    @endif
-                    @if($info['is_fee']==2)
-                    <span>会员免费</span>
-                    @elseif($info['is_fee']==3)
-                    <span>免费观看</span>
-                    @endif
-                </p>
-                <p class="btns">
-                    @if($is_pay)
-                    <a>{{$is_pay}}</a>
-                    @else
-                    <a href="{{URL('video-pay',$info['video_id'])}}">立刻购买</a>
-                    @endif
-                    <a  class="kefu_btn">我要咨询</a>
-                </p>
-                @if (session('error_message'))
-                    <div class="error_message">
-                        {{ session('error_message') }}
-                    </div>
-                @endif
+<div class="video_info">
+    <div class="video_pay">
+        <div id="video" style="width:100%; height:4.8rem;"></div>
+        <a id='try'>
+            <img src="{{asset('resources/mobile/images/ico19.png')}}">
+        </a>
+    </div>
+    <div class="weui_tab " id="tab1"><!--tab-fixed添加顶部-->
+        <div class="clearfix weui_navbar">
+            <div class="weui_navbar_item  tab-red">
+                课程介绍
             </div>
-            
-            <div class="fx">
-                <div class="bdsharebuttonbox">
-                    <span class="fon14 fxfont">分享</span>
-                    <a  class="bds_more" data-cmd="more"></a>
-                    <a  class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                    <a  class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                    <a  class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                    <a  class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                    <a  class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                </div>
+            <div class="weui_navbar_item">
+                课程目录
+            </div>
+            <div class="weui_navbar_item">
+                常见问题
             </div>
         </div>
     </div>
-    <div class="videoOth">
-        <p class="videoOthTab">
-            <span class="active">课程介绍</span>
-            <span class="mulu">课程目录</span>
-            <span>常见问题</span>
-        </p>
-        <ul class="videoTabCon">
-            <li class="active">
+    <div class="course-con">
+        <div class="item text" style="display: block;">
+            <div class="introduce">
+                <p class="introduceTit">爱情三重奏</p>
+                <p class="introduceInfo">
+                    {{$info['number']}}人学习过 | {{count($info['VideoCourseMany'])}}个课时
+                    <span>
+                        ￥
+                        <i class="newP">{{$info['price']}}</i>
+                        <i class="oldP">{{$info['old_price']}}</i>
+                    </span>
+                </p>
+            </div>
+            <div class="jianjie">
+                <span>课程详情</span>
                 {!!$info['content']!!}
-            </li>
-            <li>
+            </div>
+        </div>
+        <div class="item cur">
+            <ul>
                 @foreach($info['VideoCourseMany'] as $k=>$v)
-                <p class="courseItem" onclick="window.open('{{URL('video-play',[$v['course_id']])}}')">
-                    <i></i>
-                    {{$v['title']}}
-                    @if(!empty($v['try_video']))
-                    <span class="free">免费试听</span>
-                    @endif
-                    <i></i>
-                </p>
+                @if($is_pay!='免费观看'&&$is_pay!='已购买')
+                <li data-src="{{$v['try_video']}}" data-try='1' @if($k==0) class="on" @endif>{{$v['title']}}</li>
+                @else
+                <li data-src="{{$v['video']}}" @if($k==0) class="on" @endif>{{$v['title']}}</li>
+                @endif
                 @endforeach
-            </li>
-            <li class="commonPr">
-                <p class="proTit">常见问题：</p>
-                <div>
-                    {!!f_article_info(1249)['content']!!}
-                </div>
-            </li>
-        </ul>
+            </ul>
+        </div>
+        <div class="item des">
+            <p class="desTit">注意问题</p>
+            {!!f_article_info(1249)['content']!!}
+        </div>
     </div>
-    <div class="videoLike">
-        <p class="likes">
-            猜你喜欢
-        </p>
-        <ul class="videoList">
-            @foreach($like_video_list as $v)
-                <li>
-                    <a href="{{URL('video-info',[$v])}}">
-                        <div class="imgDiv">
-                            <img class="videoPa" src="{{asset($v['img'])}}">
-                            <p><img src="{{asset('resources/home/images/ico/ico22.png')}}">{{count($v['VideoCourseMany'])}}个课时</p>
-                        </div>
-                        <div class="videoTit">
-                            <p>{{$v['title']}}</p>
-                            <span>{{$v['number']}}人正在学习</span> 
-                        </div>
-                        <div class="priceTag"> 
-                            <p class="price colred">￥<span class="newprice">{{$v['price']}}</span><span class="oldprice">{{$v['old_price']}}</span> </p> 
-                            @if($v['is_try'])
-                            <p class="videotag"> <span>可试学</span> </p> 
-                            @endif
-                        </div> 
-                    </a> 
-                </li>
-            @endforeach
-        </ul>
+    <div class="course-footer-box">
+        <div class="course-footer">
+            <div class="collect left" id="actionToggle">
+                课程价格:
+                <p>
+                    ￥
+                    <span class="newP">{{$info['price']}}</span>
+                    <span class="oldP">{{$info['old_price']}}</span>
+                </p>
+            </div>
+            @if($is_pay)
+                <a class="right cz">{{$is_pay}}</a>
+            @else
+                <a href="{{URL('video-pay',$info['video_id'])}}" class="right cz">立刻购买</a>
+            @endif
+        </div>
     </div>
 </div>
 @endsection
 @section('script')
 @parent
 <script type="text/javascript">
-    window._bd_share_config={
-        "common":{
-            "bdText" : '',
-            "bdDesc" : '',
-            "bdUrl": '',
-            "bdPic": '',
-            "bdStyle":"1",
-        },"share":{}
-    };
-    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-    $(".videoOthTab span").click(function(){
-        var index = $(this).index();
-        $(this).addClass("active").siblings().removeClass('active');
-        $(".videoTabCon li").eq(index).addClass('active').siblings().removeClass('active')
+    $(function(){
+        $(".weui_navbar_item").click(function(){
+            $(this).addClass('tab-red').siblings().removeClass("tab-red");
+            $(".course-con .item").eq($(this).index()).show().siblings().hide();
+        })
+        var video_url = $(".cur").find("li").eq(0).attr('data-src');
+        if($(".cur").find("li").eq(0).attr('data-try')==1){
+            $("#try").show();
+        }else{
+            $("#try").hide();
+        }
+        var videoObject = {
+            container: '#video', //容器的ID
+            variable: 'player',
+            poster:'{{asset($Video['img'])}}',//封面图片
+            video: video_url
+        };
+        var player = new ckplayer(videoObject);
+
+        function changeVideo(videoUrl) {
+            if(player == null) {
+                return;
+            }
+            var newVideoObject = {
+                container: '#video', //容器的ID
+                variable: 'player',
+                poster:'{{asset($Video['img'])}}',//封面图片
+                // loaded: 'loadedHandler', //当播放器加载后执行的函数
+                video: videoUrl
+            }
+            //判断是需要重新加载播放器还是直接换新地址
+            if(player.playerType == 'html5video') {
+                if(player.getFileExt(videoUrl) == '.flv' || player.getFileExt(videoUrl) == '.m3u8' || player.getFileExt(videoUrl) == '.f4v' || videoUrl.substr(0, 4) == 'rtmp') {
+                    player.removeChild();
+
+                    player = null;
+                    player = new ckplayer();
+                    player.embed(newVideoObject);
+                } else {
+                    player.newVideo(newVideoObject);
+                }
+            } else {
+                if(player.getFileExt(videoUrl) == '.mp4' || player.getFileExt(videoUrl) == '.webm' || player.getFileExt(videoUrl) == '.ogg') {
+                    player = null;
+                    player = new ckplayer();
+                    player.embed(newVideoObject);
+                } else {
+                    player.newVideo(newVideoObject);
+                }
+            }
+        }
+        
+        $(".cur").find("li").click(function(){
+            $(this).addClass('on').siblings().removeClass("on");
+            var video_url = $(this).attr('data-src');
+            if($(this).attr('data-try')==1){
+                $("#try").show();
+            }else{
+                $("#try").hide();
+            }
+            changeVideo(video_url);
+        })
+        $("#try").click(function(){
+            player.videoPlay();
+            $("#try").hide();
+        })
     })
 </script>
 @endsection

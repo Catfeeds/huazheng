@@ -32,7 +32,11 @@ class LoginController extends Controller
     }
     public function showLoginForm(){
         //更改登陆页面模版路径
-        return view('home.user.login');
+        if(isMobile()){
+            return view('mobile.user.login',['is_footer'=>0]);
+        }else{
+            return view('home.user.login');
+        }
     }
     /**
      * Create a new controller instance.

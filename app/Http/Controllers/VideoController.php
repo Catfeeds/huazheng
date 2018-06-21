@@ -47,7 +47,11 @@ class VideoController extends Controller
             'video_list' => $video_list,
             'Category'   => $Category,
         ];
-        return view('home.video.video-list',$assign);
+        if(isMobile()){
+            return view('mobile.video.video-list',$assign);
+        }else{
+            return view('home.video.video-list',$assign);
+        }
     }
     public function video_info(Request $request,$id){
         //课程详情
@@ -94,16 +98,7 @@ class VideoController extends Controller
                 'title'=>$info['title'],
             ],
         ];
-        //猜你喜欢
-        $like_video_list = Video::VideoList([
-            'order'    =>[
-                0=>[
-                    'order'=>'number',
-                    'sort'=>'DESC',
-                ],
-            ],
-            'paginate' =>3,
-        ]);
+        
         $assign = [
             'like_video_list'  => $like_video_list,
             'location'         => $location,
@@ -113,7 +108,12 @@ class VideoController extends Controller
             'head_keywords'    => !empty($info['seo_keywords'])?$info['seo_keywords']:$info['title'],
             'head_description' => !empty($info['seo_description'])?$info['seo_description']:$info['title'],
         ];
-        return view('home.video.video-info',$assign);
+        if(isMobile()){
+            $assign['is_footer'] = 0;
+            return view('mobile.video.video-info',$assign);
+        }else{
+            return view('home.video.video-info',$assign);
+        }
     }
     public function video_play(Request $request,$id){
         //课程播放
@@ -203,6 +203,10 @@ class VideoController extends Controller
             'video_list'     => $video_list,
             'Gs_panel_title' => 2,
         ];
-        return view('home.video.member-video-list',$assign);
+        if(isMobile()){
+            return view('mobile.video.member-video-list',$assign);
+        }else{
+            return view('home.video.member-video-list',$assign);
+        }
     }
 }
