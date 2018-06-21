@@ -1,91 +1,86 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
     @parent
 @endsection
 @section('content')
     <div class="master-banner">
-        <div class="banner_in">
-            <div class="banner_left">
-                <img src="{{asset($info['img2'])}}" alt="{{$info['alt2']}}">
-            </div>
-            <div class="banner_right">
-                <div class="js">
-                    <h4>
-                        <b>{{$info['title']}}</b>
-                        {{$info['title2']}}
-                    </h4>
-                    <p>
-                        {!!nl2br($info['desc'])!!}
-                    </p>
-                </div>
-                @if($info['MoreVideoMany']['0'])
-                <div class="sp play">
-                    <img class="video_play" data-vid="{{$info['MoreVideoMany']['0']['video']}}" src="{{asset($info['MoreVideoMany']['0']['image'])}}">
-                </div>
-                @endif
-            </div>
-        </div>
+        <img src="{{asset($info['img2'])}}" alt="{{$info['alt2']}}">
     </div>
     <div class="layout master-content">
-        @include('home.layouts.location')
-        <div class="con_in">
-            <div class="ds_nav">
-                <h3>导师介绍</h3>
-                <ul>
-                    <li>
-                        <a  target="_self">导师视频</a>
-                    </li>
-                    <li>
-                        <a  target="_self">导师荣誉</a>
-                    </li>
-                    <li>
-                        <a  class="kefu_btn" target="_self">立即咨询</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ds_js">
-                {!!$info['content']!!}
-            </div>
-            <div class="item ds_sp">
-                <ul class="sp_list">
-                    @if($info['MoreVideoMany'])
-                        @foreach($info['MoreVideoMany'] as $k=>$v)
-                        <li class="play">
-                            <div class="tu">
-                                <img src="{{asset($v['image'])}}" alt="">
-                            </div>
-                            <p>{{$v['title']}}</p>
-                            <!-- 播放按钮 -->
-                            <span class="video_play" data-vid="{{$v['video']}}"></span>
-                        </li>
-                        @endforeach
-                    @endif
-                </ul>
-            </div>
-            <div class="item ds_ry">
-                <ul class="ry_list">
-                    @if($info['MoreImageMany'])
-                        @foreach($info['MoreImageMany'] as $k=>$v)
-                        <li>
-                            <div class="tu">
-                                <img src="{{asset($v['image'])}}" alt="{{$v['alt']}}">
-                            </div>
-                            <p>{{$v['title']}}</p>
-                        </li>
-                        @endforeach
-                    @endif
-                </ul>
-            </div>
-            @foreach(ads_image(24,1) as $v)
-            <div class="con_bottom">
-                <a class="bendi" @if(!empty($v['url'])) href="{{$v['url']}}" @endif target="_blank"><img src="{{asset($v['image'])}}" alt="{{asset($v['alt'])}}"> </a>
-            </div>
-            @endforeach
-            
+        <div class="info-title">
+            <h1>
+                {{$info['title']}}
+                <small>{{$info['title2']}}</small>
+            </h1>
+            <button class="button kefu_btn">立即咨询</button>
         </div>
-    </div>
-    @include('home.layouts.fhns-bottom')
+        <div class="info-text info-text-up">
+            <div class="info-text-table">
+                <p class="t1">导师介绍</p>
+                {!!nl2br($info['desc'])!!}
+            </div>
+            <button class="button">
+                <i class="icon icon-caret"></i>
+            </button>
+        </div>
+        <script>
+            $('.info-text').on('click', '.button', function () {
+                $('.info-text').toggleClass("info-text-up");
+            })
+        </script>
+        <div class="clearfix buttons-tab info-buttons-tab">
+            <a class="tab-link button active">导师视频</a>
+            <a class="tab-link button">导师荣誉</a>
+        </div>
+        <div class="tabs info-tabs">
+            <div id="info-tab2" class="clearfix tab info-tab-video" style="display: block;">
+                @foreach($info['MoreVideoMany'] as $k=>$v)
+                <a class="info-video-list video_play" data-vid="{{$v['video']}}">
+                    <div class="info-video-bg">
+                        <img src="{{asset($v['image'])}}" alt="video">
+                        <i class="iconfont3 font-play video_play" data-vid="{{$v['video']}}"></i>
+                    </div>
+                    <p>{{$v['title']}}</p>
+                </a>
+                @endforeach
+            </div>
+            <div id="info-tab3" class="clearfix tab info-tab-glory">
+                @foreach($info['MoreImageMany'] as $k=>$v)
+                <a class="info-glory-list">
+                    <div class="info-glory-bg">
+                        <img src="{{asset($v['image'])}}" alt="{{$v['alt']}}" alt="video">
+                    </div>
+                    <p>{{$v['title']}}</p>
+                </a>
+                @endforeach
+            </div>
+        </div>
+        <div class="video_play_box">
+            <div class="box">
+                <i class="ico13"></i>
+            </div>
+        </div>
+        @include('mobile.layouts.location')
 @endsection
 @section('script')
     @parent
+    <script type="text/javascript">
+        $(function(){
+            $(".info-buttons-tab .button").click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                $(".info-tabs .tab").eq($(this).index()).show().siblings().hide();
+            })
+            //视频
+            $(".info-tabs").on('click','.video_play', function(){
+                var video = $(this).attr('data-vid');
+                var iframe = '<iframe frameborder="0" src="'+video+'" allowfullscreen></iframe>';
+                $(".video_play_box").show();
+                $(".video_play_box .box").append(iframe);
+            });
+            $(".video_play_box").on("click", ".ico13", function() {
+                $(".video_play_box").hide();
+                $(".video_play_box").find("iframe").remove();
+            });
+        })
+    </script>
 @endsection

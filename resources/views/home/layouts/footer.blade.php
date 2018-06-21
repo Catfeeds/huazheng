@@ -63,7 +63,7 @@
         <div class="new_foot-in">
             <ul>
                 <li>
-                    <img src="{{asset(ConfigGet('footer_logo'))}}" alt="{{ConfigGet('site_name')}}" title="{{ConfigGet('site_name')}}"/>
+                    <img src="{{asset(ConfigGet('logo'))}}" alt="{{ConfigGet('site_name')}}" title="{{ConfigGet('site_name')}}"/>
                     <p>在线咨询：{!!ConfigGet('phone')!!}</p>
                     <p>公司地址：{!!ConfigGet('address')!!}</p>
                     <!-- <p>泰兴商业大厦 7楼709室</p> -->

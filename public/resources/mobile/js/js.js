@@ -27,4 +27,7 @@ $(document).ready(function() {
     $('.sliHea i').click(function(){
         $(".slideMask").removeClass('slActive')
     });
+
+
+    
 });

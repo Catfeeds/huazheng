@@ -85,19 +85,20 @@ $(function(){
         x = elem;
         // console.log(elem.data('vid'));
         var vid = elem.data('vid');
-        var src = vid;
-         // 'http://static.video.qq.com/TPout.swf?vid=' + vid + '&auto=0';
-        // console.log(vid, src, elem);
-        var attr = {allowFullScreen: true,
-            quality: "high",
-            width: 480,
-            height: 400,
-            align: "middle",
-            allowScriptAccess: "always",
-            wmode: "Opaque"
-        };
-        var params = {wmode: "Opaque"};
-        obj = createSwfObject(src, attr, params);
+        // var src = vid;
+        //  // 'http://static.video.qq.com/TPout.swf?vid=' + vid + '&auto=0';
+        // // console.log(vid, src, elem);
+        // var attr = {allowFullScreen: true,
+        //     quality: "high",
+        //     width: 480,
+        //     height: 400,
+        //     align: "middle",
+        //     allowScriptAccess: "always",
+        //     wmode: "Opaque"
+        // };
+        // var params = {wmode: "Opaque"};
+        // obj = createSwfObject(src, attr, params);
+        var obj = '<iframe frameborder="0" width="480" height="400" src="'+vid+'" allowfullscreen></iframe>';
         $("#flash-player").empty().append(obj);
         $(".video-list-1").show();
         $(".divMask").show();
