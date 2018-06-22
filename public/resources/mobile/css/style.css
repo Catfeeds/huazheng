@@ -2462,7 +2462,7 @@ white-space: nowrap;}
   line-height: 1.9rem;
 }
 
-.Validform_checktip.Validform_wrong{color: #ff5562;font-size: .18rem;}
+.Validform_checktip.Validform_wrong{color: #ff5562;font-size: .18rem;display: block;clear:both;}
 
 .mainSelf{
     font-size: .24rem;
@@ -2529,7 +2529,7 @@ white-space: nowrap;}
     color: #ff5266;
     font-size: .18rem;
 }
-.mainSelf .vip a{border:1px solid #ff5266;border-radius: .1rem;padding:.06rem .1rem;margin-left: .05rem;}
+.mainSelf .vip a{border:1px solid #ff5266;border-radius: .1rem;padding:.06rem .1rem;margin-left: .05rem;color:#ff5266;}
 .mainSelf .selfList{background-color: #fff;}
 .mainSelf .selfList li{
     padding: 0 .3rem 0 .3rem;
@@ -2592,9 +2592,9 @@ white-space: nowrap;}
 .infor li .left{ float:left; font-size: .3rem; }
 .infor li .tx_left{ line-height: .6; }
 .infor li .right{ float:right; color:#666;  margin-right: 3%; font-size: .3rem;}
-.infor li .right .tx{ width:.2rem; height: .2rem; display: block;  overflow: hidden; border-radius: 50%;}
+.infor li .right .tx{ width:.6rem; height: .6rem; display: block;  overflow: hidden; border-radius: 50%;}
 .infor li .right .tx img{  width: 100%; height: 100%; object-fit: cover; }
-.infor li.infor_tx .left{ line-height: .6; }
+.infor li.infor_tx .left{ line-height: .6rem; }
 .infor li.bdb{ border-bottom:13px solid #efefef; }
 .infor ul{ background: #fff; }
 .infor .quit{ width:90%;  padding: 3% 0; text-align: center;  background: #ff5562; color:#fff; font-size: .3rem; margin: 5% auto;}

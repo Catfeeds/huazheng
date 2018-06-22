@@ -1,16 +1,16 @@
 <div class="detail_right">
     @foreach(ads_image(23,1) as $v)
     <div class="case_zx">
-        <a class="bendi" @if(!empty($v['url'])) href="{{$v['url']}}" @endif target="_blank"><img src="{{asset($v['image'])}}" alt="{{asset($v['alt'])}}"> </a>
-        <a  class="kefu_btn zx" target="_blank">立即咨询</a> 
-        <a  class="apply_box_btn zx" data-channel="新笃爱_文章页" target="_blank">免费申请</a> 
+        <a class="bendi" @if(!empty($v['url'])) href="{{$v['url']}}" @endif ><img src="{{asset($v['image'])}}" alt="{{asset($v['alt'])}}"> </a>
+        <a  class="kefu_btn zx" >立即咨询</a> 
+        <a  class="apply_box_btn zx" data-channel="新笃爱_文章页" >免费申请</a> 
     </div>
     @endforeach
     <div class="tjzj">
         <h4>推荐导师</h4>
         @foreach($art_4 as $k=>$v)
         <dl>
-            <a href="{{URL($cat_4['url']),$v['id']}}" target="_blank">
+            <a href="{{URL($cat_4['url']),$v['id']}}" >
                 <dt>
                     <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
                 </dt>
@@ -55,13 +55,13 @@
             @foreach($art_2 as $k=>$v)
                 @if($k==3)
                 <p class="box4">
-                    <a href="{{URL($cat_1['url']),$v['id']}}" target="_blank">
+                    <a href="{{URL($cat_1['url']),$v['id']}}" >
                         <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}" width="114" height="115">
                         <span class="ellipsis2">{{$v['title']}}</span>
                     </a>
                 </p>
                 @else
-                <p class="@if($k==5) box5 @endif box{{$k+1}}"><a href="{{URL($cat_1['url']),$v['id']}}" class="ellipsis2" target="_blank">{{$v['title']}}</a></p>
+                <p class="@if($k==5) box5 @endif box{{$k+1}}"><a href="{{URL($cat_1['url']),$v['id']}}" class="ellipsis2" >{{$v['title']}}</a></p>
                 @endif
             @endforeach
         </div>
@@ -72,11 +72,11 @@
         <h4>{{$cat_3['title']}}</h4>
         @if(isset($art_3['0']))
         <img src="{{asset($art_3['0']['img'])}}" alt="{{$art_3['0']['alt']}}">
-        <p><a href="{{URL($cat_3['url']),$art_3['0']['id']}}" target="_blank">{{$art_3['0']['title']}}</a></p>
+        <p><a href="{{URL($cat_3['url']),$art_3['0']['id']}}" >{{$art_3['0']['title']}}</a></p>
         @endif
         @foreach($art_3 as $k=>$v)
         @if($k>0)
-        <a href="{{URL($cat_3['url']),$v['id']}}" style="height: 31px;overflow: hidden;" target="_blank">{{$v['title']}}</a>
+        <a href="{{URL($cat_3['url']),$v['id']}}" style="height: 31px;overflow: hidden;" >{{$v['title']}}</a>
         @endif
         @endforeach
     </div>

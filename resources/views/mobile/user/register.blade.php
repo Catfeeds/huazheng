@@ -3,7 +3,6 @@
 @parent
 @endsection
 @section('content')
-<!--  登录  -->
 <div class="login_box">
     <div class="login-banner">
         <img src="{{asset('resources/mobile/images/ico20.jpg')}}" alt="banner">
@@ -76,15 +75,6 @@
             </div>
             <input type="submit" class="button button-fill loginin-btn" id="login-submit" value="立即注册">
         </form>
-        <!-- 微信登录 -->
-        <!-- <div class="login-input-more">
-            <div class="login-input-more-list">
-                <a href="/account/wechat/login">
-                    <span class="wat"><img src="http://a3.huazhen.com/huazhen0624/i/icon1.png" alt=""></span>
-                    <p>微信登录</p>
-                </a>
-            </div>
-        </div> -->
     </div>
 </div>
 @endsection

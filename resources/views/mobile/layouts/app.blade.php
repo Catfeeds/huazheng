@@ -19,6 +19,7 @@
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont2.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont3.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/swiper-3.4.0.min.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/layer.css') }}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/style.css') }}" />
             <script type="text/javascript" src="{{ asset('resources/mobile/js/jquery.js') }}"></script>
             <script type="text/javascript" src="{{ asset('resources/mobile/js/js.js') }}"></script>

@@ -24,7 +24,7 @@
             <ul class="navs navs2">
                 @foreach(nav(5) as $k=>$v)
                 <li>
-                    <a @if(!empty($v['url'])) href="{{$v['url']}}" @endif @if($v['is_blank']) target="_blank" @endif title="{{$v['title']}}"  @if(count($v['child'])) class="cur" @endif>
+                    <a @if(!empty($v['url'])) href="{{$v['url']}}" @endif @if($v['is_blank'])  @endif title="{{$v['title']}}"  @if(count($v['child'])) class="cur" @endif>
                         <i class=" icon-nan navsI icon{{$k+1}}" style="background-image: url({{asset($v['ico'])}});"></i>
                         <p>{{$v['title']}}</p>
                     </a>

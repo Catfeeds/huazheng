@@ -13,7 +13,7 @@
         </div>
         <div class="selfName">
             <span class="selfNameValue">{{$user_info['name']}}</span>
-            <!-- <a href="{{URL('member-edit')}}"><span class="editIcon"></span></a> -->
+            <a href="{{URL('member-edit')}}"><span class="editIcon"></span></a>
         </div>
         @if($user_info['grade']==1)
         <p class="user_kt">

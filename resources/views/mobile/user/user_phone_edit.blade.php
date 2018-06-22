@@ -5,7 +5,7 @@
 @section('content')
 <div class="login_box">
     <div class="login-input">
-        <form method="POST" id="demoform" action="{{URL('password-reset')}}">
+        <form method="POST" id="demoform" action="{{URL('user-bangding-save')}}">
             @csrf
             <div class="login-input-text">
                 <input type="text" class="form-control retpadding text-input" placeholder="请输入手机号码" id="reset-phone"
@@ -19,27 +19,10 @@
             <div class="login-input-text">
                 <input type="text" class="form-control retpadding note text-input" placeholder="短信验证码" name="verify_code"
                 id="register-code" required datatype="*" nullmsg="请输入短信验证码" value="{{old('verify_code')}}" />
-                <input class="get-msg" id="register-get-code" value="获取验证码" type="button">
+                <input class="get-msg" id="rebind-get-msg" value="获取验证码" type="button">
                 <label for="register-code" class="Validform_checktip @if($errors->has('verify_code')) Validform_wrong @endif" >
                     @if ($errors->has('verify_code'))
                         {{ $errors->first('verify_code') }}
-                    @endif
-                </label>
-            </div>
-            <div class="login-input-text">
-                <input type="password" class="form-control retpadding text-input" placeholder="密码由6-20位组成"
-                id="register-password" name="password" datatype="*6-20" errormsg="密码由6-20位组成" value="{{old('password')}}" />
-                <label for="register-password" class="error Validform_checktip @if($errors->has('password')) Validform_wrong @endif">
-                    @if ($errors->has('password'))
-                        {{ $errors->first('password') }}
-                    @endif
-                </label>
-            </div>
-            <div class="login-input-text">
-                <input type="password" class="form-control retpadding text-input" placeholder="请再次输入上面的密码"  name="password_confirmation" id="register-password_confirmation" datatype="*" recheck="password" errormsg="您两次输入的密码不一致！" value="{{old('password_confirmation')}}"/>
-                <label for="register-password_confirmation" class="error Validform_checktip @if($errors->has('password_confirmation')) Validform_wrong @endif">
-                    @if ($errors->has('password_confirmation'))
-                        {{ $errors->first('password_confirmation') }}
                     @endif
                 </label>
             </div>
@@ -61,18 +44,47 @@
         tipSweep:true,
         btnSubmit:".loginin-btn",
         beforeSubmit:function(date){
-            // submit();
-            // return false;
+            var formData=$("#demoform").serialize();
+            var form_url=$("#demoform").attr('action');
+            if($("#demoform").attr('is')!=false){
+              $("#demoform").attr("is",false);
+              $.ajax({
+                type: "POST",
+                url:form_url,
+                data:formData,
+                success:function(data){
+                    if(data.code==200){
+                        layer.msg(data.message);
+                        setTimeout(function(){
+                            window.location.replace("{{URL('member')}}");
+                        },500);
+                    }else{
+                        layer.msg(data.message);
+                    }
+                },
+                error:function(data){
+                  var obj = new Function("return" + data.responseText)();
+                  obj = obj.errors;
+                  var msg='';
+                  $("#demoform").attr("is",true);
+                  for (var prop in obj){
+                      msg += obj[prop]+"\r";
+                  }
+                  alert(msg);
+                }
+              });
+            }
+            return false;
         }
     });
     var t=60;
-    $(".get-msg").click(function(){
+    $("#rebind-get-msg").click(function(){
         var phone = $("#reset-phone").val();
-        if($(".get-msg").attr('is')!=false){
-            $(".get-msg").attr("is",false);
+        if($("#rebind-get-msg").attr('is')!=false){
+            $("#rebind-get-msg").attr("is",false);
             $.ajax({
                 type: "POST",
-                url:"{{URL('password-reset-sms-send')}}",
+                url:"{{URL('bangding-sms-send')}}",
                 data:"phone="+phone,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -88,10 +100,9 @@
                 },
                 error:function(data){
                     var obj = new Function("return" + data.responseText)();
-                    console.log(obj);
                     obj = obj.errors;
                     var msg='';
-                    $(".get-msg").attr("is",true);
+                    $("#rebind-get-msg").attr("is",true);
                     for (var prop in obj){
                         msg += obj[prop]+"\r";
                     }

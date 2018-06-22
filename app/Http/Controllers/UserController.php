@@ -26,7 +26,11 @@ class UserController extends Controller
             //已经登陆的跳转首页
             return redirect('/');
         }
-        return view('home.user.password-reset');
+        if(isMobile()){
+            return view('mobile.user.password-reset');
+        }else{
+            return view('home.user.password-reset');
+        }
     }
 
     public function password_reset_save(Request $request){
@@ -106,6 +110,45 @@ class UserController extends Controller
         ];
         return view('home.user.member-pic',$assign);
     }
+    public function user_name_edit(Request $request){
+        //会员名称修改
+        $user_info = Auth::user();
+        $assign = [
+            'head_title'     => '名称编辑',
+            'user_info'      => $user_info,
+        ];
+        if(isMobile()){
+            return view('mobile.user.user_name_edit',$assign);
+        }else{
+            return redirect('member');
+        }
+    }
+    public function user_phone_edit(Request $request){
+        //会员手机修改
+        $user_info = Auth::user();
+        $assign = [
+            'head_title'     => '手机编辑',
+            'user_info'      => $user_info,
+        ];
+        if(isMobile()){
+            return view('mobile.user.user_phone_edit',$assign);
+        }else{
+            return redirect('member');
+        }
+    }
+    public function user_password_edit(Request $request){
+        //会员密码修改
+        $user_info = Auth::user();
+        $assign = [
+            'head_title'     => '密码编辑',
+            'user_info'      => $user_info,
+        ];
+        if(isMobile()){
+            return view('mobile.user.user_password_edit',$assign);
+        }else{
+            return redirect('member');
+        }
+    }
     public function user_name_save(Request $request){
         //会员名称修改
         $user_info = Auth::user();
@@ -122,7 +165,7 @@ class UserController extends Controller
         if($old_pic!='resources/home/images/pic.png'){
             @unlink($old_pic);
         }
-        return render("修改成功",200);
+        return render("修改成功",200,$user_info->pic);
     }
     public function user_bangding_save(Request $request){
         //修改绑定手机号

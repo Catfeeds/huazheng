@@ -16,7 +16,7 @@
                             <ul class="clearfix list">
                                 @foreach($v['article'] as $b_k=>$b_v)
                                     <li>
-                                        <a href="{{URL($v['url'],$b_v['id'])}}" target="_blank">
+                                        <a href="{{URL($v['url'],$b_v['id'])}}" >
                                             <div class="img" style="background-image: url({{asset($b_v['img'])}});"></div>
                                             <h3 class="ellipsis">{{$b_v['title']}}<i class="iconfont2 font-arrow-left"></i></h3>
                                         </a>
@@ -30,7 +30,7 @@
                             <ul class="clearfix list">
                                 @foreach($v['article'] as $b_k=>$b_v)
                                     <li>
-                                        <a href="{{URL($v['url'],$b_v['id'])}}" target="_blank">
+                                        <a href="{{URL($v['url'],$b_v['id'])}}" >
                                             <div class="img" style="background-image: url({{asset($b_v['img'])}});"></div>
                                             <h3 class="ellipsis">{{$b_v['title']}}<i class="iconfont2 font-arrow-left"></i></h3>
                                         </a>

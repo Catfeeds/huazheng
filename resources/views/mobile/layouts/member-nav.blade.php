@@ -9,7 +9,7 @@ $user_info = Auth::user();
         <p class="user_ming">{{$user_info['name']}}</p>
         @if($user_info['grade']==1)
         <p class="user_kt">
-            <a href="{{URL('vip-pay')}}" target="_blank" class="vip_btn">成为VIP</a>
+            <a href="{{URL('vip-pay')}}"  class="vip_btn">成为VIP</a>
         </p>
         @else
         <div class="vip">

@@ -5,21 +5,12 @@
 @section('content')
 <div class="login_box">
     <div class="login-input">
-        <form method="POST" id="demoform" action="{{URL('password-reset')}}">
+        <form method="POST" id="demoform" action="{{URL('user-password-save')}}">
             @csrf
-            <div class="login-input-text">
-                <input type="text" class="form-control retpadding text-input" placeholder="请输入手机号码" id="reset-phone"
-                name="phone" required value="{{old('phone')}}" datatype="*,m" nullmsg="请输入手机号码" errormsg="请输入手机号码"/>
-                <label for="reset-phone" class="error1 Validform_checktip  @if($errors->has('phone')) Validform_wrong @endif">
-                    @if ($errors->has('phone'))
-                    {{ $errors->first('phone') }}
-                    @endif
-                </label>
-            </div>
             <div class="login-input-text">
                 <input type="text" class="form-control retpadding note text-input" placeholder="短信验证码" name="verify_code"
                 id="register-code" required datatype="*" nullmsg="请输入短信验证码" value="{{old('verify_code')}}" />
-                <input class="get-msg" id="register-get-code" value="获取验证码" type="button">
+                <input class="get-msg" id="rebind-get-msg" value="获取验证码" type="button">
                 <label for="register-code" class="Validform_checktip @if($errors->has('verify_code')) Validform_wrong @endif" >
                     @if ($errors->has('verify_code'))
                         {{ $errors->first('verify_code') }}
@@ -61,19 +52,47 @@
         tipSweep:true,
         btnSubmit:".loginin-btn",
         beforeSubmit:function(date){
-            // submit();
-            // return false;
+            var formData=$("#demoform").serialize();
+            var form_url=$("#demoform").attr('action');
+            if($("#demoform").attr('is')!=false){
+              $("#demoform").attr("is",false);
+              $.ajax({
+                type: "POST",
+                url:form_url,
+                data:formData,
+                success:function(data){
+                    if(data.code==200){
+                        layer.msg(data.message);
+                        setTimeout(function(){
+                            window.location.replace("{{URL('member')}}");
+                        },500);
+                    }else{
+                        layer.msg(data.message);
+                    }
+                },
+                error:function(data){
+                  var obj = new Function("return" + data.responseText)();
+                  obj = obj.errors;
+                  var msg='';
+                  $("#demoform").attr("is",true);
+                  for (var prop in obj){
+                      msg += obj[prop]+"\r";
+                  }
+                  alert(msg);
+                }
+              });
+            }
+            return false;
         }
     });
     var t=60;
     $(".get-msg").click(function(){
-        var phone = $("#reset-phone").val();
         if($(".get-msg").attr('is')!=false){
             $(".get-msg").attr("is",false);
             $.ajax({
                 type: "POST",
-                url:"{{URL('password-reset-sms-send')}}",
-                data:"phone="+phone,
+                url:"{{URL('password-sms-send')}}",
+                data:'',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -83,12 +102,12 @@
                         t=60;
                         captcha_up();
                     }else{
+                        $(".get-msg").attr("is",true);
                         alert(data.message);
                     }
                 },
                 error:function(data){
                     var obj = new Function("return" + data.responseText)();
-                    console.log(obj);
                     obj = obj.errors;
                     var msg='';
                     $(".get-msg").attr("is",true);

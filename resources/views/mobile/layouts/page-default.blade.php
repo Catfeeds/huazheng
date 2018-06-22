@@ -27,19 +27,19 @@
     $path = preg_replace('/\&page\=(\d+)/i',"",$path);
     $path = preg_replace('/page\=(\d+)/i',"",$path);
     ?>
-    <a @if($paginator->currentPage()>1) href="{{$start_url}}" @endif class="first @if($paginator->currentPage()==1) disabled @endif" data-action="first" target="_blank">«</a>
+    <a @if($paginator->currentPage()>1) href="{{$start_url}}" @endif class="first @if($paginator->currentPage()==1) disabled @endif" data-action="first" >«</a>
     @if ($paginator->onFirstPage())
-        <a class="previous disabled" data-action="previous" target="_blank">上一页</a>
+        <a class="previous disabled" data-action="previous" >上一页</a>
     @else
-        <a href="{{ $previousPageUrl }}" class="previous" data-action="previous" target="_blank">上一页</a>
+        <a href="{{ $previousPageUrl }}" class="previous" data-action="previous" >上一页</a>
     @endif
     <input type="text" data-max-page="{{$paginator->lastPage()}}" data-path="{{$path}}">
     @if ($paginator->hasMorePages())
-        <a href="{{ $paginator->nextPageUrl() }}" class="next" data-action="next" target="_blank">下一页</a>
+        <a href="{{ $paginator->nextPageUrl() }}" class="next" data-action="next" >下一页</a>
     @else
-        <a class="next disabled" data-action="next" target="_blank">下一页</a>
+        <a class="next disabled" data-action="next" >下一页</a>
     @endif
-    <a @if($paginator->currentPage()!=$paginator->lastPage()) href="{{$end_url}}" @endif class="last @if($paginator->currentPage()==$paginator->lastPage()) disabled @endif" data-action="last" target="_blank">»</a>
+    <a @if($paginator->currentPage()!=$paginator->lastPage()) href="{{$end_url}}" @endif class="last @if($paginator->currentPage()==$paginator->lastPage()) disabled @endif" data-action="last" >»</a>
     <!-- <ul class="pagination clearfix">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())

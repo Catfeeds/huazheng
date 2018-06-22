@@ -1,12 +1,12 @@
 @foreach($article_list as $k=>$v)
 <dl class="dl_list @if($k%2==1) nomargin @endif">
     <dt>
-        <a href="{{URL($cate_info['url'],$v['id'])}}" target="_blank">
+        <a href="{{URL($cate_info['url'],$v['id'])}}" >
             <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
         </a>
     </dt>
     <dd>
-        <a href="{{URL($cate_info['url'],$v['id'])}}" target="_blank">
+        <a href="{{URL($cate_info['url'],$v['id'])}}" >
             <h3 class="ellipsis">{{$v['title']}}</h3>
             <p class="p_con ellipsis2">{!!nl2br($v['desc'])!!}</p>
         </a>
