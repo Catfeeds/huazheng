@@ -422,16 +422,22 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
 .othersw .swiper-slide{
     position: relative;
 }
+.othersw{padding:0 .3rem;}
 .othText{
-    position: absolute;
+    /*position: absolute;*/
     left: 0;
     bottom: 0;
     width: 100%;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.4);
     color: #fff;
-    padding: .1rem 0 .23rem;
-    text-align: center;
-    font-size: .23rem;
+    line-height:2.2;
+    text-align: left;
+    padding: 0 .2rem;
+    margin-bottom: .1rem;
+    font-size: .24rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .othersw .otherspa{
     bottom: 8px;

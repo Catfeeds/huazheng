@@ -1358,6 +1358,8 @@ white-space: nowrap;}
     border-left: 1px solid #fff;
     vertical-align: top;
     text-align: left;
+    height: 275px;
+    overflow: hidden;
 }
 .daoshi_bglist .daoshi-file .file-detail p{ color:#fff; font-size: 14px; text-align: left; margin-top: 0;}
 .love{
@@ -2309,7 +2311,7 @@ white-space: nowrap;}
 .expert_in .hzgm ul li .show h4{ font-size: 16px; text-align: center; font-weight: normal; margin-bottom: 5px;}
 .expert_in .hzgm ul li .show p{ font-size: 14px; text-align: center; line-height: 26px; }
 .expert_in .hzgm ul li .show .line{ border-top: 1px dashed #fff; width:160px; margin:10px auto;}
-.expert_in .hzgm ul li .show span{margin: 0 auto;  display: block; text-align: center; font-size:14px;line-height: 24px; padding: 0 2px;}
+.expert_in .hzgm ul li .show span{margin: 0 auto; /* display: block;*/ text-align: center; font-size:14px;line-height: 24px; padding: 0 2px;}
 
 .expert_in .hzgm ul li .show  a.know{ display: block; width:85px; height: 27px;  background: #fff; text-align: center; line-height: 25px; margin-right: 18px; font-size: 12px; margin:10px auto; color:#ff5562;}
 .expert_in .hzgm ul li .show  a.zx{ display: block; width:83px; height: 25px;  color:#fff; text-align: center; line-height: 25px; font-size: 12px; margin:0 auto; border:1px solid #fff;}

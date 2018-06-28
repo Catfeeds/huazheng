@@ -2,7 +2,7 @@
     @if(!isset($is_header)||$is_header!=0)
     <div class="header">
         <div class="headerCon">
-            <img class="logo" src="{{asset(ConfigGet('logo3'))}}">
+            <a href="/"><img class="logo" src="{{asset(ConfigGet('logo3'))}}"></a>
             <a href="javascript:void(0)" class="bars sliShow">
                 <i class="iconfont icon-bars"></i>
             </a>

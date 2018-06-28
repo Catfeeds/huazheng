@@ -88,10 +88,10 @@
         {{$index_7_cate['title']}}
     </p>
     <div class="otherssw0 othersw swiper-container">
-        <div class="swiper-wrapper">
+        <div class="">
             @foreach($index_7 as $b_k=>$b_v)
             <a href="{{URL($index_7_cate['url'],$b_v['id'])}}" class="swiper-slide">
-                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
+                <!-- <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}"> -->
                 <p class="othText">{{$b_v['title']}}</p>
             </a>
             @endforeach
@@ -122,7 +122,7 @@
             var projectsw = new Swiper('.projectsw', {
                 pagination : '.projectpa',
                
-                slidesPerView : 1.5,
+                slidesPerView : 1.8,
                 spaceBetween : 20,
                 autoplay : 4000
             });
@@ -152,37 +152,37 @@
                 });
             };
             tetab1();
-            function othersw(sw){
-                var sw = new Swiper('.' + sw, {
-                    pagination : '.otherspa',
-                    loop:true,
-                    autoplay : 4000
-                });
-            };
-            othersw('otherssw0')
-            $(".teacherTab a").click(function(){
-                $(this).addClass('active').siblings().removeClass('active');
-                if($(this).index() == 0){
-                    $(".teachertab2").hide();
-                    $(".teachertab1").show();
-                    tetab1();
-                }else{
-                    $(".teachertab2").show();
-                    $(".teachertab1").hide();
-                    tetab2()
-                }
-            });
-            $(".otherTab a").click(function(){
-                $(this).addClass('active').siblings().removeClass('active');
-                for(var i=0;i<5;i++){
-                    if(i == $(this).index()){
-                        $(".otherssw"+i).show();
-                        othersw('otherssw'+i)
-                    }else{
-                        $(".otherssw"+i).hide();
-                    }
-                }
-            });
+            // function othersw(sw){
+            //     var sw = new Swiper('.' + sw, {
+            //         pagination : '.otherspa',
+            //         loop:true,
+            //         autoplay : 4000
+            //     });
+            // };
+            // othersw('otherssw0')
+            // $(".teacherTab a").click(function(){
+            //     $(this).addClass('active').siblings().removeClass('active');
+            //     if($(this).index() == 0){
+            //         $(".teachertab2").hide();
+            //         $(".teachertab1").show();
+            //         tetab1();
+            //     }else{
+            //         $(".teachertab2").show();
+            //         $(".teachertab1").hide();
+            //         tetab2()
+            //     }
+            // });
+            // $(".otherTab a").click(function(){
+            //     $(this).addClass('active').siblings().removeClass('active');
+            //     for(var i=0;i<5;i++){
+            //         if(i == $(this).index()){
+            //             $(".otherssw"+i).show();
+            //             othersw('otherssw'+i)
+            //         }else{
+            //             $(".otherssw"+i).hide();
+            //         }
+            //     }
+            // });
             
             
             

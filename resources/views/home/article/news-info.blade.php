@@ -43,11 +43,12 @@
                     {!!$info['content']!!}
                 </div>
                 @foreach(ads_image(22,1) as $v)
-                <div class="ad" style="background-image: url({{asset($v['image'])}});">
-                    <div class="ad_zx">
+                <div class="ad" >
+                    <img src="{{asset($v['image'])}}" alt="{{$v['alt']}}">
+                    <!-- <div class="ad_zx">
                         <a  class="kefu_btn ad_zx1" target="_self"><i></i>在线咨询</a>
                         <a  class="apply_box_btn ad_zx2" target="_self"><i></i>网上预约</a>
-                    </div>
+                    </div> -->
                 </div>
                 @endforeach
                 <!-- <div class="tag">

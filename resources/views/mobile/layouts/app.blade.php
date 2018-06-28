@@ -15,12 +15,12 @@
             <meta name="description" content="@if(isset($head_description)){{$head_description}}@else{{ConfigGet('site_description')}}@endif">
         @show
         @section('style')
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont2.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont3.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/swiper-3.4.0.min.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/layer.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/style.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont2.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont3.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/swiper-3.4.0.min.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/layer.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/style.css') }}?version={{env('VERSION')}}" />
             <script type="text/javascript" src="{{ asset('resources/mobile/js/jquery.js') }}"></script>
             <script type="text/javascript" src="{{ asset('resources/mobile/js/js.js') }}"></script>
         @show
