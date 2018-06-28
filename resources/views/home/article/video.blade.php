@@ -14,7 +14,7 @@
             <div class="video_main">
                 <ul class="clearfix">
                     @foreach($v_c['article'] as $k=>$v)
-                    <li class=" video_play" data-vid="{{$v['video']}}">
+                    <li class="max_img" data-vid="{{$v['img2']}}">
                         <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
                         <p class="video_p">{{$v['title']}}</p>
                         <div class="mask_conter last_mask_conter" >

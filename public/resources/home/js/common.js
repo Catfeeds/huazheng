@@ -103,6 +103,16 @@ $(function(){
         $(".video-list-1").show();
         $(".divMask").show();
     });
+    //视频
+    $("body").on('click', '.max_img', function(){
+        var elem = $(this);
+        x = elem;
+        var vid = elem.data('vid');
+        var obj = '<img src="'+vid+'">';
+        $("#flash-player").empty().append(obj);
+        $(".video-list-1").show();
+        $(".divMask").show();
+    });
     function createSwfObject (src, attributes, parameters) {
         var i, html, div, obj, attr = attributes || {}, param = parameters || {};
         attr.type = 'application/x-shockwave-flash';

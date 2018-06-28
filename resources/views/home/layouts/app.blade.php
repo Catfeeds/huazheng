@@ -15,12 +15,12 @@
             <meta name="description" content="@if(isset($head_description)){{$head_description}}@else{{ConfigGet('site_description')}}@endif">
         @show
         @section('style')
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/cropper.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/iconfont.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/swiper.min.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/style.css') }}" />
-            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/style2.css') }}" />
-            <script type="text/javascript" src="{{ asset('resources/home/js/jquery-1.7.2.min.js') }}"></script>
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/cropper.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/iconfont.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/swiper.min.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/style.css') }}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('resources/home/css/style2.css') }}?version={{env('VERSION')}}" />
+            <script type="text/javascript" src="{{ asset('resources/home/js/jquery-1.7.2.min.js') }}?version={{env('VERSION')}}"></script>
         @show
     </head>
     <body >

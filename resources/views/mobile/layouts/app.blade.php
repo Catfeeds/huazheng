@@ -21,8 +21,8 @@
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/swiper-3.4.0.min.css') }}?version={{env('VERSION')}}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/layer.css') }}?version={{env('VERSION')}}" />
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/style.css') }}?version={{env('VERSION')}}" />
-            <script type="text/javascript" src="{{ asset('resources/mobile/js/jquery.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('resources/mobile/js/js.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('resources/mobile/js/jquery.js') }}?version={{env('VERSION')}}"></script>
+            <script type="text/javascript" src="{{ asset('resources/mobile/js/js.js') }}?version={{env('VERSION')}}"></script>
         @show
     </head>
     <body >
