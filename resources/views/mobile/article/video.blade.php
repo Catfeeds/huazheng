@@ -10,7 +10,7 @@
             <div class="video_main">
                 <ul class="clearfix">
                     @foreach($v_c['article'] as $k=>$v)
-                    <li class="video_play" data-vid="{{$v['img2']}}">
+                    <li @if(!empty($v['video'])) class="video_play" data-vid="{{$v['video']}}" @else class="max_img" data-vid="{{$v['img2']}}" @endif>
                         <p class="video_p">{{$v['title']}}</p>
                         <div class="img">
                             <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
@@ -36,6 +36,19 @@
         $(function(){
             //视频
             $(".video_center").on('click','.video_play', function(){
+                var video = $(this).attr('data-vid');
+                var iframe = '<iframe frameborder="0" src="'+video+'" allowfullscreen></iframe>';
+                $(".video_play_box").show();
+                $(".video_play_box").find("iframe").remove();
+                $(".video_play_box .box").append(iframe);
+            });
+            $(".video_center").on("click", ".ico13", function() {
+                $(".video_play_box").hide();
+                $(".video_play_box").find("iframe").remove();
+            });
+
+            //图片
+            $(".video_center").on('click','.max_img', function(){
                 var video = $(this).attr('data-vid');
                 var iframe = '<img src="'+video+'">';
                 $(".video_play_box").show();
