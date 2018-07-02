@@ -179,7 +179,8 @@ class ArticleController extends Controller
             $form->text('seo_keywords', 'seo keywords');
             $form->text('seo_description', 'seo description');
             // $form->text('job_title', '职称');
-            $form->text('video', '视频链接');
+            $form->text('video_text', '视频链接');
+            $form->file('video','视频')->move('/uploads/video/'.date('Ymd'))->uniqueName();
             $form->text('url', '链接');
 
             // $form->html('', $label = '知识解答');
@@ -211,9 +212,17 @@ class ArticleController extends Controller
 
 
             $form->saving(function (Form $form) {
+                if($form->video){
+                    $form->video = upload_file($form->video);
+                    $form->video_text = $form->video;
+                }else{
+                    $form->video = $form->video_text;
+                }
+
                 $caregory_info = ArticleCategory::find($form->cate_id);
                 $width = trans('template.template_width.'.$caregory_info['template']);
                 $height = trans('template.template_height.'.$caregory_info['template']);
+
                 if($width>0||$height>0){
                     $form->img = Image($form->img,$width,$height,"uploads/article/".date("Ymd")."/");
                 }
@@ -221,6 +230,8 @@ class ArticleController extends Controller
             $form->saved(function (Form $form) {
                 //链接推送
                 baidu_url(env('APP_URL').'/show-'.$form->cate_id.'-'.$form->id.'-1.html');
+                admin_toastr(trans('admin.update_succeeded'));
+                return redirect('/admin/article?cate_id='.$form->cate_id);
             });
             // $form->setAction('/admin/article-save');//提交地址
 

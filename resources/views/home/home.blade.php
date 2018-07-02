@@ -100,7 +100,13 @@
                             <!-- <video id="qiye-video" class="video-js vjs-default-skin" controls="">
                                 <source src="{{$v['video']}}" type="video/mp4">
                             </video> -->
-                            <iframe frameborder="0" width="1050" height="410" src="{{$v['video']}}" allowfullscreen></iframe>
+                            @if(strstr($v['video'],"http"))
+                            <iframe frameborder="0" width="1050" height="410" src="{{asset($v['video'])}}" allowfullscreen></iframe>
+                            @else
+                            <video width="1050" height="410" controls="" >
+                                <source src="{{asset($v['video'])}}" type="video/mp4">
+                            </video>
+                            @endif
                             <!-- <embed id="qiye-video" class="video-js vjs-default-skin" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=h0665s7je28&auto=0" allowFullScreen="true" quality="high" width="516" height="290" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
                         </div>
                     </div>

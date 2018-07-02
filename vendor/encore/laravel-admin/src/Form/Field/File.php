@@ -101,6 +101,9 @@ class File extends Field
      */
     public function prepare($file)
     {
+        if(!is_uploaded_file($file)){
+            return $file;
+        }
         if (request()->has(static::FILE_DELETE_FLAG)) {
             return $this->destroy();
         }
@@ -172,13 +175,14 @@ class File extends Field
 
         if (!empty($this->value)) {
             $this->attribute('data-initial-preview', $this->preview());
-            $this->attribute('data-initial-caption', $this->initialCaption($this->value));
+            $this->attribute('data-initial-caption', $this->value);
+            // $this->attribute('data-initial-caption', $this->initialCaption($this->value));
 
             $this->setupPreviewOptions();
         }
 
         $options = json_encode($this->options);
-
+        // dd($this->getElementClassSelector());
         $this->script = <<<EOT
 
 $("input{$this->getElementClassSelector()}").fileinput({$options});

@@ -15,6 +15,7 @@ class Text extends Field
      */
     public function render()
     {
+        // dd($this->form->model()->title);
         $this->initPlainInput();
 
         $this->prepend('<i class="fa fa-pencil fa-fw"></i>')
@@ -24,7 +25,6 @@ class Text extends Field
             ->defaultAttribute('value', old($this->column, $this->value()))
             ->defaultAttribute('class', 'form-control '.$this->getElementClassString())
             ->defaultAttribute('placeholder', $this->getPlaceholder());
-
         return parent::render()->with([
             'prepend' => $this->prepend,
             'append'  => $this->append,

@@ -97,13 +97,27 @@ class VideoCourseController extends Controller
             $form->hidden('video_id','对应视频')->value($request['video_id']);
 
             $form->text('title', '标题');
-            $form->text('video', '链接');
-            $form->text('try_video', '试看链接');
+            $form->text('video_text', '视频链接');
+            $form->file('video','视频')->move('/uploads/video/'.date('Ymd'))->uniqueName();
+            $form->text('try_video_text', '试看视频链接');
+            $form->file('try_video','试看视频')->move('/uploads/video/'.date('Ymd'))->uniqueName();
             // $form->image('image','图片')->move('/uploads/images/'.date('Ymd'))->uniqueName();
 
             // $form->setAction('/admin/ads-image');//提交地址
 
             $form->saving(function (Form $form) {
+                if($form->video){
+                    $form->video = upload_file($form->video);
+                    $form->video_text = $form->video;
+                }else{
+                    $form->video = $form->video_text;
+                }
+                if($form->try_video){
+                    $form->try_video = upload_file($form->try_video);
+                    $form->try_video_text = $form->try_video;
+                }else{
+                    $form->try_video = $form->try_video_text;
+                }
                 // $AdsPosition = AdsPosition::find($form->cate_id);
                 // $form->image = Image($form->image,$AdsPosition['width'],$AdsPosition['height'],"uploads/images/".date("Ymd")."/");
             });

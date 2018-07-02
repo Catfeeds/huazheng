@@ -967,7 +967,6 @@ class Form
 //        static::doNotSnakeAttributes($this->model);
 
         $data = $this->model->toArray();
-
         $this->builder->fields()->each(function (Field $field) use ($data) {
             $field->fill($data);
         });
