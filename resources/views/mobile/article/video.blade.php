@@ -10,7 +10,7 @@
             <div class="video_main">
                 <ul class="clearfix">
                     @foreach($v_c['article'] as $k=>$v)
-                    <li @if(!empty($v['video'])) class="video_play" data-vid="{{$v['video']}}" @else class="max_img" data-vid="{{$v['img2']}}" @endif>
+                    <li @if(!empty($v['video'])) class="video_play" data-vid="{{$v['video']}}" @elseif(!empty($v['img2'])) class="max_img" data-vid="{{$v['img2']}}" @endif>
                         <p class="video_p">{{$v['title']}}</p>
                         <div class="img">
                             <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">

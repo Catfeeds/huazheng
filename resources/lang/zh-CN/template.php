@@ -145,7 +145,7 @@ return [
 		'hpjht' => '0',
 		'ppzx' => '0',
 		'news' => '365',
-		'video' => '360',
+		// 'video' => '360',
 		'detail' => '0',
 		'master' => '0',
 		'master-group' => '232',

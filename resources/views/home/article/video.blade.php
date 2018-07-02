@@ -14,8 +14,9 @@
             <div class="video_main">
                 <ul class="clearfix">
                     @foreach($v_c['article'] as $k=>$v)
-                    <li @if(!empty($v['video'])) class="video_play" data-vid="{{$v['video']}}" @else class="max_img" data-vid="{{$v['img2']}}" @endif>
-                        <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
+                    <li @if(!empty($v['video'])) class="video_play" data-vid="{{$v['video']}}" @elseif(!empty($v['img2'])) class="max_img" data-vid="{{$v['img2']}}" @endif>
+                        <div class="img" style="background-image: url({{asset($v['img'])}});"></div>
+                        <!-- <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"> -->
                         <p class="video_p">{{$v['title']}}</p>
                         <div class="mask_conter last_mask_conter" >
                             <div class="video_leftSide">

@@ -32,7 +32,8 @@ function ConfigGet($name=''){
  */
 function Image($file,$width=null,$height=null,$save_path=""){
     if($file){
-        
+        $width = $width>0?$width:null;
+        $height = $height>0?$height:null;
         $type=array("jpg","jpge","png","gif","JPG","JPEG","PNG","GIF");
         if(is_string($file)){
             $ext = explode(".",$file);

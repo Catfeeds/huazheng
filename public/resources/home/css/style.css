@@ -2286,6 +2286,7 @@ white-space: nowrap;}
     line-height: 26px;
     z-index: 99999999;
 }
+.video_main ul li .img{ width:275px; height: 198px; display: block;background: no-repeat center;background-size: cover;}
 .video_main ul li img{ width:275px; height: 198px; display: block;}
 
 
