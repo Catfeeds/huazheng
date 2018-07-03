@@ -313,6 +313,7 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
     background: #f8485e;
 }
 .newvideosw iframe{width: 100%;height: 2.2rem;}
+.newvideosw video{width: 100%;height: 2.2rem;}
 
 
 .teacher{

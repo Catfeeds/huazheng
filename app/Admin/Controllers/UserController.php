@@ -87,6 +87,14 @@ class UserController extends Controller
                 }
             });
             $grid->column('created_at',"注册日期")->sortable();
+
+            $grid->filter(function ($filter) {
+                $filter->where(function($query){
+                    if(!empty($this->input)){
+                        $query->orWhere('name','like',"%".$this->input."%")->orWhere('phone','like',"%".$this->input."%");
+                    }
+                },'会员名称或手机号码');
+            });
         });
     }
 

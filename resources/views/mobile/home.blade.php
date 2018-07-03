@@ -37,8 +37,14 @@
     <div class="newvideosw swiper-container">
         <div class="swiper-wrapper">
             @foreach($index_3 as $k=>$v)
-            <div href="/love3" class="swiper-slide">
-                <iframe frameborder="0" src="{{$v['video']}}" allowfullscreen></iframe>
+            <div class="swiper-slide">
+                @if(strstr($v['video'],"http"))
+                <iframe frameborder="0" src="{{asset($v['video'])}}" allowfullscreen></iframe>
+                @else
+                <video controls="" >
+                    <source src="{{asset($v['video'])}}" type="video/mp4">
+                </video>
+                @endif
             </div>
             @endforeach
         </div>

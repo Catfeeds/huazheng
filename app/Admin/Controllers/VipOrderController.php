@@ -112,7 +112,7 @@ class VipOrderController extends Controller
                         }
                         $query->whereIn('user_id',$user_id_arr);
                     }
-                },'会员名称');
+                },'会员名称或手机号码');
             });
 
             // $grid->created_at();

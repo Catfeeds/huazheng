@@ -114,7 +114,7 @@ class VideoOrderController extends Controller
                         }
                         $query->whereIn('user_id',$user_id_arr);
                     }
-                },'会员名称');
+                },'会员名称或手机号码');
                 $filter->where(function($query){
                     if(!empty($this->input)){
                         $video_id_arr = [-1];

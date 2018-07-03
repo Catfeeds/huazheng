@@ -180,7 +180,9 @@ class ArticleController extends Controller
             $form->text('seo_description', 'seo description');
             // $form->text('job_title', '职称');
             $form->text('video_text', '视频链接');
-            $form->file('video','视频')->move('/uploads/video/'.date('Ymd'))->uniqueName();
+            $form->file('video','视频')->move('/uploads/video/'.date('Ymd'))->uniqueName()->options(['maxFileSize'=>1024*10,'msgSizeTooLarge'=>'文件 "{name}" ({size} KB) 超出允许的最大上传大小 {maxSize} KB. 请重试上传！']);
+            // $form->slider('video','视频')->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => 'years old']);
+
             $form->text('url', '链接');
 
             // $form->html('', $label = '知识解答');
