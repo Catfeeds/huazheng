@@ -100,6 +100,7 @@ $(function(){
         // obj = createSwfObject(src, attr, params);
         var obj = '<iframe frameborder="0" width="480" height="400" src="'+vid+'" allowfullscreen></iframe>';
         $("#flash-player").empty().append(obj);
+        $(".video-list-1").addClass("video_play_box").removeClass('max_img_box');
         $(".video-list-1").show();
         $(".divMask").show();
     });
@@ -110,6 +111,7 @@ $(function(){
         var vid = elem.data('vid');
         var obj = '<img src="'+vid+'">';
         $("#flash-player").empty().append(obj);
+        $(".video-list-1").addClass('max_img_box').removeClass("video_play_box");
         $(".video-list-1").show();
         $(".divMask").show();
     });

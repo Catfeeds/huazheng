@@ -568,6 +568,7 @@ display: -webkit-box;
 .con02-con .tabBar{ height: 380px;  background: #fff8f8; box-shadow: 0 0 15px #ccc;}
 /* .tabBarCon{padding: 0 37px;} */
 .tabBarCon .swiper-slide{padding:0 75px;}
+.tabBarCon video{width: 1050px;height: 410px;}
 /*.con02-con .tabBar .con02-left{  width:648px; }*/
 /*.con02-con .tabBar .con02-right{  width:648px; }*/
 /*.zhezhao{ width: 113px; height: 95px; }
@@ -824,6 +825,7 @@ display: -webkit-box;
 }
 .trapMan-twoItem{
     width: 250px;
+    height: 355px;
     margin: 0 25px;
     float: left;
     border-radius: 20px;
@@ -836,6 +838,7 @@ display: -webkit-box;
 .trapMan-twoB2{
     text-align: left;
     padding-left: 20px;
+    height:117px;overflow: hidden;
 }
 .trapMan-twoB2 li{
     margin-top: 18px;
@@ -2267,6 +2270,8 @@ white-space: nowrap;}
     margin-top: -200px;
     text-align: center;
 }
+.window-3.max_img_box{width: 80%;left: 10%;margin-left: 0;top: 10%;margin-top: 0;height: 80%;}
+.window-3.max_img_box .txt{overflow-y:auto;height: 100%;}
 .window-3 img{
   width: 100%;
 }
@@ -3678,7 +3683,7 @@ video{
 
 .daoshi h3.t{color: #ff5a67; line-height: 55px; font-size: 20px;margin-top: 10px;}
 .daoshi .list{margin-left: -22px;}
-.daoshi .list li{float: left;height: 273px;height: 166px;margin-left: 22px;margin-bottom: 30px;position:relative;background-color: #e5e5e5;padding:50px 140px 0 20px;line-height: 1.6;}
+.daoshi .list li{float: left;height: 273px;height: 166px;width: 300px;margin-left: 22px;margin-bottom: 30px;position:relative;background-color: #e5e5e5;padding:50px 140px 0 20px;line-height: 1.6;}
 .daoshi .list li .img{position: absolute;right: 0;width: 135px;bottom: 0;}
 .daoshi .list li .title{font-size: 18px;color:#333;margin-bottom:5px;}
 .daoshi .list li .title2{font-size: 14px;color:#333;}

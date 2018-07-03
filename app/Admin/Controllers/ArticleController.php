@@ -153,8 +153,8 @@ class ArticleController extends Controller
 
             $cate = ArticleCategory::orderBy('order',"ASC")->get()->toarray();
             foreach($cate as &$v){
-                $width = trans('template.template_width.'.$v['template'])>0?trans('template.template_width.'.$v['template']):0;
-                $height = trans('template.template_height.'.$v['template'])>0?trans('template.template_height.'.$v['template']):0;
+                $width = trans('template.template_width.'.$v['template'])>0?trans('template.template_width.'.$v['template']):'*';
+                $height = trans('template.template_height.'.$v['template'])>0?trans('template.template_height.'.$v['template']):'*';
                 $v['title'] .= "(".$width."*".$height.")";
             }
             $cate_options = optionsDate(getTree($cate));

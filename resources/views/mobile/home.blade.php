@@ -158,37 +158,37 @@
                 });
             };
             tetab1();
-            // function othersw(sw){
-            //     var sw = new Swiper('.' + sw, {
-            //         pagination : '.otherspa',
-            //         loop:true,
-            //         autoplay : 4000
-            //     });
-            // };
-            // othersw('otherssw0')
-            // $(".teacherTab a").click(function(){
-            //     $(this).addClass('active').siblings().removeClass('active');
-            //     if($(this).index() == 0){
-            //         $(".teachertab2").hide();
-            //         $(".teachertab1").show();
-            //         tetab1();
-            //     }else{
-            //         $(".teachertab2").show();
-            //         $(".teachertab1").hide();
-            //         tetab2()
-            //     }
-            // });
-            // $(".otherTab a").click(function(){
-            //     $(this).addClass('active').siblings().removeClass('active');
-            //     for(var i=0;i<5;i++){
-            //         if(i == $(this).index()){
-            //             $(".otherssw"+i).show();
-            //             othersw('otherssw'+i)
-            //         }else{
-            //             $(".otherssw"+i).hide();
-            //         }
-            //     }
-            // });
+            function othersw(sw){
+                var sw = new Swiper('.' + sw, {
+                    pagination : '.otherspa',
+                    loop:true,
+                    autoplay : 4000
+                });
+            };
+            othersw('otherssw0')
+            $(".teacherTab a").click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                if($(this).index() == 0){
+                    $(".teachertab2").hide();
+                    $(".teachertab1").show();
+                    tetab1();
+                }else{
+                    $(".teachertab2").show();
+                    $(".teachertab1").hide();
+                    tetab2()
+                }
+            });
+            $(".otherTab a").click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                for(var i=0;i<5;i++){
+                    if(i == $(this).index()){
+                        $(".otherssw"+i).show();
+                        othersw('otherssw'+i)
+                    }else{
+                        $(".otherssw"+i).hide();
+                    }
+                }
+            });
             
             
             

@@ -76,7 +76,7 @@ class VideoCourseController extends Controller
 
             $grid->urlCreateButton('/admin/video-course/create?video_id='.$request['video_id']);//修改添加按钮链接
             $grid->filter(function ($filter) {
-                $filter->equal('video_id','对应视频课程')->select();
+                $filter->equal('video_id','对应视音频课程')->select();
             });
         });
 
@@ -94,13 +94,13 @@ class VideoCourseController extends Controller
                 // 去掉跳转列表按钮
                 $tools->disableListButton();
             });
-            $form->hidden('video_id','对应视频')->value($request['video_id']);
+            $form->hidden('video_id','对应视音频')->value($request['video_id']);
 
             $form->text('title', '标题');
-            $form->text('video_text', '视频链接');
-            $form->file('video','视频')->move('/uploads/video/'.date('Ymd'))->uniqueName()->options(['maxFileSize'=>1024*10,'msgSizeTooLarge'=>'文件 "{name}" ({size} KB) 超出允许的最大上传大小 {maxSize} KB. 请重试上传！']);
-            $form->text('try_video_text', '试看视频链接');
-            $form->file('try_video','试看视频')->move('/uploads/video/'.date('Ymd'))->uniqueName()->options(['maxFileSize'=>1024*10,'msgSizeTooLarge'=>'文件 "{name}" ({size} KB) 超出允许的最大上传大小 {maxSize} KB. 请重试上传！']);
+            $form->text('video_text', '视音频链接');
+            $form->file('video','视音频')->move('/uploads/video/'.date('Ymd'))->uniqueName()->options(['maxFileSize'=>1024*10,'msgSizeTooLarge'=>'文件 "{name}" ({size} KB) 超出允许的最大上传大小 {maxSize} KB. 请重试上传！']);
+            $form->text('try_video_text', '试看视音频链接');
+            $form->file('try_video','试看视音频')->move('/uploads/video/'.date('Ymd'))->uniqueName()->options(['maxFileSize'=>1024*10,'msgSizeTooLarge'=>'文件 "{name}" ({size} KB) 超出允许的最大上传大小 {maxSize} KB. 请重试上传！']);
             // $form->image('image','图片')->move('/uploads/images/'.date('Ymd'))->uniqueName();
 
             // $form->setAction('/admin/ads-image');//提交地址
