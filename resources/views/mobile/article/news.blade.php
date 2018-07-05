@@ -4,6 +4,11 @@
 @endsection
 @section('content')
     <div id="story-tab1" class="news">
+        <div class="buttons-tab story-tabs project-tab-link clearfix">
+            @foreach($sub_category as $v)
+            <a href="{{URL($v['url'])}}" class="@if(isset($url)&&trim($v['url'],"/")==$url) cur @endif">{{$v['title']}}</a>
+            @endforeach
+        </div>
         @foreach($article_list as $k=>$v)
         <a class="story-article-list" href="{{URL($cate_info['url'],$v['id'])}}">
             <div class="story-article-bg">
