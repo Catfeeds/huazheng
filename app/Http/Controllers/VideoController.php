@@ -169,10 +169,13 @@ class VideoController extends Controller
             return redirect('video-info/'.$id);
         }
         //生成订单
-        $arr = new VideoOrder;
+        $arr = VideoOrder::where(['user_id'=>$user_info['id'],"video_id"=>$id])->first();
+        if(!$arr){
+            $arr = new VideoOrder;
+        }
         $arr->user_id = $user_info['id'];
         $arr->video_id = $id;
-        $arr->status = 2;
+        $arr->status = 1;
         $arr->price = $Video['price'];
         $arr->order_no = video_order_no();
         $arr->pay_time = date('Y-m-d H:i:s');
