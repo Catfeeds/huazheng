@@ -12,8 +12,8 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
@@ -32,6 +32,7 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         array (
             'Yansongda\\Supports\\' => 19,
             'Yansongda\\Pay\\' => 14,
+            'Yansongda\\LaravelPay\\' => 21,
         ),
         'X' => 
         array (
@@ -144,6 +145,10 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         'Yansongda\\Pay\\' => 
         array (
             0 => __DIR__ . '/..' . '/yansongda/pay/src',
+        ),
+        'Yansongda\\LaravelPay\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yansongda/laravel-pay/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -407,6 +412,7 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PayController' => __DIR__ . '/../..' . '/app/Http/Controllers/PayController.php',
         'App\\Http\\Controllers\\RecruitmentApplyController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecruitmentApplyController.php',
         'App\\Http\\Controllers\\SmsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SmsController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
@@ -429,6 +435,7 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         'App\\Models\\MoreImage' => __DIR__ . '/../..' . '/app/Models/MoreImage.php',
         'App\\Models\\MoreVideo' => __DIR__ . '/../..' . '/app/Models/MoreVideo.php',
         'App\\Models\\Nav' => __DIR__ . '/../..' . '/app/Models/Nav.php',
+        'App\\Models\\PayLog' => __DIR__ . '/../..' . '/app/Models/PayLog.php',
         'App\\Models\\RecruitmentApply' => __DIR__ . '/../..' . '/app/Models/RecruitmentApply.php',
         'App\\Models\\Region' => __DIR__ . '/../..' . '/app/Models/Region.php',
         'App\\Models\\SmsCaptcha' => __DIR__ . '/../..' . '/app/Models/SmsCaptcha.php',
@@ -4034,6 +4041,8 @@ class ComposerStaticInita74c71ec34ddf873394ccc799b8afcf7
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'Yansongda\\LaravelPay\\Facades\\Pay' => __DIR__ . '/..' . '/yansongda/laravel-pay/src/Facades/Pay.php',
+        'Yansongda\\LaravelPay\\PayServiceProvider' => __DIR__ . '/..' . '/yansongda/laravel-pay/src/PayServiceProvider.php',
         'Yansongda\\Pay\\Contracts\\GatewayApplicationInterface' => __DIR__ . '/..' . '/yansongda/pay/src/Contracts/GatewayApplicationInterface.php',
         'Yansongda\\Pay\\Contracts\\GatewayInterface' => __DIR__ . '/..' . '/yansongda/pay/src/Contracts/GatewayInterface.php',
         'Yansongda\\Pay\\Exceptions\\Exception' => __DIR__ . '/..' . '/yansongda/pay/src/Exceptions/Exception.php',

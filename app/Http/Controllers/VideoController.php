@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Validator,Auth;
-use App\Models\Video,App\Models\VideoCourse,App\Models\User,App\Models\Category,App\Models\VideoOrder;
-
+use App\Models\Video,App\Models\VideoCourse,App\Models\User,App\Models\Category,App\Models\VideoOrder,App\Models\PayLog;
 class VideoController extends Controller
 {
     /**
@@ -168,6 +167,37 @@ class VideoController extends Controller
             //已经购买或无需购买的跳转回去
             return redirect('video-info/'.$id);
         }
+        $assign = [
+            'Video'            => $Video,
+            'head_title'       => !empty($Video['seo_title'])?$Video['seo_title']:$Video['title'],
+            'head_keywords'    => !empty($Video['seo_keywords'])?$Video['seo_keywords']:$Video['title'],
+            'head_description' => !empty($Video['seo_description'])?$Video['seo_description']:$Video['title'],
+        ];
+        return view('home.video.video-pay',$assign);
+    }
+    public function video_pay_save(Request $request){
+        //课程购买-支付确认
+        $this->validate($request,[
+            'id'    => 'required',
+            'pay_type'   => 'required',
+        ],[],[
+            'id'=>"课程",
+            'pay_type'=>"支付方式",
+        ]);
+        if(!$request['id']>0){
+            return redirect("/");
+        }
+        $id = $request['id'];
+        $user_info = Auth::user();
+        $Video = Video::find($id);
+        if(!$Video){
+            return redirect("/");
+        }
+        $is_pay = VideoOrder::is_pay($id,$user_info['id']);
+        if($is_pay||($Video['is_fee']==2&&$user_info['grade']==2)||$Video['is_fee']==3){
+            //已经购买或无需购买的跳转回去
+            return redirect('video-info/'.$id);
+        }
         //生成订单
         $arr = VideoOrder::where(['user_id'=>$user_info['id'],"video_id"=>$id])->first();
         if(!$arr){
@@ -181,8 +211,18 @@ class VideoController extends Controller
         $arr->pay_time = date('Y-m-d H:i:s');
         $arr->save();
 
-        Video::where("video_id",$id)->increment('number',1);
-        return redirect('video-info/'.$id);
+        //创建支付记录
+        $pay_log = PayLog::PaySave([
+            'order_id'=>$arr['id'],
+            'type'=>1,
+            'price'=>$arr['price'],
+            'user_id'=>$arr['user_id'],
+            'order_no'=>$arr['order_no'],
+            'pay_type'=>$request['pay_type'],
+            'add_time'=>time(),
+        ]);
+
+        return redirect('pay?id='.$pay_log['id']);
     }
 
     public function member_video_list(Request $request){

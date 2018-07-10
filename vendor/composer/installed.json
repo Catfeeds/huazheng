@@ -4606,6 +4606,62 @@
         ]
     },
     {
+        "name": "yansongda/laravel-pay",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yansongda/laravel-pay.git",
+            "reference": "03f6121263089acaf796094a7917cb94cb8ffc63"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yansongda/laravel-pay/zipball/03f6121263089acaf796094a7917cb94cb8ffc63",
+            "reference": "03f6121263089acaf796094a7917cb94cb8ffc63",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.1",
+            "yansongda/pay": "^2.0"
+        },
+        "time": "2018-06-29T14:39:44+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Yansongda\\LaravelPay\\PayServiceProvider"
+                ],
+                "aliases": {
+                    "Pay": "Yansongda\\LaravelPay\\Facades\\Pay"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Yansongda\\LaravelPay\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "yansongda",
+                "email": "me@yansongda.cn"
+            }
+        ],
+        "description": "专注 Alipay 和 WeChat 的 laravel 支付扩展包",
+        "keywords": [
+            "alipay",
+            "laravel",
+            "package",
+            "pay",
+            "wechat"
+        ]
+    },
+    {
         "name": "yansongda/pay",
         "version": "v2.4.0",
         "version_normalized": "2.4.0.0",

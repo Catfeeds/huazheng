@@ -3692,3 +3692,122 @@ video{
     display: -webkit-box;
     -webkit-line-clamp:5;
     -webkit-box-orient: vertical}
+
+
+
+
+
+.videoPay .colred{
+    color: #ff5562;
+}
+.videoPay .orders,.videoPay .payMethod,.videoPay .zhixun{
+    border: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+}
+.videoPay .orders>p,.videoPay .payMethod>p,.videoPay .zhixun>p{
+    padding: 20px;
+    font-size: 18px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.videoPay .ordersCon{
+    padding: 37px 27px;
+}
+.videoPay .ordersCon>div{
+    display: inline-block;
+    vertical-align: middle;
+}
+.videoPay .ordersCon>div:first-child{
+    width: 885px;
+    border-right: 1px solid #e5e5e5;
+}
+.videoPay .imgDivs{
+    display: inline-block;
+    width: 366px;
+    height: 196px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.videoPay .videoP{
+    display: block;
+    width: 100%;
+}
+.videoPay .videoCon2{
+    position: relative;
+    display:inline-block;
+    vertical-align: top;
+    height: 196px;
+    width: 440px;
+}
+.videoPay .videoTit{
+    font-size: 18px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.videoPay .videoDes{
+    font-size: 14px;
+    color: #999;
+    margin-top:15px;
+    text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp:4; -webkit-box-orient: vertical
+}
+.videoPay .ordersNum{
+    position: absolute;
+    left: 0;bottom:0;
+    font-size: 14px;
+    color: #999;
+}
+.videoPay .ordersCon>div:last-child{
+    width: 252px;
+    text-align: center;
+    color:#999;
+}
+.videoPay .price{
+    font-size: 30px;
+}
+.videoPay .payCon{
+    padding: 26px;
+}
+.videoPay .payCon p{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    height: 52px;
+    border: 2px solid #eaeaea;
+    cursor: pointer;
+    margin-right: 20px;
+    overflow: hidden;
+}
+.videoPay .payCon p.active{
+    border: 2px solid #ff5562;
+}
+.videoPay .sel{
+    display: none;
+    position: absolute;
+    right: -34px;
+    bottom: -32px;
+}
+.videoPay .payCon p.active .sel{
+    display: block;
+}
+.videoPay .topay{
+    float: right;
+    color: #fff;
+    background: #ff5562;
+    padding: 14px 30px;
+    border-radius: 5px;
+    margin-right: 52px;
+    margin-top: 4px;
+    font-size: 18px;
+}
+.videoPay .zhixun .zhiP{
+    padding: 30px;
+    font-size: 16px;
+    background: #fff;
+    border-bottom: none;
+}
+.videoPay .qq{
+    display: inline-block;
+    margin-right: 10px;
+}
+.videoPay .zhixun .zhiP span{
+    margin-right: 20px;
+}

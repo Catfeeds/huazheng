@@ -33,6 +33,7 @@ Route::group(['middleware'=>'auth'], function(){
 	//需要登陆的路由
 	Route::get('video-play/{id}','VideoController@video_play');//视频课程观看
 	Route::get('video-pay/{id}','VideoController@video_pay');//视频课程购买
+	Route::post('video-pay-save','VideoController@video_pay_save');//视频课程购买
 	Route::get('member-video-list','VideoController@member_video_list');//视频课程购买
 
 	Route::get('vip-pay','UserController@vip_pay');//会员vip购买
@@ -49,6 +50,8 @@ Route::group(['middleware'=>'auth'], function(){
 
 	Route::post('bangding-sms-send','SmsController@bangding_sms_send');//发送修改手机验证码
 	Route::post('password-sms-send','SmsController@password_sms_send');//发送修改密码验证码
+
+	Route::get('pay','PayController@pay');//支付发起
 });
 
 
