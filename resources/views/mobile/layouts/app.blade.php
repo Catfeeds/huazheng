@@ -13,6 +13,7 @@
             <title>@if(isset($head_title)){{$head_title}}@else{{ConfigGet('site_name')}}@endif</title>
             <meta name="keywords" content="@if(isset($head_keywords)){{$head_keywords}}@else{{ConfigGet('site_keywords')}}@endif">
             <meta name="description" content="@if(isset($head_description)){{$head_description}}@else{{ConfigGet('site_description')}}@endif">
+            <meta name='author' content="名鹊科技:http://www.gzmqnet.com"/>
         @show
         @section('style')
             <link type="text/css" rel="stylesheet" href="{{ asset('resources/mobile/css/iconfont.css') }}?version={{env('VERSION')}}" />
