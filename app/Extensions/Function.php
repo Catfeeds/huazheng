@@ -363,3 +363,14 @@ function isMobile() {
   } 
   return false;
 }
+
+/**
+ * 判断是否为微信浏览器
+ * @return boolean [description]
+ */
+function is_weixin(){
+    if(strpos($_SERVER['HTTP_USER_AGENT'],'MicroMessenger')!==false){
+        return true;
+    }
+    return false;
+}

@@ -2616,3 +2616,91 @@ white-space: nowrap;}
 
 
 .ststem_article{padding:.3rem .24rem;}
+
+
+.video_pay .payCourse{
+    background: #fff;
+    font-size: 0;
+    margin: .2rem 0;
+}
+.video_pay .payCourse{
+    display: block;
+    padding: .3rem .1rem;
+}
+.video_pay .payCourse>div{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 1.4rem;
+}
+.video_pay .courseImg{
+    width: 42%;
+    overflow: hidden;
+}
+.video_pay .courseImg img{
+    width: 100%;
+}
+.video_pay .courseInfo{
+    margin-left: .2rem;
+    width: 54%;
+}
+.video_pay .courseTit{
+    font-size: .3rem;
+}
+.video_pay .pricesa{
+    position: absolute;
+    left: 0;bottom:0;
+    width: 100%;
+    font-size: .24rem;
+}
+.video_pay .pricesa>p{
+    display: inline-block;
+}
+.video_pay .newPrice{
+    font-size: .3rem;
+}
+.video_pay .tag{
+    float: right;
+    font-size: .2rem;
+    margin-top: 3px;
+    color: #ff5562;
+}
+.video_pay .payMethod{
+    padding-left: .3rem;
+    background: #fff;
+}
+.video_pay .methTex{
+    font-size: .32rem;
+    padding: .2rem 0;
+}
+.video_pay .payUl li{
+    border-top: 1px solid #e5e5e5;
+    background: url(../images/pay1.png) no-repeat 94% center / .4rem;
+}
+.video_pay .payUl li.on{
+    background: url(../images/pay2.png) no-repeat 94% center / .4rem;
+}
+.video_pay .payUl li a{
+    display: block;
+    font-size: .28rem;
+    color: #999999;
+    padding: .2rem 0;
+    height: 1.2rem;
+}
+.video_pay .payUl li a img{
+    display: inline-block;
+    width: .8rem;
+    vertical-align: middle;
+    margin-right: .2rem;
+}
+.video_pay .topay{
+    display: block;
+    width: 95%;
+    margin: auto;
+    background: #ff5562;
+    color: #fff;
+    padding: .2rem;
+    text-align: center;
+    font-size: .28rem;
+    margin-top: .2rem;
+}

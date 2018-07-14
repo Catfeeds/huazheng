@@ -36,22 +36,21 @@ class PayController extends Controller
         if(!$pay_log){
             return redirect("/");
         }
-
         if($pay_log['pay_type']==1){
             //微信支付流程
             $config = [
-                'appid' => 'wxb3fxxxxxxxxxxx', // APP APPID
-                'app_id' => 'wxb3fxxxxxxxxxxx', // 公众号 APPID
-                'miniapp_id' => 'wxb3fxxxxxxxxxxx', // 小程序 APPID
-                'mch_id' => '145776xxxx',
-                'key' => 'mF2suE9sU6Mk1CxxxxIxxxxx',
-                'notify_url' => 'http://yanda.net.cn',
-                'cert_client' => './cert/apiclient_cert.pem', // optional, 退款，红包等情况时需要用到
-                'cert_key' => './cert/apiclient_key.pem',// optional, 退款，红包等情况时需要用到
-                'log' => [ // optional
-                    'file' => './logs/wechat.log',
-                    'level' => 'debug'
-                ],
+                // 'appid' => 'wxb3fxxxxxxxxxxx', // APP APPID
+                'app_id' => 'wx3e2f2acc04f5e83e', // 公众号 APPID
+                // 'miniapp_id' => 'wxb3fxxxxxxxxxxx', // 小程序 APPID
+                'mch_id' => '1509537671',//商户号
+                'key' => 'dataimagepngbase64iVBORw0KGgklia',//商户密钥
+                'notify_url'  => URL('notify_url'),
+                'cert_client' => 'wxzs/apiclient_cert.pem', // optional, 退款，红包等情况时需要用到
+                'cert_key' => 'wxzs/apiclient_key.pem',// optional, 退款，红包等情况时需要用到
+                // 'log' => [ // optional
+                //     'file' => './logs/wechat.log',
+                //     'level' => 'debug'
+                // ],
             ];
             if(strpos($_SERVER['HTTP_USER_AGENT'],'MicroMessenger')!==false){
                 if(!session()->has('pay_open_id')){
@@ -76,14 +75,21 @@ class PayController extends Controller
                     }
                 }
             }
-            
-            // 扫码支付
             $order = [
-                'out_trade_no' => $pay_log['order_no'],
-                'body'         => '订单支付',
-                'total_fee'    => round($pay_log['price']*100),
-                'openid'       => 'onkVf1FjWS5SBxxxxxxxx',
+                'out_trade_no' => time(),
+                'body' => 'subject-测试',
+                'total_fee'      => '1',
+                'openid' => 'onkVf1FjWS5SBxxxxxxxx',
             ];
+            $result = Pay::wechat($config)->mp($order);
+            dd($result);
+            // 扫码支付
+            // $order = [
+            //     'out_trade_no' => $pay_log['order_no'],
+            //     'body'         => '订单支付',
+            //     'total_fee'    => round($pay_log['price']*100),
+            //     'openid'       => 'wx3e2f2acc04f5e83e',
+            // ];
             $result = Pay::wechat($config)->mp($order);
             $qr = $result->code_url;
             dd($result);

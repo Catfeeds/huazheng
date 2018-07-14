@@ -173,7 +173,11 @@ class VideoController extends Controller
             'head_keywords'    => !empty($Video['seo_keywords'])?$Video['seo_keywords']:$Video['title'],
             'head_description' => !empty($Video['seo_description'])?$Video['seo_description']:$Video['title'],
         ];
-        return view('home.video.video-pay',$assign);
+        if(isMobile()){
+            return view('mobile.video.video-pay',$assign);
+        }else{
+            return view('home.video.video-pay',$assign);
+        }
     }
     public function video_pay_save(Request $request){
         //课程购买-支付确认
