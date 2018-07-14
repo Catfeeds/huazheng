@@ -18,9 +18,9 @@ $user_info = Auth::user();
         @endif
         @if(empty($user_info['wx_openid']))
         <!-- 微信绑定 -->
-        <div class="my_weixin" >
+        <!-- <div class="my_weixin" >
             <span class="wx_ann">绑定微信</span>
-        </div>
+        </div> -->
         @endif
     </div>
     <div class="Gs_panel_title ">

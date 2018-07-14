@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Validator,Auth;
-use App\Models\SmsCaptcha,App\Models\User,App\Models\VipOrder;
+use App\Models\SmsCaptcha,App\Models\User,App\Models\VipOrder,App\Models\PayLog;
 
 class UserController extends Controller
 {
@@ -221,27 +221,47 @@ class UserController extends Controller
     }
     public function vip_pay(){
         //vip购买
-        
         $user_info = Auth::user();
-        //生成订单
+        $assign = [
+            'vip_price'        => ConfigGet('vip_price'),
+            'head_title'       => !empty($Video['seo_title'])?$Video['seo_title']:$Video['title'],
+            'head_keywords'    => !empty($Video['seo_keywords'])?$Video['seo_keywords']:$Video['title'],
+            'head_description' => !empty($Video['seo_description'])?$Video['seo_description']:$Video['title'],
+        ];
+        if(isMobile()){
+            return view('mobile.user.vip-pay',$assign);
+        }else{
+            return view('home.user.vip-pay',$assign);
+        }
+    }
+    public function vip_pay_save(Request $request){
+        //vip购买-支付确认
+        $this->validate($request,[
+            'pay_type' => 'required',
+        ],[],[
+            'pay_type' =>"支付方式",
+        ]);
+
+        $user_info = Auth::user();
         $arr = new VipOrder;
         $arr->user_id = $user_info['id'];
-        $arr->status = 2;
+        $arr->status = 1;
         $arr->price = ConfigGet('vip_price');
         $arr->order_no = vip_order_no();
         $arr->pay_time = date('Y-m-d H:i:s');
         $arr->save();
 
-        if($user_info['grade']==2){
-            //续费
-            $user_info->grade_end = date('Y-m-d H:i:s',strtotime($user_info->grade_end)+60*60*24*365);//增加1年
-        }else{
-            //新购
-            $user_info->grade = 2;
-            $user_info->grade_start = date('Y-m-d H:i:s');
-            $user_info->grade_end = date('Y-m-d H:i:s',time()+60*60*24*365);//增加1年
-        }
-        $user_info->save();
-        return redirect()->back();
+        //创建支付记录
+        $pay_log = PayLog::PaySave([
+            'order_id'=>$arr['order_id'],
+            'type'=>2,
+            'price'=>$arr['price'],
+            'user_id'=>$arr['user_id'],
+            'order_no'=>$arr['order_no'],
+            'pay_type'=>$request['pay_type'],
+            'add_time'=>date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect('pay?id='.$pay_log['id']);
     }
 }

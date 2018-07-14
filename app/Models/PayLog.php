@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Encore\Admin\Traits\AdminBuilder;
 use Encore\Admin\Traits\ModelTree;
-use App\Models\ArticleCategory;
 class PayLog extends Model
 {
     protected $table = 'pay_log';
-    
+    public function VideoTo(){
+        return $this->belongsTo('App\Models\VideoOrder','order_id','order_id');
+    }
     static public function PaySave($attributes=array()){
         if($attributes['id']>0){
         	$info = PayLog::find($attributes['id']);

@@ -162,6 +162,8 @@ return [
 
         Yansongda\LaravelPay\PayServiceProvider::class,//支付
 
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class//二维码
+
     ],
 
     /*
@@ -213,6 +215,8 @@ return [
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
         'Pay' => Yansongda\LaravelPay\Facades\Pay::class,//支付
+
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class//二维码
     ],
 
 ];

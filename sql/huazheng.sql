@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 03/07/2018 02:32:46
+ Date: 15/07/2018 00:38:15
 */
 
 SET NAMES utf8mb4;
@@ -80,7 +80,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 6365 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 6372 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -6449,6 +6449,13 @@ INSERT INTO `hl_admin_operation_log` VALUES (6361, 1, 'admin/article', 'GET', '1
 INSERT INTO `hl_admin_operation_log` VALUES (6362, 1, 'admin/article/1180/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-07-03 02:18:01', '2018-07-03 02:18:01');
 INSERT INTO `hl_admin_operation_log` VALUES (6363, 1, 'admin/article/1180', 'PUT', '127.0.0.1', '{\"id\":\"1180\",\"title\":\"\\u5a5a\\u59fb\\u4fee\\u590d\",\"en_title\":null,\"title2\":null,\"cate_id\":\"358\",\"desc\":null,\"desc2\":null,\"content\":null,\"alt\":null,\"alt2\":null,\"is_top\":\"off\",\"add_time\":\"2018-05-28 00:00:00\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"video_text\":\"uploads\\/file\\/20180703\\/5b3a6bd703efc5.25640745.mp4\",\"url\":null,\"_token\":\"RbyXxxIB21YwWog8lPZz3KoutUY7kwIlGHaVnpyv\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article?no_header=true&no_sidebar=true&no_footer=true&cate_id=358\"}', '2018-07-03 02:18:08', '2018-07-03 02:18:08');
 INSERT INTO `hl_admin_operation_log` VALUES (6364, 1, 'admin/article', 'GET', '127.0.0.1', '{\"cate_id\":\"358\"}', '2018-07-03 02:18:09', '2018-07-03 02:18:09');
+INSERT INTO `hl_admin_operation_log` VALUES (6365, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-07-06 01:12:14', '2018-07-06 01:12:14');
+INSERT INTO `hl_admin_operation_log` VALUES (6366, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-07-06 01:12:18', '2018-07-06 01:12:18');
+INSERT INTO `hl_admin_operation_log` VALUES (6367, 1, 'admin/article-category/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-07-06 01:12:22', '2018-07-06 01:12:22');
+INSERT INTO `hl_admin_operation_log` VALUES (6368, 1, 'admin/article-category', 'POST', '127.0.0.1', '{\"title\":\"\\u65b0\\u95fb\\u5206\\u7c7b1\",\"title2\":null,\"en_title\":null,\"template\":\"news\",\"url\":\"new2\",\"parent_id\":\"342\",\"cat_desc\":null,\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"yCehGuDuY1BBEgPRAPFFf0f9W4vvzbsiNDI1BkfN\",\"_previous_\":\"http:\\/\\/huazheng.me\\/admin\\/article-category\"}', '2018-07-06 01:12:56', '2018-07-06 01:12:56');
+INSERT INTO `hl_admin_operation_log` VALUES (6369, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-07-06 01:12:57', '2018-07-06 01:12:57');
+INSERT INTO `hl_admin_operation_log` VALUES (6370, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-07-15 00:00:07', '2018-07-15 00:00:07');
+INSERT INTO `hl_admin_operation_log` VALUES (6371, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-07-15 00:00:10', '2018-07-15 00:00:10');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -7143,7 +7150,7 @@ CREATE TABLE `hl_article_category`  (
   `img2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图片2',
   `alt2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图片2alt',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 379 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 380 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_article_category
@@ -7204,6 +7211,7 @@ INSERT INTO `hl_article_category` VALUES (372, 0, '系统告示', NULL, NULL, NU
 INSERT INTO `hl_article_category` VALUES (373, 0, '笃爱介绍', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180611/f7d6283b693e65511e83aa1c86a12619.jpg', NULL, 'introduce', 54, '2018-06-10 23:09:00', '2018-06-12 14:00:00', 'introduce', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (374, 373, '笃爱品牌', NULL, '<h2 style=\"padding:0px;margin:0px;list-style:none;border:0px;color:#FF5A67;width:1200px;height:50px;line-height:55px;font-size:20px;font-family:&quot;white-space:normal;background-color:#FFFFFF;\">\r\n	笃爱品牌\r\n</h2>\r\n<p style=\"padding:0px;margin-top:0px;margin-bottom:0px;list-style:none;border:0px;width:1200px;line-height:26px;font-size:14px;font-family:&quot;white-space:normal;background-color:#FFFFFF;\">\r\n	笃爱隶属于广州笃爱教育咨询有限公司，笃爱团队创办于2008年，由理论、实践经验丰富的导师团队组建，是面向中国家庭提供专业的情感咨询与规划的标杆品牌，旗下拥有冷爱、Ayawawa、肖然等一批极具影响力的明星情感导师，并囊括众多心理学、社会学等领域的导师学者。<br style=\"padding:0px;margin:0px;list-style:none;border:0px;\" />\r\n笃爱倡导“为爱努力”的健康情感价值观，秉承“爱是一种可以被学习的能力”的理念，鼓励每个人积极面对自身情感问题，重视家庭情感生活规划，寻找科学方法修复情感，憧憬天下家庭都能享受爱。<br style=\"padding:0px;margin:0px;list-style:none;border:0px;\" />\r\n笃爱一直不遗余力地引领情感咨询行业走向阳光化、专业化。笃爱注重服务质量，建立了一套严谨的服务品质管控体系;同时与美国婚姻家庭协会(AAMFT)的注册咨询师以及注册督导师合作，引入世界最先进的婚姻家庭治疗模型理论体系，致力于树立新的行业品质标杆\r\n</p>', NULL, NULL, NULL, NULL, NULL, NULL, 'introduce', 55, '2018-06-10 23:58:46', '2018-06-12 14:00:00', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (375, 373, '笃爱活动', NULL, '<h2 style=\"padding:0px;margin:0px;list-style:none;border:0px;color:#FF5A67;width:1200px;height:50px;line-height:55px;font-size:20px;white-space:normal;background-color:#FFFFFF;\">\r\n	笃爱活动\r\n</h2>\r\n<p style=\"padding:0px;margin-top:0px;margin-bottom:10px;list-style:none;border:0px;width:1200px;line-height:30px;font-size:14px;white-space:normal;background-color:#FFFFFF;\">\r\n	\"笃爱线下会员\"将告诉你：爱是一种可被学习的能力！“笃爱线下会员”是国内线下情感学习品牌，其前身为爱情风暴。为回馈新老学员对笃爱的支持，笃爱现已将爱情风暴活动全面升级为笃爱线下会员活动，新加入的学员可以爱情风暴的同等价格享受更丰富更全面的课程内容。<br style=\"padding:0px;margin:0px;list-style:none;border:0px;\" />\r\n其中，笃爱线下会员活动的核心课程及价值在于教会学员拥有以下五大能力：掌握脱单技巧的能力，经营长期关系、提升爱的能力，解决情感问题并培养强大心态的能力，提高情商、增加个人社交魅力的能力和发掘自己形象魅力提升自己综合素养的能力。课程主要围绕快速脱单训练展开：第一模块让你掌握更多认识异性并与异性沟通的机会；第二模块让你了解如何通过肢体语言来吸引异性，由老师现场演练教学；第三模块让你通过观察快速掌握TA的心理，赢得恋爱主动权。<br style=\"padding:0px;margin:0px;list-style:none;border:0px;\" />\r\n笃爱线下会员活动以授课和互动的方式对学员进行三天两夜的集中式训练。授课主要通过导师讲课的方式，启发学员思维；而互动通过讨论和分享的形式，让学员现场消化和实践知识。\r\n</p>\r\n<p style=\"padding:0px;margin:0px 0px 20px;list-style:none;border:0px;width:1200px;display:block;color:#FF535F;font-size:14px;white-space:normal;background-color:#FFFFFF;\">\r\n	笃爱线下会员活动至今已累计巡讲二十二期，见证了668位学员的寻爱之旅，帮助了3968位学员收获幸福爱情。\r\n</p>', NULL, NULL, NULL, NULL, NULL, NULL, 'introduce', 56, '2018-06-10 23:59:45', '2018-06-12 14:00:00', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (379, 342, '新闻分类1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'news', 0, '2018-07-06 01:12:56', '2018-07-06 01:12:56', 'new2', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for hl_article_category2
@@ -7529,18 +7537,20 @@ CREATE TABLE `hl_password_resets`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `hl_pay_log`;
 CREATE TABLE `hl_pay_log`  (
-  `pay_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '支付记录表',
-  `order_id` int(11) NULL DEFAULT NULL COMMENT '对应订单',
-  `type` tinyint(1) NULL DEFAULT NULL COMMENT '订单类型，1-课程视频',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '支付记录表',
+  `order_id` int(11) UNSIGNED NULL DEFAULT 0 COMMENT '对应订单',
+  `type` tinyint(1) UNSIGNED NULL DEFAULT 1 COMMENT '订单类型，1-课程视频，2会员购买',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '对应价格',
-  `pay_status` tinyint(1) NULL DEFAULT 1 COMMENT '1-未支付，2-支付',
+  `price` decimal(10, 2) UNSIGNED NULL DEFAULT 0.00 COMMENT '对应价格',
+  `pay_status` tinyint(1) UNSIGNED NULL DEFAULT 1 COMMENT '1-未支付，2-支付',
   `add_time` timestamp NULL DEFAULT NULL COMMENT '添加时间',
   `pay_time` timestamp NULL DEFAULT NULL COMMENT '支付时间',
-  `pay_type` tinyint(1) NULL DEFAULT 1 COMMENT '支付类型，1-微信，2-支付宝',
-  PRIMARY KEY (`pay_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Fixed;
+  `pay_type` tinyint(1) UNSIGNED NULL DEFAULT 1 COMMENT '支付类型，1-微信，2-支付宝',
+  `user_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '所属会员',
+  `order_no` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单号',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Fixed;
 
 -- ----------------------------
 -- Table structure for hl_recruitment_apply
@@ -11447,12 +11457,7 @@ CREATE TABLE `hl_video_order`  (
   `pay_time` timestamp NULL DEFAULT NULL COMMENT '支付时间',
   `pay_type` tinyint(1) NULL DEFAULT NULL COMMENT '支付类型，1-微信，2-支付宝',
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of hl_video_order
--- ----------------------------
-INSERT INTO `hl_video_order` VALUES (5, 3, '2018-06-07 22:42:28', '2018-06-07 22:42:28', 6, 2, 199.00, '20180607224228729971', NULL, NULL);
+) ENGINE = MyISAM AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for hl_vip_order

@@ -213,17 +213,18 @@ class VideoController extends Controller
         $arr->price = $Video['price'];
         $arr->order_no = video_order_no();
         $arr->pay_time = date('Y-m-d H:i:s');
+        $arr->pay_type = $request['pay_type'];
         $arr->save();
 
         //创建支付记录
         $pay_log = PayLog::PaySave([
-            'order_id'=>$arr['id'],
+            'order_id'=>$arr['order_id'],
             'type'=>1,
             'price'=>$arr['price'],
             'user_id'=>$arr['user_id'],
             'order_no'=>$arr['order_no'],
             'pay_type'=>$request['pay_type'],
-            'add_time'=>time(),
+            'add_time'=>date('Y-m-d H:i:s'),
         ]);
 
         return redirect('pay?id='.$pay_log['id']);

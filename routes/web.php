@@ -29,6 +29,8 @@ Route::get('video-list','VideoController@video_list');//视频课程
 Route::get('video-info/{id}','VideoController@video_info');//视频课程详情
 Route::get('contact-us','ArticleController@contact_us');//联系我们
 
+Route::any('wechat_notify_url','PayController@wechat_notify_url');//微信支付回调
+
 Route::group(['middleware'=>'auth'], function(){
 	//需要登陆的路由
 	Route::get('video-play/{id}','VideoController@video_play');//视频课程观看
@@ -37,6 +39,8 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('member-video-list','VideoController@member_video_list');//视频课程购买
 
 	Route::get('vip-pay','UserController@vip_pay');//会员vip购买
+	Route::post('vip-pay-save','UserController@vip_pay_save');//会员vip购买提交
+	
 	Route::get('member','UserController@member');//个人中心
 	Route::get('member-edit','UserController@member_edit');//个人资料修改
 	Route::get('user-name-edit','UserController@user_name_edit');//个人名称修改
@@ -52,6 +56,7 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::post('password-sms-send','SmsController@password_sms_send');//发送修改密码验证码
 
 	Route::get('pay','PayController@pay');//支付发起
+	Route::post('pay_is','PayController@pay_is');//判断支付是否成功
 });
 
 

@@ -23,6 +23,7 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden; line-height:0; font-size:0}
 .clearfix{*zoom:1}
 
+.error{color:#f8485e;font-size: .18rem;padding:.05rem;line-height: 1.6;}
 .iconfont{font-size: 100%;}
 .header {
     height: 1rem;
@@ -484,13 +485,13 @@ body{ font-family:Arial,"微软雅黑";color:#000; line-height:1.3; font-size:.2
     top: 0;
     bottom:0;
     right: 0;
-    width: 4rem;
-    height: 4.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
     margin: auto;
     background: #fff;
     text-align: center;
     padding: .3rem;
-    border-radius: 10px;
+    border-radius: .1rem;
     color: #f8485e;
     font-size: .26rem;
 }
@@ -2647,6 +2648,11 @@ white-space: nowrap;}
 .video_pay .courseTit{
     font-size: .3rem;
 }
+.video_pay .courseDes{
+    font-size: .24rem;
+    color:#777;
+    padding-top: .1rem;
+}
 .video_pay .pricesa{
     position: absolute;
     left: 0;bottom:0;
@@ -2664,6 +2670,9 @@ white-space: nowrap;}
     font-size: .2rem;
     margin-top: 3px;
     color: #ff5562;
+}
+.video_pay .pricesa.vip .tag{
+    float: left;
 }
 .video_pay .payMethod{
     padding-left: .3rem;

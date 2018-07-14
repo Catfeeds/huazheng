@@ -24,4 +24,13 @@ class VideoOrder extends Model
         ])->first();
         return $order_info;
     }
+    public function Nutify($attributes = array()){
+        $id = $attributes['id'];
+        $info = VideoOrder::find($id);
+        if($info['status']==1){
+            $info->status = 2;
+            $info->pay_time = date('Y-m-d H:i:s');
+            $info->save();
+        }
+    }
 }

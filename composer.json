@@ -13,6 +13,7 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "mews/captcha": "^2.1",
+        "simplesoftwareio/simple-qrcode": "^2.0",
         "yansongda/laravel-pay": "^2.0",
         "yansongda/pay": "^2.4"
     },
