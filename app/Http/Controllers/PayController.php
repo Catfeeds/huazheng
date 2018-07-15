@@ -91,9 +91,11 @@ class PayController extends Controller
                     case '1':
                         $url_ok = url('video-info',[$pay_log['VideoTo']['video_id']]);
                         $url_no = url('video-info',[$pay_log['VideoTo']['video_id']]);
+                        break;
                     case '2':
                         $url_ok = url('member');
                         $url_no = url('member');
+                        break;
                 }
                 $assign = [
                     "Pay"       =>$Pay,

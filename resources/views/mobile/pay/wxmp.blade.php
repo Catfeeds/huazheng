@@ -17,18 +17,18 @@
         WeixinJSBridge.invoke(
             'getBrandWCPayRequest',
             {
-                "appId":'{{$pay['appId']}}',
-                "nonceStr":'{{$pay['nonceStr']}}',
-                "package":'{{$pay['package']}}',
-                "paySign":'{{$pay['paySign']}}',
-                "signType":'{{$pay['signType']}}',
-                "timeStamp":'{{$pay['timeStamp']}}'
+                "appId":'{{$Pay['appId']}}',
+                "nonceStr":'{{$Pay['nonceStr']}}',
+                "package":'{{$Pay['package']}}',
+                "paySign":'{{$Pay['paySign']}}',
+                "signType":'{{$Pay['signType']}}',
+                "timeStamp":'{{$Pay['timeStamp']}}'
             },
             function(res){
                 if(res.err_msg == 'get_brand_wcpay_request:ok'){
-                    window.location.replace({{$url_ok}});
+                    window.location.replace("{{$url_ok}}");
                 }else{
-                    window.location.replace({{$url_no}});
+                    window.location.replace("{{$url_no}}");
                 }
             }
         );
