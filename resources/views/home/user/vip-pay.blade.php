@@ -52,7 +52,7 @@
             <p class="zhiP">
                 <span>有任何疑问欢迎咨询</span>
                 <span class="colred"><img class="qq" src="http://a3.huazhen.com/huazhen_revision/pc/paymentCourse/img/qq.png">400-0173-520</span>
-                <span>(课程视频最终解析权归花镇所有)</span>
+                <span>(课程视频最终解析权归笃爱所有)</span>
             </p>
         </div>
     </div>

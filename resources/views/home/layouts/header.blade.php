@@ -34,12 +34,12 @@
                 <div class="wechat-text">
                     <b>注意</b>
                     <p>
-                        近日来，发现不法分子抄袭盗用花镇宣传材料，高仿花镇微信帐号，冒充花镇情感分析师行骗以及恶意诋毁花镇，严重影响花镇声誉，威胁用户利益。避免上当受骗，请谨慎交易！
+                        近日来，发现不法分子抄袭盗用笃爱宣传材料，高仿笃爱微信帐号，冒充笃爱情感分析师行骗以及恶意诋毁笃爱，严重影响笃爱声誉，威胁用户利益。避免上当受骗，请谨慎交易！
                     </p>
                 </div>
                 <div class="wechat-cx">
                     <div class="cx-left">
-                        <p>花镇情感分析师微信号真伪查询：</p>
+                        <p>笃爱情感分析师微信号真伪查询：</p>
                         <div class="cx-input">
                             <input type="text" placeholder="请输入分析师微信号" class="f-input">
                             <div class="f-tap-btn">
