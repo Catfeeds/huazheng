@@ -29,7 +29,7 @@
 	    			@foreach($index2_box['article'] as $b_k=>$b_v)
 	   	            <div class="swiper-slide">
 	   	                <img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
-	   	                <p class="fh_ptwo">{{$b_v['title']}}</p>
+	   	                <p class="fh_ptwo">{!!$b_v['title']!!}</p>
 	   	            </div>
 	    			@endforeach
 	   	          </div>
@@ -164,7 +164,9 @@
 							<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
 							<ul class="trapMan-twoB2">
 		    					@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
+		    					@if($b_k2 < 3)
 								<li><i></i>{{$b_v2}}</li>
+								@endif
 		    					@endforeach
 							</ul>
 							<a  class="kefu_btn">免费咨询</a>

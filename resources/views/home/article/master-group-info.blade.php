@@ -3,8 +3,8 @@
     @parent
 @endsection
 @section('content')
-    <div class="master-banner">
-        <div class="banner_in">
+    <div class="master-banner clearfix">
+        <div class="banner_in clearfix">
             <div class="banner_left">
                 <img src="{{asset($info['img2'])}}" alt="{{$info['alt2']}}">
             </div>

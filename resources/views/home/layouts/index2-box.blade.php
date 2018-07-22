@@ -92,10 +92,12 @@
 		<div class="trapMan-exponent" style="background-image: url({{asset($index2_box['img'])}});">
 			<div class="trapMan-exponentT">
     			@foreach(explode('<br />',nl2br($index2_box['cat_desc'])) as $b_k=>$b_v)
+    			@if($b_k < 5)
 				<div>
 					<img src="{{asset('resources/home/images/ico/ico3.png')}}">
 					<span>{{$b_v}}</span>
 				</div>
+				@endif
     			@endforeach
 				<a  class="ljzx kefu_btn">立即咨询</a>
 			</div>
@@ -114,7 +116,9 @@
 					<img src="{{asset($b_v['img'])}}" alt="{{$b_v['alt']}}">
 					<ul class="trapMan-twoB2">
     					@foreach(explode('<br />',nl2br($b_v['desc'])) as $b_k2=>$b_v2)
+    					@if($b_k2 < 3)
 						<li><i></i>{{$b_v2}}</li>
+						@endif
     					@endforeach
 					</ul>
 					<a  class="kefu_btn">免费咨询</a>

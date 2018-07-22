@@ -60,7 +60,7 @@
                         </div>
                         <div class="story-article-info">
                             <div class="story-article-title2">上一篇：{{$prev_article['title']}}</div>
-                            <span class="xq">【详情】</span>
+                            <!-- <span class="xq">【详情】</span> -->
                         </div>
                     </a>
                     @endif
@@ -71,7 +71,7 @@
                         </div>
                         <div class="story-article-info">
                             <div class="story-article-title2">下一篇：{{$next_article['title']}}</div>
-                            <span class="xq">【详情】</span>
+                            <!-- <span class="xq">【详情】</span> -->
                         </div>
                     </a>
                     @endif
