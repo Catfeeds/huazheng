@@ -53,8 +53,13 @@
                 <div class="captcha">
                     {!!captcha_img()!!}
                 </div>
+                <label for="register-captcha" class="Validform_checktip @if($errors->has('captcha')) Validform_wrong @endif">
+                    @if ($errors->has('captcha'))
+                        {{ $errors->first('captcha') }}
+                    @endif
+                </label>
             </div>
-            <div class="login-input-text">
+            <!-- <div class="login-input-text">
                 <input type="text" class="form-control retpadding note text-input" placeholder="短信验证码" name="verify_code"
                 id="register-code" required datatype="*" nullmsg="请输入短信验证码" value="{{old('verify_code')}}" />
                 <input class="get-msg" id="register-get-code" value="获取验证码" type="button">
@@ -63,7 +68,7 @@
                         {{ $errors->first('verify_code') }}
                     @endif
                 </label>
-            </div>
+            </div> -->
             <div class="input-group yhxy" >
                 <input class="reset" type="checkbox" id="register-checkbox" value="1" name="xieyi" @if(old('xieyi')) checked='checked' @endif>
                 <label for="register-checkbox" style="display:inline-block;">我已接受并阅读<span onclick="window.open('{{URL('system-article',[1250])}}')">《笃爱用户协议》</span></label>

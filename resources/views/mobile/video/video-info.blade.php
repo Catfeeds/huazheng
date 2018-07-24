@@ -93,47 +93,57 @@
         }else{
             $("#try").hide();
         }
-        var videoObject = {
-            container: '#video', //容器的ID
-            variable: 'player',
-            flashplayer:true,
-            poster:'{{asset($info['img'])}}',//封面图片
-            video: video_url
-        };
-        var player = new ckplayer(videoObject);
+        
+        changeVideo(video_url);
 
         function changeVideo(videoUrl) {
-            if(player == null) {
-                return;
+            alert(videoUrl);
+            if(videoUrl.indexOf(".mp3") != -1){
+                $("#video").html('<video src="'+videoUrl+'" controls="controls" poster="{{asset($info['img'])}}" id="video" style="width: 100%; height:100%;"></video>');
+                return true;
+            }else{
+                $("#video").html('');
+                var videoObject = {
+                    container: '#video', //容器的ID
+                    variable: 'player',
+                    flashplayer:true,
+                    poster:'{{asset($info['img'])}}',//封面图片
+                    video: videoUrl
+                };
+                var player = new ckplayer(videoObject);
+                return true;
             }
-            var newVideoObject = {
-                container: '#video', //容器的ID
-                variable: 'player',
-                flashplayer:true,
-                poster:'{{asset($info['img'])}}',//封面图片
-                // loaded: 'loadedHandler', //当播放器加载后执行的函数
-                video: videoUrl
-            }
-            //判断是需要重新加载播放器还是直接换新地址
-            if(player.playerType == 'html5video') {
-                if(player.getFileExt(videoUrl) == '.flv' || player.getFileExt(videoUrl) == '.m3u8' || player.getFileExt(videoUrl) == '.f4v' || videoUrl.substr(0, 4) == 'rtmp') {
-                    player.removeChild();
+            // if(player == null) {
+            //     return;
+            // }
+            // var newVideoObject = {
+            //     container: '#video', //容器的ID
+            //     variable: 'player',
+            //     flashplayer:true,
+            //     poster:'{{asset($info['img'])}}',//封面图片
+            //     // loaded: 'loadedHandler', //当播放器加载后执行的函数
+            //     video: videoUrl
+            // }
+            // //判断是需要重新加载播放器还是直接换新地址
+            // if(player.playerType == 'html5video') {
+            //     if(player.getFileExt(videoUrl) == '.flv' || player.getFileExt(videoUrl) == '.m3u8' || player.getFileExt(videoUrl) == '.f4v' || videoUrl.substr(0, 4) == 'rtmp') {
+            //         player.removeChild();
 
-                    player = null;
-                    player = new ckplayer();
-                    player.embed(newVideoObject);
-                } else {
-                    player.newVideo(newVideoObject);
-                }
-            } else {
-                if(player.getFileExt(videoUrl) == '.mp4' || player.getFileExt(videoUrl) == '.webm' || player.getFileExt(videoUrl) == '.ogg') {
-                    player = null;
-                    player = new ckplayer();
-                    player.embed(newVideoObject);
-                } else {
-                    player.newVideo(newVideoObject);
-                }
-            }
+            //         player = null;
+            //         player = new ckplayer();
+            //         player.embed(newVideoObject);
+            //     } else {
+            //         player.newVideo(newVideoObject);
+            //     }
+            // } else {
+            //     if(player.getFileExt(videoUrl) == '.mp4' || player.getFileExt(videoUrl) == '.webm' || player.getFileExt(videoUrl) == '.ogg') {
+            //         player = null;
+            //         player = new ckplayer();
+            //         player.embed(newVideoObject);
+            //     } else {
+            //         player.newVideo(newVideoObject);
+            //     }
+            // }
         }
         
         $(".cur").find("li").click(function(){

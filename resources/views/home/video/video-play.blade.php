@@ -10,10 +10,15 @@
             </a>
         </div>
         <div class="videoDiv">
-            <div id="video" style="width: 80%; height:100%;"></div>
+            
             <!-- <video id="vis" ref="videosCon" preload="auto" src="{{$video_url}}" poster="">
                 <source src="{{$video_url}}" type="video/mp4">
             </video> -->
+            @if(strstr($video_url,".mp3"))
+                <video src="{{asset($video_url)}}" controls="controls" poster="{{asset($Video['img'])}}" id="video" style="width: 80%; height:100%;"></video>
+            @else
+                <div id="video" style="width: 80%; height:100%;"></div>
+            @endif
             <div class="videoListzj">
                 <p class="sectionList" ><i class="iconfont icon-zhangjie"></i>章节</p>
                 <div class="listCon">
@@ -34,23 +39,21 @@
 @section('script')
 @parent
 <script>
-    // var videoObject = {
-    //     container: '#video', //容器的ID或className
-    //     variable: 'player',//播放函数名称
-    //     flashplayer:true,
-    //     // poster:'{{asset('resources/home/images/ico/ico25.jpg')}}',//封面图片
-    //     //flashplayer:true,
-    //     video: [//视频地址列表形式
-    //         ['{{asset($video_url)}}', 'video/mp4', '', 0],
-    //     ]
-    // };
-    // var player = new ckplayer(videoObject);
-    var videoObject = {
-        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
-        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-        poster:'{{asset($Video['img'])}}',//封面图片
-        video:'{{asset($video_url)}}',//视频地址
-    };
+    
+    @if(!strstr($video_url,".mp3"))
+        var videoObject = {
+            container: '#video', //容器的ID或className
+            variable: 'player',//播放函数名称
+            flashplayer:true,
+            // poster:'{{asset('resources/home/images/ico/ico25.jpg')}}',//封面图片
+            //flashplayer:true,
+            video: [//视频地址列表形式
+                ['{{asset($video_url)}}', 'video/mp4', '', 0],
+            ]
+        };
+        var player = new ckplayer(videoObject);
+    @endif
+    
     var player=new ckplayer(videoObject);
     var sect = true;
     function secStatu(){

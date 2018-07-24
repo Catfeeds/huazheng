@@ -172,7 +172,7 @@ class PayController extends Controller
                         break;
                 }
             }
-            usleep(1000);
+            usleep(500);
         }
     }
 }
