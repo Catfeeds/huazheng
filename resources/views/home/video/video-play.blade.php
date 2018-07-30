@@ -44,12 +44,14 @@
         var videoObject = {
             container: '#video', //容器的ID或className
             variable: 'player',//播放函数名称
-            flashplayer:true,
+            // flashplayer:true,
             // poster:'{{asset('resources/home/images/ico/ico25.jpg')}}',//封面图片
             //flashplayer:true,
-            video: [//视频地址列表形式
-                ['{{asset($video_url)}}', 'video/mp4', '', 0],
-            ]
+            poster:'{{asset($Video['img'])}}',//封面图片
+            video:'{{asset($video_url)}}',//视频地址
+            // video: [//视频地址列表形式
+            //     ['{{asset($video_url)}}', 'video/mp4', '', 0],
+            // ]
         };
         var player = new ckplayer(videoObject);
     @endif
