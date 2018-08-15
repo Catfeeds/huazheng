@@ -947,12 +947,30 @@ function _mediaAttrs(srcTag) {
 	return _getAttrList(unescape(srcTag));
 }
 function _mediaEmbed(attrs) {
-	var html = '<embed ';
-	_each(attrs, function(key, val) {
-		html += key + '="' + val + '" ';
-	});
-	html += '/>';
-	return html;
+	//hao
+	paraStr = attrs.src;
+	
+	paraStr.indexOf(".mp3");
+	if(paraStr.indexOf(".mp3")<0){
+		var html = '<iframe  ';
+		_each(attrs, function(key, val) {
+			html += key + '="' + val + '" ';
+		});
+		html += '/>';
+		return html;
+	}else{
+		var html = '<audio ';
+		attrs.controls = "controls";
+		attrs.preload = "preload";
+		_each(attrs, function(key, val) {
+			html += key + '="' + val + '" ';
+		});
+		html += '/>';
+		return html;
+	}
+	
+	// <source src="http://www.duai520.com/uploads/video/10cat.mp3" type="audio/mpeg">
+	
 }
 function _mediaImg(blankPath, attrs) {
 	var width = attrs.width,
@@ -7761,16 +7779,16 @@ KindEditor.plugin('media', function(K) {
 				'</div>',
 				'<div class="ke-dialog-row">',
 				'<label for="keWidth" style="width:60px;">' + lang.width + '</label>',
-				'<input type="text" id="keWidth" class="ke-input-text ke-input-number" name="width" value="550" maxlength="4" />',
+				'<input type="text" id="keWidth" class="ke-input-text ke-input-number" name="width" value="" maxlength="4" />',
 				'</div>',
 				'<div class="ke-dialog-row">',
 				'<label for="keHeight" style="width:60px;">' + lang.height + '</label>',
-				'<input type="text" id="keHeight" class="ke-input-text ke-input-number" name="height" value="400" maxlength="4" />',
+				'<input type="text" id="keHeight" class="ke-input-text ke-input-number" name="height" value="" maxlength="4" />',
 				'</div>',
-				'<div class="ke-dialog-row">',
-				'<label for="keAutostart">' + lang.autostart + '</label>',
-				'<input type="checkbox" id="keAutostart" name="autostart" value="" /> ',
-				'</div>',
+				// '<div class="ke-dialog-row">',
+				// '<label for="keAutostart">' + lang.autostart + '</label>',
+				// '<input type="checkbox" id="keAutostart" name="autostart" value="" /> ',
+				// '</div>',
 				'</div>'
 			].join('');
 			var dialog = self.createDialog({
@@ -7805,7 +7823,8 @@ KindEditor.plugin('media', function(K) {
 								type : K.mediaType(url),
 								width : width,
 								height : height,
-								autostart : autostartBox[0].checked ? 'true' : 'false',
+								// autostart : autostartBox[0].checked ? 'true' : 'false',
+								// autostart : autostartBox[0].checked ? 'true' : 'false',
 								loop : 'true'
 							});
 						self.insertHtml(html).hideDialog().focus();
@@ -7816,8 +7835,8 @@ KindEditor.plugin('media', function(K) {
 			urlBox = K('[name="url"]', div),
 			viewServerBtn = K('[name="viewServer"]', div),
 			widthBox = K('[name="width"]', div),
-			heightBox = K('[name="height"]', div),
-			autostartBox = K('[name="autostart"]', div);
+			heightBox = K('[name="height"]', div);
+			// autostartBox = K('[name="autostart"]', div);
 			urlBox.val('http://');
 			if (allowMediaUpload) {
 				var uploadbutton = K.uploadbutton({
@@ -7880,7 +7899,7 @@ KindEditor.plugin('media', function(K) {
 				urlBox.val(attrs.src);
 				widthBox.val(K.removeUnit(img.css('width')) || attrs.width || 0);
 				heightBox.val(K.removeUnit(img.css('height')) || attrs.height || 0);
-				autostartBox[0].checked = (attrs.autostart === 'true');
+				// autostartBox[0].checked = (attrs.autostart === 'true');
 			}
 			urlBox[0].focus();
 			urlBox[0].select();
