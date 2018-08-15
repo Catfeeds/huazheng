@@ -60,26 +60,27 @@ class RegisterController extends Controller
             // 'name' => 'required|string|max:255',
             'phone'       => 'required|string|phone|max:255|unique:users',
             'password'    => 'required|string|min:6|max:20|confirmed',
-            'verify_code' => 'required',
+            // 'verify_code' => 'required',
+            'captcha' => 'required|captcha',
             'xieyi'       => 'required',
         ],[
             'xieyi.required' => '请阅读并同意协议',
         ],['phone'=>"手机号码"]);
         
-        $SmsCaptcha = SmsCaptcha::where([
-            'phone'=>$data['phone'],
-            'captcha'=>$data['verify_code'],
-            'status'=>1,
-        ])->where('add_time',">",time()-1800)->first();
-        $Validator->after(function($validator) use ($SmsCaptcha){
-            if(!$SmsCaptcha){
-                $validator->errors()->add('verify_code', '短信验证码过期或不存在，请重新获取');
-            }
-        });
-        if(!$Validator->errors()->messages()&&!$Validator->fails()){
-            $SmsCaptcha->status=2;
-            $SmsCaptcha->save();
-        }
+        // $SmsCaptcha = SmsCaptcha::where([
+        //     'phone'=>$data['phone'],
+        //     'captcha'=>$data['verify_code'],
+        //     'status'=>1,
+        // ])->where('add_time',">",time()-1800)->first();
+        // $Validator->after(function($validator) use ($SmsCaptcha){
+        //     if(!$SmsCaptcha){
+        //         $validator->errors()->add('verify_code', '短信验证码过期或不存在，请重新获取');
+        //     }
+        // });
+        // if(!$Validator->errors()->messages()&&!$Validator->fails()){
+        //     $SmsCaptcha->status=2;
+        //     $SmsCaptcha->save();
+        // }
         return $Validator;
     }
 

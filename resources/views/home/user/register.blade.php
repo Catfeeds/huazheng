@@ -57,8 +57,13 @@
                                     <div class="captcha">
                                         {!!captcha_img()!!}
                                     </div>
+                                    <label for="register-captcha" class="Validform_checktip @if($errors->has('captcha')) Validform_wrong @endif">
+                                        @if ($errors->has('captcha'))
+                                            {{ $errors->first('captcha') }}
+                                        @endif
+                                    </label>
                                 </div>
-                                <div class="input-group input-group2">
+                                <!-- <div class="input-group input-group2">
                                     <input type="text" class="form-control retpadding note text-input" placeholder="短信验证码" name="verify_code"
                                     id="register-code" required datatype="*" nullmsg="请输入短信验证码" value="{{old('verify_code')}}" />
                                     <input class="get-msg" id="register-get-code" value="获取验证码" type="button">
@@ -67,7 +72,7 @@
                                             {{ $errors->first('verify_code') }}
                                         @endif
                                     </label>
-                                </div>
+                                </div> -->
                                 <div class="input-group">
                                     <input class="btn nomargin" type="button" value="立 即 注 册" id="register-submit">
                                 </div>

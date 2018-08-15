@@ -93,7 +93,7 @@
                     @foreach($art_4 as $k=>$v)
                     @if($k==0)
                     <dl>
-                        <a href="{{URL($cat_4['url']),$v['id']}}" >
+                        <a href="{{URL($cat_4['url'],$v['id'])}}" >
                             <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}" class="img">
                             <div>
                                 <h3>{{$v['title']}}</h3>
