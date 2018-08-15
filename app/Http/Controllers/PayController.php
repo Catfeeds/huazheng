@@ -24,11 +24,11 @@ class PayController extends Controller
     protected function wx_config(){
         return $wx_config = [
             // 'appid' => 'wxb3fxxxxxxxxxxx', // APP APPID
-            'app_id' => 'wx3e2f2acc04f5e83e', // 公众号 APPID
+            'app_id' => env('WECHAT_APP_ID'), // 公众号 APPID
             // 'miniapp_id' => 'wxb3fxxxxxxxxxxx', // 小程序 APPID
-            'app_secret' => '13540943de904a7d513069b2bc36428f',//公众号AppSecret
-            'mch_id' => '1509537671',//商户号
-            'key' => 'dataimagepngbase64iVBORw0KGgklia',//商户密钥
+            'app_secret' => env('WECHAT_APP_SECRET'),//公众号AppSecret
+            'mch_id' => env('WECHAT_MCH_ID'),//商户号
+            'key' => env('WECHAT_KEY'),//商户密钥
             'notify_url'  => URL('wechat_notify_url'),
             'cert_client' => 'wxzs/apiclient_cert.pem', // optional, 退款，红包等情况时需要用到
             'cert_key' => 'wxzs/apiclient_key.pem',// optional, 退款，红包等情况时需要用到

@@ -2485,6 +2485,9 @@ white-space: nowrap;}
   display: flex;
   justify-content: center;
 }
+
+.login_box .login-input .login-input-more .login-input-more-list a{display: block;text-align: center;}
+.login_box .login-input .login-input-more .login-input-more-list .wat img{width: .9rem;}
 .login_box .login-input .login-input-more .login-input-more-list {
   text-align: center;
   width: 33%;
@@ -2493,14 +2496,14 @@ white-space: nowrap;}
   -ms-flex: 1;
   flex: 1;
   color: #999999;
-  font-size: 0.7275rem;
+  font-size: 0.24rem;
 }
 .login_box .login-input .login-input-more .login-input-more-list i {
   font-size: 1.2rem;
   color: #999999;
 }
 .login_box .login-input .login-input-more .login-input-more-list p {
-  line-height: 1.9rem;
+  line-height:.7rem;
 }
 
 .Validform_checktip.Validform_wrong{color: #ff5562;font-size: .18rem;display: block;clear:both;}

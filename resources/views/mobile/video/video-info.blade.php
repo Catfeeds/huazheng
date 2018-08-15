@@ -97,7 +97,7 @@
         changeVideo(video_url);
 
         function changeVideo(videoUrl) {
-            alert(videoUrl);
+            // alert(videoUrl);
             if(videoUrl.indexOf(".mp3") != -1){
                 $("#video").html('<video src="'+videoUrl+'" controls="controls" poster="{{asset($info['img'])}}" id="video" style="width: 100%; height:100%;"></video>');
                 return true;

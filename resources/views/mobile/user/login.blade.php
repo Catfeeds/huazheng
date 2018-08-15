@@ -45,14 +45,14 @@
             <input type="submit" class="button button-fill loginin-btn" id="login-submit" value="登录">
         </form>
         <!-- 微信登录 -->
-        <!-- <div class="login-input-more">
+        <div class="login-input-more">
             <div class="login-input-more-list">
-                <a href="/account/wechat/login">
-                    <span class="wat"><img src="http://a3.huazhen.com/huazhen0624/i/icon1.png" alt=""></span>
+                <a href="{{url('wx_login')}}">
+                    <span class="wat"><img src="{{asset('resources/mobile/images/ico27.png')}}" alt=""></span>
                     <p>微信登录</p>
                 </a>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 @endsection

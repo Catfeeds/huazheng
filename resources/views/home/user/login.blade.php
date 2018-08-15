@@ -13,9 +13,9 @@
                         <p class="acc cur">
                             <span class="acc">账号登录</span>
                         </p>
-                        <!-- <p>
+                        <p>
                             <span>微信登录</span>
-                        </p> -->
+                        </p>
                         <!-- <i></i> -->
                     </div>
                     <div class="form-item" >
@@ -49,7 +49,6 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                     <div class="form-item" style="display:none">
                         <div class="">
@@ -64,6 +63,23 @@
 @endsection
 @section('script')
 @parent
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+    var obj = new WxLogin({
+        id:"login_container",
+        appid: "{{env('WECHAT_APP_ID')}}",
+        scope: "snsapi_login",
+        redirect_uri: "{{url('wx_login')}}",
+        state: "",
+        style: "",
+        href: ""
+    });
+    $('.main .right .right-box p').click(function(event) {
+        $(this).addClass('cur').siblings('p').removeClass('cur');
+        var num = $(this).index();
+        $('.main .form-item').eq(num).show().siblings('.form-item').hide();
+    });
+</script>
 <script type="text/javascript">
     $("#demoform").Validform({
         tiptype:3,

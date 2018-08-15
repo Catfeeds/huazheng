@@ -264,4 +264,50 @@ class UserController extends Controller
 
         return redirect('pay?id='.$pay_log['id']);
     }
+    public function wx_login(Request $request){
+        //微信授权登陆
+        if(is_weixin()){
+            //微信浏览器
+            if(!isset($request['code'])){
+                $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=".env('WECHAT_APP_ID')."&redirect_uri=".url('').$request->getRequestUri()."&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
+                header("Location:".$url);
+                exit;
+            }else{
+                $code=$request['code'];
+                $get_token_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".env('WECHAT_APP_ID')."&secret=".env('WECHAT_APP_SECRET')."&code=".$code."&grant_type=authorization_code";
+                $ch = curl_init();
+                curl_setopt($ch,CURLOPT_URL,$get_token_url);
+                curl_setopt($ch,CURLOPT_HEADER,0);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                $res = curl_exec($ch);
+                curl_close($ch);
+                $json_obj = json_decode($res,true);
+                if(!$json_obj){
+                    return redirect('/');
+                }
+                
+                $get_info="https://api.weixin.qq.com/sns/userinfo?access_token=".$json_obj['access_token']."&openid=".$json_obj['openid']."&lang=zh_CN";
+                $ch = curl_init();
+                curl_setopt($ch,CURLOPT_URL,$get_info);
+                curl_setopt($ch,CURLOPT_HEADER,0);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                $res = curl_exec($ch);
+                curl_close($ch);
+                $json_info = json_decode($res,true);
+                
+                $user = User::where('wx_openid',$json_obj['unionid'])->first();
+                if(!$user){
+                    $user = new User;
+                }
+                $user->wx_openid = $json_info['unionid'];
+                $user->name = $json_info['nickname'];
+                $user->pic = $json_info['headimgurl'];
+                $user->save();
+                Auth::login($user);
+                return redirect()->intended();
+            }
+        }
+    }
 }

@@ -24,12 +24,14 @@ Route::post('password-reset-sms-send','SmsController@password_reset_sms_send');/
 
 Route::get('password-reset','UserController@password_reset');//密码页面
 Route::post('password-reset','UserController@password_reset_save');//密码密码
+Route::get('wx_login','UserController@wx_login');//微信授权登陆
 
 Route::get('video-list','VideoController@video_list');//视频课程
 Route::get('video-info/{id}','VideoController@video_info');//视频课程详情
 Route::get('contact-us','ArticleController@contact_us');//联系我们
 
 Route::any('wechat_notify_url','PayController@wechat_notify_url');//微信支付回调
+
 
 Route::group(['middleware'=>'auth'], function(){
 	//需要登陆的路由
