@@ -67,7 +67,7 @@
 <script>
     var obj = new WxLogin({
         id:"login_container",
-        appid: "{{env('WECHAT_APP_ID')}}",
+        appid: "{{env('WECHAT_KF_APPID')}}",
         scope: "snsapi_login",
         redirect_uri: "{{url('wx_login')}}",
         state: "",
