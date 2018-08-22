@@ -298,7 +298,7 @@ class UserController extends Controller
                 curl_close($ch);
                 $json_info = json_decode($res,true);
                 
-                $user = User::where('wx_openid',$json_obj['unionid'])->first();
+                $user = User::where('wx_openid',$json_info['unionid'])->first();
                 if(!$user){
                     $user = new User;
                 }
@@ -340,7 +340,7 @@ class UserController extends Controller
                 curl_close($ch);
                 $json_info = json_decode($res,true);
                 
-                $user = User::where('wx_openid',$json_obj['unionid'])->first();
+                $user = User::where('wx_openid',$json_info['unionid'])->first();
                 if(!$user){
                     $user = new User;
                 }
